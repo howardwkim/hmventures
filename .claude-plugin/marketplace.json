@@ -1,0 +1,14 @@
+{
+  "name": "hmventures",
+  "owner": {
+    "name": "HM Ventures"
+  },
+  "description": "Shared Claude Code skills for HM Ventures (Howard + Mike).",
+  "plugins": [
+    {
+      "name": "social-post",
+      "source": "./plugins/social-post",
+      "description": "Create and publish a social media post from a file or inline content. Picks accounts, fills required fields, confirms it actually went live. woopsocial backend behind a swappable adapter."
+    }
+  ]
+}

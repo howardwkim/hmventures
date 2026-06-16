@@ -1,0 +1,8 @@
+{
+  "name": "social-post",
+  "description": "Create and publish a social media post from a file or inline content. Picks accounts, fills required fields, confirms it actually went live. woopsocial backend behind a swappable adapter.",
+  "version": "1.0.0",
+  "author": {
+    "name": "HM Ventures"
+  }
+}
