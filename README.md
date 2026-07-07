@@ -32,3 +32,9 @@ claude mcp add --transport http -s user woopsocial "https://api.woopsocial.com/m
 ```
 
 Restart Claude Code after adding. Then point the skill at a file — e.g. *"post this video to TikTok."*
+
+## Docs
+
+Non-plugin reference material lives under `docs/`.
+
+- [`docs/miho/`](docs/miho/) — MiHO Partners brand knowledge (positioning, voice, ICP, proven angles) and Mike's content-pipeline commands (`/staff-writer`, `/social-package`), kept for shared visibility. See that folder's README for what's runnable vs. reference-only.
