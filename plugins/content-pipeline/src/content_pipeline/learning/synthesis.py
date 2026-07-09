@@ -107,6 +107,52 @@ def _format_new_events(new_events):
     return "\n".join(lines) if lines else "(none)"
 
 
+def _validate_synthesis_result(result) -> None:
+    """Validate the full shape of the parsed llm.complete_json response
+    before anything is applied. llm.complete_json only guarantees "some
+    JSON object was parsed" - it does not guarantee the shape matches
+    schema_hint. Raises ValueError on any mismatch so the failure happens
+    before any DB write in on_approval, keeping the apply step atomic from
+    the caller's perspective (checkpoint does not advance on a malformed
+    response, so the next approve() call reprocesses the same events
+    cleanly)."""
+    if not isinstance(result, dict):
+        raise ValueError(f"malformed synthesis response: not a dict: {result!r}")
+
+    new_rules = result.get("new_rules")
+    if not isinstance(new_rules, list):
+        raise ValueError(f"malformed synthesis response: 'new_rules' is not a list: {result!r}")
+    for rule in new_rules:
+        if not isinstance(rule, dict):
+            raise ValueError(f"malformed synthesis response: new_rules item is not a dict: {rule!r}")
+        if not isinstance(rule.get("text"), str):
+            raise ValueError(f"malformed synthesis response: new_rules item missing string 'text': {rule!r}")
+        if not isinstance(rule.get("kind"), str):
+            raise ValueError(f"malformed synthesis response: new_rules item missing string 'kind': {rule!r}")
+        if "evidence_ids" not in rule:
+            raise ValueError(f"malformed synthesis response: new_rules item missing 'evidence_ids': {rule!r}")
+
+    supersede = result.get("supersede")
+    if not isinstance(supersede, list):
+        raise ValueError(f"malformed synthesis response: 'supersede' is not a list: {result!r}")
+    for s in supersede:
+        if not isinstance(s, dict):
+            raise ValueError(f"malformed synthesis response: supersede item is not a dict: {s!r}")
+        if "id" not in s:
+            raise ValueError(f"malformed synthesis response: supersede item missing 'id': {s!r}")
+        if not isinstance(s.get("reason"), str):
+            raise ValueError(f"malformed synthesis response: supersede item missing string 'reason': {s!r}")
+
+    tendencies = result.get("tendencies")
+    if not isinstance(tendencies, list):
+        raise ValueError(f"malformed synthesis response: 'tendencies' is not a list: {result!r}")
+    for t in tendencies:
+        if not isinstance(t, dict):
+            raise ValueError(f"malformed synthesis response: tendencies item is not a dict: {t!r}")
+        if not isinstance(t.get("text"), str):
+            raise ValueError(f"malformed synthesis response: tendencies item missing string 'text': {t!r}")
+
+
 def on_approval(conn, article_id, *, model=llm.DEFAULT_MODEL) -> dict:
     """The one synthesis pass, called from writing.approve() after an
     article is approved. Returns a summary dict describing what happened."""
@@ -134,6 +180,7 @@ def on_approval(conn, article_id, *, model=llm.DEFAULT_MODEL) -> dict:
         '"tendencies": [{"text": "string", "evidence_ids": [int]}]}'
     )
     result = llm.complete_json(prompt, schema_hint=schema_hint, model=model)
+    _validate_synthesis_result(result)
 
     new_rules = result.get("new_rules", []) or []
     supersede = result.get("supersede", []) or []

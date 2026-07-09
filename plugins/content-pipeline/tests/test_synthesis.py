@@ -1,3 +1,5 @@
+import pytest
+
 from content_pipeline import events
 from content_pipeline.learning import canon, synthesis
 
@@ -133,3 +135,64 @@ def test_demote_on_contradiction_never_deletes_row(conn):
 
     total = conn.execute("SELECT COUNT(*) AS n FROM permanent_rules").fetchone()["n"]
     assert total == 1
+
+
+def test_malformed_new_rules_item_raises_and_applies_nothing(conn, monkeypatch):
+    events.append(conn, "edit_round", {"operator_feedback": "never use em dashes", "what_changed": "", "edit_size": 5}, article_id="a1")
+    monkeypatch.setattr(synthesis.llm, "complete_json", lambda *a, **k: {
+        # missing "kind" on this new_rules item
+        "new_rules": [{"text": "Never use em dashes", "evidence_ids": [1]}],
+        "supersede": [], "tendencies": []})
+    monkeypatch.setattr(synthesis.health, "promotion_allowed", lambda c: True)
+
+    with pytest.raises(ValueError):
+        synthesis.on_approval(conn, "a1")
+
+    assert canon.active_rules(conn) == []
+    # checkpoint must not advance on a malformed response
+    row = conn.execute(
+        "SELECT * FROM synthesis_runs WHERE artifact='style' ORDER BY id DESC LIMIT 1"
+    ).fetchone()
+    assert row is None
+
+
+def test_malformed_supersede_item_raises_and_applies_nothing(conn, monkeypatch):
+    old_id = canon.add_permanent_rule(conn, "Open with a question.", "positive", [1])
+    events.append(conn, "edit_round", {"operator_feedback": "actually open with the number instead", "what_changed": "", "edit_size": 5}, article_id="a1")
+    monkeypatch.setattr(synthesis.health, "promotion_allowed", lambda c: True)
+    monkeypatch.setattr(synthesis.llm, "complete_json", lambda *a, **k: {
+        "new_rules": [],
+        # missing "reason" on this supersede item
+        "supersede": [{"id": old_id}],
+        "tendencies": []})
+
+    with pytest.raises(ValueError):
+        synthesis.on_approval(conn, "a1")
+
+    old_row = conn.execute("SELECT * FROM permanent_rules WHERE id=?", (old_id,)).fetchone()
+    assert old_row["status"] != "superseded"
+
+
+def test_malformed_tendencies_item_raises_and_applies_nothing(conn, monkeypatch):
+    events.append(conn, "edit_round", {"operator_feedback": "tends to open with a stat", "what_changed": "", "edit_size": 5}, article_id="a1")
+    monkeypatch.setattr(synthesis.health, "promotion_allowed", lambda c: True)
+    monkeypatch.setattr(synthesis.llm, "complete_json", lambda *a, **k: {
+        "new_rules": [], "supersede": [],
+        # missing "text" on this tendencies item
+        "tendencies": [{"evidence_ids": [1]}]})
+
+    with pytest.raises(ValueError):
+        synthesis.on_approval(conn, "a1")
+
+    assert canon.tendencies(conn) == []
+
+
+def test_non_dict_response_raises_and_applies_nothing(conn, monkeypatch):
+    events.append(conn, "edit_round", {"operator_feedback": "never use em dashes", "what_changed": "", "edit_size": 5}, article_id="a1")
+    monkeypatch.setattr(synthesis.llm, "complete_json", lambda *a, **k: ["not", "a", "dict"])
+    monkeypatch.setattr(synthesis.health, "promotion_allowed", lambda c: True)
+
+    with pytest.raises(ValueError):
+        synthesis.on_approval(conn, "a1")
+
+    assert canon.active_rules(conn) == []
