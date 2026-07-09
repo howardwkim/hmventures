@@ -27,6 +27,11 @@ def decide(conn, candidate_id, outcome, *, today, idea_note=None):
     Sets decided_at, appends a 'decision' event (outcome + the candidate's
     stored predicted_relevance, for later calibration), and commits
     immediately (save-as-you-go)."""
+    if outcome not in {"yes", "no", "snooze"}:
+        raise ValueError(
+            f"invalid outcome: {outcome!r}, expected one of yes/no/snooze"
+        )
+
     row = conn.execute(
         "SELECT predicted_relevance FROM candidates WHERE id = ?", (candidate_id,)
     ).fetchone()

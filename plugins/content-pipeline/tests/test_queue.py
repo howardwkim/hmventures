@@ -28,3 +28,15 @@ def test_decision_logs_event_with_prediction(conn):
     ev = conn.execute("SELECT * FROM events WHERE kind='decision'").fetchone()
     import json; p = json.loads(ev["payload_json"])
     assert p["outcome"] == "yes" and p["predicted_relevance"] == 0.8
+
+def test_decide_rejects_invalid_outcome(conn):
+    source.ingest(conn, [_cand("a")])
+    cid = conn.execute("SELECT id FROM candidates").fetchone()["id"]
+    try:
+        queue.decide(conn, cid, "maybe", today="2026-07-09")
+        assert False, "expected ValueError"
+    except ValueError:
+        pass
+    row = conn.execute("SELECT status FROM candidates WHERE id = ?", (cid,)).fetchone()
+    assert row["status"] == "pending"  # unchanged, no partial write
+    assert conn.execute("SELECT * FROM events WHERE kind='decision'").fetchone() is None
