@@ -76,6 +76,8 @@ def interview_questions(conn, article_id, *, brand_context, style_context) -> li
     )
 
     result = llm.complete_json(prompt, schema_hint=schema_hint)
+    if not isinstance(result, dict) or not isinstance(result.get("questions"), list):
+        raise ValueError(f"LLM response missing 'questions' list: {result!r}")
     return result["questions"]
 
 

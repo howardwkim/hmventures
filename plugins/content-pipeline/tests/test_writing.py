@@ -1,5 +1,7 @@
 import json
 
+import pytest
+
 from content_pipeline.models import Candidate
 from content_pipeline.discovery import source
 from content_pipeline import queue, writing
@@ -79,6 +81,20 @@ def test_interview_questions_shape(conn, monkeypatch):
     aid, cid = _start_article(conn)
     qs = writing.interview_questions(conn, aid, brand_context="", style_context="")
     assert qs[0]["recommended"] == "Agree" and qs[0]["alternate"] == "Disagree"
+
+
+def test_interview_questions_accepts_empty_list(conn, monkeypatch):
+    monkeypatch.setattr(writing.llm, "complete_json", lambda *a, **k: {"questions": []})
+    aid, cid = _start_article(conn)
+    qs = writing.interview_questions(conn, aid, brand_context="", style_context="")
+    assert qs == []
+
+
+def test_interview_questions_raises_value_error_on_missing_questions_key(conn, monkeypatch):
+    monkeypatch.setattr(writing.llm, "complete_json", lambda *a, **k: {"foo": "bar"})
+    aid, cid = _start_article(conn)
+    with pytest.raises(ValueError):
+        writing.interview_questions(conn, aid, brand_context="", style_context="")
 
 
 def test_record_answer_logs_choice(conn):
