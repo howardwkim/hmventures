@@ -4,6 +4,7 @@ import pytest
 
 from content_pipeline.models import Candidate
 from content_pipeline.discovery import source
+from content_pipeline.learning import synthesis
 from content_pipeline import queue, writing
 
 
@@ -102,3 +103,139 @@ def test_record_answer_logs_choice(conn):
     writing.record_answer(conn, aid, "Q", "skip", None, {"recommended": "a", "alternate": "b"})
     ev = conn.execute("SELECT * FROM events WHERE kind='interview_choice'").fetchone()
     assert json.loads(ev["payload_json"])["chosen"] == "skip"
+
+
+def test_generate_draft_stores_text_sets_reviewing_and_logs_event(conn, monkeypatch):
+    monkeypatch.setattr(writing.llm, "complete", lambda *a, **k: "Draft body text.")
+    aid, cid = _start_article(conn)
+
+    draft = writing.generate_draft(
+        conn, aid, research="some research", brand_context="brand", style_context="style"
+    )
+
+    assert draft == "Draft body text."
+
+    article = conn.execute("SELECT * FROM articles WHERE id = ?", (aid,)).fetchone()
+    assert article["draft_text"] == "Draft body text."
+    assert article["status"] == "reviewing"
+
+    ev = conn.execute(
+        "SELECT * FROM events WHERE kind = 'draft_generated'"
+    ).fetchone()
+    assert ev is not None
+    assert ev["article_id"] == aid
+
+
+def test_generate_draft_prompt_includes_no_em_dash_instruction(conn, monkeypatch):
+    captured = {}
+
+    def fake_complete(prompt, **kwargs):
+        captured["prompt"] = prompt
+        return "Draft body text."
+
+    monkeypatch.setattr(writing.llm, "complete", fake_complete)
+    aid, cid = _start_article(conn)
+
+    writing.generate_draft(
+        conn, aid, research="r", brand_context="b", style_context="s"
+    )
+
+    assert "em dash" in captured["prompt"].lower()
+    assert "—" not in captured["prompt"]
+
+
+def _generate_draft(conn, monkeypatch, text="First draft text."):
+    monkeypatch.setattr(writing.llm, "complete", lambda *a, **k: text)
+    aid, cid = _start_article(conn)
+    writing.generate_draft(conn, aid, research="r", brand_context="b", style_context="s")
+    return aid
+
+
+def test_record_edit_round_computes_size_and_increments_round(conn, monkeypatch):
+    aid = _generate_draft(conn, monkeypatch, text="abc")
+
+    round1 = writing.record_edit_round(conn, aid, "make it punchier", "abcdef")
+    assert round1 == 1
+
+    row1 = conn.execute(
+        "SELECT * FROM edit_rounds WHERE article_id = ? AND round = 1", (aid,)
+    ).fetchone()
+    assert row1 is not None
+    assert row1["operator_feedback"] == "make it punchier"
+    assert row1["edit_size"] == 3  # "abc" -> "abcdef", 3 chars added
+
+    article = conn.execute("SELECT * FROM articles WHERE id = ?", (aid,)).fetchone()
+    assert article["draft_text"] == "abcdef"
+
+    ev = conn.execute(
+        "SELECT * FROM events WHERE kind = 'edit_round'"
+    ).fetchone()
+    assert ev is not None
+    payload = json.loads(ev["payload_json"])
+    assert payload["round"] == 1
+    assert payload["operator_feedback"] == "make it punchier"
+    assert payload["edit_size"] == 3
+
+    round2 = writing.record_edit_round(conn, aid, "tighten intro", "abcdefgh")
+    assert round2 == 2
+
+    row2 = conn.execute(
+        "SELECT * FROM edit_rounds WHERE article_id = ? AND round = 2", (aid,)
+    ).fetchone()
+    assert row2 is not None
+    assert row2["edit_size"] == 2  # "abcdef" -> "abcdefgh"
+
+    article2 = conn.execute("SELECT * FROM articles WHERE id = ?", (aid,)).fetchone()
+    assert article2["draft_text"] == "abcdefgh"
+
+
+def test_approve_sets_approved_and_fires_synthesis_hook(conn, monkeypatch):
+    aid = _generate_draft(conn, monkeypatch)
+
+    calls = []
+    monkeypatch.setattr(
+        synthesis, "on_approval", lambda conn, article_id: calls.append(article_id)
+    )
+
+    writing.approve(conn, aid, "Final approved text.")
+
+    article = conn.execute("SELECT * FROM articles WHERE id = ?", (aid,)).fetchone()
+    assert article["status"] == "approved"
+    assert article["final_text"] == "Final approved text."
+    assert article["approved_at"] is not None
+
+    ev = conn.execute(
+        "SELECT * FROM events WHERE kind = 'article_approved'"
+    ).fetchone()
+    assert ev is not None
+    assert ev["article_id"] == aid
+
+    assert calls == [aid]
+
+
+def test_resumable_finds_interviewing_article(conn):
+    assert writing.resumable(conn) is None
+
+    aid, cid = _start_article(conn)
+
+    resumed = writing.resumable(conn)
+    assert resumed is not None
+    assert resumed["id"] == aid
+    assert resumed["status"] == "interviewing"
+
+
+def test_resumable_finds_reviewing_article(conn, monkeypatch):
+    aid = _generate_draft(conn, monkeypatch)
+
+    resumed = writing.resumable(conn)
+    assert resumed is not None
+    assert resumed["id"] == aid
+    assert resumed["status"] == "reviewing"
+
+
+def test_resumable_ignores_approved_article(conn, monkeypatch):
+    aid = _generate_draft(conn, monkeypatch)
+    monkeypatch.setattr(synthesis, "on_approval", lambda conn, article_id: None)
+    writing.approve(conn, aid, "Final text.")
+
+    assert writing.resumable(conn) is None

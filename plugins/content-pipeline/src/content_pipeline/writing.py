@@ -103,3 +103,144 @@ def record_answer(conn, article_id, question, chosen, answer_text, options) -> N
         {"chosen": chosen, "question": question},
         article_id=article_id,
     )
+
+
+def generate_draft(conn, article_id, *, research, brand_context, style_context) -> str:
+    """Generate the first draft for article_id via one llm.complete call.
+    The prompt injects the interview answers (confirmed/edited/skipped),
+    the style rules verbatim, and an explicit no-em-dash constraint.
+    Stores the result in articles.draft_text, moves status to 'reviewing',
+    and appends a 'draft_generated' event. Returns the draft text."""
+    candidate_row = conn.execute(
+        """SELECT c.* FROM candidates c
+           JOIN articles a ON a.candidate_id = c.id
+           WHERE a.id = ?""",
+        (article_id,),
+    ).fetchone()
+
+    answers = conn.execute(
+        """SELECT question, chosen, answer_text
+           FROM interview_answers WHERE article_id = ?
+           ORDER BY id ASC""",
+        (article_id,),
+    ).fetchall()
+    answers_text = "\n".join(
+        f"- Q: {row['question']}\n  Chosen: {row['chosen']}\n  Answer: {row['answer_text']}"
+        for row in answers
+    ) or "(no interview answers recorded)"
+
+    prompt = (
+        "You are drafting a content article. Write the full first draft "
+        "based on the research, the candidate story, the operator's interview "
+        "answers, the brand context, and the style rules below.\n\n"
+        f"Candidate title: {candidate_row['title'] if candidate_row else ''}\n"
+        f"Candidate summary: {candidate_row['summary'] if candidate_row else ''}\n\n"
+        f"Research:\n{research}\n\n"
+        f"Interview answers:\n{answers_text}\n\n"
+        f"Brand context:\n{brand_context}\n\n"
+        "Style rules (apply verbatim):\n"
+        f"{style_context}\n\n"
+        "Constraint: do not use em dashes anywhere in the draft. Use commas, "
+        "periods, or parentheses instead.\n\n"
+        "Write the complete draft now."
+    )
+
+    draft_text = llm.complete(prompt)
+
+    conn.execute(
+        "UPDATE articles SET draft_text = ?, status = 'reviewing' WHERE id = ?",
+        (draft_text, article_id),
+    )
+    conn.commit()
+
+    events.append(
+        conn,
+        "draft_generated",
+        {"length": len(draft_text)},
+        article_id=article_id,
+    )
+
+    return draft_text
+
+
+def record_edit_round(conn, article_id, operator_feedback, new_text) -> int:
+    """Record one review-iterate round: computes edit_size as the character
+    difference between the prior draft_text and new_text, bumps the round
+    number, updates articles.draft_text, writes an edit_rounds row, and
+    appends an 'edit_round' event. Returns the round number (1-indexed,
+    per article)."""
+    article = conn.execute(
+        "SELECT draft_text FROM articles WHERE id = ?", (article_id,)
+    ).fetchone()
+    prior_text = article["draft_text"] if article and article["draft_text"] else ""
+    edit_size = abs(len(new_text) - len(prior_text))
+
+    last_round = conn.execute(
+        "SELECT MAX(round) AS r FROM edit_rounds WHERE article_id = ?",
+        (article_id,),
+    ).fetchone()
+    round_number = (last_round["r"] or 0) + 1
+
+    what_changed = f"draft_text updated ({len(prior_text)} -> {len(new_text)} chars)"
+
+    conn.execute(
+        """INSERT INTO edit_rounds
+               (article_id, round, operator_feedback, what_changed, edit_size, created_at)
+           VALUES (?, ?, ?, ?, ?, ?)""",
+        (article_id, round_number, operator_feedback, what_changed, edit_size, _now()),
+    )
+    conn.execute(
+        "UPDATE articles SET draft_text = ? WHERE id = ?",
+        (new_text, article_id),
+    )
+    conn.commit()
+
+    events.append(
+        conn,
+        "edit_round",
+        {
+            "round": round_number,
+            "operator_feedback": operator_feedback,
+            "what_changed": what_changed,
+            "edit_size": edit_size,
+        },
+        article_id=article_id,
+    )
+
+    return round_number
+
+
+def approve(conn, article_id, final_text) -> None:
+    """Mark article_id approved: stores final_text, sets status 'approved'
+    and approved_at, appends an 'article_approved' event, then triggers
+    the learning synthesis hook. Imported lazily to avoid a module-load
+    cycle between writing and learning.synthesis."""
+    from content_pipeline.learning import synthesis
+
+    conn.execute(
+        """UPDATE articles
+           SET status = 'approved', final_text = ?, approved_at = ?
+           WHERE id = ?""",
+        (final_text, _now(), article_id),
+    )
+    conn.commit()
+
+    events.append(
+        conn,
+        "article_approved",
+        {},
+        article_id=article_id,
+    )
+
+    synthesis.on_approval(conn, article_id)
+
+
+def resumable(conn):
+    """Return the single article stuck in 'interviewing' or 'reviewing'
+    (oldest by created_at), or None if none exists. Used by the CLI to
+    offer "pick up where you left off?" before starting a new article."""
+    return conn.execute(
+        """SELECT * FROM articles
+           WHERE status IN ('interviewing', 'reviewing')
+           ORDER BY created_at ASC"""
+    ).fetchone()
