@@ -189,6 +189,27 @@ def test_record_edit_round_computes_size_and_increments_round(conn, monkeypatch)
     assert article2["draft_text"] == "abcdefgh"
 
 
+def test_record_edit_round_size_not_blind_to_same_length_rewrite(conn, monkeypatch):
+    # A same-length full-content rewrite (500 'a's -> 500 'b's) has a length
+    # delta of 0. The old abs(len(new) - len(prior)) implementation would
+    # have recorded edit_size == 0 here, silently hiding a heavy rewrite
+    # from the downstream edit-effort health metric. The real char-diff
+    # must register this as a large, non-zero edit.
+    prior_text = "a" * 500
+    aid = _generate_draft(conn, monkeypatch, text=prior_text)
+
+    new_text = "b" * 500
+    writing.record_edit_round(conn, aid, "full rewrite", new_text)
+
+    row = conn.execute(
+        "SELECT * FROM edit_rounds WHERE article_id = ? AND round = 1", (aid,)
+    ).fetchone()
+    assert row is not None
+    # length delta would be 0; the real diff must be close to the full 500
+    # characters changed (SequenceMatcher may find a few incidental matches).
+    assert row["edit_size"] > 400
+
+
 def test_approve_sets_approved_and_fires_synthesis_hook(conn, monkeypatch):
     aid = _generate_draft(conn, monkeypatch)
 

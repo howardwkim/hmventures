@@ -1,3 +1,4 @@
+import difflib
 import json
 import uuid
 from datetime import datetime, timezone
@@ -9,6 +10,21 @@ VALID_CHOSEN = {"recommended", "alternate", "custom", "skip"}
 
 def _now():
     return datetime.now(timezone.utc).isoformat()
+
+
+def _char_diff_size(prior: str, new: str) -> int:
+    """Character-level edit magnitude between prior and new text, using
+    difflib.SequenceMatcher opcodes. Sums the larger of the two changed
+    spans for every non-'equal' opcode, so it is sensitive to actual
+    content change (insertions, deletions, and same-length replacements)
+    rather than just the net length delta - a same-length full rewrite
+    correctly registers as a large edit instead of edit_size == 0."""
+    matcher = difflib.SequenceMatcher(None, prior, new)
+    return sum(
+        max(i2 - i1, j2 - j1)
+        for tag, i1, i2, j1, j2 in matcher.get_opcodes()
+        if tag != "equal"
+    )
 
 
 def next_candidate(conn):
@@ -173,7 +189,7 @@ def record_edit_round(conn, article_id, operator_feedback, new_text) -> int:
         "SELECT draft_text FROM articles WHERE id = ?", (article_id,)
     ).fetchone()
     prior_text = article["draft_text"] if article and article["draft_text"] else ""
-    edit_size = abs(len(new_text) - len(prior_text))
+    edit_size = _char_diff_size(prior_text, new_text)
 
     last_round = conn.execute(
         "SELECT MAX(round) AS r FROM edit_rounds WHERE article_id = ?",
