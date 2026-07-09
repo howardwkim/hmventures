@@ -112,3 +112,38 @@ def test_edit_effort_trend_no_approved_articles_returns_zeroed_dict_no_crash(con
 
     assert health.promotion_allowed(conn) is True
     assert health.nudge(conn) is None
+
+
+def test_edit_effort_trend_single_approved_article_is_not_spiking_or_rising(conn):
+    # Cold start: exactly one approved article with nonzero edit effort.
+    # half = 1 // 2 = 0, so prior_ids is empty (prior_mean = 0) and
+    # recent_ids holds the one article (recent_mean > 0). Without the
+    # prior_mean > 0 guard, spiking/rising would trivially be True here
+    # (recent_mean > 0 * SPIKE_FACTOR), wrongly blocking promotion on an
+    # operator's very first approval.
+    _seed_article(conn, "a1", "2026-01-01T00:00:00+00:00", [10])
+
+    trend = health.edit_effort_trend(conn, window=4)
+
+    assert trend["prior_mean"] == 0
+    assert trend["recent_mean"] == pytest.approx(11)  # sum(edit_size) + round_count
+    assert trend["rising"] is False
+    assert trend["spiking"] is False
+
+
+def test_promotion_allowed_on_first_approved_article(conn):
+    # The cold-start regression this fix targets: promotion must not be
+    # blocked on essentially every fresh install's first approval.
+    _seed_article(conn, "a1", "2026-01-01T00:00:00+00:00", [10])
+
+    assert health.promotion_allowed(conn) is True
+
+
+def test_promotion_allowed_on_second_approved_article(conn):
+    # half = 2 // 2 = 1, so prior=[a1] (nonzero), recent=[a2] (nonzero) -
+    # a real baseline exists here even without the guard, but confirm the
+    # second article also isn't wrongly blocked.
+    _seed_article(conn, "a1", "2026-01-01T00:00:00+00:00", [10])
+    _seed_article(conn, "a2", "2026-01-02T00:00:00+00:00", [10])
+
+    assert health.promotion_allowed(conn) is True

@@ -1,6 +1,6 @@
 SPIKE_FACTOR = 1.5
 
-NUDGE_MESSAGE = "drafts needed more editing lately — want to review the writing rules?"
+NUDGE_MESSAGE = "drafts needed more editing lately, want to review the writing rules?"
 
 
 def _approved_article_ids(conn, window):
@@ -43,12 +43,22 @@ def edit_effort_trend(conn, window=10) -> dict:
     recent_mean / prior_mean are the mean per-article effort
     (sum(edit_size) + round_count) within each half.
 
-    rising = recent_mean > prior_mean (any increase).
-    spiking = recent_mean > prior_mean * SPIKE_FACTOR (the promotion gate
-    trips on this, not on `rising` alone).
+    rising = prior_mean > 0 and recent_mean > prior_mean (any increase).
+    spiking = prior_mean > 0 and recent_mean > prior_mean * SPIKE_FACTOR (the
+    promotion gate trips on this, not on `rising` alone).
 
-    With 0 or 1 approved articles there's nothing to split; recent_mean
-    and prior_mean are both 0 and rising/spiking are both False.
+    Both rising and spiking require a positive prior_mean as a baseline to
+    compare against - without it, any nonzero recent effort would trivially
+    read as a rise/spike, which would wrongly block promotion on an
+    operator's very first approvals (exactly when the two-door promotion
+    mechanism needs to work).
+
+    With 0 approved articles there's nothing to split; recent_mean and
+    prior_mean are both 0 and rising/spiking are both False. With exactly 1
+    approved article, half = 0, so prior_ids is empty (prior_mean = 0) and
+    recent_ids holds that one article (recent_mean is its own nonzero
+    effort, not 0) - the prior_mean > 0 guard is what keeps rising/spiking
+    False in this case too.
     """
     article_ids = _approved_article_ids(conn, window)
 
@@ -64,8 +74,8 @@ def edit_effort_trend(conn, window=10) -> dict:
     prior_mean = _mean_effort(prior_ids)
     recent_mean = _mean_effort(recent_ids)
 
-    rising = recent_mean > prior_mean
-    spiking = recent_mean > prior_mean * SPIKE_FACTOR
+    rising = prior_mean > 0 and recent_mean > prior_mean
+    spiking = prior_mean > 0 and recent_mean > prior_mean * SPIKE_FACTOR
 
     return {
         "recent_mean": recent_mean,

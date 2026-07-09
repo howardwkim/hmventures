@@ -1,7 +1,7 @@
 import pytest
 
-from content_pipeline import events
-from content_pipeline.learning import canon, synthesis
+from content_pipeline import events, writing
+from content_pipeline.learning import canon, health, synthesis
 
 
 def test_explicit_directive_promotes_immediately(conn, monkeypatch):
@@ -12,6 +12,42 @@ def test_explicit_directive_promotes_immediately(conn, monkeypatch):
         "supersede": [], "tendencies": []})
     monkeypatch.setattr(synthesis.health, "promotion_allowed", lambda c: True)
     synthesis.on_approval(conn, "a1")
+    assert any("em dashes" in r["rule_text"] for r in canon.active_rules(conn))
+
+
+def test_explicit_directive_on_first_ever_article_promotes_end_to_end(conn, monkeypatch):
+    # Regression test for the cold-start promotion gate bug: with exactly
+    # one approved article, health.promotion_allowed must not be a
+    # trivially-false positive spike, and an explicit directive on that
+    # very first article must actually reach a permanent rule. Exercises
+    # writing.approve -> synthesis.on_approval -> the REAL
+    # health.promotion_allowed (not mocked), so it proves the fix end to
+    # end rather than just asserting on health.py in isolation.
+    conn.execute(
+        "INSERT INTO articles (id, status, created_at) VALUES ('a1', 'reviewing', '2026-01-01T00:00:00+00:00')"
+    )
+    conn.commit()
+    conn.execute(
+        "INSERT INTO edit_rounds (article_id, round, operator_feedback, what_changed, edit_size, created_at) "
+        "VALUES ('a1', 1, 'never use em dashes', 'removed em dashes', 5, '2026-01-01T00:00:00+00:00')"
+    )
+    conn.commit()
+    events.append(
+        conn,
+        "edit_round",
+        {"operator_feedback": "never use em dashes", "what_changed": "removed em dashes", "edit_size": 5},
+        article_id="a1",
+    )
+    monkeypatch.setattr(synthesis.llm, "complete_json", lambda *a, **k: {
+        "new_rules": [{"text": "Never use em dashes", "kind": "negative", "evidence_ids": [1]}],
+        "supersede": [], "tendencies": []})
+
+    # Sanity check the real (unmocked) health gate first, since that's the
+    # actual bug this test guards against.
+    assert health.promotion_allowed(conn) is True
+
+    writing.approve(conn, "a1", "final text")
+
     assert any("em dashes" in r["rule_text"] for r in canon.active_rules(conn))
 
 
@@ -116,25 +152,6 @@ def test_pending_rule_notice_does_not_repeat_after_shown(conn, monkeypatch):
     assert first is not None
     second = synthesis.pending_rule_notice(conn, "a3")
     assert second is None
-
-
-def test_demote_on_contradiction_supersedes_rule(conn):
-    rule_id = canon.add_permanent_rule(conn, "Never use em dashes.", "negative", [1])
-
-    synthesis.demote_on_contradiction(conn, rule_id)
-
-    row = conn.execute("SELECT * FROM permanent_rules WHERE id=?", (rule_id,)).fetchone()
-    assert row["status"] == "superseded"
-    assert canon.active_rules(conn) == []
-
-
-def test_demote_on_contradiction_never_deletes_row(conn):
-    rule_id = canon.add_permanent_rule(conn, "Always open with the number.", "positive", [1])
-
-    synthesis.demote_on_contradiction(conn, rule_id)
-
-    total = conn.execute("SELECT COUNT(*) AS n FROM permanent_rules").fetchone()["n"]
-    assert total == 1
 
 
 def test_malformed_new_rules_item_raises_and_applies_nothing(conn, monkeypatch):

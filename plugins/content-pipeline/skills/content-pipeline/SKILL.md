@@ -165,8 +165,10 @@ exclamation points. Tap to undo." Surface this to the operator when you see a
 non-null `pending_rule_notice`; each notice is shown exactly once (the CLI
 marks it shown internally after returning it). If the operator disagrees with
 a promoted rule, the natural path is another `edit` round whose feedback
-contradicts it — two contradicting edits demote (supersede) the rule rather
-than deleting it.
+contradicts it: the next synthesis pass (on the next `approve`) reads that
+edit, and the LLM can propose superseding the rule (status flip, never
+deleted) based on the new evidence. This runs through the same synthesis
+pass as new-rule promotion, not a separate demotion mechanic.
 
 There is also a thrash guard: if recent edit effort is spiking, promotion is
 paused for that approval (no new permanent rules), but provisional tendencies

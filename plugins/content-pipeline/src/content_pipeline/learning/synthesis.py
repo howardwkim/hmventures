@@ -274,11 +274,3 @@ def pending_rule_notice(conn, article_id) -> str | None:
         return payload.get("undo_note") or f"Applied a new rule: {payload.get('rule_text')}. Tap to undo."
 
     return None
-
-
-def demote_on_contradiction(conn, rule_id) -> None:
-    """Called when an edit contradicts a rule twice - the edit-as-undo
-    path. Supersedes the rule (status transition, never deletes)."""
-    canon.supersede_rule(
-        conn, rule_id, "contradicted by operator edits twice; demoted"
-    )
