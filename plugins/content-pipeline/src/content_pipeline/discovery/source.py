@@ -1,5 +1,5 @@
-import hashlib
 import json
+import re
 from datetime import datetime, timezone
 from typing import Protocol
 
@@ -16,10 +16,13 @@ def _now():
 
 
 def _candidate_id(candidate: Candidate) -> str:
-    """Deterministic id derived from (source, source_ref), so re-ingesting the
-    same ref always produces the same primary key and collides on INSERT OR IGNORE."""
-    key = f"{candidate.source}:{candidate.source_ref}"
-    return hashlib.sha256(key.encode("utf-8")).hexdigest()[:16]
+    """Deterministic slug id derived from (source, source_ref), so re-ingesting
+    the same ref always produces the same primary key and collides on
+    INSERT OR IGNORE. Lowercase, non-alphanumeric runs collapsed to a single
+    '-', leading/trailing '-' stripped."""
+    key = f"{candidate.source}:{candidate.source_ref}".lower()
+    slug = re.sub(r"[^a-z0-9]+", "-", key).strip("-")
+    return slug
 
 
 def ingest(conn, candidates: list[Candidate]) -> int:
