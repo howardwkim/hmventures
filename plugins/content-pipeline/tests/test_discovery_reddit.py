@@ -46,3 +46,11 @@ def test_since_date_filters_old_rows(tmp_path):
     cands = RedditDigestSource(p, since_date="2026-07-05").fetch()
     assert len(cands) == 1
     assert cands[0].source_ref == "new"
+
+
+def test_since_date_is_inclusive_of_exact_match(tmp_path):
+    p = str(tmp_path/"digest.sqlite")
+    _make_digest_multi(p, [("exact", "2026-07-05")])
+    cands = RedditDigestSource(p, since_date="2026-07-05").fetch()
+    assert len(cands) == 1
+    assert cands[0].source_ref == "exact"
