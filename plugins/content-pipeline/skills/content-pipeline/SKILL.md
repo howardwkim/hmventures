@@ -5,182 +5,206 @@ description: Run the content pipeline — discover candidate topics, review and 
 
 # content-pipeline
 
-Drive the content pipeline from raw candidate topics to an approved article. The
-backend is the `content_pipeline` CLI (Task E1) — a Python package with an
-argparse entry point exposing 8 subcommands, each printing one JSON object to
-stdout. This skill does not reimplement any of that logic; it just decides
-*when* to call which subcommand and how to read the JSON back.
+Drive the content pipeline from raw candidate topics to an approved article,
+learning the operator's writing style as you go.
+
+**You are the writer.** The Python backend is deterministic — it persists state
+and does the bookkeeping math, and it never calls an LLM. Every piece of LLM
+judgment is *your* job in this conversation: you generate the interview
+questions, write the draft, revise it on operator feedback, and decide what
+style rules to learn. The CLI verbs below are how you read context and persist
+what you produced. Do not expect the CLI to write anything for you.
 
 ## Invocation
 
-Every subcommand is run the same way, from inside
-`plugins/content-pipeline/` in this repo:
+Every verb runs the same way, from inside `plugins/content-pipeline/`:
 
 ```
-uv run python -m content_pipeline.cli --db PATH <subcommand> [args...]
+uv run python -m content_pipeline.cli --db PATH <verb> [args...]
 ```
 
-`--db` is a **top-level** flag (it comes before the subcommand name), pointing
-at the pipeline's own sqlite database. If omitted, the CLI falls back to the
-`CONTENT_PIPELINE_DB` environment variable, and if that's unset too, to
-`~/.content-pipeline/pipeline.sqlite`. For a real operator run, pick one
-pipeline DB (env var or `--db`) and use it consistently across the whole
-session — the pipeline resumes from whatever's already in that database (e.g.
-`write-next` will resume an in-progress article rather than starting a new
-one).
-
-Each CLI call opens its own connection and closes it — there is no persistent
-process. Every subcommand prints exactly one JSON object; parse stdout as JSON
-to read the result.
+`--db` is a **top-level** flag (before the verb). If omitted, the CLI falls
+back to `CONTENT_PIPELINE_DB`, then to `~/.content-pipeline/pipeline.sqlite`.
+Pick one DB and use it consistently for the whole session — the pipeline
+resumes from whatever is already in it. Each call opens its own connection,
+does its work, prints exactly one JSON object, and exits. Parse stdout as JSON.
 
 ## The flow
 
-Run these in order. `status` is a side-query you can call any time, not a
-step in the sequence.
+### 1. Orient — `status` (and `review`)
+Start here. `status` returns `{review_queue_count, resumable_article,
+write_next_available, calibration, edit_effort_trend, nudge, synthesis_pending}`.
+Check `synthesis_pending`: if it is `true`, an article was approved but its
+style-synthesis step never ran — do step 9 for that outstanding article before
+anything else. Run `review` to see the candidates awaiting a decision.
 
-### 1. Discover — `discover`
-Pull new candidate topics in from a source and ingest them into the pipeline DB.
-
-```
-discover --source reddit --digest-db PATH
-```
-
-Discovery is **pluggable by source** — `--source` selects the adapter
-(`reddit` is the only one implemented so far, source #1). For `reddit`,
-`--digest-db PATH` points at an *external* sqlite database — Howard's Hermes
-Reddit-digest tool's own `digest_posts` table (post_id, subreddit, title,
-reddit_url, summary, score, num_comments, upvote_ratio, quality_score,
-why_care, digest_date). This pipeline never writes to that database, only
-reads from it; if the path doesn't exist, `discover` degrades gracefully —
-zero candidates ingested, no error. Result JSON: `{source, fetched, ingested}`.
-Ingestion is idempotent (dedupes on source + source_ref), so re-running
-`discover` against the same digest is safe.
-
-### 2. Review — `review`
-List candidates awaiting a decision.
+### 2. Ingest candidates — `ingest`
+For this phase candidates are operator-supplied test data:
 
 ```
-review [--today YYYY-MM-DD]
+ingest --json '[{"source":"test","source_ref":"r1","title":"...","url":"...","summary":"..."}]'
 ```
 
-Result JSON: `{today, count, candidates: [...]}`. `--today` overrides the
-date used for queue placement — mainly for testing; omit it for real use.
+Each object mirrors the `Candidate` fields: required `source, source_ref,
+title`; optional `url, summary, engagement, topic_tags, emotional_driver,
+news_hook, predicted_relevance`. The candidate id is derived as
+`<source>-<source_ref>` (e.g. `test-r1`). Ingestion dedupes on
+(source, source_ref); re-ingesting is safe. Result: `{ingested}`.
 
-### 3. Decide — `decide`
-Record a decision on one candidate from the review queue.
+`discover --source reddit --digest-db PATH` remains available (reddit adapter),
+but is not the default path in this phase.
+
+### 3. Review and decide — `review`, `decide`
+Present the full candidate list to the operator top-down. For each decision:
 
 ```
 decide CANDIDATE_ID yes|no|snooze [--note TEXT]
 ```
 
-`yes` moves it toward writing, `no` drops it, `snooze` defers it (optionally
-with `--note`). Result JSON: `{candidate_id, status}`.
+`yes` moves it toward writing, `no` drops it, `snooze` defers it until the next
+day. Save as you go. Result: `{candidate_id, status}`.
 
 ### 4. Write next — `write-next`
-Start the next accepted candidate, or resume one already in progress.
-
 ```
 write-next
 ```
 
-If an article is mid-flight (interviewing/drafting/reviewing), this resumes
-it: `{resumed: true, article_id, status}`. Otherwise it starts the
-highest-priority accepted candidate and returns interview questions:
-`{resumed: false, article_id, candidate_id, questions}`. If the queue is
-empty: `{resumed: false, article_id: null, questions: null}`.
+If an article is mid-flight, this resumes it: `{resumed: true, article_id,
+status}` — ask the operator "pick up where you left off?" before continuing.
+If starting fresh: `{resumed: false, article_id, candidate_id, candidate:
+{title, summary, url}, brand_context, style_context}`. Empty queue:
+`{resumed: false, article_id: null}`.
 
-### 5. Answer — `answer`
-Record one answer to an interview question (repeat per question).
+There is **no `questions` field** — you generate the interview questions
+yourself from the returned `candidate`, `brand_context`, and `style_context`.
+For each question, offer a **recommended** answer (your best read of the
+operator's take) and one **alternate**, and always allow free-text or skip.
+Converse naturally; don't interrogate.
+
+### 5. Record answers — `answer`
+After each answer:
 
 ```
 answer ARTICLE_ID --question TEXT --chosen recommended|alternate|custom|skip [--text TEXT]
 ```
 
-`--chosen` picks which option was taken; `--text` supplies the actual answer
-text (required unless skipping). Result JSON: `{article_id, recorded}`.
+Result: `{article_id, recorded}`.
 
-### 6. Draft — `draft`
-Generate the first draft from the recorded interview answers and the current
-style canon.
-
+### 6. Draft — `draft-context`, then `save-draft`
 ```
-draft ARTICLE_ID [--research TEXT]
+draft-context ARTICLE_ID
 ```
 
-`--research` is optional extra source material to fold in. Result JSON:
-`{article_id, draft, pending_rule_notice}`. **Always check
-`pending_rule_notice`** — see "Rule promotion and the undo notice" below.
-
-### 7. Edit — `edit`
-Record one round of operator feedback plus the resulting revised text. Call
-this once per edit round; repeat as many rounds as needed before approving.
+Returns `{article_id, candidate, answers, brand_context, style_context}`.
+**Write the full draft yourself** from the answers + `style_context` +
+`brand_context`. Apply every active style rule verbatim. Hard constraint:
+**no em dashes** anywhere — use commas, periods, or parentheses instead. Show
+the operator the draft, then persist it:
 
 ```
-edit ARTICLE_ID --feedback TEXT --text TEXT
+save-draft ARTICLE_ID --text "<the full draft>"
 ```
 
-`--feedback` is what the operator said about the previous draft;
-`--text` is the new draft text after applying it. Result JSON:
-`{article_id, round}` (the round number just recorded).
+Result: `{article_id, status: "reviewing", pending_rule_notice}`. If
+`pending_rule_notice` is non-null, surface it to the operator ("Applied a new
+rule: X. Tap to undo.") — see "Rule promotion" below.
+
+### 7. Edit loop — `edit`
+For each round of operator feedback, **revise the draft yourself**, show it,
+then record the round:
+
+```
+edit ARTICLE_ID --feedback "<verbatim operator feedback>" --text "<revised draft>"
+```
+
+Pass the operator's feedback verbatim (the synthesis step reads it to detect
+directives). Result: `{article_id, round}`. Repeat until the operator approves.
 
 ### 8. Approve — `approve`
-Finalize the article. This also triggers the one synthesis pass that reads
-this article's edit/interview events and updates the style canon.
-
 ```
-approve ARTICLE_ID --text TEXT
+approve ARTICLE_ID --text "<final text>"
 ```
 
-`--text` is the final approved text. Result JSON: `{article_id, status}`
-(`status` becomes `approved`).
+Result: `{article_id, status: "approved"}`. Approve does **not** trigger
+synthesis — that is the next step, and it is yours to run.
 
-### Status (side-query, any time) — `status`
+### 9. Synthesize style — `synthesis-context`, then `apply-synthesis`
+This is the learning step. Run it **every time you approve an article**
+(`status.synthesis_pending` flags any approved article still missing it).
 
 ```
-status [--today YYYY-MM-DD]
+synthesis-context ARTICLE_ID
 ```
 
-Result JSON: `{review_queue_count, resumable_article, write_next_available,
-calibration, edit_effort_trend, nudge}`. Useful for orienting at the start of
-a session (is there a review queue to clear, an article to resume, etc.)
-without changing anything.
+Returns `{base_checkpoint, new_events, active_rules, promotion_allowed}`.
+Reason over `new_events` (the edit rounds and interview choices since the last
+synthesis) by the **two-door rule** described below, producing a decision:
+
+```json
+{
+  "new_rules": [{"text": "...", "kind": "positive|negative", "evidence_ids": [<ids from new_events>]}],
+  "supersede": [{"id": <active_rule_id>, "reason": "..."}],
+  "tendencies": [{"text": "...", "evidence_ids": [...]}]
+}
+```
+
+Then persist it:
+
+```
+apply-synthesis ARTICLE_ID --base-checkpoint <base_checkpoint from synthesis-context> --json '<your decision>'
+```
+
+Passing `base_checkpoint` back is **required**: it makes the write idempotent.
+A repeated call with the same base_checkpoint returns
+`{skipped: "checkpoint_advanced", ...}` instead of double-applying the rules.
+If `promotion_allowed` is `false` (thrash guard), still send `tendencies` but
+expect no rule promotion. Result: `{skipped, promoted, new_rule_ids,
+superseded_ids, tendency_count, event_count}`.
+
+## The two-door reasoning (how to decide new_rules vs tendencies)
+
+Apply these rules exactly when building your synthesis decision:
+
+1. **Additive only.** Never regenerate the full permanent-rule set. Only
+   propose NEW rules to add, or EXISTING active rules to supersede (by id, with
+   a reason). Every active rule you don't explicitly supersede stays as is.
+   `supersede` is the only way a permanent rule changes status — it flips to
+   "superseded" (a status change), it is never deleted.
+
+2. **Cite evidence.** Every new rule and every tendency must cite the
+   `new_events` ids that support it, in `evidence_ids`. A rule with no evidence
+   is rejected by the backend — do not propose one.
+
+3. **Generalizable vs one-off.** Classify each edit before using it. A
+   generalizable edit reflects a lasting preference (a phrasing habit, a
+   structural preference, a recurring correction). A one-off is specific to
+   that single article (a fact correction, a typo, a detail unique to that
+   story) and earns nothing — no rule, no tendency.
+
+4. **Two-door promotion.** If the operator's feedback contains an explicit
+   directive (words like never, always, stop, from now on, don't, must),
+   propose it as a **new permanent rule** immediately (`new_rules`). If the
+   evidence instead shows a silent, repeated preference with no explicit
+   directive, propose it as a **provisional tendency** (`tendencies`), never a
+   permanent rule. Do not promote a silent pattern to a permanent rule
+   yourself; that path runs through repeated tendency evidence over time.
+
+5. **Contradiction → supersede.** If an edit contradicts an existing active
+   rule, propose that rule in `supersede` with the reason, alongside any new
+   rule the edit implies.
 
 ## Rule promotion and the undo notice
 
-After every `approve`, the pipeline runs one synthesis pass over that
-article's edit rounds and interview answers to learn the operator's writing
-style. Two doors:
+When your synthesis promotes a rule, the **next `save-draft` call's JSON carries
+it in `pending_rule_notice`** — e.g. "Applied a new rule: never use exclamation
+points. Tap to undo." Surface it to the operator when non-null; each notice
+shows exactly once (the CLI marks it shown after returning it). If the operator
+disagrees with a promoted rule, the natural path is another `edit` round whose
+feedback contradicts it — the next synthesis pass reads that edit and you
+propose superseding the rule.
 
-- **Explicit directive** in an edit round's `--feedback` (words like "never",
-  "always", "stop", "from now on", "don't", "must" — e.g. "never use
-  exclamation points") → promoted to a **permanent rule** immediately, applied
-  to the style canon used by the *next* `draft` call.
-- **Silent, repeated pattern** with no explicit directive → recorded only as a
-  **provisional tendency** (rebuilt wholesale each synthesis run), which needs
-  more accumulated evidence before it can ever become a permanent rule.
-
-When a rule was just promoted, the **next `draft` call's JSON output carries
-it in `pending_rule_notice`** — a string like "Applied a new rule: never use
-exclamation points. Tap to undo." Surface this to the operator when you see a
-non-null `pending_rule_notice`; each notice is shown exactly once (the CLI
-marks it shown internally after returning it). If the operator disagrees with
-a promoted rule, the natural path is another `edit` round whose feedback
-contradicts it: the next synthesis pass (on the next `approve`) reads that
-edit, and the LLM can propose superseding the rule (status flip, never
-deleted) based on the new evidence. This runs through the same synthesis
-pass as new-rule promotion, not a separate demotion mechanic.
-
-There is also a thrash guard: if recent edit effort is spiking, promotion is
-paused for that approval (no new permanent rules), but provisional tendencies
-still rebuild. This is internal to the CLI — nothing extra to do here, just be
-aware a `draft` after a "spiking" approval may not show a new rule even if the
-feedback looked directive.
-
-## Notes
-
-- Discovery is pluggable by design — `reddit` is source #1, more sources can
-  be added later without changing this flow; just check `discover --help` (or
-  this file, once updated) for what `--source` values exist.
-- There is no separate backend-adapter file for this skill (unlike
-  `social-post`'s swappable-backend pattern) — the "backend" already is the
-  `content_pipeline` CLI itself, so there's nothing to swap.
+Thrash guard: if recent edit effort is spiking, `synthesis-context` returns
+`promotion_allowed: false`; that approval promotes no permanent rules, but
+provisional tendencies still rebuild. Nothing extra to do — just expect a draft
+after a spiking stretch may not show a new rule even on directive-looking
+feedback.
