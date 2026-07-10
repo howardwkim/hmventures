@@ -1,8 +1,0 @@
-{
-  "name": "content-pipeline",
-  "description": "Run the content pipeline end to end: discover candidate topics from a pluggable source (Reddit digest first), review and decide which to pursue, interview and draft an article, take edit rounds, and approve. Learns writing-style rules from edit feedback over time.",
-  "version": "1.0.0",
-  "author": {
-    "name": "HM Ventures"
-  }
-}

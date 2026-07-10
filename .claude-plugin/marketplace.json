@@ -9,11 +9,6 @@
       "name": "social-post",
       "source": "./plugins/social-post",
       "description": "Create and publish a social media post from a file or inline content. Picks accounts, fills required fields, confirms it actually went live. woopsocial backend behind a swappable adapter."
-    },
-    {
-      "name": "content-pipeline",
-      "source": "./plugins/content-pipeline",
-      "description": "Run the content pipeline end to end: discover candidate topics from a pluggable source (Reddit digest first), review and decide which to pursue, interview and draft an article, take edit rounds, and approve. Learns writing-style rules from edit feedback over time."
     }
   ]
 }
