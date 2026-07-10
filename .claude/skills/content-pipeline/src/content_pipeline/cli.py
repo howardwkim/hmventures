@@ -9,7 +9,7 @@ shares a connection across invocations - each CLI call is a fresh process.
 import argparse
 import json
 
-from content_pipeline import db, queue, writing
+from content_pipeline import db, queue, writing, brief, voice
 from content_pipeline.discovery import source
 from content_pipeline.discovery.reddit_digest import RedditDigestSource
 from content_pipeline.learning import canon, health, selection, synthesis
@@ -47,6 +47,18 @@ def _rows_to_dicts(rows):
 
 def _print_json(obj):
     print(json.dumps(obj, default=str))
+
+
+def _source_snippet(conn, article_id) -> str:
+    """Short grounding excerpt from the originating candidate: title + summary."""
+    row = conn.execute(
+        "SELECT c.title, c.summary FROM candidates c "
+        "JOIN articles a ON a.candidate_id = c.id WHERE a.id = ?",
+        (article_id,),
+    ).fetchone()
+    if row is None:
+        return ""
+    return f"{row['title']}\n\n{row['summary']}".strip()
 
 
 def cmd_discover(args):
@@ -160,6 +172,65 @@ def cmd_draft_context(args):
             "answers": _rows_to_dicts(answers),
             "brand_context": _brand_context(conn),
             "style_context": canon.style_context(conn),
+        })
+    finally:
+        conn.close()
+
+
+def cmd_save_brief(args):
+    conn = _get_conn(args.db)
+    try:
+        data = json.loads(args.json)
+        try:
+            version = brief.save_brief(conn, args.article_id, data)
+        except ValueError as e:
+            raise SystemExit(str(e))
+        _print_json({"article_id": args.article_id, "version": version})
+    finally:
+        conn.close()
+
+
+def cmd_brief_writer_context(args):
+    conn = _get_conn(args.db)
+    try:
+        answers = conn.execute(
+            "SELECT question, chosen, answer_text FROM interview_answers "
+            "WHERE article_id = ? ORDER BY id ASC",
+            (args.article_id,),
+        ).fetchall()
+        _print_json({
+            "article_id": args.article_id,
+            "answers": _rows_to_dicts(answers),
+            "source_snippet": _source_snippet(conn, args.article_id),
+            "voice_doc": voice.voice_doc(conn),
+        })
+    finally:
+        conn.close()
+
+
+def cmd_brief_context(args):
+    conn = _get_conn(args.db)
+    try:
+        _print_json({
+            "article_id": args.article_id,
+            "brief": brief.current_brief(conn, args.article_id),
+            "voice_doc": voice.voice_doc(conn),
+        })
+    finally:
+        conn.close()
+
+
+def cmd_edit_context(args):
+    conn = _get_conn(args.db)
+    try:
+        row = conn.execute(
+            "SELECT draft_text FROM articles WHERE id = ?", (args.article_id,)
+        ).fetchone()
+        _print_json({
+            "article_id": args.article_id,
+            "current_draft": row["draft_text"] if row else None,
+            "brief": brief.current_brief(conn, args.article_id),
+            "voice_doc": voice.voice_doc(conn),
         })
     finally:
         conn.close()
@@ -321,6 +392,23 @@ def build_parser():
     p_draft_ctx = sub.add_parser("draft-context", help="Context for the agent to write the draft")
     p_draft_ctx.add_argument("article_id")
     p_draft_ctx.set_defaults(func=cmd_draft_context)
+
+    p_save_brief = sub.add_parser("save-brief", help="Persist a versioned brief")
+    p_save_brief.add_argument("article_id")
+    p_save_brief.add_argument("--json", required=True, dest="json")
+    p_save_brief.set_defaults(func=cmd_save_brief)
+
+    p_bw_ctx = sub.add_parser("brief-writer-context", help="Context for the brief-writer subagent")
+    p_bw_ctx.add_argument("article_id")
+    p_bw_ctx.set_defaults(func=cmd_brief_writer_context)
+
+    p_brief_ctx = sub.add_parser("brief-context", help="Context for the drafter subagent")
+    p_brief_ctx.add_argument("article_id")
+    p_brief_ctx.set_defaults(func=cmd_brief_context)
+
+    p_edit_ctx = sub.add_parser("edit-context", help="Context for the edit subagent")
+    p_edit_ctx.add_argument("article_id")
+    p_edit_ctx.set_defaults(func=cmd_edit_context)
 
     p_save_draft = sub.add_parser("save-draft", help="Persist an agent-written draft")
     p_save_draft.add_argument("article_id")

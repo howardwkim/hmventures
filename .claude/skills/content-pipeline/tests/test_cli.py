@@ -2,9 +2,10 @@ import json
 
 import pytest
 
-from content_pipeline import cli, db, writing
+from content_pipeline import cli, db, writing, brief as brief_mod
 from content_pipeline.discovery import source
 from content_pipeline.models import Candidate
+from content_pipeline import queue
 
 
 def _run(capsys, argv):
@@ -352,3 +353,71 @@ def test_status_reports_synthesis_pending(tmp_path, capsys):
                   "--base-checkpoint", str(sctx["base_checkpoint"]),
                   "--json", json.dumps({"new_rules": [], "supersede": [], "tendencies": []})])
     assert _run(capsys, ["--db", db_path, "status"])["synthesis_pending"] is False
+
+
+# --- Task 5: save-brief / brief-writer-context / brief-context / edit-context ---
+#
+# These tests use `_cli` rather than the file's existing `_run` helper: the
+# brief's reference helper is `_run(capsys, dbpath, *argv)` (variadic argv,
+# reads only the last stdout line), which collides with the existing
+# `_run(capsys, argv)` (single argv list) used by every test above. Since
+# Python module-level function names are late-bound, redefining `_run` here
+# would silently repoint *all* earlier calls to the new signature and break
+# them. Renamed to `_cli` to avoid that; behavior is otherwise verbatim from
+# the task brief.
+
+def _cli(capsys, dbpath, *argv):
+    cli.main(["--db", dbpath, *argv])
+    return json.loads(capsys.readouterr().out.strip().splitlines()[-1])
+
+
+def _started_article(dbpath):
+    c = db.connect(dbpath)
+    # brand-new file has no tables; bootstrap exactly as the CLI's _get_conn does
+    has_meta = c.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name='schema_meta'"
+    ).fetchone()
+    db.init_schema(c) if has_meta is None else db.migrate(c)
+    source.ingest(c, [Candidate(source="reddit", source_ref="r1", title="Pricing story",
+                                url="u", summary="Raised price to $39, lost 40 users.")])
+    cid = c.execute("SELECT id FROM candidates").fetchone()["id"]
+    queue.decide(c, cid, "yes", today="2026-07-09")
+    aid = writing.start_article(c, cid)
+    c.close()
+    return aid
+
+
+def test_save_brief_and_brief_context_roundtrip(tmp_path, capsys):
+    dbp = str(tmp_path / "p.sqlite")
+    aid = _started_article(dbp)
+    brief_json = json.dumps({"topic": "pricing", "angle": "lose the wrong customers",
+                             "key_points": ["support-heavy churn"], "source_snippet": "…"})
+
+    saved = _cli(capsys, dbp, "save-brief", aid, "--json", brief_json)
+    assert saved["version"] == 1
+
+    ctx = _cli(capsys, dbp, "brief-context", aid)
+    assert ctx["brief"]["angle"] == "lose the wrong customers"
+    assert isinstance(ctx["voice_doc"], str) and ctx["voice_doc"]
+
+
+def test_brief_writer_context_has_answers_and_snippet(tmp_path, capsys):
+    dbp = str(tmp_path / "p.sqlite")
+    aid = _started_article(dbp)
+    _cli(capsys, dbp, "answer", aid, "--question", "What is the takeaway?",
+         "--chosen", "custom", "--text", "cheap price selects bad customers")
+
+    ctx = _cli(capsys, dbp, "brief-writer-context", aid)
+    assert ctx["answers"][0]["answer_text"] == "cheap price selects bad customers"
+    assert "Raised price to $39" in ctx["source_snippet"]
+    assert ctx["voice_doc"]
+
+
+def test_edit_context_returns_current_draft(tmp_path, capsys):
+    dbp = str(tmp_path / "p.sqlite")
+    aid = _started_article(dbp)
+    _cli(capsys, dbp, "save-draft", aid, "--text", "the current draft body")
+
+    ctx = _cli(capsys, dbp, "edit-context", aid)
+    assert ctx["current_draft"] == "the current draft body"
+    assert "voice_doc" in ctx and "brief" in ctx
