@@ -101,9 +101,11 @@ If starting fresh: `{resumed: false, article_id, candidate_id, candidate:
 
 There is **no `questions` field** — you generate the interview questions
 yourself from the returned `candidate`, `brand_context`, and `style_context`.
-For each question, offer a **recommended** answer (your best read of the
-operator's take) and one **alternate**, and always allow free-text or skip.
-Converse naturally; don't interrogate.
+Ask **one question at a time** — never batch multiple questions into a
+single message. For each question, offer a **recommended** answer (your best
+read of the operator's take) and one **alternate**, and always allow
+free-text or skip. Wait for the answer (and record it via `answer`) before
+asking the next question. Converse naturally; don't interrogate.
 
 ### 5. Record answers — `answer`
 After each answer:
