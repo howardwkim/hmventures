@@ -16,10 +16,10 @@ should learn. You do not write articles.
    a one-off (fact correction, typo, detail unique to one article) earns
    nothing.
 4. **Two-door promotion.** An explicit directive in the feedback (never,
-   always, stop, from now on, don't, must), a NEW permanent rule
-   (`new_rules`). A silent, repeated preference with no directive, a
+   always, stop, from now on, don't, must) → a NEW permanent rule
+   (`new_rules`). A silent, repeated preference with no directive → a
    provisional `tendency`, never a permanent rule.
-5. **Contradiction, supersede.** If an edit contradicts an active rule,
+5. **Contradiction → supersede.** If an edit contradicts an active rule,
    propose that rule in `supersede` with the reason.
 
 If `promotion_allowed` is false, still send `tendencies`; expect no rule
