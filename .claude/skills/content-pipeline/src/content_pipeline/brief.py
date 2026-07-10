@@ -53,4 +53,4 @@ def current_brief(conn, article_id) -> dict | None:
     if row is None:
         return None
     data = json.loads(row["brief_json"])
-    return {"id": row["id"], "version": row["version"], **data}
+    return {**data, "id": row["id"], "version": row["version"]}

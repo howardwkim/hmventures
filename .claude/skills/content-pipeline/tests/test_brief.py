@@ -68,3 +68,17 @@ def test_save_brief_rejects_missing_required_fields(conn):
     article_id = _create_article(conn)
     with pytest.raises(ValueError):
         brief.save_brief(conn, article_id, {"topic": "x"})  # no angle, no key_points
+
+
+def test_current_brief_row_id_and_version_win_over_stored_keys(conn):
+    # A stored brief_json that happens to carry its own "id"/"version" keys
+    # must not clobber the true row id/version - the explicit columns win.
+    article_id = _create_article(conn)
+    b = _brief()
+    b["id"] = 999
+    b["version"] = 999
+    brief.save_brief(conn, article_id, b)
+    cur = brief.current_brief(conn, article_id)
+    assert isinstance(cur["id"], int)
+    assert cur["id"] != 999
+    assert cur["version"] == 1
