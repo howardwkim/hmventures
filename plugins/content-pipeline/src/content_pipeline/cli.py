@@ -15,9 +15,10 @@ from content_pipeline.discovery.reddit_digest import RedditDigestSource
 from content_pipeline.learning import canon, health, selection, synthesis
 
 def _brand_context(conn):
-    """Brand/voice context for the agent's prompts. Populated in Task 6
-    (config-driven). Until then returns an empty string."""
-    return ""
+    """Brand/voice context for the agent's prompts, read from
+    ~/.content-pipeline/config.json (empty string if unset)."""
+    from content_pipeline import config
+    return config.brand_context()
 
 
 def _get_conn(db_path):
