@@ -109,8 +109,6 @@ asking the next question. Converse naturally; don't interrogate.
 
 Load `references/interview-guide.md` for the content dimensions to probe. It is
 a swappable spec: change what gets asked by editing that file, not this skill.
-Ask one question at a time (never batch), recording each with `answer` before
-the next.
 
 ### 5. Record answers (`answer`)
 After each answer:
