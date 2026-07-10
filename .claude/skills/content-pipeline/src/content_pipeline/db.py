@@ -1,7 +1,7 @@
 import os, sqlite3
 from pathlib import Path
 
-CURRENT_VERSION = 1
+CURRENT_VERSION = 2
 
 
 class NoDatabaseConfigured(RuntimeError):
@@ -79,17 +79,41 @@ CREATE INDEX idx_candidates_status ON candidates(status);
 CREATE INDEX idx_events_kind ON events(kind);
 """
 
+_MIGRATION_V2 = """
+CREATE TABLE briefs (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  article_id TEXT REFERENCES articles(id),
+  version INTEGER NOT NULL,
+  brief_json TEXT NOT NULL,
+  created_at TEXT NOT NULL
+);
+CREATE TABLE draft_versions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  article_id TEXT REFERENCES articles(id),
+  version INTEGER NOT NULL,
+  text TEXT NOT NULL,
+  brief_id INTEGER REFERENCES briefs(id),
+  voice_snapshot TEXT,
+  created_at TEXT NOT NULL
+);
+INSERT INTO draft_versions (article_id, version, text, brief_id, voice_snapshot, created_at)
+  SELECT id, 1, draft_text, NULL, NULL, created_at
+    FROM articles
+   WHERE draft_text IS NOT NULL AND draft_text != '';
+"""
+
 def init_schema(conn):
     conn.executescript(_SCHEMA_V1)
-    conn.execute("INSERT INTO schema_meta(version) VALUES (?)", (CURRENT_VERSION,))
+    conn.execute("INSERT INTO schema_meta(version) VALUES (1)")
     conn.commit()
+    migrate(conn)
 
 def schema_version(conn):
     row = conn.execute("SELECT version FROM schema_meta").fetchone()
     return row["version"] if row else 0
 
 # Migration registry: {from_version: (to_version, sql_or_callable)}
-_MIGRATIONS = {}
+_MIGRATIONS = {1: (2, _MIGRATION_V2)}
 
 def migrate(conn):
     v = schema_version(conn)
