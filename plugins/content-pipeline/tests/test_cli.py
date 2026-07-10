@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from content_pipeline import cli, db, queue, writing
+from content_pipeline import cli, db, writing
 from content_pipeline.discovery import source
 from content_pipeline.models import Candidate
 
@@ -22,6 +22,7 @@ def test_status_on_empty_db_prints_valid_json_with_zeroed_queues(tmp_path, capsy
     assert result["write_next_available"] is False
     assert result["calibration"]["n"] == 0
     assert result["nudge"] is None
+    assert result["synthesis_pending"] is False
 
 
 def test_status_runs_on_already_migrated_db(tmp_path, capsys):
@@ -80,6 +81,14 @@ def test_discover_missing_digest_db_ingests_zero(tmp_path, capsys):
     )
 
     assert result["ingested"] == 0
+
+
+def test_ingest_verb_adds_candidates(tmp_path, capsys):
+    db_path = str(tmp_path / "t.sqlite")
+    result = _run(capsys, ["--db", db_path, "ingest", "--json", json.dumps([{
+        "source": "test", "source_ref": "r1", "title": "T1",
+        "url": "http://x", "summary": "S1"}])])
+    assert result["ingested"] == 1
 
 
 def _seed_candidate(db_path, candidate_id="reddit-abc123"):
@@ -178,30 +187,21 @@ def _seed_accepted_candidate(db_path, candidate_id="reddit-abc123"):
     conn.close()
 
 
-def test_write_next_starts_article_and_returns_questions(tmp_path, capsys, monkeypatch):
+def test_write_next_returns_context_not_questions(tmp_path, capsys):
     db_path = str(tmp_path / "t.sqlite")
-    _seed_accepted_candidate(db_path)
-
-    monkeypatch.setattr(
-        writing.llm,
-        "complete_json",
-        lambda *a, **k: {
-            "questions": [
-                {"question": "Q1?", "recommended": "R1", "alternate": "A1"}
-            ]
-        },
-    )
-
-    result = _run(capsys, ["--db", db_path, "write-next"])
-
-    assert result["resumed"] is False
-    assert "article_id" in result
-    assert result["questions"] == [
-        {"question": "Q1?", "recommended": "R1", "alternate": "A1"}
-    ]
+    _run(capsys, ["--db", db_path, "ingest", "--json", json.dumps([{
+        "source": "test", "source_ref": "r1", "title": "T1",
+        "url": "http://x", "summary": "S1"}])])
+    _run(capsys, ["--db", db_path, "decide", "test-r1", "yes"])
+    out = _run(capsys, ["--db", db_path, "write-next"])
+    assert out["resumed"] is False
+    assert out["article_id"]
+    assert "questions" not in out
+    assert "style_context" in out and "brand_context" in out
+    assert out["candidate"]["title"] == "T1"
 
 
-def test_write_next_resumes_existing_article(tmp_path, capsys, monkeypatch):
+def test_write_next_resumes_existing_article(tmp_path, capsys):
     db_path = str(tmp_path / "t.sqlite")
     _seed_accepted_candidate(db_path)
 
@@ -259,27 +259,26 @@ def test_answer_records_interview_answer(tmp_path, capsys):
     assert row["answer_text"] == "R1"
 
 
-def test_draft_generates_and_returns_text(tmp_path, capsys, monkeypatch):
+def test_save_draft_and_draft_context_roundtrip(tmp_path, capsys):
+    db_path = str(tmp_path / "t.sqlite")
+    _run(capsys, ["--db", db_path, "ingest", "--json", json.dumps([{
+        "source": "test", "source_ref": "r2", "title": "T2",
+        "url": "http://y", "summary": "S2"}])])
+    _run(capsys, ["--db", db_path, "decide", "test-r2", "yes"])
+    started = _run(capsys, ["--db", db_path, "write-next"])
+    aid = started["article_id"]
+    _run(capsys, ["--db", db_path, "answer", aid, "--question", "angle?",
+                  "--chosen", "recommended", "--text", "founders"])
+    ctx = _run(capsys, ["--db", db_path, "draft-context", aid])
+    assert ctx["answers"][0]["answer_text"] == "founders"
+    saved = _run(capsys, ["--db", db_path, "save-draft", aid, "--text", "the full draft"])
+    assert saved["status"] == "reviewing"
+
+
+def test_edit_records_round(tmp_path, capsys):
     db_path = str(tmp_path / "t.sqlite")
     article_id = _start_article(db_path)
-
-    monkeypatch.setattr(writing.llm, "complete", lambda *a, **k: "Draft body text.")
-
-    result = _run(capsys, ["--db", db_path, "draft", article_id])
-
-    assert result["draft"] == "Draft body text."
-    assert "pending_rule_notice" in result
-
-
-def test_edit_records_round(tmp_path, capsys, monkeypatch):
-    db_path = str(tmp_path / "t.sqlite")
-    article_id = _start_article(db_path)
-
-    monkeypatch.setattr(writing.llm, "complete", lambda *a, **k: "Draft body text.")
-    conn = db.connect(db_path)
-    db.migrate(conn)
-    writing.generate_draft(conn, article_id, research="", brand_context="", style_context="")
-    conn.close()
+    _run(capsys, ["--db", db_path, "save-draft", article_id, "--text", "Draft body text."])
 
     result = _run(
         capsys,
@@ -289,23 +288,10 @@ def test_edit_records_round(tmp_path, capsys, monkeypatch):
     assert result["round"] == 1
 
 
-def test_approve_marks_article_approved(tmp_path, capsys, monkeypatch):
+def test_approve_marks_article_approved(tmp_path, capsys):
     db_path = str(tmp_path / "t.sqlite")
     article_id = _start_article(db_path)
-
-    monkeypatch.setattr(writing.llm, "complete", lambda *a, **k: "Draft body text.")
-    conn = db.connect(db_path)
-    db.migrate(conn)
-    writing.generate_draft(conn, article_id, research="", brand_context="", style_context="")
-    conn.close()
-
-    from content_pipeline.learning import synthesis
-
-    monkeypatch.setattr(
-        synthesis.llm,
-        "complete_json",
-        lambda *a, **k: {"new_rules": [], "supersede": [], "tendencies": []},
-    )
+    _run(capsys, ["--db", db_path, "save-draft", article_id, "--text", "Draft body text."])
 
     result = _run(capsys, ["--db", db_path, "approve", article_id, "--text", "Final text."])
 
@@ -318,3 +304,42 @@ def test_approve_marks_article_approved(tmp_path, capsys, monkeypatch):
     ).fetchone()
     assert row["status"] == "approved"
     assert row["final_text"] == "Final text."
+
+
+def test_apply_synthesis_via_cli(tmp_path, capsys):
+    db_path = str(tmp_path / "t.sqlite")
+    _run(capsys, ["--db", db_path, "ingest", "--json", json.dumps([{
+        "source": "test", "source_ref": "r3", "title": "T3",
+        "url": "http://z", "summary": "S3"}])])
+    _run(capsys, ["--db", db_path, "decide", "test-r3", "yes"])
+    aid = _run(capsys, ["--db", db_path, "write-next"])["article_id"]
+    _run(capsys, ["--db", db_path, "save-draft", aid, "--text", "d1"])
+    _run(capsys, ["--db", db_path, "edit", aid, "--feedback", "never shout", "--text", "d2"])
+    _run(capsys, ["--db", db_path, "approve", aid, "--text", "d2"])
+    sctx = _run(capsys, ["--db", db_path, "synthesis-context", aid])
+    assert sctx["promotion_allowed"] in (True, False)
+    out = _run(capsys, ["--db", db_path, "apply-synthesis", aid,
+                        "--base-checkpoint", str(sctx["base_checkpoint"]),
+                        "--json", json.dumps({
+                            "new_rules": [{"text": "never shout", "kind": "negative",
+                                           "evidence_ids": [1]}],
+                            "supersede": [], "tendencies": []})])
+    assert out["promoted"] is True
+
+
+def test_status_reports_synthesis_pending(tmp_path, capsys):
+    db_path = str(tmp_path / "t.sqlite")
+    _run(capsys, ["--db", db_path, "ingest", "--json", json.dumps([{
+        "source": "test", "source_ref": "r4", "title": "T4",
+        "url": "http://q", "summary": "S4"}])])
+    _run(capsys, ["--db", db_path, "decide", "test-r4", "yes"])
+    aid = _run(capsys, ["--db", db_path, "write-next"])["article_id"]
+    _run(capsys, ["--db", db_path, "save-draft", aid, "--text", "d1"])
+    _run(capsys, ["--db", db_path, "approve", aid, "--text", "d1"])
+    st = _run(capsys, ["--db", db_path, "status"])
+    assert st["synthesis_pending"] is True     # approved, apply-synthesis not yet run
+    sctx = _run(capsys, ["--db", db_path, "synthesis-context", aid])
+    _run(capsys, ["--db", db_path, "apply-synthesis", aid,
+                  "--base-checkpoint", str(sctx["base_checkpoint"]),
+                  "--json", json.dumps({"new_rules": [], "supersede": [], "tendencies": []})])
+    assert _run(capsys, ["--db", db_path, "status"])["synthesis_pending"] is False

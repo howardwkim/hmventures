@@ -14,9 +14,10 @@ from content_pipeline.discovery import source
 from content_pipeline.discovery.reddit_digest import RedditDigestSource
 from content_pipeline.learning import canon, health, selection, synthesis
 
-# brand_context has no dedicated task in this plan (deferred/out of scope).
-# Passed through as an empty placeholder wherever writing.* needs a string.
-BRAND_CONTEXT = ""
+def _brand_context(conn):
+    """Brand/voice context for the agent's prompts. Populated in Task 6
+    (config-driven). Until then returns an empty string."""
+    return ""
 
 
 def _get_conn(db_path):
@@ -95,40 +96,31 @@ def cmd_write_next(args):
     try:
         resumable_article = writing.resumable(conn)
         if resumable_article is not None:
-            article_id = resumable_article["id"]
-            _print_json(
-                {
-                    "resumed": True,
-                    "article_id": article_id,
-                    "status": resumable_article["status"],
-                }
-            )
+            _print_json({
+                "resumed": True,
+                "article_id": resumable_article["id"],
+                "status": resumable_article["status"],
+            })
             return
 
         candidate = writing.next_candidate(conn)
         if candidate is None:
-            _print_json({"resumed": False, "article_id": None, "questions": None})
+            _print_json({"resumed": False, "article_id": None})
             return
 
         article_id = writing.start_article(conn, candidate["id"])
-        try:
-            questions = writing.interview_questions(
-                conn,
-                article_id,
-                brand_context=BRAND_CONTEXT,
-                style_context=canon.style_context(conn),
-            )
-        except ValueError as e:
-            raise SystemExit(str(e))
-
-        _print_json(
-            {
-                "resumed": False,
-                "article_id": article_id,
-                "candidate_id": candidate["id"],
-                "questions": questions,
-            }
-        )
+        _print_json({
+            "resumed": False,
+            "article_id": article_id,
+            "candidate_id": candidate["id"],
+            "candidate": {
+                "title": candidate["title"],
+                "summary": candidate["summary"],
+                "url": candidate["url"],
+            },
+            "brand_context": _brand_context(conn),
+            "style_context": canon.style_context(conn),
+        })
     finally:
         conn.close()
 
@@ -148,26 +140,100 @@ def cmd_answer(args):
         conn.close()
 
 
-def cmd_draft(args):
+def cmd_draft_context(args):
     conn = _get_conn(args.db)
     try:
-        draft_text = writing.generate_draft(
-            conn,
-            args.article_id,
-            research=args.research or "",
-            brand_context=BRAND_CONTEXT,
-            style_context=canon.style_context(conn),
-        )
-        notice = synthesis.pending_rule_notice(conn, args.article_id)
-        _print_json(
-            {
-                "article_id": args.article_id,
-                "draft": draft_text,
-                "pending_rule_notice": notice,
-            }
-        )
+        cand = conn.execute(
+            """SELECT c.title, c.summary, c.url FROM candidates c
+               JOIN articles a ON a.candidate_id = c.id WHERE a.id = ?""",
+            (args.article_id,),
+        ).fetchone()
+        answers = conn.execute(
+            """SELECT question, chosen, answer_text FROM interview_answers
+               WHERE article_id = ? ORDER BY id ASC""",
+            (args.article_id,),
+        ).fetchall()
+        _print_json({
+            "article_id": args.article_id,
+            "candidate": _row_to_dict(cand),
+            "answers": _rows_to_dicts(answers),
+            "brand_context": _brand_context(conn),
+            "style_context": canon.style_context(conn),
+        })
     finally:
         conn.close()
+
+
+def cmd_save_draft(args):
+    conn = _get_conn(args.db)
+    try:
+        writing.save_draft(conn, args.article_id, args.text)
+        notice = synthesis.pending_rule_notice(conn, args.article_id)
+        _print_json({
+            "article_id": args.article_id,
+            "status": "reviewing",
+            "pending_rule_notice": notice,
+        })
+    finally:
+        conn.close()
+
+
+def cmd_synthesis_context(args):
+    conn = _get_conn(args.db)
+    try:
+        _print_json(synthesis.synthesis_context(conn, args.article_id))
+    finally:
+        conn.close()
+
+
+def cmd_apply_synthesis(args):
+    conn = _get_conn(args.db)
+    try:
+        result = json.loads(args.json)
+        try:
+            out = synthesis.apply_synthesis(
+                conn, args.article_id, result, base_checkpoint=args.base_checkpoint
+            )
+        except ValueError as e:
+            raise SystemExit(str(e))
+        _print_json(out)
+    finally:
+        conn.close()
+
+
+def cmd_ingest(args):
+    from content_pipeline.models import Candidate
+    conn = _get_conn(args.db)
+    try:
+        raw = json.loads(args.json)
+        candidates = [
+            Candidate(
+                source=c["source"], source_ref=c["source_ref"], title=c["title"],
+                url=c.get("url", ""), summary=c.get("summary", ""),
+                engagement=c.get("engagement", {}), topic_tags=c.get("topic_tags", []),
+                emotional_driver=c.get("emotional_driver"), news_hook=c.get("news_hook"),
+                predicted_relevance=c.get("predicted_relevance"),
+            )
+            for c in raw
+        ]
+        _print_json({"ingested": source.ingest(conn, candidates)})
+    finally:
+        conn.close()
+
+
+def _synthesis_pending(conn) -> bool:
+    """True if an article was approved but the style-synthesis step hasn't
+    run for it yet. Because approve() no longer auto-triggers synthesis, a
+    forgotten apply-synthesis would silently stall learning; status surfaces
+    this. Detected structurally: an 'article_approved' event exists with an
+    id beyond the last style-synthesis checkpoint (which apply_synthesis
+    advances past all events it processed)."""
+    last = synthesis._last_checkpoint(conn)
+    row = conn.execute(
+        "SELECT 1 FROM events WHERE kind='article_approved' AND id > ? LIMIT 1",
+        (last,),
+    ).fetchone()
+    return row is not None
 
 
 def cmd_edit(args):
@@ -207,6 +273,7 @@ def cmd_status(args):
                 "calibration": selection.calibration(conn),
                 "edit_effort_trend": health.edit_effort_trend(conn),
                 "nudge": health.nudge(conn),
+                "synthesis_pending": _synthesis_pending(conn),
             }
         )
     finally:
@@ -250,10 +317,29 @@ def build_parser():
     p_answer.add_argument("--text", default=None, dest="text")
     p_answer.set_defaults(func=cmd_answer)
 
-    p_draft = sub.add_parser("draft", help="Generate the first draft")
-    p_draft.add_argument("article_id")
-    p_draft.add_argument("--research", default=None)
-    p_draft.set_defaults(func=cmd_draft)
+    p_draft_ctx = sub.add_parser("draft-context", help="Context for the agent to write the draft")
+    p_draft_ctx.add_argument("article_id")
+    p_draft_ctx.set_defaults(func=cmd_draft_context)
+
+    p_save_draft = sub.add_parser("save-draft", help="Persist an agent-written draft")
+    p_save_draft.add_argument("article_id")
+    p_save_draft.add_argument("--text", required=True)
+    p_save_draft.set_defaults(func=cmd_save_draft)
+
+    p_syn_ctx = sub.add_parser("synthesis-context", help="Context for the agent's style synthesis")
+    p_syn_ctx.add_argument("article_id")
+    p_syn_ctx.set_defaults(func=cmd_synthesis_context)
+
+    p_apply = sub.add_parser("apply-synthesis", help="Persist the agent's synthesis decision")
+    p_apply.add_argument("article_id")
+    p_apply.add_argument("--json", required=True, dest="json")
+    p_apply.add_argument("--base-checkpoint", required=True, type=int, dest="base_checkpoint",
+                         help="The base_checkpoint value from synthesis-context (idempotency guard)")
+    p_apply.set_defaults(func=cmd_apply_synthesis)
+
+    p_ingest = sub.add_parser("ingest", help="Ingest candidate topics from a JSON array")
+    p_ingest.add_argument("--json", required=True, dest="json")
+    p_ingest.set_defaults(func=cmd_ingest)
 
     p_edit = sub.add_parser("edit", help="Record an edit round")
     p_edit.add_argument("article_id")
