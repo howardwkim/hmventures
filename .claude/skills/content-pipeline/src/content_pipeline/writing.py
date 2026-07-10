@@ -4,6 +4,8 @@ import uuid
 from datetime import datetime, timezone
 
 from content_pipeline import events
+from content_pipeline import brief as brief_mod
+from content_pipeline import voice
 
 VALID_CHOSEN = {"recommended", "alternate", "custom", "skip"}
 
@@ -25,6 +27,26 @@ def _char_diff_size(prior: str, new: str) -> int:
         for tag, i1, i2, j1, j2 in matcher.get_opcodes()
         if tag != "equal"
     )
+
+
+def append_draft_version(conn, article_id, text) -> int:
+    """Append a draft_versions row (next per-article version), capturing the
+    brief_id and voice snapshot that produced this text. Returns the version
+    number. Called by save_draft and record_edit_round so every draft and
+    edit round is preserved - nothing overwritten."""
+    row = conn.execute(
+        "SELECT MAX(version) AS v FROM draft_versions WHERE article_id = ?", (article_id,)
+    ).fetchone()
+    version = (row["v"] or 0) + 1
+    cur = brief_mod.current_brief(conn, article_id)
+    brief_id = cur["id"] if cur else None
+    conn.execute(
+        "INSERT INTO draft_versions (article_id, version, text, brief_id, voice_snapshot, created_at) "
+        "VALUES (?, ?, ?, ?, ?, ?)",
+        (article_id, version, text, brief_id, voice.voice_doc(conn), _now()),
+    )
+    conn.commit()
+    return version
 
 
 def next_candidate(conn):
@@ -93,6 +115,7 @@ def save_draft(conn, article_id, draft_text) -> None:
         (draft_text, article_id),
     )
     conn.commit()
+    append_draft_version(conn, article_id, draft_text)
     events.append(
         conn,
         "draft_generated",
@@ -133,6 +156,7 @@ def record_edit_round(conn, article_id, operator_feedback, new_text) -> int:
     )
     conn.commit()
 
+    append_draft_version(conn, article_id, new_text)
     events.append(
         conn,
         "edit_round",

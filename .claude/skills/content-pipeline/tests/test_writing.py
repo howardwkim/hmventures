@@ -2,7 +2,7 @@ import json
 
 from content_pipeline.models import Candidate
 from content_pipeline.discovery import source
-from content_pipeline import queue, writing, events
+from content_pipeline import queue, writing, events, brief as brief_mod
 
 
 def _cand(ref="r1"):
@@ -207,3 +207,43 @@ def test_resumable_ignores_approved_article(conn):
     writing.approve(conn, aid, "Final text.")
 
     assert writing.resumable(conn) is None
+
+
+def test_save_draft_appends_version_one_with_inputs(conn, monkeypatch):
+    monkeypatch.setattr("content_pipeline.config.brand_context", lambda: "SEEDVOICE")
+    aid, cid = _start_article(conn)
+    brief_mod.save_brief(conn, aid, {"topic": "t", "angle": "a", "key_points": ["k"]})
+
+    writing.save_draft(conn, aid, "Draft body one.")
+
+    v = conn.execute(
+        "SELECT * FROM draft_versions WHERE article_id=? ORDER BY version", (aid,)
+    ).fetchall()
+    assert len(v) == 1
+    assert v[0]["version"] == 1
+    assert v[0]["text"] == "Draft body one."
+    assert v[0]["brief_id"] is not None
+    assert "SEEDVOICE" in v[0]["voice_snapshot"]
+
+
+def test_regenerate_via_second_save_draft_adds_version_two(conn):
+    aid, cid = _start_article(conn)
+    writing.save_draft(conn, aid, "first generation")
+    writing.save_draft(conn, aid, "regenerated from a changed brief")
+
+    versions = conn.execute(
+        "SELECT version, text FROM draft_versions WHERE article_id=? ORDER BY version", (aid,)
+    ).fetchall()
+    assert [r["version"] for r in versions] == [1, 2]
+    assert versions[1]["text"] == "regenerated from a changed brief"
+
+
+def test_edit_round_also_appends_a_draft_version(conn):
+    aid = _draft_article(conn, text="v1 body")  # save_draft -> version 1
+    writing.record_edit_round(conn, aid, "tighten it", "v1 body tighter")
+
+    versions = conn.execute(
+        "SELECT version, text FROM draft_versions WHERE article_id=? ORDER BY version", (aid,)
+    ).fetchall()
+    assert [r["version"] for r in versions] == [1, 2]
+    assert versions[1]["text"] == "v1 body tighter"
