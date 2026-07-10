@@ -5,7 +5,7 @@ or a generic good-writing default when unset) and a learned layer rendered
 from the style canon (permanent rules + provisional tendencies). The seed is
 the floor; the learned layer is composed on top. The seed changes only when
 the operator edits their brand_context; the learned layer evolves via
-synthesis. This is the single input a stage receives for "how to write" —
+synthesis. This is the single input a stage receives for "how to write":
 audience, tone, length, and structure belong here, not in the per-article
 brief.
 """

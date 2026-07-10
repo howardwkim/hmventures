@@ -58,7 +58,7 @@ def _source_snippet(conn, article_id) -> str:
     ).fetchone()
     if row is None:
         return ""
-    return f"{row['title']}\n\n{row['summary']}".strip()
+    return f"{row['title'] or ''}\n\n{row['summary'] or ''}".strip()
 
 
 def cmd_discover(args):
@@ -180,8 +180,8 @@ def cmd_draft_context(args):
 def cmd_save_brief(args):
     conn = _get_conn(args.db)
     try:
-        data = json.loads(args.json)
         try:
+            data = json.loads(args.json)
             version = brief.save_brief(conn, args.article_id, data)
         except ValueError as e:
             raise SystemExit(str(e))

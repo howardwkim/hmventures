@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from content_pipeline import cli, db, writing, brief as brief_mod
+from content_pipeline import cli, db, writing
 from content_pipeline.discovery import source
 from content_pipeline.models import Candidate
 from content_pipeline import queue
