@@ -1,11 +1,8 @@
 import json
 
-import pytest
-
 from content_pipeline.models import Candidate
 from content_pipeline.discovery import source
-from content_pipeline.learning import synthesis
-from content_pipeline import queue, writing
+from content_pipeline import queue, writing, events
 
 
 def _cand(ref="r1"):
@@ -76,28 +73,6 @@ def _start_article(conn):
     return article_id, older_id
 
 
-def test_interview_questions_shape(conn, monkeypatch):
-    monkeypatch.setattr(writing.llm, "complete_json", lambda *a, **k: {
-        "questions": [{"question": "Your take?", "recommended": "Agree", "alternate": "Disagree"}]})
-    aid, cid = _start_article(conn)
-    qs = writing.interview_questions(conn, aid, brand_context="", style_context="")
-    assert qs[0]["recommended"] == "Agree" and qs[0]["alternate"] == "Disagree"
-
-
-def test_interview_questions_accepts_empty_list(conn, monkeypatch):
-    monkeypatch.setattr(writing.llm, "complete_json", lambda *a, **k: {"questions": []})
-    aid, cid = _start_article(conn)
-    qs = writing.interview_questions(conn, aid, brand_context="", style_context="")
-    assert qs == []
-
-
-def test_interview_questions_raises_value_error_on_missing_questions_key(conn, monkeypatch):
-    monkeypatch.setattr(writing.llm, "complete_json", lambda *a, **k: {"foo": "bar"})
-    aid, cid = _start_article(conn)
-    with pytest.raises(ValueError):
-        writing.interview_questions(conn, aid, brand_context="", style_context="")
-
-
 def test_record_answer_logs_choice(conn):
     aid, cid = _start_article(conn)
     writing.record_answer(conn, aid, "Q", "skip", None, {"recommended": "a", "alternate": "b"})
@@ -105,54 +80,28 @@ def test_record_answer_logs_choice(conn):
     assert json.loads(ev["payload_json"])["chosen"] == "skip"
 
 
-def test_generate_draft_stores_text_sets_reviewing_and_logs_event(conn, monkeypatch):
-    monkeypatch.setattr(writing.llm, "complete", lambda *a, **k: "Draft body text.")
+def test_save_draft_stores_text_sets_reviewing_and_logs(conn):
     aid, cid = _start_article(conn)
 
-    draft = writing.generate_draft(
-        conn, aid, research="some research", brand_context="brand", style_context="style"
-    )
+    writing.save_draft(conn, aid, "Here is the full draft body.")
 
-    assert draft == "Draft body text."
-
-    article = conn.execute("SELECT * FROM articles WHERE id = ?", (aid,)).fetchone()
-    assert article["draft_text"] == "Draft body text."
-    assert article["status"] == "reviewing"
-
-    ev = conn.execute(
-        "SELECT * FROM events WHERE kind = 'draft_generated'"
+    row = conn.execute(
+        "SELECT draft_text, status FROM articles WHERE id=?", (aid,)
     ).fetchone()
-    assert ev is not None
-    assert ev["article_id"] == aid
+    assert row["draft_text"] == "Here is the full draft body."
+    assert row["status"] == "reviewing"
+    kinds = [e["kind"] for e in events.recent(conn)]
+    assert "draft_generated" in kinds
 
 
-def test_generate_draft_prompt_includes_no_em_dash_instruction(conn, monkeypatch):
-    captured = {}
-
-    def fake_complete(prompt, **kwargs):
-        captured["prompt"] = prompt
-        return "Draft body text."
-
-    monkeypatch.setattr(writing.llm, "complete", fake_complete)
+def _draft_article(conn, text="First draft text."):
     aid, cid = _start_article(conn)
-
-    writing.generate_draft(
-        conn, aid, research="r", brand_context="b", style_context="s"
-    )
-
-    assert "em dash" in captured["prompt"].lower()
-    assert "—" not in captured["prompt"]
-
-
-def _generate_draft(conn, monkeypatch, text="First draft text."):
-    monkeypatch.setattr(writing.llm, "complete", lambda *a, **k: text)
-    aid, cid = _start_article(conn)
-    writing.generate_draft(conn, aid, research="r", brand_context="b", style_context="s")
+    writing.save_draft(conn, aid, text)
     return aid
 
 
-def test_record_edit_round_computes_size_and_increments_round(conn, monkeypatch):
-    aid = _generate_draft(conn, monkeypatch, text="abc")
+def test_record_edit_round_computes_size_and_increments_round(conn):
+    aid = _draft_article(conn, text="abc")
 
     round1 = writing.record_edit_round(conn, aid, "make it punchier", "abcdef")
     assert round1 == 1
@@ -189,14 +138,14 @@ def test_record_edit_round_computes_size_and_increments_round(conn, monkeypatch)
     assert article2["draft_text"] == "abcdefgh"
 
 
-def test_record_edit_round_size_not_blind_to_same_length_rewrite(conn, monkeypatch):
+def test_record_edit_round_size_not_blind_to_same_length_rewrite(conn):
     # A same-length full-content rewrite (500 'a's -> 500 'b's) has a length
     # delta of 0. The old abs(len(new) - len(prior)) implementation would
     # have recorded edit_size == 0 here, silently hiding a heavy rewrite
     # from the downstream edit-effort health metric. The real char-diff
     # must register this as a large, non-zero edit.
     prior_text = "a" * 500
-    aid = _generate_draft(conn, monkeypatch, text=prior_text)
+    aid = _draft_article(conn, text=prior_text)
 
     new_text = "b" * 500
     writing.record_edit_round(conn, aid, "full rewrite", new_text)
@@ -210,13 +159,8 @@ def test_record_edit_round_size_not_blind_to_same_length_rewrite(conn, monkeypat
     assert row["edit_size"] > 400
 
 
-def test_approve_sets_approved_and_fires_synthesis_hook(conn, monkeypatch):
-    aid = _generate_draft(conn, monkeypatch)
-
-    calls = []
-    monkeypatch.setattr(
-        synthesis, "on_approval", lambda conn, article_id: calls.append(article_id)
-    )
+def test_approve_sets_approved_and_logs_event_without_synthesis(conn):
+    aid = _draft_article(conn)
 
     writing.approve(conn, aid, "Final approved text.")
 
@@ -231,7 +175,11 @@ def test_approve_sets_approved_and_fires_synthesis_hook(conn, monkeypatch):
     assert ev is not None
     assert ev["article_id"] == aid
 
-    assert calls == [aid]
+    # approve no longer triggers synthesis: no synthesis checkpoint written.
+    syn = conn.execute(
+        "SELECT 1 FROM synthesis_runs WHERE artifact='style'"
+    ).fetchone()
+    assert syn is None
 
 
 def test_resumable_finds_interviewing_article(conn):
@@ -245,8 +193,8 @@ def test_resumable_finds_interviewing_article(conn):
     assert resumed["status"] == "interviewing"
 
 
-def test_resumable_finds_reviewing_article(conn, monkeypatch):
-    aid = _generate_draft(conn, monkeypatch)
+def test_resumable_finds_reviewing_article(conn):
+    aid = _draft_article(conn)
 
     resumed = writing.resumable(conn)
     assert resumed is not None
@@ -254,9 +202,8 @@ def test_resumable_finds_reviewing_article(conn, monkeypatch):
     assert resumed["status"] == "reviewing"
 
 
-def test_resumable_ignores_approved_article(conn, monkeypatch):
-    aid = _generate_draft(conn, monkeypatch)
-    monkeypatch.setattr(synthesis, "on_approval", lambda conn, article_id: None)
+def test_resumable_ignores_approved_article(conn):
+    aid = _draft_article(conn)
     writing.approve(conn, aid, "Final text.")
 
     assert writing.resumable(conn) is None

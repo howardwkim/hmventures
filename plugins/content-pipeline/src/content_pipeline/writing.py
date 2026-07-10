@@ -3,7 +3,7 @@ import json
 import uuid
 from datetime import datetime, timezone
 
-from content_pipeline import events, llm
+from content_pipeline import events
 
 VALID_CHOSEN = {"recommended", "alternate", "custom", "skip"}
 
@@ -60,43 +60,6 @@ def start_article(conn, candidate_id) -> str:
     return article_id
 
 
-def interview_questions(conn, article_id, *, brand_context, style_context) -> list[dict]:
-    """Generate interview questions for article_id via one llm.complete_json
-    call. Each question comes back as {question, recommended, alternate} so
-    the operator can accept a recommendation, pick the alternate, or write
-    their own answer. brand_context and style_context are plain strings
-    supplied by the caller (e.g. brand/voice docs text, active permanent
-    rules and provisional tendencies) - this function does not compute them."""
-    article = conn.execute(
-        "SELECT * FROM articles WHERE id = ?", (article_id,)
-    ).fetchone()
-    candidate = conn.execute(
-        "SELECT * FROM candidates WHERE id = ?", (article["candidate_id"],)
-    ).fetchone()
-
-    prompt = (
-        "You are helping prepare an interview for a content article before "
-        "drafting begins. Given the candidate story below, the brand context, "
-        "and the style context, generate a short list of interview questions "
-        "that will surface the operator's take on the story.\n\n"
-        f"Candidate title: {candidate['title']}\n"
-        f"Candidate summary: {candidate['summary']}\n\n"
-        f"Brand context:\n{brand_context}\n\n"
-        f"Style context:\n{style_context}\n\n"
-        "For each question, propose a recommended answer and one alternate "
-        "answer the operator could pick instead."
-    )
-    schema_hint = (
-        '{"questions": [{"question": "string", "recommended": "string", '
-        '"alternate": "string"}]}'
-    )
-
-    result = llm.complete_json(prompt, schema_hint=schema_hint)
-    if not isinstance(result, dict) or not isinstance(result.get("questions"), list):
-        raise ValueError(f"LLM response missing 'questions' list: {result!r}")
-    return result["questions"]
-
-
 def record_answer(conn, article_id, question, chosen, answer_text, options) -> None:
     """Persist one interview answer immediately (save-as-you-go, so an
     interrupted interview doesn't lose already-answered questions) and log
@@ -121,62 +84,21 @@ def record_answer(conn, article_id, question, chosen, answer_text, options) -> N
     )
 
 
-def generate_draft(conn, article_id, *, research, brand_context, style_context) -> str:
-    """Generate the first draft for article_id via one llm.complete call.
-    The prompt injects the interview answers (confirmed/edited/skipped),
-    the style rules verbatim, and an explicit no-em-dash constraint.
-    Stores the result in articles.draft_text, moves status to 'reviewing',
-    and appends a 'draft_generated' event. Returns the draft text."""
-    candidate_row = conn.execute(
-        """SELECT c.* FROM candidates c
-           JOIN articles a ON a.candidate_id = c.id
-           WHERE a.id = ?""",
-        (article_id,),
-    ).fetchone()
-
-    answers = conn.execute(
-        """SELECT question, chosen, answer_text
-           FROM interview_answers WHERE article_id = ?
-           ORDER BY id ASC""",
-        (article_id,),
-    ).fetchall()
-    answers_text = "\n".join(
-        f"- Q: {row['question']}\n  Chosen: {row['chosen']}\n  Answer: {row['answer_text']}"
-        for row in answers
-    ) or "(no interview answers recorded)"
-
-    prompt = (
-        "You are drafting a content article. Write the full first draft "
-        "based on the research, the candidate story, the operator's interview "
-        "answers, the brand context, and the style rules below.\n\n"
-        f"Candidate title: {candidate_row['title'] if candidate_row else ''}\n"
-        f"Candidate summary: {candidate_row['summary'] if candidate_row else ''}\n\n"
-        f"Research:\n{research}\n\n"
-        f"Interview answers:\n{answers_text}\n\n"
-        f"Brand context:\n{brand_context}\n\n"
-        "Style rules (apply verbatim):\n"
-        f"{style_context}\n\n"
-        "Constraint: do not use em dashes anywhere in the draft. Use commas, "
-        "periods, or parentheses instead.\n\n"
-        "Write the complete draft now."
-    )
-
-    draft_text = llm.complete(prompt)
-
+def save_draft(conn, article_id, draft_text) -> None:
+    """Persist an agent-written first draft: store it, move the article to
+    'reviewing', and log a 'draft_generated' event. The draft text itself is
+    produced by the conversational agent, not by this module."""
     conn.execute(
         "UPDATE articles SET draft_text = ?, status = 'reviewing' WHERE id = ?",
         (draft_text, article_id),
     )
     conn.commit()
-
     events.append(
         conn,
         "draft_generated",
         {"length": len(draft_text)},
         article_id=article_id,
     )
-
-    return draft_text
 
 
 def record_edit_round(conn, article_id, operator_feedback, new_text) -> int:
@@ -227,12 +149,10 @@ def record_edit_round(conn, article_id, operator_feedback, new_text) -> int:
 
 
 def approve(conn, article_id, final_text) -> None:
-    """Mark article_id approved: stores final_text, sets status 'approved'
-    and approved_at, appends an 'article_approved' event, then triggers
-    the learning synthesis hook. Imported lazily to avoid a module-load
-    cycle between writing and learning.synthesis."""
-    from content_pipeline.learning import synthesis
-
+    """Mark article_id approved: store final_text, set status 'approved' and
+    approved_at, append an 'article_approved' event. Style synthesis is a
+    separate, agent-driven step (synthesis_context + apply_synthesis), not
+    triggered here."""
     conn.execute(
         """UPDATE articles
            SET status = 'approved', final_text = ?, approved_at = ?
@@ -247,8 +167,6 @@ def approve(conn, article_id, final_text) -> None:
         {},
         article_id=article_id,
     )
-
-    synthesis.on_approval(conn, article_id)
 
 
 def resumable(conn):
