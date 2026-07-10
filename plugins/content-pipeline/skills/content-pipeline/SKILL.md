@@ -23,17 +23,41 @@ Every verb runs the same way, from inside `plugins/content-pipeline/`:
 uv run python -m content_pipeline.cli --db PATH <verb> [args...]
 ```
 
-`--db` is a **top-level** flag (before the verb). If omitted, the CLI falls
-back to `CONTENT_PIPELINE_DB`, then to `~/.content-pipeline/pipeline.sqlite`.
-Pick one DB and use it consistently for the whole session — the pipeline
-resumes from whatever is already in it. Each call opens its own connection,
-does its work, prints exactly one JSON object, and exits. Parse stdout as JSON.
+`--db` is a **top-level** flag (before the verb) and is **mandatory on every
+call** — pass it explicitly every time, don't rely on an environment variable
+or shell profile to fill it in. There is no fallback: `--db` unset and
+`CONTENT_PIPELINE_DB` unset makes every verb exit with an error rather than
+guessing a path. This is a code-level guard against an unconfigured
+invocation (e.g. an ad hoc smoke test) silently landing on the wrong file.
+
+**The operator's real pipeline DB is `~/.content-pipeline/pipeline.sqlite`.**
+That is the canonical path for every real, operator-directed run of this
+skill — pass `--db ~/.content-pipeline/pipeline.sqlite` explicitly for real
+work in this conversation.
+
+**Mutating verbs need an explicit go-ahead first.** `decide`, `next-article`,
+`answer`, `save-draft`, `edit`, `approve`, and `apply-synthesis` change real
+pipeline state (they start articles, consume candidates, advance checkpoints).
+Never run one speculatively or to "check that it works" — that includes while
+developing or verifying changes to this skill or the CLI itself. If you need
+to exercise a mutating verb for testing, pass `--db` pointing at a throwaway
+file under the scratchpad directory, never
+`~/.content-pipeline/pipeline.sqlite`.
 
 ## The flow
 
+Each numbered step below is a discrete stopping point. When one finishes, ask
+the operator whether to proceed to the next step rather than continuing on
+your own — e.g. after decisions are recorded, ask "start the next article?"
+before running `next-article`; after a draft is saved, ask before moving into
+the edit loop; after approval, ask before running synthesis (unless
+`synthesis_pending` makes it mandatory first). Exception: within a step that
+is inherently a back-and-forth (the edit loop's rounds), keep going per the
+operator's ongoing feedback without re-asking each round.
+
 ### 1. Orient — `status` (and `review`)
 Start here. `status` returns `{review_queue_count, resumable_article,
-write_next_available, calibration, edit_effort_trend, nudge, synthesis_pending}`.
+next_article_available, calibration, edit_effort_trend, nudge, synthesis_pending}`.
 Check `synthesis_pending`: if it is `true`, an article was approved but its
 style-synthesis step never ran — do step 9 for that outstanding article before
 anything else. Run `review` to see the candidates awaiting a decision.
@@ -64,9 +88,9 @@ decide CANDIDATE_ID yes|no|snooze [--note TEXT]
 `yes` moves it toward writing, `no` drops it, `snooze` defers it until the next
 day. Save as you go. Result: `{candidate_id, status}`.
 
-### 4. Write next — `write-next`
+### 4. Start the next article — `next-article`
 ```
-write-next
+next-article
 ```
 
 If an article is mid-flight, this resumes it: `{resumed: true, article_id,

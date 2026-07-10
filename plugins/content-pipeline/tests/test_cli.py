@@ -13,13 +13,22 @@ def _run(capsys, argv):
     return json.loads(out)
 
 
+def test_missing_db_config_errors_loudly_instead_of_defaulting(monkeypatch, capsys):
+    monkeypatch.delenv("CONTENT_PIPELINE_DB", raising=False)
+
+    with pytest.raises(SystemExit) as excinfo:
+        cli.main(["status"])
+
+    assert "CONTENT_PIPELINE_DB" in str(excinfo.value)
+
+
 def test_status_on_empty_db_prints_valid_json_with_zeroed_queues(tmp_path, capsys):
     db_path = str(tmp_path / "t.sqlite")
 
     result = _run(capsys, ["--db", db_path, "status"])
 
     assert result["review_queue_count"] == 0
-    assert result["write_next_available"] is False
+    assert result["next_article_available"] is False
     assert result["calibration"]["n"] == 0
     assert result["nudge"] is None
     assert result["synthesis_pending"] is False
@@ -187,13 +196,13 @@ def _seed_accepted_candidate(db_path, candidate_id="reddit-abc123"):
     conn.close()
 
 
-def test_write_next_returns_context_not_questions(tmp_path, capsys):
+def test_next_article_returns_context_not_questions(tmp_path, capsys):
     db_path = str(tmp_path / "t.sqlite")
     _run(capsys, ["--db", db_path, "ingest", "--json", json.dumps([{
         "source": "test", "source_ref": "r1", "title": "T1",
         "url": "http://x", "summary": "S1"}])])
     _run(capsys, ["--db", db_path, "decide", "test-r1", "yes"])
-    out = _run(capsys, ["--db", db_path, "write-next"])
+    out = _run(capsys, ["--db", db_path, "next-article"])
     assert out["resumed"] is False
     assert out["article_id"]
     assert "questions" not in out
@@ -201,7 +210,7 @@ def test_write_next_returns_context_not_questions(tmp_path, capsys):
     assert out["candidate"]["title"] == "T1"
 
 
-def test_write_next_resumes_existing_article(tmp_path, capsys):
+def test_next_article_resumes_existing_article(tmp_path, capsys):
     db_path = str(tmp_path / "t.sqlite")
     _seed_accepted_candidate(db_path)
 
@@ -210,19 +219,19 @@ def test_write_next_resumes_existing_article(tmp_path, capsys):
     article_id = writing.start_article(conn, "reddit-abc123")
     conn.close()
 
-    result = _run(capsys, ["--db", db_path, "write-next"])
+    result = _run(capsys, ["--db", db_path, "next-article"])
 
     assert result["resumed"] is True
     assert result["article_id"] == article_id
 
 
-def test_write_next_empty_queue_reports_none(tmp_path, capsys):
+def test_next_article_empty_queue_reports_none(tmp_path, capsys):
     db_path = str(tmp_path / "t.sqlite")
     conn = db.connect(db_path)
     db.init_schema(conn)
     conn.close()
 
-    result = _run(capsys, ["--db", db_path, "write-next"])
+    result = _run(capsys, ["--db", db_path, "next-article"])
 
     assert result["article_id"] is None
 
@@ -265,7 +274,7 @@ def test_save_draft_and_draft_context_roundtrip(tmp_path, capsys):
         "source": "test", "source_ref": "r2", "title": "T2",
         "url": "http://y", "summary": "S2"}])])
     _run(capsys, ["--db", db_path, "decide", "test-r2", "yes"])
-    started = _run(capsys, ["--db", db_path, "write-next"])
+    started = _run(capsys, ["--db", db_path, "next-article"])
     aid = started["article_id"]
     _run(capsys, ["--db", db_path, "answer", aid, "--question", "angle?",
                   "--chosen", "recommended", "--text", "founders"])
@@ -312,7 +321,7 @@ def test_apply_synthesis_via_cli(tmp_path, capsys):
         "source": "test", "source_ref": "r3", "title": "T3",
         "url": "http://z", "summary": "S3"}])])
     _run(capsys, ["--db", db_path, "decide", "test-r3", "yes"])
-    aid = _run(capsys, ["--db", db_path, "write-next"])["article_id"]
+    aid = _run(capsys, ["--db", db_path, "next-article"])["article_id"]
     _run(capsys, ["--db", db_path, "save-draft", aid, "--text", "d1"])
     _run(capsys, ["--db", db_path, "edit", aid, "--feedback", "never shout", "--text", "d2"])
     _run(capsys, ["--db", db_path, "approve", aid, "--text", "d2"])
@@ -333,7 +342,7 @@ def test_status_reports_synthesis_pending(tmp_path, capsys):
         "source": "test", "source_ref": "r4", "title": "T4",
         "url": "http://q", "summary": "S4"}])])
     _run(capsys, ["--db", db_path, "decide", "test-r4", "yes"])
-    aid = _run(capsys, ["--db", db_path, "write-next"])["article_id"]
+    aid = _run(capsys, ["--db", db_path, "next-article"])["article_id"]
     _run(capsys, ["--db", db_path, "save-draft", aid, "--text", "d1"])
     _run(capsys, ["--db", db_path, "approve", aid, "--text", "d1"])
     st = _run(capsys, ["--db", db_path, "status"])

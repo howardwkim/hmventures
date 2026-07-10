@@ -14,7 +14,7 @@ def test_full_lifecycle_backend(tmp_path, capsys):
         "source": "test", "source_ref": "e1", "title": "Remote work ruling",
         "url": "http://x", "summary": "A court ruling on remote work."}])], dbpath, capsys)
     _run(["decide", "test-e1", "yes"], dbpath, capsys)
-    started = _run(["write-next"], dbpath, capsys)
+    started = _run(["next-article"], dbpath, capsys)
     aid = started["article_id"]
     assert started["candidate"]["title"] == "Remote work ruling"
     _run(["answer", aid, "--question", "What's the angle?", "--chosen", "recommended",

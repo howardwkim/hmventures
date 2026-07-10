@@ -1,0 +1,1 @@
+/Users/howardwkim/src/hmventures/plugins/content-pipeline/commands/content-pipeline.md

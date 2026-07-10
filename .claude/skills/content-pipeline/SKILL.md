@@ -1,0 +1,1 @@
+/Users/howardwkim/src/hmventures/plugins/content-pipeline/skills/content-pipeline/SKILL.md

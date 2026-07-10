@@ -2,10 +2,22 @@ import os, sqlite3
 from pathlib import Path
 
 CURRENT_VERSION = 1
-DEFAULT_DB = "~/.content-pipeline/pipeline.sqlite"
+
+
+class NoDatabaseConfigured(RuntimeError):
+    """Raised when neither --db nor CONTENT_PIPELINE_DB names a target.
+
+    There is no silent fallback to a default file: an unconfigured invocation
+    must fail loudly rather than risk landing on someone else's real DB."""
+
 
 def _resolve(path):
-    p = path or os.environ.get("CONTENT_PIPELINE_DB") or DEFAULT_DB
+    p = path or os.environ.get("CONTENT_PIPELINE_DB")
+    if not p:
+        raise NoDatabaseConfigured(
+            "No database configured: pass --db PATH or set CONTENT_PIPELINE_DB. "
+            "For a throwaway/test DB, point explicitly at a scratch file."
+        )
     p = Path(p).expanduser()
     p.parent.mkdir(parents=True, exist_ok=True)
     return str(p)

@@ -92,7 +92,7 @@ def cmd_decide(args):
         conn.close()
 
 
-def cmd_write_next(args):
+def cmd_next_article(args):
     conn = _get_conn(args.db)
     try:
         resumable_article = writing.resumable(conn)
@@ -270,7 +270,7 @@ def cmd_status(args):
             {
                 "review_queue_count": len(review_rows),
                 "resumable_article": _row_to_dict(resumable_article),
-                "write_next_available": resumable_article is not None or next_up is not None,
+                "next_article_available": resumable_article is not None or next_up is not None,
                 "calibration": selection.calibration(conn),
                 "edit_effort_trend": health.edit_effort_trend(conn),
                 "nudge": health.nudge(conn),
@@ -308,8 +308,8 @@ def build_parser():
     p_decide.add_argument("--today", default=None)
     p_decide.set_defaults(func=cmd_decide)
 
-    p_write_next = sub.add_parser("write-next", help="Resume or start the next article")
-    p_write_next.set_defaults(func=cmd_write_next)
+    p_next_article = sub.add_parser("next-article", help="Resume or start the next article")
+    p_next_article.set_defaults(func=cmd_next_article)
 
     p_answer = sub.add_parser("answer", help="Record one interview answer")
     p_answer.add_argument("article_id")
@@ -363,7 +363,10 @@ def build_parser():
 def main(argv=None):
     parser = build_parser()
     args = parser.parse_args(argv)
-    args.func(args)
+    try:
+        args.func(args)
+    except db.NoDatabaseConfigured as e:
+        raise SystemExit(str(e))
 
 
 if __name__ == "__main__":
