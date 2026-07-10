@@ -139,7 +139,6 @@ def apply_synthesis(conn, article_id, result, *, base_checkpoint) -> dict:
 
     all_new = events.since(conn, last_seen)
     relevant = [e for e in all_new if e["kind"] in _RELEVANT_EVENT_KINDS]
-    max_event_id = max((e["id"] for e in all_new), default=last_seen)
 
     promotion_allowed = health.promotion_allowed(conn)
     new_rules = result.get("new_rules", []) or []
@@ -186,7 +185,11 @@ def apply_synthesis(conn, article_id, result, *, base_checkpoint) -> dict:
         )
     conn.commit()
 
-    _record_checkpoint(conn, max_event_id, len(relevant))
+    # Advance the checkpoint to the true high-water mark AFTER our own appends
+    # (rule_promoted / synthesis_skipped_promotion), so "everything through
+    # here is accounted for" holds literally, not just for the filtered kinds.
+    true_max = conn.execute("SELECT MAX(id) AS m FROM events").fetchone()["m"]
+    _record_checkpoint(conn, true_max if true_max is not None else last_seen, len(relevant))
 
     return {
         "skipped": None,
