@@ -36,8 +36,9 @@ skill. Pass `--db ~/.content-pipeline/pipeline.sqlite` explicitly for real
 work in this conversation.
 
 **Mutating verbs need an explicit go-ahead first.** `decide`, `next-article`,
-`answer`, `save-draft`, `edit`, `approve`, and `apply-synthesis` change real
-pipeline state (they start articles, consume candidates, advance checkpoints).
+`answer`, `save-draft`, `edit`, `approve`, `fork`, and `apply-synthesis` change
+real pipeline state (they start articles, consume candidates, advance
+checkpoints).
 Never run one speculatively or to "check that it works" (that includes while
 developing or verifying changes to this skill or the CLI itself). If you need
 to exercise a mutating verb for testing, pass `--db` pointing at a throwaway
@@ -153,6 +154,22 @@ returns the revised draft. Show it, then record the round:
 
 Repeat per the operator's feedback until they approve. (This step is an inherent
 back-and-forth; keep going without re-asking each round.)
+
+**Edit vs. fork — two different operations.** An `edit` *revises the existing
+draft* in place: the edit subagent gets `current_draft` + feedback and changes
+what's asked, leaving the rest intact (a linear successor). A **fork**
+*regenerates from a changed input*: when the operator wants to try a different
+style ("here's a new style guide, redraft in this"), don't route it through
+`edit`. Fork the article instead:
+
+    fork ARTICLE_ID --voice "<pasted style guide>"
+
+This snapshots the shared upstream (same candidate, a copy of the answers and
+the current brief) into a **new article** marked `forked_from`, with the pasted
+style as its whole voice doc — global config untouched. Then draft the fork
+(step 6) to get the alternate; the original is preserved beside it, and both
+are addressable by their own ids. Use `edit` to refine a draft, `fork` to try
+a genuinely different input.
 
 ### 8. Approve (`approve`)
 ```

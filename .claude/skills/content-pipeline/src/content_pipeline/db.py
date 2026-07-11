@@ -1,7 +1,7 @@
 import os, sqlite3
 from pathlib import Path
 
-CURRENT_VERSION = 2
+CURRENT_VERSION = 3
 
 
 class NoDatabaseConfigured(RuntimeError):
@@ -102,6 +102,11 @@ INSERT INTO draft_versions (article_id, version, text, brief_id, voice_snapshot,
    WHERE draft_text IS NOT NULL AND draft_text != '';
 """
 
+_MIGRATION_V3 = """
+ALTER TABLE articles ADD COLUMN forked_from TEXT REFERENCES articles(id);
+ALTER TABLE articles ADD COLUMN voice_override TEXT;
+"""
+
 def init_schema(conn):
     conn.executescript(_SCHEMA_V1)
     conn.execute("INSERT INTO schema_meta(version) VALUES (1)")
@@ -113,7 +118,7 @@ def schema_version(conn):
     return row["version"] if row else 0
 
 # Migration registry: {from_version: (to_version, sql_or_callable)}
-_MIGRATIONS = {1: (2, _MIGRATION_V2)}
+_MIGRATIONS = {1: (2, _MIGRATION_V2), 2: (3, _MIGRATION_V3)}
 
 def migrate(conn):
     v = schema_version(conn)

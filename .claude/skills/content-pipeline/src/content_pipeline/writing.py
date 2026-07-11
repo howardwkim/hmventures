@@ -43,7 +43,7 @@ def append_draft_version(conn, article_id, text) -> int:
     conn.execute(
         "INSERT INTO draft_versions (article_id, version, text, brief_id, voice_snapshot, created_at) "
         "VALUES (?, ?, ?, ?, ?, ?)",
-        (article_id, version, text, brief_id, voice.voice_doc(conn), _now()),
+        (article_id, version, text, brief_id, voice.voice_doc(conn, article_id), _now()),
     )
     conn.commit()
     return version
@@ -161,6 +161,8 @@ def describe_run(conn, article_id=None):
         "candidate_id": art["candidate_id"],
         "title": cand["title"] if cand else None,
         "status": art["status"],
+        "forked_from": art["forked_from"],
+        "has_voice_override": bool(art["voice_override"]),
         "answer_count": len(answers),
         "draft_versions": max((t["version"] for t in timeline if t["step"] == "draft_version"), default=0),
         "edit_rounds": sum(1 for t in timeline if t["step"] == "edit_round"),
@@ -190,6 +192,55 @@ def start_article(conn, candidate_id) -> str:
         {"candidate_id": candidate_id},
         article_id=article_id,
         candidate_id=candidate_id,
+    )
+
+    return article_id
+
+
+def fork_article(conn, parent_article_id, voice_override=None) -> str | None:
+    """Fork parent_article_id into a new article that snapshots the shared
+    upstream (same candidate, a copy of the interview answers, a copy of the
+    current brief) but NOT the draft/edit history — the fork diverges at the
+    draft. The copy is a point-in-time snapshot: later edits to the parent do
+    not flow into the fork. `forked_from` records the parent; an optional
+    voice_override becomes the fork's whole voice doc so it regenerates in a
+    pasted style without touching global config. Lands in 'interviewing'
+    (i.e. briefed, pre-draft — the same state a normal article sits in after
+    its brief is saved); the next step is to draft it. Returns the new
+    article id, or None if the parent does not exist."""
+    parent = conn.execute(
+        "SELECT candidate_id FROM articles WHERE id = ?", (parent_article_id,)
+    ).fetchone()
+    if parent is None:
+        return None
+
+    article_id = uuid.uuid4().hex
+    conn.execute(
+        """INSERT INTO articles (id, candidate_id, status, created_at, forked_from, voice_override)
+           VALUES (?, ?, 'interviewing', ?, ?, ?)""",
+        (article_id, parent["candidate_id"], _now(), parent_article_id, voice_override),
+    )
+
+    conn.execute(
+        """INSERT INTO interview_answers
+               (article_id, question, options_json, chosen, answer_text, created_at)
+           SELECT ?, question, options_json, chosen, answer_text, created_at
+             FROM interview_answers WHERE article_id = ? ORDER BY id ASC""",
+        (article_id, parent_article_id),
+    )
+    conn.commit()
+
+    parent_brief = brief_mod.current_brief(conn, parent_article_id)
+    if parent_brief is not None:
+        carried = {k: v for k, v in parent_brief.items() if k not in ("id", "version")}
+        brief_mod.save_brief(conn, article_id, carried)
+
+    events.append(
+        conn,
+        "article_forked",
+        {"forked_from": parent_article_id, "has_voice_override": voice_override is not None},
+        article_id=article_id,
+        candidate_id=parent["candidate_id"],
     )
 
     return article_id

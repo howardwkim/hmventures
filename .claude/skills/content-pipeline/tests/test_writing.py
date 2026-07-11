@@ -283,3 +283,59 @@ def test_describe_run_defaults_to_most_recent_article(conn):
 def test_describe_run_none_when_no_article(conn):
     assert writing.describe_run(conn) is None
     assert writing.describe_run(conn, "nonexistent") is None
+
+
+def _brief_dict():
+    return {"topic": "t", "angle": "a", "key_points": ["p1", "p2"]}
+
+
+def test_fork_snapshots_answers_and_brief_into_new_article(conn):
+    aid, cid = _start_article(conn)
+    writing.record_answer(conn, aid, "Q1", "recommended", "keep", {"recommended": "a"})
+    brief_mod.save_brief(conn, aid, _brief_dict())
+    writing.save_draft(conn, aid, "parent draft in default voice")
+
+    fork_id = writing.fork_article(conn, aid, voice_override="ALL CAPS PUNCHY STYLE")
+    assert fork_id and fork_id != aid
+
+    fork = conn.execute("SELECT * FROM articles WHERE id=?", (fork_id,)).fetchone()
+    assert fork["candidate_id"] == cid          # same candidate
+    assert fork["forked_from"] == aid           # provenance recorded
+    assert fork["voice_override"] == "ALL CAPS PUNCHY STYLE"
+    assert fork["status"] == "interviewing"     # briefed, pre-draft
+
+    # answers copied (snapshot), not shared
+    fa = conn.execute("SELECT question FROM interview_answers WHERE article_id=?", (fork_id,)).fetchall()
+    assert [r["question"] for r in fa] == ["Q1"]
+    # brief copied as the fork's version 1
+    assert brief_mod.current_brief(conn, fork_id)["topic"] == "t"
+    # the fork has NO draft/edit history of its own yet
+    assert conn.execute("SELECT COUNT(*) c FROM draft_versions WHERE article_id=?", (fork_id,)).fetchone()["c"] == 0
+
+    ev = conn.execute("SELECT * FROM events WHERE kind='article_forked'").fetchone()
+    assert ev is not None and ev["article_id"] == fork_id
+
+
+def test_fork_snapshot_is_independent_of_parent(conn):
+    aid, cid = _start_article(conn)
+    writing.record_answer(conn, aid, "Q1", "recommended", "orig", {"recommended": "a"})
+    fork_id = writing.fork_article(conn, aid)
+
+    # a later answer on the parent must NOT appear in the fork
+    writing.record_answer(conn, aid, "Q2-added-later", "custom", "new", {})
+    fa = conn.execute("SELECT question FROM interview_answers WHERE article_id=?", (fork_id,)).fetchall()
+    assert [r["question"] for r in fa] == ["Q1"]
+
+
+def test_fork_none_for_missing_parent(conn):
+    assert writing.fork_article(conn, "nope") is None
+
+
+def test_voice_override_replaces_whole_voice_doc(conn):
+    from content_pipeline import voice
+    aid, cid = _start_article(conn)
+    fork_id = writing.fork_article(conn, aid, voice_override="ONLY THIS")
+    assert voice.voice_doc(conn, fork_id) == "ONLY THIS"
+    # an article with no override falls back to the composed default
+    assert voice.voice_doc(conn, aid) != "ONLY THIS"
+    assert voice.voice_doc(conn) == voice.voice_doc(conn, aid)

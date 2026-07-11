@@ -202,7 +202,7 @@ def cmd_brief_writer_context(args):
             "article_id": args.article_id,
             "answers": _rows_to_dicts(answers),
             "source_snippet": _source_snippet(conn, args.article_id),
-            "voice_doc": voice.voice_doc(conn),
+            "voice_doc": voice.voice_doc(conn, args.article_id),
         })
     finally:
         conn.close()
@@ -214,7 +214,7 @@ def cmd_brief_context(args):
         _print_json({
             "article_id": args.article_id,
             "brief": brief.current_brief(conn, args.article_id),
-            "voice_doc": voice.voice_doc(conn),
+            "voice_doc": voice.voice_doc(conn, args.article_id),
         })
     finally:
         conn.close()
@@ -230,7 +230,22 @@ def cmd_edit_context(args):
             "article_id": args.article_id,
             "current_draft": row["draft_text"] if row else None,
             "brief": brief.current_brief(conn, args.article_id),
-            "voice_doc": voice.voice_doc(conn),
+            "voice_doc": voice.voice_doc(conn, args.article_id),
+        })
+    finally:
+        conn.close()
+
+
+def cmd_fork(args):
+    conn = _get_conn(args.db)
+    try:
+        new_id = writing.fork_article(conn, args.article_id, voice_override=args.voice)
+        if new_id is None:
+            raise SystemExit(f"no such article: {args.article_id}")
+        _print_json({
+            "article_id": new_id,
+            "forked_from": args.article_id,
+            "has_voice_override": args.voice is not None,
         })
     finally:
         conn.close()
@@ -455,6 +470,15 @@ def build_parser():
     p_status = sub.add_parser("status", help="Print queues + calibration + health nudge")
     p_status.add_argument("--today", default=None)
     p_status.set_defaults(func=cmd_status)
+
+    p_fork = sub.add_parser(
+        "fork",
+        help="Fork an article (snapshot answers+brief) to regenerate in a new style",
+    )
+    p_fork.add_argument("article_id", help="Parent article id to fork from")
+    p_fork.add_argument("--voice", default=None,
+                        help="Pasted style guide used as the fork's whole voice doc")
+    p_fork.set_defaults(func=cmd_fork)
 
     p_describe = sub.add_parser(
         "describe-run",

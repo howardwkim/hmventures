@@ -12,13 +12,18 @@ def test_schema_version_is_set(conn):
     assert db.schema_version(conn) == db.CURRENT_VERSION
 
 
-def test_fresh_db_is_v2_with_new_tables(conn):
-    assert db.schema_version(conn) == 2
+def test_fresh_db_is_head_with_new_tables(conn):
+    assert db.schema_version(conn) == 3
     for table in ("briefs", "draft_versions"):
         found = conn.execute(
             "SELECT name FROM sqlite_master WHERE type='table' AND name=?", (table,)
         ).fetchone()
         assert found is not None, f"missing table {table}"
+
+
+def test_v3_adds_fork_columns_to_articles(conn):
+    cols = {r["name"] for r in conn.execute("PRAGMA table_info(articles)")}
+    assert {"forked_from", "voice_override"} <= cols
 
 
 def test_v1_to_v2_migration_backfills_draft_versions(tmp_path):
@@ -37,7 +42,7 @@ def test_v1_to_v2_migration_backfills_draft_versions(tmp_path):
 
     db.migrate(c)
 
-    assert db.schema_version(c) == 2
+    assert db.schema_version(c) == db.CURRENT_VERSION  # migrate runs to head
     v = c.execute("SELECT * FROM draft_versions WHERE article_id='a1'").fetchone()
     assert v["version"] == 1
     assert v["text"] == "existing draft body"
