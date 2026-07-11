@@ -247,3 +247,39 @@ def test_edit_round_also_appends_a_draft_version(conn):
     ).fetchall()
     assert [r["version"] for r in versions] == [1, 2]
     assert versions[1]["text"] == "v1 body tighter"
+
+
+def test_describe_run_reconstructs_timeline_from_tables(conn):
+    aid, cid = _start_article(conn)
+    writing.record_answer(conn, aid, "Q1", "recommended", None,
+                          {"recommended": "a", "alternate": "b"})
+    writing.save_draft(conn, aid, "First draft body.")
+    writing.record_edit_round(conn, aid, "tighten it", "First draft body, tighter.")
+    writing.approve(conn, aid, "First draft body, tighter.")
+
+    run = writing.describe_run(conn, aid)
+    assert run["article_id"] == aid
+    assert run["candidate_id"] == cid
+    assert run["status"] == "approved"
+    assert run["answer_count"] == 1
+    assert run["draft_versions"] == 2  # save_draft + edit each append a version
+    assert run["edit_rounds"] == 1
+
+    steps = [t["step"] for t in run["timeline"]]
+    assert steps[0] == "started"
+    assert steps[-1] == "approved"
+    assert "interview_answer" in steps and "draft_version" in steps and "edit_round" in steps
+    # timeline is time-ordered
+    assert [t["ts"] for t in run["timeline"]] == sorted(t["ts"] for t in run["timeline"])
+
+
+def test_describe_run_defaults_to_most_recent_article(conn):
+    older_id, newer_id = _accept_two(conn)
+    a1 = writing.start_article(conn, older_id)
+    a2 = writing.start_article(conn, newer_id)
+    assert writing.describe_run(conn)["article_id"] == a2
+
+
+def test_describe_run_none_when_no_article(conn):
+    assert writing.describe_run(conn) is None
+    assert writing.describe_run(conn, "nonexistent") is None

@@ -109,6 +109,9 @@ asking the next question. Converse naturally; don't interrogate.
 
 Load `references/interview-guide.md` for the content dimensions to probe. It is
 a swappable spec: change what gets asked by editing that file, not this skill.
+**Ask at most three questions** — the guide names the two always-ask dimensions
+plus one chosen for the candidate. Stop at three (fewer if you already have
+enough for a brief); do not walk the whole list.
 
 ### 5. Record answers (`answer`)
 After each answer:

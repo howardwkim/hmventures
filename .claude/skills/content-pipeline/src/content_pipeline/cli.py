@@ -336,10 +336,13 @@ def cmd_status(args):
         review_rows = queue.list_review(conn, today)
         resumable_article = writing.resumable(conn)
         next_up = writing.next_candidate(conn)
+        counts = writing.pipeline_counts(conn)
 
         _print_json(
             {
                 "review_queue_count": len(review_rows),
+                "picked_not_started_count": counts["picked_not_started_count"],
+                "articles_by_status": counts["articles_by_status"],
                 "resumable_article": _row_to_dict(resumable_article),
                 "next_article_available": resumable_article is not None or next_up is not None,
                 "calibration": selection.calibration(conn),
@@ -348,6 +351,14 @@ def cmd_status(args):
                 "synthesis_pending": _synthesis_pending(conn),
             }
         )
+    finally:
+        conn.close()
+
+
+def cmd_describe_run(args):
+    conn = _get_conn(args.db)
+    try:
+        _print_json(writing.describe_run(conn, args.article_id))
     finally:
         conn.close()
 
@@ -444,6 +455,14 @@ def build_parser():
     p_status = sub.add_parser("status", help="Print queues + calibration + health nudge")
     p_status.add_argument("--today", default=None)
     p_status.set_defaults(func=cmd_status)
+
+    p_describe = sub.add_parser(
+        "describe-run",
+        help="Narrate an article's run (timeline derived from the tables, no events)",
+    )
+    p_describe.add_argument("article_id", nargs="?", default=None,
+                            help="Article id; defaults to the most recent article")
+    p_describe.set_defaults(func=cmd_describe_run)
 
     return parser
 

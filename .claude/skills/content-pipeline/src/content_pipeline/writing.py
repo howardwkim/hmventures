@@ -60,6 +60,119 @@ def next_candidate(conn):
     ).fetchone()
 
 
+def pipeline_counts(conn):
+    """Counts for the status overview: how many accepted candidates are
+    waiting to be written (status 'yes' with no article yet), and how many
+    articles sit in each status. Surfaces buckets that would otherwise be
+    invisible — a picked-but-not-started candidate belongs to neither the
+    pending review queue nor the started-articles set."""
+    picked_not_started = conn.execute(
+        """SELECT COUNT(*) FROM candidates
+           WHERE status = 'yes'
+             AND id NOT IN (SELECT candidate_id FROM articles)"""
+    ).fetchone()[0]
+    rows = conn.execute(
+        "SELECT status, COUNT(*) AS n FROM articles GROUP BY status"
+    ).fetchall()
+    articles_by_status = {row["status"]: row["n"] for row in rows}
+    return {
+        "picked_not_started_count": picked_not_started,
+        "articles_by_status": articles_by_status,
+    }
+
+
+def describe_run(conn, article_id=None):
+    """Reconstruct an article's run as an ordered timeline, derived purely
+    from the typed tables (articles, interview_answers, briefs,
+    draft_versions, edit_rounds) — no dependency on the events log. This is
+    the read-only 'what happened' narration: everything here is already
+    persisted as durable rows, so nothing is duplicated to produce it.
+
+    article_id defaults to the most recently created article (handy for "show
+    me my last run"). Returns None if there is no such article. Style
+    synthesis is global (synthesis_runs has no article_id), so the latest run
+    is reported separately rather than attributed to this article."""
+    if article_id is None:
+        row = conn.execute(
+            "SELECT id FROM articles ORDER BY created_at DESC, id DESC LIMIT 1"
+        ).fetchone()
+        if row is None:
+            return None
+        article_id = row["id"]
+
+    art = conn.execute("SELECT * FROM articles WHERE id = ?", (article_id,)).fetchone()
+    if art is None:
+        return None
+    cand = conn.execute(
+        "SELECT title, source, source_ref FROM candidates WHERE id = ?",
+        (art["candidate_id"],),
+    ).fetchone()
+
+    timeline = [{"ts": art["created_at"], "step": "started", "status": "interviewing"}]
+
+    answers = conn.execute(
+        "SELECT question, chosen, created_at FROM interview_answers "
+        "WHERE article_id = ? ORDER BY created_at, id",
+        (article_id,),
+    ).fetchall()
+    for a in answers:
+        timeline.append(
+            {"ts": a["created_at"], "step": "interview_answer",
+             "question": a["question"], "chosen": a["chosen"]}
+        )
+
+    for b in conn.execute(
+        "SELECT version, created_at FROM briefs WHERE article_id = ? ORDER BY version",
+        (article_id,),
+    ).fetchall():
+        timeline.append({"ts": b["created_at"], "step": "brief_saved", "version": b["version"]})
+
+    for d in conn.execute(
+        "SELECT version, text, created_at FROM draft_versions "
+        "WHERE article_id = ? ORDER BY version",
+        (article_id,),
+    ).fetchall():
+        timeline.append(
+            {"ts": d["created_at"], "step": "draft_version",
+             "version": d["version"], "chars": len(d["text"])}
+        )
+
+    for e in conn.execute(
+        "SELECT round, operator_feedback, edit_size, created_at FROM edit_rounds "
+        "WHERE article_id = ? ORDER BY round",
+        (article_id,),
+    ).fetchall():
+        timeline.append(
+            {"ts": e["created_at"], "step": "edit_round", "round": e["round"],
+             "edit_size": e["edit_size"], "feedback": e["operator_feedback"]}
+        )
+
+    if art["approved_at"]:
+        timeline.append({"ts": art["approved_at"], "step": "approved"})
+
+    timeline.sort(key=lambda x: x["ts"])
+
+    latest_synthesis = conn.execute(
+        "SELECT ts, artifact, event_count FROM synthesis_runs ORDER BY id DESC LIMIT 1"
+    ).fetchone()
+
+    return {
+        "article_id": article_id,
+        "candidate_id": art["candidate_id"],
+        "title": cand["title"] if cand else None,
+        "status": art["status"],
+        "answer_count": len(answers),
+        "draft_versions": max((t["version"] for t in timeline if t["step"] == "draft_version"), default=0),
+        "edit_rounds": sum(1 for t in timeline if t["step"] == "edit_round"),
+        "timeline": timeline,
+        "latest_synthesis": _row_to_dict_or_none(latest_synthesis),
+    }
+
+
+def _row_to_dict_or_none(row):
+    return dict(row) if row is not None else None
+
+
 def start_article(conn, candidate_id) -> str:
     """Create an articles row (status 'interviewing') for candidate_id,
     append an 'article_started' event, and return the new article id."""
