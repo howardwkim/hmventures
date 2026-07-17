@@ -1,0 +1,27 @@
+[
+  {
+    "category": "contradicts-convention",
+    "summary": "Adrian Hanauer built the Seattle Sounders around a \"democracy in sports\" model borrowed from European clubs like Barcelona and Real Madrid, where season ticket holders are treated as stakeholders rather than customers. Every four years, season ticket holders cast a vote of confidence or no-confidence on the team's general manager, and the club also runs recurring fan councils and advisory boards that meet with ownership quarterly to share information, even when it's unflattering. This runs directly against how most sports franchises operate, where wealthy owners can largely ignore fan sentiment because ticket demand exceeds supply; Hanauer frames it as trying to run the club closer to how a publicly held company would be governed.",
+    "quote": "so so many uh soccer teams around the world are organized um almost like membership clubs... every four years our fans our season ticket holders get to vote on whether the general manager retains uh his or her job or loses it it's a vote of confidence or no confidence"
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "On broadcast strategy, the Sounders have repeatedly turned down deals that would have paid more money in exchange for narrower distribution, opting instead to stay on wide, free, over-the-air channels (Q13) to maximize how many people see the team and can become fans. Hanauer frames this explicitly as a distribution-versus-money tradeoff, and while he says there's a dollar figure that would eventually change the calculus, the default has been to prioritize audience reach over near-term rights fees. This is a non-obvious strategic choice for a sports franchise, where the instinct is often to maximize per-deal revenue rather than protect broad exposure.",
+    "quote": "we've had some choices along the way to maybe get paid a little bit more money um but less uh less access and distribution for our fans uh and we've chosen the path of more distribution but there is some amount of money that would convince us to change change course"
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "On the technical side, the Sounders' sports science program is built on two deliberately basic, older pieces of hardware rather than anything cutting-edge: a heart rate monitor and a GPS unit that every player wears at every training session. That data lets the staff track acceleration, deceleration, distance traveled, and speed, and synchronize it with heart rate against the specific drill being run — for example, they can see that a player's heart rate hit 97% of max during a particular stage of a 5v5 small-sided game. The insight is that useful athletic performance data doesn't require exotic sensors; consistent, synchronized capture of a couple of basic metrics across every session is what makes it actionable.",
+    "quote": "we know you know during a 5v5 uh small sided game that you know dempsey's heart rate got to 97 percent of his max heart rate um in the early stage of this this you know of this exercise where he hadn't run it at speed for very"
+  },
+  {
+    "category": "changed-belief",
+    "summary": "Asked where new sports technology will land first, Hanauer predicts virtual reality will be adopted on the team/coaching side well before it reaches fans at home, even though the more obvious \"future of sports\" narrative is about fan-facing VR experiences. His reasoning is economic: a team is willing to spend something like half a million dollars on a single system that gives coaches an edge, whereas getting tens of thousands of individual fans to each buy a home VR headset is a much slower, more diffuse adoption curve. The broader point is that organizational technology spending often outpaces consumer technology spending for the same underlying innovation, because a single high-value buyer decision beats waiting on mass consumer adoption.",
+    "quote": "i think it will my guess is it'll probably start um uh more on the uh coach on the on the team side people who you know where we are willing to invest half a million dollars in a system that that will help us as opposed to 60 000 uh fans at home with hololens sets watching"
+  },
+  {
+    "category": "changed-belief",
+    "summary": "Despite the fact that the Sounders currently invest heavily in team-side sports science and data collection, Hanauer says that if forced to choose where to prioritize future technology investment, his instinct is to favor fan-engagement technology over further team-performance data tools. He explicitly separates what the organization has historically funded (team analytics) from where he personally sees the bigger opportunity going forward (the fan side), citing the risk of falling behind on entertainment options that compete with the in-stadium experience, like fans staying home for a 120-inch TV with multiple camera angles and instant bathroom access. It's a case of a decision-maker naming a gap between current spending patterns and where he actually believes the next edge will come from.",
+    "quote": "you know if my my gut tells me that i i will be more interested in fan engagement technology as opposed to team side stuff um data analysis and gathering more data"
+  }
+]

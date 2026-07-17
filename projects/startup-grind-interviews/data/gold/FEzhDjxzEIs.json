@@ -1,0 +1,129 @@
+{
+  "video_id": "FEzhDjxzEIs",
+  "interviewee_name": "Enrique Godreau III",
+  "interviewee_title": "Partner 9Mile Labs",
+  "nuggets": [
+    {
+      "category": "number/metric",
+      "summary": "Godreau ran the numbers on venture capital as an industry over the decade many consider its golden era and found the returns didn't match the hype. From 2001 to 2011 -- a period that produced Salesforce, the iPod/iTunes cloud wave, and Google's rise -- the net internal rate of return for the entire VC industry was only 1.1%, barely positive on an inflation-adjusted basis. The gap between how much value the technology sector visibly created and how little of it flowed back to the professional investors funding it is what pushed him to re-engineer his own investment model rather than assume the old playbook still worked.",
+      "quote": "from 2001 to 2011 or so... the net internal rate of return for all of venture capital as an industry was a 1.1%... Your ceiling mattress beat it on an inflation-adjusted basis.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "number/metric",
+      "summary": "Godreau tracked how startup exits shifted from IPO-driven to acquisition-driven, and the swing was extreme: in 1996 there were roughly six IPOs for every five M&A exits (near parity), by 2001 it was one-to-one, and by 2008 it had flipped to 22 M&A exits for every single IPO. He ties this to larger companies finding it structurally harder to out-innovate the market, so they increasingly treat acquiring smaller companies as outsourced R&D. The practical implication for founders is that from the early 2000s onward, planning an exit strategy has meant planning to be bought, not planning to go public.",
+      "quote": "in 1996, for every six IPOs, there were only five M&A transactions. It was in 2001 where it became one-to-one... By 2008, that number was 22 to 1.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "number/metric",
+      "summary": "Comparing his own portfolio across two eras, Godreau noted that a company he funded in the early Voyager Capital days (Avenue A) needed a $35 million round to get to scale, largely because startups then had to buy their own servers and build their own network infrastructure from scratch (they colocated at Exodus). By the time cloud infrastructure existed, he told the same entrepreneur that raising more than $7 million today would be unusual for the equivalent business. This is a concrete before/after data point on how much cheaper company-building became once infrastructure shifted from capital expense to rented service.",
+      "quote": "when we funded Aquana, it was a $35 million round. And... in talking to Brian McAndrews, how much would we raise now? I said, if we needed to raise more than $7 million, it'd be a lot. It's because back then we had to buy our own servers.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "changed-belief",
+      "summary": "After analyzing his own portfolio's wins and losses, Godreau concluded the single variable separating home runs from write-offs wasn't the idea, the market timing, or the valuation -- it was execution quality. That reframing led him to treat venture investing less like picking good ideas and more like a private-equity-style operating problem: instead of just writing a check, deliberately parachute specific execution resources (sales, go-to-market, ops expertise) into a portfolio company at its weakest functional link. He coined this hybrid \"venture equity\" and eventually left his 15-year-old firm to build a new one (9Mile Labs) around it, because an established brand with an established model couldn't pivot to the new thesis.",
+      "quote": "if execution matters so much, then what would it matter to bring additional execution resources to emerging businesses?... I said, wow, what I'm really looking for is something that's a blend of venture capital... but like private equity that has operating partners... And I called that venture equity.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "mistake",
+      "summary": "Early in his career, Godreau had a portfolio company that beat its sales forecast by 10-12% quarter over quarter for two straight years -- until it suddenly missed two quarters in a row and never recovered. The root cause, uncovered only when he asked to see usage data, was that the sales team had been re-selling/renewing existing customers ('icing' deals) who had stopped actually using the product; bookings looked healthy while adoption was dead, and the company simply ran out of a finite pool of people willing to buy without using. The lesson he draws is that revenue growth alone is a lagging and misleading signal -- usage data is the real leading indicator of whether a market is durable.",
+      "quote": "it turned out that nobody was using it... They were buying it, but they weren't using it. And you can only sell that to a certain number of early adopters... but no one's buying it.",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "ops-failure",
+      "signal_strength": "A"
+    },
+    {
+      "category": "mistake",
+      "summary": "Godreau backed a company that negotiated deals with taxi providers to let feature-phone users summon a cab with special carrier codes -- essentially Uber's concept -- 13 years before Uber existed. The founder later texted him the press release of Uber's $400 million raise with the message 'rats, 13 years too early.' Godreau's takeaway is that being early is functionally just as fatal as being late, but it's a much easier mistake to make because early conviction feels like foresight rather than a timing error; the market has to be ready to buy, not just able to be sold to.",
+      "quote": "I remember I was in Tacoma when I got the text message from the CEO and he forwarded to me the... press release on Uber raising $400 million, 13 years after he had pioneered that business model and concept. And he says, rats, 13 years too early.",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "market-timing",
+      "signal_strength": "A"
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Godreau describes passing on a pitch where an articulate founder proposed an app where you'd shake your phone to get a restaurant recommendation by neighborhood, cuisine, and price -- he went home convinced the value proposition made no sense (his wife agreed she'd never do that either). The company was acquired roughly three months later for about $75 million, which would have been an 8x return in under six months. His retrospective explanation isn't that the business fundamentals were wrong -- they weren't -- but that his own gut-check on 'would I personally do this' reflected a generational gap between a digital native's instincts and his own digital-adoptee instincts, and that gap is invisible from the inside.",
+      "quote": "I do not understand that value proposition at all... No one will ever do that... they got acquired. It wasn't three months later. They were acquired for like $75 million or something. It would have been an 8x investment.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "mistake",
+      "summary": "Godreau names the single worst pitch pattern he sees: founders who open by telling the investor how much money they're going to make them (e.g., '10x in four to five years'), rather than leading with the customer problem and the product that solves it. He treats this as a tell that the founder is optimizing the pitch as a transaction rather than building something authentically valuable, and says every genuinely great company he's backed was run by a team maniacally focused on customer success rather than investor returns as the stated goal.",
+      "quote": "the absolute worst thing that can happen in a presentation is entrepreneurs that talk about how they're going to make their investors a lot of money... it's just really grating.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Godreau lays out the exact structure of the pitches that made him want to invest immediately: state the problem, back it with specific evidence (interviews and conversations from multiple stakeholder lenses that validate the problem is real), then lay out the competitive landscape and required price points the solution needs to hit, and only then present the actual product -- explicitly tying it back to the problem and evidence just established. The reusable insight is that the order matters: proof the problem is real and well-understood has to land before the product pitch, not alongside or after it.",
+      "quote": "the presentations that began with a clear articulation of a problem... These are the number of interviews and conversations I've had from different lenses to validate that problem statement. Check... it's that marriage of problem and answer that I think is so hard and so interesting.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Godreau offers a blunt screening heuristic for evaluating a founder: if you sit through an entire pitch meeting -- market sizing, competitors, use of proceeds -- and the word 'customer' never comes up, the deal is dead on arrival, because it signals the founder hasn't actually talked to the people they claim to be building for. It's a simple, checkable proxy that substitutes for a harder-to-verify claim ('we understand our customer') with an easy-to-observe behavior (do they even say the word).",
+      "quote": "you go to a meeting and they never use the word customer... if we've gone through this entire meeting, you've never said the word customer, then we're misaligned from the inception... You've probably not talked to the customer.",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "customer-discovery",
+      "signal_strength": "B"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Godreau describes only two engagement models with corporate strategic partners that actually work, and warns that the middle ground doesn't: either (1) bring a partner in very early as an informal co-development collaborator -- not a cap-table investor -- so their insight shapes the product before it's built, or (2) bring them in late, only after you've already proven your value proposition and have a working distribution channel, at which point co-op marketing dollars and real partnership terms become available. His stated bias is that a strategic partner's most valuable asset is distribution, and trying to extract balanced value from them mid-stage (before you have proof points) usually fails because your interests and theirs aren't yet aligned.",
+      "quote": "either really early on co-development or really late when you're looking for distribution. But then you have to have the proof points on the value proposition being real for your business as well as theirs.",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "growth-marketing",
+      "signal_strength": "B"
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Across every acquisition exit in Godreau's own experience (companies bought by FTI, WPP, and Microsoft), the eventual buyer had first been an unpaid or informally-paid business development partner years earlier -- helping build a product for free or cheap because the relationship itself was valuable, long before any sale conversation started. His reframe: don't treat M&A as a late-stage transaction you initiate by 'calling up' potential acquirers after years of building alone; instead identify your most likely eventual acquirer early and start the relationship as a collaborator or discounted early customer, because that's the actual path his companies' deals came from.",
+      "quote": "I never meant to sell a business. Every company that we exited through acquisition was bought... these are all relationships that had started on the business development side... And now you pursue a transactional element.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "number/metric",
+      "summary": "At Godreau's 9Mile Labs accelerator cohort, four portfolio companies raised equity and four raised revenue (i.e., landed paying customers) instead, and his stated observation is that the revenue path turned out to be far less dilutive than the equity path for the founders who took it. The actionable point for early-stage founders is that closing paying customers, even small ones, can be a superior capital-raising strategy to an equity round when the option is available, because it doesn't cost you ownership.",
+      "quote": "Four of them have raised equity. Four of them have raised revenue. Turns out the revenue is far less dilutive than equity.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Godreau describes how a fault-tolerant software company (self-rebooting systems with zero downtime) survived after its core telecom market died in the dot-com bust: instead of dying with the market, they identified two other industries -- defense and media -- that had the exact same underlying technical requirement (high system availability) even though the customers and sales motions were completely different. They chose to push into defense despite brutal, multi-year sales cycles because they had just enough residual telecom revenue to survive the wait; once established in defense (eventually running on 100% of U.S. fighter jets, three-time Lockheed software company of the year), the same technical core let them expand into media (video streaming), and shortly after unifying all three markets on one technical foundation and open-sourcing the product, the company was acquired. The reusable idea is to pivot by finding a different industry that needs the same underlying technical capability, not by abandoning your technology when your first market disappears.",
+      "quote": "we needed to do was figure out what other markets have the same requirement of high availability for their systems. And we found two markets that had that. One of them was in the media space, and the other was in the defense space.",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "product-mvp",
+      "signal_strength": "A"
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "When asked why an ultra-high-net-worth individual (net worth $50-100M) would bother investing $50,000 in a small startup when the financial upside is trivial relative to their wealth, Godreau's answer is that financial return is rarely the real motivator at that level. What actually drives the decision is either a personal, emotional commitment to seeing change happen in a specific sector (they'd invest that amount regardless of return), or the reputational value of being able to talk about the company as 'one of their investee children' among their peers. The practical implication for fundraising from very wealthy individual investors is to pitch the sector mission and the social/reputational upside, not the 10x math -- the financials only need to be sensible, not the headline.",
+      "quote": "The financial piece, that pales in comparison at the level of wealth that you were describing. Most of the appeals that we make at that level are not about the financials. They speak to aspirational, strategic, or other catalytic investment purposes.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "number/metric",
+      "summary": "Responding to a founder's worry about hostile pushback from large incumbents once his startup starts winning market share, Godreau cites that 40% of the S&P 500 turns over every 10 years as a reason not to over-index on the threat of entrenched giants. The point isn't the statistic alone but the reframe it enables: incumbency is far less permanent than it appears, so a founder should focus on genuinely understanding the customer problem rather than pre-emptively worrying about incumbent hostility, because that turnover rate means large companies are actively losing position regardless.",
+      "quote": "40% of the S&P 500 changes over every 10 years. Do they want to be on the 60% column or on the 40% column?",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    }
+  ]
+}

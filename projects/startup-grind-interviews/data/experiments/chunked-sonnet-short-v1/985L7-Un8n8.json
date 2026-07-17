@@ -1,0 +1,181 @@
+{
+  "video_id": "985L7-Un8n8",
+  "interviewee_name": "Rand Fishkin",
+  "interviewee_title": "CEO SparkToro",
+  "method": {
+    "technique": "chunked-overlap",
+    "model": "sonnet",
+    "num_chunks": 4,
+    "overlap_pct": 20,
+    "prompt_file": "gold-extraction-prompt-short-v1.md"
+  },
+  "raw_nugget_count": 40,
+  "deduped_nugget_count": 33,
+  "nuggets": [
+    {
+      "category": "contradicts-convention",
+      "summary": "Rand Fishkin structured SparkToro's funding round as an LLC rather than a C Corp, which is the standard vehicle for venture-backed startups. Investors buy units (like a law firm or VC partnership) instead of equity/shares, and the company is never required to have an exit event (acquisition or IPO) for investors to get paid. This flips the usual founder-investor deal: instead of betting everything on a hockey-stick exit, the company can return money to investors indefinitely through profit distributions while staying small and sustainable.",
+      "quote": "So the way the round is structured is that essentially SparkToro is an LLC, not a C Corp, which is unusual. We raised $1.3 million from about 35 angel investors."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "SparkToro's angel investors are paid back through a profit-share mechanism modeled loosely on venture return structures: the company first pays out profits equal to 1x the total amount invested, distributed pro-rata, and after that threshold every investor continues to receive their pro-rata share of profits indefinitely. Because there's no requirement to sell or go public, Fishkin notes an investor could theoretically keep collecting checks for 40 years. This means a modest, profitable business (his example: $2M/year in revenue) could return far more to angels over time than a typical venture-style exit, which surprised even Fishkin's own spreadsheet modeling.",
+      "quote": "we have a requirement similar to venture capital where we pay 1x our investors amount... after that, everyone gets paid their percentage of the profit... you could potentially make that for 40 years, right? ... that means that the company does not have to sell or go public for you to be able to make money."
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Fishkin argues that the standard venture capital model — where only 4-6% of investments need to return the fund and the other ~95% can fail — is a good bet for a diversified investor but a bad bet for a founder, who only gets to pour their time into roughly one company per decade or two. The portfolio math that makes VC economically rational for the fund manager doesn't translate into good odds for the individual founder forced to play a hits-driven, all-or-nothing game. This reframes venture funding as a structure optimized for the investor's portfolio, not the founder's single shot.",
+      "quote": "I think that's largely bullshit that you need to fit the venture capital model of... four to six percent of venture investments return the appropriate amount of capital or more to the fund... I only get to put all my time and energy and love into one company every 10 to 20 years."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Fishkin cites SBA statistics that roughly 50% of ordinary small businesses survive four to five years, compared to only about 14% for venture-backed startups over the same window. Taking venture capital dramatically lowers a company's odds of simply surviving, in exchange for a shot at outsized ('hockey stick') outcomes if it does succeed. This is a concrete data point founders can use to weigh the venture path against a slower, profitability-focused path.",
+      "quote": "your five-year, four or five-year survival rate is like 14% or so. So you have dramatically reduced your odds once you take venture, but you've increased your odds of like becoming a billionaire hockey stick."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Under SparkToro's funding structure, founder salaries are explicitly capped: Fishkin and his co-founder Casey pay themselves up to the average Seattle software engineer salary (around $150K) until the company has paid back its investors' full $1.3M principal. After that threshold is hit, the cap doubles to as much as $300K. This gives investors a concrete, built-in incentive alignment mechanism — founders don't get to pay themselves lavishly before investors are made whole — that's spelled out in the deal terms rather than left to founder discretion.",
+      "quote": "Casey and I get a salary equal to, up to, the Seattle software engineer average... that is what we make until we pay our investors back 1.3... at which point that goes up to two times the average... one, around 150, and it would go up to as much as 300."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Rather than keeping SparkToro's unusual LLC-based funding structure proprietary, Fishkin open-sourced the legal paperwork and posted it publicly on SparkToro's site, so other founders can replicate the same investor-friendly, non-exit-dependent structure without paying an attorney to draft it from scratch. He confirms at least two or three other companies have already used the documents. This is a concrete, reusable resource for any founder wanting to raise money outside the standard C Corp/venture template.",
+      "quote": "we open-sourced our documents so that, you know, if you wanted to use it, you wouldn't have to like pay an attorney to go structure it the same way. We open-sourced the docs and put them on SparkToro, and a couple people have already used that."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Fishkin claims that owning units in his LLC is actually more liquid than typical equity in a venture-backed private startup, which cuts against the common assumption that non-traditional structures are less liquid than standard VC deals. The reasoning: conventional VC investors often hold contractual rights that let them block or restrict private secondary sales of shares, plus 409A valuation complications create legal friction — constraints that don't apply to SparkToro's simpler unit structure.",
+      "quote": "it is more liquid because in a lot of those cases, the venture investors have some rights or some abilities to stop private sales or those kinds of things. There's also a bunch of weird stuff around 4-9-A valuations and legal issues."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "The idea for SparkToro came from a recurring pattern Rand saw in his post-Moz consulting work: SEO only helps when people are already actively searching for what a business sells. Using Crowd Cow (a crowdsourced high-quality beef delivery service) as the example, he explains that nobody searches \"buy steak online\" because Americans think of beef as a commodity, so keyword research turns up nothing usable — there's no search demand to capture. The non-obvious implication is that for products creating new demand or reframing a category, the actionable move isn't SEO at all but finding where the target audience already spends attention (podcasts, publications, people they follow) and reaching them there instead.",
+      "quote": "nobody, I mean, next to nobody searches for buy steak online. It just doesn't happen, right?... You can do nothing with SEO... there's no searches... Instead, what they have to do... is go find their audience... find all the places online and off that that audience pays attention to."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "For a two-person, self-funded startup with no outside growth pressure, Rand notes that health insurance in the US ends up being the single largest recurring expense line — more than salaries, tools, or anything else. This is a useful budgeting flag for anyone planning to run a tiny bootstrapped team without an employer group plan: the cost isn't proportional to headcount the way people expect, so it can dominate a lean startup's burn.",
+      "quote": "Most of the expense is going to health care. I'm serious, right? Health care in this country is insanely expensive for a two-person company. Yeah, it's unjustifiable."
+    },
+    {
+      "category": "other",
+      "summary": "Rand describes a call with a Silicon Valley investor who rejected SparkToro with open derision, telling him the idea would never work and that he needed to raise in the traditional way if he was serious. Rather than being discouraging, that specific rejection became one of his strongest motivators to prove the company could succeed on its own terms. The insight is a pattern about founder psychology: being told bluntly \"you can't\" can generate more resolve than encouragement does, which is worth knowing both as a founder and as an investor deciding how to deliver a pass.",
+      "quote": "the derision in his voice, just the, the, you're the stupidest person I've ever talked to. This will never work... I want to build this company and have it be a world leader just because of him... There's no better way to get a founder just like, oh, oh, I'm going to make this work than to tell, than to tell me, you know, you can't."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "When Rand Fishkin and Casey Henry raised the founding round for SparkToro, they deliberately structured it as a priced round instead of a convertible note or SAFE (the YC-style instrument). The reasoning was specific: they didn't want a future investor to be the one who effectively set the company's valuation by pricing a later round off the note. This is a non-obvious structuring choice for a small seed round, where convertible notes/SAFEs are usually the default because they're cheaper and faster to execute.",
+      "quote": "So we did a price round, right? We didn't try and do a convertible node or anything like that. Because, similar to YC Safe, right? Like the way that Y Combinator starts with their thing, the non-priced round thing did not make sense because we knew that we did not want to have someone price it in the future."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Rand pushes back hard on the MVP dogma, arguing it only makes sense when very few people will see your first launch. He says he strongly dislikes MVPs for SparkToro specifically because he built a large audience during his Moz years, meaning tens of thousands of marketers will show up and judge the product on day one — a bad first impression at that scale is much costlier than the lean-startup advice assumes. The point generalizes: whether an MVP is smart or reckless depends on how much attention your launch will actually get, not on a blanket \"ship fast\" rule.",
+      "quote": "I strongly dislike the MVP... I really dislike MVPs if you know in advance that lots of people are going to pay attention to your launch. I think MVPs are awesome if you think very few people are going to pay attention to your launch... on launch day, tens of thousands of marketers will come, they will look, and they will judge."
+    },
+    {
+      "category": "other",
+      "summary": "Rand offers an explanation for why prominent VCs and startup commentators keep pushing the \"launch fast, don't be embarrassed by v1\" message even though he thinks it's often wrong advice for founders. His read is that it's rational advice for the investor, not the founder: if only about 5% of a portfolio needs to succeed and returns must materialize within a 5-7 year fund cycle, speed and first-mover advantage matter more to them than getting the product right. For a founder building a durable, profit-focused business rather than optimizing for a fund's return timeline, that calculus doesn't apply — worth remembering that startup advice often encodes the advice-giver's incentives, not the founder's.",
+      "quote": "if only 5% of the companies in your portfolio need to make it, and you need your returns in five to seven years, because that's what you promised your LPs, speed to market as being the dominant first mover monopoly matters more than getting it right."
+    },
+    {
+      "category": "other",
+      "summary": "After Rand stepped down as Moz's CEO, he describes sensing that leadership attributed the company's slowing growth to his past decisions specifically — not just to the ideas themselves being wrong, but to the fact that the ideas came from him — and concluded the fix was to stop listening to him. This is a recognizable organizational failure mode worth naming: conflating \"this idea underperformed\" with \"this person's judgment is the problem\" can lead a team to discard a founder's input wholesale rather than evaluating each decision on its own merits.",
+      "quote": "there was this attitude up, right, stepped down, that, like, okay, Rand's mistakes are what got us to this plateauing growth rate. And so, in order to recover, we, we need to not listen to him."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Rand lays out Moz's growth trajectory over its life: roughly 100% year-over-year growth for seven years, then a plateau down to about 50%, then 20%, then down to around 9-12% in its final years — even as the company became profitable for the first time in years. The non-obvious point is that for a venture-backed company, hitting profitability doesn't offset a low growth rate; a 10% growth rate that would be a dream outcome for a bootstrapped company like SparkToro is treated as an unacceptable result once VC money and return expectations are in the mix.",
+      "quote": "for seven years, Malas grew at 100% year over year, sort of growth rate... and then that plateaued, I think, to, like, you know, 50%, and then 20%... 11%, something like that... because it's venture-backed, that's sort of an unacceptably low growth rate, even though it's now profitable growth rate after, after a number of years of burning money."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "To describe how his exit from Moz felt, Rand uses a self-invented 0-to-10 scale where zero means being escorted out of the building by security and ten means a tearful, joyful goodbye among close friends — and rates his own departure a four. This is a reusable framing device for talking concretely about a messy, ambiguous departure (from a company, a role, a partnership) without needing to fully narrate the details — a single number on a defined scale conveys more than a vague adjective like \"difficult.\"",
+      "quote": "on a scale of zero to ten, where zero is escorted out of the building by security. And ten is, you know, you hug everybody, and it's sort of tearful but joyful goodbyes... I was like, a four."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Rand is candid that his radical transparency about Moz's struggles — writing openly about disagreements, depression, and a painful exit in his book \"Lost and Founder\" — likely made it much harder to raise a large venture round afterward, even though that same openness helped readers and built trust. He explicitly says if he hadn't overshared, he'd have had an easy time raising venture money at a strong valuation; instead, he believes investors would be wary given how publicly he's criticized the venture-backed growth model. This complicates the common startup-community advice to \"just be transparent\" — transparency has a real, acknowledged cost in fundability, not just upside in authenticity.",
+      "quote": "if I had come out of Moz and had sort of not overshared in the way that, ways that I have... I would have had a very easy time raising a large venture round and a great, you know, multiple... I think if I were trying to raise venture, no fucking way, right?"
+    },
+    {
+      "category": "other",
+      "summary": "Rand explains that writing — blog posts and his book — is his specific mechanism for processing painful experiences like the Moz departure, as opposed to other common coping methods like therapy or emotional venting. He notes the payoff isn't book sales (he says it wasn't a bestseller) but the catharsis of getting it off his chest, reinforced when readers email him saying his openness made them feel less alone in similar experiences. This names writing publicly about failure as a legitimate, effective processing tool in its own right, not just a marketing or personal-brand exercise.",
+      "quote": "a huge part of processing and being able to take something off my chest is write about it... especially when other people email me and say, I have also been through that and thank you for writing this because now I don't feel alone. I think that's the biggest, that's like the biggest thing for me."
+    },
+    {
+      "category": "other",
+      "summary": "Rand's mother was his co-founder at Moz, and he describes effectively having to part ways with her professionally alongside his own departure — noting that unlike a typical co-founder split, this was also his mom. He frames the pain of that outcome as a kind of karmic parallel he wasn't fully prepared for. The practical takeaway for anyone considering starting a company with a family member: the risk of a bad ending compounds when the business relationship and the family relationship are the same relationship, and the emotional fallout doesn't stay contained to the business.",
+      "quote": "it's not just your partner in the business. It has to be your mom... I didn't technically fire my mom, but for all intents and purposes... she could fairly say four, three or four out of ten also... this is karma. Like, this is sort of what you, you are reaping what you sow."
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Rand Fishkin argues that the popular idea \"those who can't do, teach\" gets the causality backward — teaching or writing about a skill is often what makes you actually understand why you're good at it, not a consolation prize for people who can't do the thing itself. He references a New York Times piece making the same argument and describes his own experience: people who are excellent at something frequently never internalize the underlying \"why\" until they have to explain it to someone else in an accessible way. For him, writing about SEO and marketing for a broad audience forced him to extract the real mechanisms behind what worked, rather than just relying on intuition. The actionable takeaway is that if you want to truly master a skill you're already good at, forcing yourself to teach or write about it publicly is what surfaces the underlying logic you'd otherwise never articulate.",
+      "quote": "I think that for many folks, you, uh, you learn vastly more about a topic when you have to teach it to someone else... if you're really good at doing something, you don't necessarily internalize why you're good at it or why it worked. And I think that writing about something in a way that's accessible to many other people is a way to internalize that lesson and to, uh, truly extract out the, the why of what happened."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "When an audience member asked about alternative marketing channels (guerrilla posters, radio, bus ads) after their paid Google/Facebook spend stopped working, Fishkin laid out why that happens structurally: whichever channel becomes the default place \"everyone\" does marketing gets flooded with capital, which drives ROI down toward the raw cost of acquisition because every competitor bids the price up trying to buy the same attention. Venture-backed companies make this worse because they'll knowingly sacrifice profitable growth for raw growth, overpaying in hot channels just to hit growth targets, which further inflates the price for everyone else. His actionable conclusion is that it pays disproportionately to find channels where your specific audience is paying attention but competitors haven't thought to look, precisely because those channels aren't yet crowded with well-funded bidders.",
+      "quote": "the traditional method is, you know, you get money, you throw it at, you pour it into Google and Facebook, uh, and because everyone else is pouring it into Google and Facebook, the ROI is very low because the cost is nearly what anyone could make off of it... it pays so heavily to go and try and find out, like, oh, my audience maybe is paying attention here also and I can reach here even though no one else in my competitive group is."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Fishkin names podcast advertising as the single most underdeveloped marketing channel available right now, backed by a specific gap between audience size and monetization: roughly 22% of Americans had listened to multiple podcasts in the past month, but under 5% of podcasts carried any advertising at all. He attributes the gap to the absence of a standardized ad marketplace or bidding platform for podcasts, unlike search or social, which keeps sophisticated advertisers out even though the audience is enormous. For a marketer, this is a concrete, current signal that a large, supply-constrained audience channel exists before the tooling catches up and it becomes crowded.",
+      "quote": "22% of Americans listen to multiple podcasts in the last month, but something under 5% of podcasts have advertising... it's insane how unmonetizable they are for their creators because there's no standardized platform and there's no bidding marketplace and nobody's playing there."
+    },
+    {
+      "category": "changed-belief",
+      "summary": "When investors asked why SparkToro raised $1.3M instead of a smaller amount given its low burn rate, Fishkin's answer was that he deliberately sized the round to avoid fundraising again for two to four years, because the fundraising process itself distorts business decisions — while a founder is raising or anticipating the next raise, they end up optimizing the business to impress investors rather than serve customers. Even investors themselves will say not to do that, but founders do it anyway because the incentive is unavoidable while a raise is looming. The generalizable lesson is that raising a bit more than the bare minimum buys strategic independence from investor pressure, not just runway.",
+      "quote": "because I don't want to spend another day thinking about fundraising for the next two or three or four years. And everybody hates it... I think it forces you to have to optimize your business, not for customers, but for investors, which if you're trying to build a profitable long-term company is dumb."
+    },
+    {
+      "category": "mistake",
+      "summary": "Fishkin describes a multi-year strategic mistake at Moz: after venture investors repeatedly passed on the company in 2009-2011, he spent years reshaping Moz's business around the specific reasons those investors gave for passing, including eliminating services revenue entirely to look like a pure-SaaS company. Years later, the market trend reversed and a blended software-plus-services model became the newly favored pattern among the same class of investors, meaning the changes he'd made specifically to satisfy an investor preference actively hurt the core business and were obsolete almost as soon as he'd made them. The lesson is that chasing a snapshot-in-time investor preference, rather than what's structurally right for the business, is a bet on a moving target that's likely to lose.",
+      "quote": "I spent years at Moz, optimizing Moz's business for what I heard was the reasons Valley investors turned me down in 2009 and 2010 and 2011. And those were bad moves. Those were bad moves for the core of the company. Things like getting rid of services entirely so that we had zero services revenue at all. And then, of course, what happened five years later? Oh, now the new trend is a blended software and services."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Explaining why SparkToro's seed round was sized at $1.3M rather than something larger, Fishkin notes that the round size itself functioned as a social-proof signal to investors: because $1.3M was a familiar, \"normal\" figure for a seed round at the time, it read as reasonable and avoided extra scrutiny, whereas asking for $3M would have made investors pause and question the ask independent of the underlying business case. The implication for founders is that round size isn't just a function of runway math — it's also a number that either matches or breaks investor pattern-matching for what's normal at a given stage, and an oversized ask invites skepticism on its own.",
+      "quote": "I think the other thing that helped on that front was that the round size didn't feel unreasonable. Right? I think if I had said three million, a lot more people would have been like, whoa, wait a minute. That much money?... But 1.3 being sort of a round size that many folks were familiar with in the seed stage felt comfortable."
+    },
+    {
+      "category": "mistake",
+      "summary": "Fishkin corrects the audience's premise that Moz's revenue was declining because of Google's changes — it's actually still growing, just slowly. The real cause of Moz losing ground to SEMrush and Ahrefs, he says, was a strategic mistake: Moz took its focus off SEO specifically and tried to broaden into being a wider marketing category player, ceding ground to competitors who stayed narrowly focused on SEO. This is a cautionary example of losing a market not because of external forces but because of self-inflicted diversification away from a core strength.",
+      "quote": "Moz basically lost out to two big competitors, SEMrush and Ahreps, because we took our eye off the SEO ball and tried to go broader and be something other than SEO."
+    },
+    {
+      "category": "other",
+      "summary": "Asked where he sees undeveloped advertising channels, Fishkin names live events as one of the biggest, pointing out the irony that a room full of qualified, high-intent leads — attendees at the very Startup Grind event he's speaking at — sits mostly unmonetized by the businesses actually in the room. The audience sponsoring or attending the event isn't systematically treating the other attendees as a marketing channel, even though that room represents exactly the concentrated, capable-buyer audience most companies pay heavily to reach through other means. The implicit point for a founder is that companies already paying to be physically present at industry events are leaving value on the table by not using the room itself — the other attendees — as a direct lead channel.",
+      "quote": "here is a room of highly capable people who need all sorts of goods and services and why are we all here, right? We're here to, like, try and make our businesses do better. So that's another big one."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Fishkin cites a specific data point on how much organic search traffic has dried up: as of clickstream data he obtained from Jumpshot in February, 49% of all Google searches result in zero clicks to any website, because Google increasingly answers the query directly on the results page. He argues this is exactly why the market for SEO/rank-tracking software (Moz, SEMrush, Ahrefs) is positioned to keep growing even as organic traffic itself shrinks — marketers still need someone to track and report on how they're showing up in shrinking, more complex result types. It's a concrete number that reframes \"SEO is dying\" into \"SEO tracking is becoming more necessary, not less.\"",
+      "quote": "across all Google searches, according to Clickstream data I got from Jumpshot in February, 49% of all searches result in zero clicks. The answer is right there."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Asked which investors are actually receptive to his slower-growth, profit-focused model (versus the standard venture path), Fishkin identifies angel investors who are themselves former founders/operators as the best fit, and explains the math behind why. A typical angel might have $3-4M to deploy and can only place a handful of $50K bets across 6-8 startups — nowhere near enough volume for the venture math (a few huge winners covering many losses) to work for them personally. Instead, if even 20-50% of their portfolio companies survive and return some capital over several years, that's a great outcome for them, especially since many angels frame it as giving back to a community rather than beating an index fund. This reframes \"who should I raise from\" around an investor's actual portfolio math and motivation, not just their check size.",
+      "quote": "I want to go ahead and put $400,000 towards, you know, six or eight startups, 50K each. Okay. I can't place enough bets for the venture model to pay out for me. But if there's something that gives me, you know, 20% of the companies or 30%, or, you know, oh, my God, 50% of the companies survive five years, that could be huge."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "SparkToro's free tools deliberately don't collect email addresses as the price of use — instead they require connecting a Twitter account via OAuth. Fishkin gives two reasons: first, it builds the brand impression that follower count doesn't equal real influence (a belief central to SparkToro's product thesis), and second, and more practically, Twitter's API is expensive to call at volume, so having users authenticate via OAuth lets SparkToro make many API calls under each user's connection rather than paying Twitter directly for API access. This is a case of a lead-gen mechanic being chosen for infrastructure-cost reasons as much as marketing ones.",
+      "quote": "you do have to give us one thing, which is that you have to connect your Twitter account, right? For us to be able to analyze it and give you sort of the free data... Twitter's API is very expensive and we would like to make many calls to it. And so having OAuth connections means that we can make a lot of those calls without paying Twitter a ton of money early on."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Fishkin says SparkToro largely avoids Instagram marketing because he's not personally interested in the influencer-marketing-as-paid-post model it's become, but he carves out an important exception: Instagram advertising can be extraordinarily effective for early movers in a category that isn't yet saturated with advertisers there. He cites Tomboy X, a Seattle apparel company making boy-shorts and boxer-briefs for women with a GLBTQ-friendly niche audience, as an example where Instagram ads worked exceptionally well because they were able to find and target the specific accounts their audience already followed before competitors crowded the channel. The generalizable point: channel effectiveness depends heavily on how crowded that channel already is within your specific category, not on the channel itself.",
+      "quote": "people who are advertising in a category where there are a few other advertisers on Instagram... I have seen Instagram advertising be extraordinarily effective for new companies in a category... I think it can be effective, uh, as long as the sector isn't overrun."
+    },
+    {
+      "category": "mistake",
+      "summary": "Fishkin identifies a common startup mistake: spending on advertising before building any organic brand awareness. His stated approach is to always start with organic reach, brand, and content first, because advertising becomes dramatically more effective (higher ROI) once an audience already recognizes, likes, and trusts you — for example, retargeting ads convert far better on someone who has already visited your site once than on someone who has never heard of you. He generalizes this beyond his own company to Tomboy X and Crowdcow, framing \"building your crowd\" (website visitors, email addresses) as the real foundational asset that makes later paid spend efficient, rather than treating ads as a starting point.",
+      "quote": "I always biased starting with organic, with brand and with content because advertising, once people have already come to know you, like you and trust you gets way higher ROI. I think that one of the biggest mistakes that startups make and many companies make is that they invest in advertising [when] no one knows who they are."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Asked how he manages 35 investors without them interfering in daily decisions, Fishkin says he has heard from essentially none of them since closing the round, and attributes this to a deliberate filter he applied during the raise itself: when he encountered prospective investors during fundraising who were unusually active or wanted heavy involvement in decisions, he simply didn't call them back. He frames this as a selection bias he intentionally built into who ended up on his cap table — prioritizing busy, experienced operators/investors who prefer hands-off involvement (checks now, updates later) over investors who wanted more control or visibility into operations.",
+      "quote": "when I found people during the round, during the raise who were not like that, I did not call them back."
+    }
+  ]
+}

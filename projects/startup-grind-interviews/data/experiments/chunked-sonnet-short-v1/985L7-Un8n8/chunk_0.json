@@ -1,0 +1,52 @@
+[
+  {
+    "category": "contradicts-convention",
+    "summary": "Rand Fishkin structured SparkToro's funding round as an LLC rather than a C Corp, which is the standard vehicle for venture-backed startups. Investors buy units (like a law firm or VC partnership) instead of equity/shares, and the company is never required to have an exit event (acquisition or IPO) for investors to get paid. This flips the usual founder-investor deal: instead of betting everything on a hockey-stick exit, the company can return money to investors indefinitely through profit distributions while staying small and sustainable.",
+    "quote": "So the way the round is structured is that essentially SparkToro is an LLC, not a C Corp, which is unusual. We raised $1.3 million from about 35 angel investors."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "SparkToro's angel investors are paid back through a profit-share mechanism modeled loosely on venture return structures: the company first pays out profits equal to 1x the total amount invested, distributed pro-rata, and after that threshold every investor continues to receive their pro-rata share of profits indefinitely. Because there's no requirement to sell or go public, Fishkin notes an investor could theoretically keep collecting checks for 40 years. This means a modest, profitable business (his example: $2M/year in revenue) could return far more to angels over time than a typical venture-style exit, which surprised even Fishkin's own spreadsheet modeling.",
+    "quote": "we have a requirement similar to venture capital where we pay 1x our investors amount... after that, everyone gets paid their percentage of the profit... you could potentially make that for 40 years, right? ... that means that the company does not have to sell or go public for you to be able to make money."
+  },
+  {
+    "category": "changed-belief",
+    "summary": "Fishkin argues that the standard venture capital model — where only 4-6% of investments need to return the fund and the other ~95% can fail — is a good bet for a diversified investor but a bad bet for a founder, who only gets to pour their time into roughly one company per decade or two. The portfolio math that makes VC economically rational for the fund manager doesn't translate into good odds for the individual founder forced to play a hits-driven, all-or-nothing game. This reframes venture funding as a structure optimized for the investor's portfolio, not the founder's single shot.",
+    "quote": "I think that's largely bullshit that you need to fit the venture capital model of... four to six percent of venture investments return the appropriate amount of capital or more to the fund... I only get to put all my time and energy and love into one company every 10 to 20 years."
+  },
+  {
+    "category": "number/metric",
+    "summary": "Fishkin cites SBA statistics that roughly 50% of ordinary small businesses survive four to five years, compared to only about 14% for venture-backed startups over the same window. Taking venture capital dramatically lowers a company's odds of simply surviving, in exchange for a shot at outsized ('hockey stick') outcomes if it does succeed. This is a concrete data point founders can use to weigh the venture path against a slower, profitability-focused path.",
+    "quote": "your five-year, four or five-year survival rate is like 14% or so. So you have dramatically reduced your odds once you take venture, but you've increased your odds of like becoming a billionaire hockey stick."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "Under SparkToro's funding structure, founder salaries are explicitly capped: Fishkin and his co-founder Casey pay themselves up to the average Seattle software engineer salary (around $150K) until the company has paid back its investors' full $1.3M principal. After that threshold is hit, the cap doubles to as much as $300K. This gives investors a concrete, built-in incentive alignment mechanism — founders don't get to pay themselves lavishly before investors are made whole — that's spelled out in the deal terms rather than left to founder discretion.",
+    "quote": "Casey and I get a salary equal to, up to, the Seattle software engineer average... that is what we make until we pay our investors back 1.3... at which point that goes up to two times the average... one, around 150, and it would go up to as much as 300."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "Rather than keeping SparkToro's unusual LLC-based funding structure proprietary, Fishkin open-sourced the legal paperwork and posted it publicly on SparkToro's site, so other founders can replicate the same investor-friendly, non-exit-dependent structure without paying an attorney to draft it from scratch. He confirms at least two or three other companies have already used the documents. This is a concrete, reusable resource for any founder wanting to raise money outside the standard C Corp/venture template.",
+    "quote": "we open-sourced our documents so that, you know, if you wanted to use it, you wouldn't have to like pay an attorney to go structure it the same way. We open-sourced the docs and put them on SparkToro, and a couple people have already used that."
+  },
+  {
+    "category": "contradicts-convention",
+    "summary": "Fishkin claims that owning units in his LLC is actually more liquid than typical equity in a venture-backed private startup, which cuts against the common assumption that non-traditional structures are less liquid than standard VC deals. The reasoning: conventional VC investors often hold contractual rights that let them block or restrict private secondary sales of shares, plus 409A valuation complications create legal friction — constraints that don't apply to SparkToro's simpler unit structure.",
+    "quote": "it is more liquid because in a lot of those cases, the venture investors have some rights or some abilities to stop private sales or those kinds of things. There's also a bunch of weird stuff around 4-9-A valuations and legal issues."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "Fishkin describes a core limitation of SEO/search-based marketing using Crowd Cow (a Seattle crowdsourced-beef company) as the example: even though their product is excellent and clearly differentiated from grocery-store beef, almost nobody searches for terms like 'buy steak online' because consumers are culturally trained to treat beef as a commodity, not something to research or shop for online. The lesson is that a product can be great and still be a bad fit for SEO-driven growth if there's no pre-existing search demand for the category — the marketing channel has to match how people actually behave, not just how good the product is.",
+    "quote": "nobody, I mean, next to nobody searches for buy steak online. It just doesn't happen, right? Nobody goes on the internet and is like, ah, I need a ribeye."
+  },
+  {
+    "category": "number/metric",
+    "summary": "Fishkin notes that health insurance is the single largest expense for SparkToro despite the company being just two people (himself and co-founder Casey) with no plans to hire. For a bootstrapped or lean-funded two-person company living off a $1.3M raise, healthcare costs in the U.S. can outweigh nearly every other operating expense, which is a concrete budgeting reality for anyone planning to run a very small team long-term rather than scale headcount.",
+    "quote": "Most of the expense is going to health care. I'm serious, right? Health care in this country is insanely expensive for a two-person company."
+  },
+  {
+    "category": "other",
+    "summary": "Fishkin recounts a fundraising call with a Silicon Valley investor who rejected SparkToro's pitch with open derision, telling him the non-traditional structure would never work and that he needed to raise money the traditional way if he was serious. Rather than being discouraged, Fishkin says that single dismissive rejection became a primary source of motivation to prove the model could succeed — an example of how a harsh 'no' can function as fuel rather than a setback for a founder pursuing an unconventional path.",
+    "quote": "I swear to God, just that one person alone, I want to build this company and have it be a world leader just because of him."
+  }
+]

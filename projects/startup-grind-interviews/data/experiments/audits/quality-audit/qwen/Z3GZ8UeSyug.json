@@ -1,0 +1,20 @@
+{
+  "video_id": "Z3GZ8UeSyug",
+  "total_nuggets": 17,
+  "fail_count": 2,
+  "pass_count": 15,
+  "fails": [
+    {
+      "index": 9,
+      "category": "concrete-detail",
+      "summary": "The speaker’s biggest fear when founding Convoy was that no one would actually use the platform to ship products, a anxiety that persisted for four months during the MVP build phase from April to September. This fear was only alleviated when the first customer, Guided Products, shipped a couple of pallets of printed materials in the Puget Sound region. This specific moment validated the market need and dispelled the worry that potential customers had merely lied about their interest during the sales process.",
+      "in_baseline": false
+    },
+    {
+      "index": 15,
+      "category": "concrete-detail",
+      "summary": "The founder describes a specific, multi-step career path designed to gain engineering credibility after starting in management consulting. He moved from consulting to a startup business development role (for startup credibility), then to product management, then to a startup working directly with product engineering, and finally to a role managing engineering and product. This 'long play' of five or six roles was necessary to earn the trust of a technical co-founder and the ability to hire engineers effectively.",
+      "in_baseline": false
+    }
+  ]
+}

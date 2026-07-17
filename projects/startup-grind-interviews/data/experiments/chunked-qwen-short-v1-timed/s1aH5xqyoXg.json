@@ -1,0 +1,147 @@
+{
+  "video_id": "s1aH5xqyoXg",
+  "interviewee_name": "Adrian Hanauer",
+  "interviewee_title": "Owner Seattle Sounders FC",
+  "method": {
+    "technique": "chunked-overlap",
+    "model": "Qwen3.6-27B-Q4_K_M",
+    "reasoning": false,
+    "num_chunks": 4,
+    "overlap_pct": 20.0,
+    "prompt_file": "gold-extraction-prompt-short-v1.md"
+  },
+  "timing": {
+    "total_elapsed_seconds": 889.9,
+    "per_call": [
+      {
+        "wall_seconds": 66.2,
+        "completion_tokens": 810,
+        "predicted_ms": 56008.022
+      },
+      {
+        "wall_seconds": 70.3,
+        "completion_tokens": 834,
+        "predicted_ms": 57709.385
+      },
+      {
+        "wall_seconds": 70.2,
+        "completion_tokens": 865,
+        "predicted_ms": 59825.507
+      },
+      {
+        "wall_seconds": 75.2,
+        "completion_tokens": 907,
+        "predicted_ms": 62688.462
+      },
+      {
+        "wall_seconds": 87.9,
+        "completion_tokens": 1134,
+        "predicted_ms": 77382.687
+      },
+      {
+        "wall_seconds": 97.8,
+        "completion_tokens": 1202,
+        "predicted_ms": 84125.564
+      },
+      {
+        "wall_seconds": 81.9,
+        "completion_tokens": 1032,
+        "predicted_ms": 71411.857
+      },
+      {
+        "wall_seconds": 89.2,
+        "completion_tokens": 1101,
+        "predicted_ms": 75816.683
+      },
+      {
+        "wall_seconds": 251.1,
+        "completion_tokens": 3454,
+        "predicted_ms": 239216.553
+      }
+    ]
+  },
+  "raw_nugget_count": 19,
+  "deduped_nugget_count": 16,
+  "nuggets": [
+    {
+      "category": "mistake",
+      "summary": "The speaker reveals that his father deliberately assigned him a completely futile task\u2014tearing nylon from polyester ski jackets for pennies per pound\u2014only to throw the entire result away. This was not a genuine business need but a calculated lesson in work ethic and focus, designed to keep a bored teenager occupied and teach the value of labor regardless of the outcome. It challenges the conventional parenting or management approach of ensuring every task has a tangible, efficient result, suggesting that the process of doing hard, unglamorous work can be more valuable than the product itself.",
+      "quote": "my dad bought um like three tons of chopped up um polyester uh ski jackets... he threw me in the garage and said tear the nylon from the from the filling... i'll pay you 10 cents a pound... as an adult he told me that they threw all of it away never used any of it um and it was all just to keep me busy for a summer and really and keep me focused on a on an activity"
+    },
+    {
+      "category": "changed-belief",
+      "summary": "The speaker contrasts the feedback loop of traditional business with that of professional sports, noting that in standard industries, consistent good work usually correlates with positive financial results. In sports, however, you can execute every strategic decision perfectly for weeks and still lose due to random variance, leading to public criticism despite correct processes. This insight highlights the psychological difficulty of managing teams in high-variance environments where the report card is a poor immediate indicator of managerial competence, requiring leaders to separate process integrity from outcome volatility.",
+      "quote": "in a traditional business... when you do things right on a day-to-day basis... your p l kind of reflects that... for us our p l really is the results on saturday and you can do everything right for week after week after week and the ball you know one millimeter to the right and it's a goal one meter to the left it bounces out off the post and everyone thinks you're an idiot"
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Instead of treating fans merely as revenue sources, the organization implemented a democracy in sports model where season ticket holders vote on whether the General Manager retains their job every four years. This shifts the fan relationship from transactional to stakeholder-based, giving customers direct power over executive leadership. While this introduces significant personal risk and public pressure for the owner, it aims to deepen community engagement and loyalty by making fans feel they have a genuine voice in the club's direction, rather than just being consumers of a product.",
+      "quote": "we wanted our fans to feel like more than just you know just atms that we hit up once a year for their season ticket money uh we wanted them to feel like stakeholders... every four years our fans our season ticket holders get to vote on whether the general manager retains uh his or her job or loses it"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "The speaker describes the specific, unglamorous physical labor he performed as a child in his family\u2019s pillow manufacturing business, such as cleaning drainage pipes and climbing through dangerous equipment. These tasks were intentionally assigned by his father to instill the value of hard work and humility, regardless of the family's eventual wealth. This detail illustrates a leadership philosophy where foundational values are taught through direct, tactile experience rather than abstract instruction, emphasizing that understanding the dirty work of a business is crucial for respecting the operational reality and the people who do it.",
+      "quote": "my dad purposefully gave us the shit jobs to to to teach us um teach us the value of of hard work... go down to the factory and push boxes and clean out uh um drainage pipes and tear feathers out of uh out of burlap bags and climb through the most dangerous equipment you've ever seen to clean it"
+    },
+    {
+      "category": "mistake",
+      "summary": "The speaker highlights a common trap in media and distribution deals: prioritizing short-term financial gain over long-term brand accessibility. They explicitly chose a broadcast partner that offered lower immediate payment but provided wider over-the-air distribution, rejecting offers that paid more but restricted access to fewer viewers. This decision underscores the strategic value of maximizing audience reach to build a larger fan base, which ultimately drives greater lifetime value through merchandise, tickets, and sponsorships, rather than optimizing for a single quarter's rights fee.",
+      "quote": "we've had some choices along the way to maybe get paid a little bit more money um but less uh less access and distribution for our fans uh and we've chosen the path of more distribution"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "The organization uses basic, low-cost technology like heart rate monitors and GPS units to gather high-value performance data, synchronizing physiological stress with physical movement during specific drills. By tracking metrics like heart rate percentage against acceleration and distance in small-sided games, they can objectively assess player load and readiness. This demonstrates that effective data-driven management doesn't always require expensive, cutting-edge AI tools; rather, it relies on integrating simple, reliable data streams to create actionable insights about human performance and fatigue.",
+      "quote": "one is a is a heart rate monitor that every player wears during every training session and the other is a gps unit uh that that everybody every player wears and uh from that though we're able to track uh acceleration deceleration distance traveled um speed at which the players are are traveling um heart rate then is synchronized with that"
+    },
+    {
+      "category": "changed-belief",
+      "summary": "The speaker predicts that Virtual Reality adoption in sports will likely begin on the professional team side rather than the consumer fan side, due to the higher willingness to invest in competitive advantage. While fans may eventually use VR for immersive home viewing, the immediate ROI for organizations lies in using VR for coaching, tactical analysis, and player preparation. This shifts the perspective on emerging tech from a customer experience play to an operational efficiency play, suggesting that B2B applications often mature faster than B2C ones in high-performance industries.",
+      "quote": "i think it will my guess is it'll probably start um uh more on the uh coach on the on the team side people who you know where we are willing to invest half a million dollars in a system that that will help us as opposed to 60 000 uh fans at home with hololens sets"
+    },
+    {
+      "category": "mistake",
+      "summary": "The speaker highlights a critical operational failure in sports management: underestimating pent-up market demand. When planning the franchise, leadership created conservative financial projections with season ticket holder caps of 9,000 to 15,000, scaling the stadium for a maximum of 25,000. They failed to account for the cumulative frustration of fans from other local teams (Sonic, Seahawks, Mariners) and the latent desire for MLS, resulting in a massive oversubscription that blew past their most optimistic models. This serves as a warning against relying solely on historical industry benchmarks rather than analyzing local market sentiment and competitor failures.",
+      "quote": "when we planned our our business we did a bunch of several pro formas and one of them had one of them had nine thousand season ticket holders one was 12 000 and one was 15 000. um that was and and we had scaled the building for a capacity of about 25 000. um that was going to be the maximum capacity um and uh and you know quickly we realized that we had underestimated"
+    },
+    {
+      "category": "changed-belief",
+      "summary": "The speaker reframes the role of a CEO from being a technical expert to being a \"sniff test\" validator. He admits he is a \"jack of all trades, master of none,\" lacking deep expertise in specific areas like software development. However, he argues that having a broad, well-rounded knowledge base across all business functions allows him to effectively challenge assumptions and identify when a plan or hire doesn't pass a basic logic check. This suggests that for generalist leaders, the goal isn't to know more than the specialists, but to know enough to recognize when they are being misled or when a strategy is fundamentally flawed.",
+      "quote": "i think that that's made i mean it's made me effective in with the sounders is i know enough about every area of our business to kind of call bullshit or or or you know sure see whether it passes the the sniff test um now that said we're uh hiring and interviewing senior developers uh next week and i was asked to interview them you're like what i'm like okay i can tell you if he's nice or not um but that that's about it so i'm no good after that"
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "The speaker challenges the conventional wisdom that leaders should shield their teams from difficult conversations or bad news. He praises his mentor, Todd Lewicky, for immediately volunteering to handle the \"nastiest\" and most painful tasks, such as informing fans that their tickets were invalid. By taking on the emotional burden himself, Lewicky protected his staff from having to deliver bad news, fostering immense loyalty and respect. This contradicts the idea that delegation means passing off unpleasant duties; instead, it suggests that true leadership involves absorbing the hardest interpersonal conflicts to preserve team morale and trust.",
+      "quote": "he was the one who immediately raised his hand and said i'm on it like we have to make this difficult call and tell these people who bought 10 000 tickets that we don't have any tickets for them i'm on it i'm calling them right now um always wanted the nastiest worst uh things because he didn't want the people that worked for him to to necessarily have to have to take it on"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "The speaker details a specific, multi-layered approach to sports science that moves beyond simple performance tracking to holistic risk management. Instead of just monitoring speed or distance, the team integrates heart rate monitors, GPS units, and Omega Wave neuro-cognitive testing to measure central nervous system function, sleep, and nutrition. This data is fed into algorithms to create visual graphs for coaches, serving three distinct purposes: preventing soft-tissue injuries, optimizing player load for game day, and accelerating recovery. This illustrates how combining physiological and neurological data provides a more complete picture of athlete readiness than physical metrics alone.",
+      "quote": "we do a a ton of um there's another system called omega wave that that measures um um uh uh uh uh uh neuro uh cns central nervous system uh function functioning helps us understand whether guys are getting enough sleep uh nutrition um uh there so we have like eight systems we have sleep monitoring um and we throw it all into a giant database and um uh former microsoft uh uh data scientist who who helps us um create algorithms that that spit out uh hopefully pretty graphs that the coaches can use"
+    },
+    {
+      "category": "mistake",
+      "summary": "The speaker identifies a significant strategic risk in the current sports technology landscape: over-investing in team-side data collection while neglecting fan engagement technology. He notes that while teams are heavily investing in sports science and data crunching, they are failing to address the primary challenge of keeping fans in the stadium against the convenience of high-definition home viewing experiences. This imbalance creates a risk where the product improves internally (player performance) but fails to enhance the external value proposition (fan experience), potentially leading to revenue loss as fans prefer the comfort of their sofas.",
+      "quote": "but i do think that there is there's big opportunity and there's risk um of not continuing to um you know there are a lot of entertainment uh opportunities for for fans um first we have to make sure that the stadium experience is is fantastic because um that's you know that's a challenge in and of itself in in pro sports leagues that you know people are leaving the stadium for their for their sofa"
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Early identification of talent in youth sports is often a flawed metric due to the unpredictability of adolescent development. The speaker notes that identifying the \"best\" nine or ten-year-old is largely a numbers game that rarely predicts who will be the best player four years later, as physical and cognitive maturation varies wildly. A concrete example is Jordan Morris, who was merely a good player until age 16 or 17, when he physically matured into a \"man among boys\" and subsequently became a top scorer and national team player. This insight suggests that organizations should focus on building deep developmental pipelines rather than betting heavily on early prodigies, as late bloomers often yield higher returns.",
+      "quote": "at 9 10 11 13 14 years old it's really kind of a numbers game uh you can identify maybe the best nine year old but that player may not be the best player four years from now... jordan uh was a fantastic athlete and a good soccer player until he was 16 but at 16 or 17 he turned into a a man among boys"
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "League-wide parity can be a more sustainable business model than allowing a few dominant teams to hoard success and revenue. The speaker argues that Major League Soccer\u2019s salary cap structure, which limits average spending but allows for a few high earners, ensures that every team\u2019s fans believe they can win a championship at the start of the season. This contrasts with European leagues, where relegation fears and concentrated wealth mean only a handful of teams are competitive, causing other fans to disengage. By guaranteeing competitive balance, the league maintains broader fan engagement and financial stability across all franchises, rather than relying on the \"miracle\" of an underdog winning once in a decade.",
+      "quote": "we want uh we want every team's fans to believe in the beginning of the year that they can win a championship uh because we think that that's a that's a better model than you know take this year's miracle of leicester city uh out of the english premiership but typically there are four or five teams in the beginning of any year in in england that can win a championship"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Hiring for passion and industry-specific desire can reduce recruitment costs and increase employee retention. The speaker notes that working for a successful sports franchise is so coveted that they often receive applications from people who would essentially pay to work there, particularly for roles that cross over from other industries like technology or marketing. This creates a unique labor market dynamic where the employer has significant leverage to select for cultural fit and enthusiasm rather than just technical skills. For businesses in high-interest sectors, leveraging the \"dream job\" status can be a powerful tool for attracting top-tier talent who are motivated by the mission and brand rather than just compensation.",
+      "quote": "sometimes i feel like i could have people pay us to work for the sports franchise... it's a really coveted job and especially with the sounders that have been so successful"
+    },
+    {
+      "category": "other",
+      "summary": "Strategic partnerships can be formed through shared personal interests rather than immediate business discussions. The speaker describes how a potential business partnership with a Hollywood producer was initiated not by talking about soccer or business plans, but by spending an hour discussing poker, a shared hobby. This connection established the trust and rapport necessary for the commissioner to suggest they were \"perfect partners,\" leading to a successful franchise ownership deal. This illustrates that building genuine personal connections and finding common ground outside of professional contexts can be a more effective entry point for high-stakes business relationships than formal pitches.",
+      "quote": "i met him uh we spent an hour talking about poker because we were both poker players um and hit it off over didn't even talk about soccer and you know the next day the commissioner call he's like hey sounds like you guys would be perfect partners you know you both like poker"
+    }
+  ]
+}

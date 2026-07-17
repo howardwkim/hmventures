@@ -1,0 +1,42 @@
+[
+  {
+    "category": "concrete-detail",
+    "summary": "When Dan Lewis quit Amazon to explore founding Convoy, he had two candidate ideas (trucking logistics and mobile retail) and wanted to validate them as fast as possible before raising money. For the trucking idea, he cold-messaged every trucking-industry contact he could find on LinkedIn, and each conversation led to introductions to three more people. He also physically went to warehouses and truck stops (in Marysville and elsewhere) to talk to truckers between their truck and the diner about what they liked and disliked about their work, and was kicked out of a Whole Foods warehouse in SoDo for showing up unannounced. This hands-on, in-person guerrilla approach — not surveys or secondary research — is what let him build a credible narrative before he had hired any engineers or built any product.",
+    "quote": "So, that was just honestly walking into warehouses. I went on LinkedIn and looked up every single person in the trucking industry and cold in-mailed them. And then they would talk to me and they'd introduce me to three other people. Kept doing that. Got kicked out of the Whole Foods warehouse down in Soto."
+  },
+  {
+    "category": "contradicts-convention",
+    "summary": "When validating his idea before founding Convoy, Dan Lewis deliberately avoided talking to friends about it, because friends will lie to make you feel good rather than give honest feedback — the opposite of what a founder actually needs at that stage. Instead, he sought out complete strangers (truckers, warehouse workers) who had no social incentive to flatter him. This reverses the common early-stage instinct to test an idea on your own network first; he treats friends as actively bad sources of validation, and strangers as the better source precisely because they have nothing invested in sparing your feelings.",
+    "quote": "Because the thing is, you shouldn't talk to your friends. You should talk to people that don't know you, because friends will lie to you to be nice to you. So friends are bad, bad customer validation. Don't talk to your friends. Talk to your non-friends."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "The truckers and warehouse workers Dan Lewis interviewed for early customer research before Convoy existed later became actual paying customers once the product was built. He describes this as making the eventual sales conversation easier, because he could return to people who remembered him as the guy who'd cold-approached them at a truck stop and show them the finished product rather than cold-pitching a stranger from scratch. The unglamorous early research phase doubled as a warm pipeline for the company's first customers.",
+    "quote": "Those people I talked to early on became customers later, which is great. Because then you can go back to them and say, hey, man, you're so hopeful to me... Why don't I show you what we actually built? Oh, it works, cool. And then, you know, it's an easier sell than actually trying to sell them."
+  },
+  {
+    "category": "changed-belief",
+    "summary": "After spending six weeks doing hands-on customer research before he had any real product or hard data, Dan Lewis found that having concrete anecdotes from roughly a hundred real conversations completely changed his fundraising pitch, even without metrics to back numbers up. Whenever an investor pushed on a claim, he could answer with a specific story from an actual trucker or warehouse worker rather than a hypothesis. He credits this shift — leading with anecdote instead of hypothesis — with transforming how investor conversations went, well before Convoy had any data to show.",
+    "quote": "It changed the entire conversation from I have an idea to every time there was a question, I could pull an anecdote. I didn't have data yet, but I had anecdotes. And that changed all of the fundraising conversations."
+  },
+  {
+    "category": "other",
+    "summary": "At 22, deciding between becoming a Spanish teacher or going into management consulting, Dan Lewis got advice from a Yale dean about \"option value\": choosing the path that keeps more future paths open. The dean's reasoning was that starting in consulting keeps the door open to teaching later (high option value), but starting as a teacher makes it much harder to later break into consulting (low option value). When uncertain between two paths, the dean's advice was to pick the one with more option value — a specific decision heuristic Lewis says was the actual deciding factor, and one that generalizes well beyond this one career choice.",
+    "quote": "If you go do management consulting right now, you can have, the odds of you being able to go be a teacher later are really high. If you go do a teaching right now, the odds of being able to go into management consulting later are really low. So, if you're not sure which one you want to do, pick the one that has more option value."
+  },
+  {
+    "category": "changed-belief",
+    "summary": "Reflecting on becoming a first-time CEO, Dan Lewis says he arrived at the belief that humans are fundamentally limited in their capacity for empathy — you cannot actually understand what an experience is like (having kids, becoming a CEO) until you go through it yourself, no matter how much you've observed or been told about it in advance. He treats this as a general epistemic limit, not something specific to startups, and it changed how he thinks about trying to predict or prepare for major life and career transitions before living them.",
+    "quote": "I don't think humans are very good at empathy. I don't think you can actually understand what someone's really going through until you do it yourself in any category... I just kind of come to the conclusion now that you can't actually predict things. You don't know what they feel like until you do them."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "Asked about work-life balance as a startup CEO, Dan Lewis says the real difficulty isn't the number of hours worked — he'd put in similarly long hours at prior jobs, including management consulting and large tech companies — but the fact that as CEO he's mentally \"on\" even when away from work, and struggles to disengage attention rather than time. He reframes the balance problem specifically as an attention-management problem rather than a time-management one, which points toward a different fix: building real distractions and focus elsewhere, not just blocking off hours on a calendar.",
+    "quote": "the hardest, it's not really about time, it's about the attention. How do you not attend to that when you're not at work, right?... Mentally processing things. Like, how do you actually let that go and then just focus on other things? So that's probably the harder part."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "In parallel with the trucking research, Dan Lewis tested a second idea (mobile retail targeted at college students) using a similarly scrappy, low-cost method: he bought a stack of $5 Starbucks gift cards, made a paper questionnaire on a clipboard, dressed deliberately so he wouldn't \"look sketchy,\" and went to community colleges to interview students in person about how they shopped on their phones — walking through their actual apps with them rather than asking hypothetical questions. The small cash-value incentive was enough to get strangers to sit for a structured interview, illustrating a cheap, repeatable way to get real behavioral evidence instead of guesses.",
+    "quote": "I went and bought a bunch of Starbucks $5 gift cards, got a clipboard, printed, like, a questionnaire, put on a shirt that didn't make me look sketchy. And then went to a bunch of community colleges and just interviewed tons of students... How do you shop on your phone? Walk me through the apps you use and just kept doing that."
+  }
+]

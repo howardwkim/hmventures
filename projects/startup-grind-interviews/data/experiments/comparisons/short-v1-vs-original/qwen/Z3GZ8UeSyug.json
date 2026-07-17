@@ -1,0 +1,23 @@
+{
+  "video_id": "Z3GZ8UeSyug",
+  "candidate": "qwen-chunked-short-v1",
+  "reference": "qwen-chunked-original-prompt",
+  "original_count": 17,
+  "short_v1_count": 17,
+  "matched_count": 14,
+  "recall_pct": 82.35,
+  "missed_from_original": [
+    "To mitigate the risk of a predicted funding market crash in 2016, the speaker implemented a 'work back plan' that targeted raising a Series A round within just eight months of founding the company in April 2015. This aggressive timeline was driven by the belief that the business was a 'when, not if' opportunity, requiring rapid acceleration to secure capital before conditions worsened. The plan relied on intense effort and specific milestones, such as completing 100 shipments without a finished product, to build a credible narrative for investors.",
+    "The speaker's biggest fear when founding Convoy was that no one would actually use the platform to ship products, a anxiety that persisted for four months during the MVP build phase from April to September. This fear was only alleviated when the first customer, Guided Products, shipped a couple of pallets of printed materials in the Puget Sound region. This specific moment validated the market need and dispelled the worry that potential customers had merely lied about their interest during the sales process.",
+    "The founder describes a specific, multi-step career path designed to gain engineering credibility after starting in management consulting. He moved from consulting to a startup business development role (for startup credibility), then to product management, then to a startup working directly with product engineering, and finally to a role managing engineering and product. This 'long play' of five or six roles was necessary to earn the trust of a technical co-founder and the ability to hire engineers effectively."
+  ],
+  "net_new_genuine": [
+    "Replace slide-based presentations with narrative documents to increase transparency and reduce the ability to hide behind polished visuals. In this model, participants read a detailed document in silence before discussing it, ensuring that the conversation focuses on the substance of the argument rather than the performance of the presenter. This method forces clarity because it is difficult to mask weak logic or missing data in a linear text format compared to a curated slide deck. It also creates a shared context for the entire room, allowing for deeper, more meritocratic discussions.",
+    "Investors rarely remember specific facts or figures from a pitch deck; they remember the story, your passion, and your energy. Therefore, the deck should serve merely as a visual background for a compelling narrative rather than a data dump. The most critical element is internal consistency: the story of the problem must seamlessly connect to the team's capability and the proposed solution. If the narrative flows logically and emotionally, it de-risks the investment in the investor's mind more effectively than raw data alone.",
+    "Treat investor selection like dating, prioritizing chemistry and open communication over just the financial check. The initial fundraising period is often the easiest part of the relationship, but difficulties will inevitably arise later. If you don't enjoy the conversation or feel a natural rapport with the investor now, those friction points will become much harder to manage when the company faces challenges. Choosing partners with whom you can have honest, difficult conversations ensures you have a support system that remains effective even when the \"honeymoon phase\" of funding ends."
+  ],
+  "net_new_spurious": [],
+  "quality_pass_count": 17,
+  "quality_fail_count": 0,
+  "quality_fails": []
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "category": "contradicts-convention",
+    "summary": "When investors asked Fishkin why he raised a full round instead of a smaller amount to preserve optionality (since SparkToro has a low burn rate), his answer was that he didn't want to spend years of his life on repeated fundraising cycles, because doing so forces founders to unconsciously start optimizing the business for what investors want to hear rather than for customers -- a subtle trap for anyone trying to build a real long-term company. This runs against the common \"raise less now, raise more later at a better valuation\" advice, and Fishkin argues that frequent fundraising creates an incentive structure that quietly pulls a founder's attention away from customers even when everyone involved knows better.",
+    "quote": "I think it forces you to have to optimize your business, not for customers, but for investors, which if you're trying to build a profitable long-term company is dumb."
+  },
+  {
+    "category": "mistake",
+    "summary": "At Moz, Fishkin spent years reacting to informal feedback he'd picked up about why Silicon Valley investors passed on the company in 2009-2011, and one concrete change he made was eliminating Moz's services revenue entirely so the company had zero services income. Five years later, the industry trend reversed and blended software-plus-services models became the favored approach -- meaning the change he made specifically to look more attractive to VCs turned out to work against the business once the market moved. It's a dated, specific example of how optimizing a company around investor preferences (rather than the business's own needs) can produce decisions that look wrong in hindsight, precisely because investor sentiment is a moving target.",
+    "quote": "Things like getting rid of services entirely so that we had zero services revenue at all. And then, of course, what happened five years later? Oh, now the new trend is a blended software and services."
+  },
+  {
+    "category": "number/metric",
+    "summary": "Explaining why investors accepted SparkToro's $1.3M raise without much pushback on size, Fishkin says the specific number itself mattered psychologically: $1.3M was a round size seed-stage investors were already familiar and comfortable with, whereas asking for $3M -- not an unusual amount in absolute terms -- would have triggered noticeably more hesitation from the same pool of investors. It's a granular, first-hand data point about how a specific round-size figure, not just structure or terms, affects investor comfort at the seed stage, the kind of thing only someone who actually pitched both figures to real investors would know.",
+    "quote": "I think if I had said three million, a lot more people would have been like, whoa, wait a minute. That much money? Yeah. But 1.3 being sort of a round size that many folks were familiar with in the seed stage felt comfortable."
+  },
+  {
+    "category": "mistake",
+    "summary": "Fishkin states plainly that Moz's revenue is still growing, just slowly, and attributes the company's decline relative to the market to a specific strategic error: Moz \"took its eye off the SEO ball\" and tried to broaden into a wider category of tools, which let two competitors, SEMrush and Ahrefs, take over the core SEO software market Moz used to lead. It's a specific, named admission of a competitive loss tied to an identifiable strategic pivot (diversification away from the core product), delivered by the person who was CEO during that period rather than an outside observer's guess.",
+    "quote": "Moz basically lost out to two big competitors, SEMrush and Ahreps, because we took our eye off the SEO ball and tried to go broader and be something other than SEO."
+  },
+  {
+    "category": "number/metric",
+    "summary": "Fishkin cites a specific, sourced statistic -- that as of the February he pulled the numbers, Clickstream data he obtained from Jumpshot showed 49% of all Google searches resulted in zero clicks to any website, because Google increasingly answers the query directly on the results page. He uses this exact figure as evidence that the traditional trade between search engines and web publishers (crawl our content for free, but send us traffic in exchange) is breaking down, and as the reason SEO tracking software is actually well-positioned even as raw organic traffic declines. The specific percentage and its named third-party source make this a concrete, dated data point rather than a general claim about \"SEO getting harder.\"",
+    "quote": "across all Google searches, according to Clickstream data I got from Jumpshot in February, 49% of all searches result in zero clicks."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "Asked which investors are actually open to SparkToro's revenue-share model instead of standard venture equity, Fishkin says the best fit is angel investors who were previously operators/founders, because they've personally been burned by the venture model's binary outcome structure -- years of not knowing whether a startup they backed is a winner or a total loss. He illustrates with a concrete example of an investor's math: someone with $400,000 to deploy across six to eight startups at $50K each can't place enough bets for the traditional venture power-law to pay off for them, but a model where a much larger share of companies (20-50%) survive and return some capital changes that calculus entirely. It's a mechanism-level explanation, not just \"angels like it,\" of why a particular investor type self-selects into an alternative funding structure.",
+    "quote": "I want to go ahead and put $400,000 towards, you know, six or eight startups, 50K each. Okay. I can't place enough bets for the venture model to pay out for me. But if there's something that gives me, you know, 20% of the companies or 30%, or, you know, oh, my God, 50% of the companies survive five years, that could be huge."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "SparkToro's free lead-generation tools deliberately don't collect email addresses -- instead they require users to connect their Twitter account. Fishkin reveals the real reason isn't just marketing and brand awareness: Twitter's API is expensive to call at volume, and requiring an OAuth connection lets SparkToro make a large number of Twitter API calls riding on the user's own authenticated connection, without SparkToro having to pay Twitter for that usage itself. It's a specific, non-obvious tactic -- using a free tool's login requirement to offload API cost onto users' own access -- that wouldn't be apparent just from looking at the tool as a marketing asset.",
+    "quote": "Twitter's API is very expensive and we would like to make many calls to it. And so having OAuth connections means that we can make a lot of those calls without paying Twitter a ton of money early on."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "Asked how he manages 35 different investors without them interfering in day-to-day decisions, Fishkin says he's heard from essentially none of them since closing the round except a single congratulatory note, and attributes this directly to a selection filter he applied during the raise itself: any prospective investor who showed signs of wanting to be actively involved or push back on decisions was someone he simply didn't call back. In other words, the hands-off cap table wasn't luck or investor discipline after the fact -- it was screened for up front by declining money from investors who behaved differently even before the round closed.",
+    "quote": "And when I found people during the round who were not like that, I did not call them back."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "Fishkin says he always prioritizes organic, brand, and content channels before paid advertising, because paid ads get dramatically higher ROI once an audience already knows and trusts the brand -- and one of the biggest mistakes he sees startups make is spending on advertising before anyone has heard of them. He grounds this in a concrete comparison: an ad for a company like Tomboy X is far less effective as a cold impression than as a retargeting ad shown to someone who has already visited the site once, which is why he treats the pool of website visitors and email addresses as the real foundational asset before any paid spend.",
+    "quote": "If you've never heard of Tomboy X, it's not going to be nearly as effective as if you've already heard of them and been to their website once and now they're retargeting you."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "Fishkin gives a real example of Instagram advertising working exceptionally well for a specific company, Tomboy X (a Seattle-based apparel brand making boxer-brief-style boy shorts and other clothing for women and men, appealing to a GLBTQ-friendly, alternative-fashion audience) -- but qualifies that this worked because the audience was niche enough that Instagram advertising in that category wasn't yet crowded, letting Tomboy X find and target the specific accounts their audience already followed. It's a concrete counter-example to his general skepticism about Instagram marketing: the claim isn't that Instagram ads never work, it's that they work specifically for early movers in under-advertised niche categories, backed by a named company and its actual outcome rather than general advice.",
+    "quote": "she was saying that like Instagram advertising has been extraordinary for them, um, because their product is, you know, a very visual, but then it, it is like many other consumer products on Instagram in that it's, um, they make a boy shorts, uh, boxer brief style boy shorts for women and a bunch of other clothing and also men. Um, but they, they appeal to a very like GLBTQ plus friendly, um, audience and like a very kind of alternative, uh, fashion. And their audience is fairly, it's fairly ditching, right? Yeah. And so they have had awesome success finding like the right accounts that those people follow on Instagram and then doing targeted stuff."
+  },
+  {
+    "category": "changed-belief",
+    "summary": "Fishkin explains SparkToro deliberately avoids leaning into Instagram, tracing it to a specific shift in what the term \"influencer marketing\" meant to him: seven years earlier it meant finding real sources of influence that reach your customer (podcasts, events, media), but today the same phrase has come to mean paying attractive people on Instagram to post with a product -- a shift in the field's own definition of a core term that he finds personally uninteresting and sees as already saturated with competitors. It's a first-hand account of watching a category's meaning drift over roughly a seven-year span, used to explain a concrete strategic decision (not building Instagram features) rather than a general opinion about influencer marketing.",
+    "quote": "the phrase influencer marketing meant go out and find all the sources of influence that reach your customer and then go do your marketing on the podcasts and events and media and all these kinds of things. And now influencer, influencer marketing means go pay half naked people on Instagram to post with your product."
+  }
+]

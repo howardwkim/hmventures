@@ -1,0 +1,79 @@
+{
+  "video_id": "RZpxreTDC30",
+  "interviewee_name": "Joe Wallin",
+  "interviewee_title": "Partner Davis Wright Tremaine LLP",
+  "nuggets": [
+    {
+      "category": "changed-belief",
+      "summary": "Wallin describes how years of sitting across the table from difficult negotiators changed his model of what hostile-seeming behavior actually means. He initially assumed dramatic reactions from the other side in a negotiation were aimed at him personally or were tactical intimidation. He now uses the analogy of chess grandmaster Garry Kasparov, who talked to himself, gesticulated, and mumbled when playing human opponents -- and did the exact same things when playing the computer Deep Blue, proving the behavior had nothing to do with who was across the board. Wallin's takeaway, arrived at only after \"a while of seasoning,\" is that a counterparty's histrionics during a deal are almost never a reaction to you or a reflection of the deal terms -- they're just how that particular person behaves under stress, full stop. This reframes how a startup lawyer should read tension in a negotiating room: don't take it personally, and don't over-update on it.",
+      "quote": "I think a good story, it's not really the deal I've done, but when Gary Kasparov used to play chess against other human beings, he would talk to himself, he would gesticulate, he would mumble, he would do all these things, and people thought he was just trying to intimidate the other player... But then when he sat in front of Big Blue, the computer, he did the same exact thing. And people thought, well, gee, that's just the way he is as a human... I think a lot of times, you know, people just react a certain way. It doesn't really have anything to do with who's on the opposite side of the table or necessarily anyone else, right? It's just them. It's just who they are.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Early in his career, Wallin represented the founder of an unproven, single-person-driven concept-stage company who raised several million dollars in angel money -- a deal Wallin himself was privately uncertain about. At the same time, colleagues at his firm were working on a different company that was \"widely perceived to be the next great thing\" in Seattle and had raised tens of millions in venture capital. The consensus favorite went to zero. The shaky, uncertain concept-stage company Wallin worked on ended up selling into a public company for what he calls a nice win. The lesson he draws is that even insiders with direct access to the cap table and the founders cannot reliably predict which company will succeed -- confident outside judgments (\"that one's obviously going to win\") are frequently wrong, and it's only obvious in hindsight.",
+      "quote": "So early in my career, I had a client that had a concept, it was a concept stage company... he was raising angel money. He had success. He raised several million dollars to angel money... there was one company that I had some colleagues working on at the time that was sort of widely perceived to be the next great thing... it had raised literally tens of millions of dollars of venture capital money. That one went to zero. And the guy who I had, you know, uncertainty about, he ended up selling his company into a public company. And it was a nice win.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Wallin didn't lobby for Washington's equity crowdfunding law (HB 2023) through conventional channels -- he wrote the entire proposed statute himself from scratch, posted it on his own blog, and cold-called a GeekWire editor to get it published. The legislative sponsor, state representative Cyrus Habib, entered the picture purely by chance: Wallin was eating lunch alone at a restaurant, overheard Habib at a nearby table, and struck up a conversation with a stranger on the street as they happened to leave at the same time. Weeks later Habib, who was assembling people to testify in Olympia about improving Washington's business climate, invited Wallin to speak -- where Wallin ended up last on the list with only three minutes before the committee room had to be cleared, delivered a rushed pitch for the bill he'd written, and had several legislators approach him afterward asking to see the text. That is how a private citizen's blog post became a bill that passed the state legislature.",
+      "quote": "I actually wrote sort of just whole cloth out of my head in a proposed statute, posted it on my blog, and then, uh, got motivated and, uh, called John at GeekWire and said, Hey, you want to run this thing on your, on GeekWire?... one day I was dining at, uh, specialties and, uh, I was just sort of eating by myself, like a late lunch at like two o'clock and Cyrus... was talking to someone at a different table. I didn't, I didn't know Cyrus... we just happened to get up and sort of be leaving at the same time... I brought the bill I wrote and, uh, I was sort of the last person on the slate of people testifying and, um, when they, when they got to me, there was like three minutes before the committee room had to be cleared up for somebody else.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "number/metric",
+      "summary": "When discussing why the federal JOBS Act's Title III equity crowdfunding provisions were impractical for small companies, Wallin cites a specific figure from the SEC's own proposed rulemaking: intermediaries (the required \"portals\") were projected to charge roughly 8 to 10 percent of total offering proceeds just to run a raise. For a company trying to raise a small amount of money, handing over a tenth of the proceeds to a portal before any legal or accounting costs is a large enough bite that it effectively defeats the purpose of a low-cost crowdfunding exemption -- which is precisely why Wallin argued Washington needed a state-level alternative that didn't force founders through an intermediary at all.",
+      "quote": "the federal bill requires you to go through an intermediary and the SEC estimates in its proposed rules that the intermediaries are going to charge like eight to 10% of the offering proceeds. So that's a hefty kind of whack of your offering proceeds to just get paid to an intermediary.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "number/metric",
+      "summary": "As the drafter of Washington's HB 2023 equity crowdfunding bill, Wallin lays out the exact investor caps built into the statute: a company can raise up to $1 million in any rolling 12-month period from a mix of accredited and non-accredited investors. Individual non-accredited investors with less than $100,000 in net worth or annual income are capped at investing $2,000 or 5% of their net worth/income, whichever applies, while those above the $100,000 threshold can invest up to $100,000. These are not generic crowdfunding rules but the specific dollar thresholds of a real bill he personally wrote, mirroring (but not identical to) the federal Title III limits.",
+      "quote": "the bill will allow, um, a business to raise up to a million dollars during the course of a 12 month period from both accredited and non-accredited people. Uh, there are individual investor limitations that, that mirror the same limitations in the federal law. So if you have a less than a hundred thousand dollar net worth or income, uh, you can invest two grand or up to five percent of your net worth or income. So you're capped out on the low side. And if you have more than a hundred thousand dollars of income or net worth, you can go up to a hundred thousand dollars.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "One specific, granular piece of the HB 2023 statute that Wallin points to directly is a short investor-acknowledgment paragraph he personally authored: a mandatory sign-off in which any non-accredited investor participating in a Washington crowdfunding raise must affirmatively acknowledge that the investment is very risky and that they could lose all their money. This is a concrete example of how one lawyer's specific drafting choice -- a brief, plain-language risk waiver rather than the heavier disclosure apparatus of the federal law -- became one of the actual investor-protection mechanisms baked into a real, passed statute.",
+      "quote": "There is a nifty little paragraph I wrote, which says something to the effect of, you know, you've got to sign, if you're an investor, you've got to sign an acknowledgement that basically says, I realize I'm investing in something that's very risky. And I know I'm potentially going to lose all my money.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Asked whether Seattle deal terms lag Silicon Valley's -- the conventional wisdom being that you always get better terms in the Valley -- Wallin pushes back based on deals he's personally negotiated. He says he has directly seen local, Seattle-sourced money produce term sheets more favorable to founders than what the same company likely would have gotten from Valley investors on an equivalent deal. His point isn't that Seattle is uniformly better, but that the received wisdom (\"the old saying\") oversimplifies a landscape with far more deal-to-deal variation than founders assume, based on what he's actually seen close.",
+      "quote": "I think, I mean, that's the old, that's the old saying, right? Oh, you get better terms in Silicon Valley... I've seen really favorable terms up here in Seattle on deals. Yeah. I mean, I've seen deals up here from local, you know, money that were, that were really favorable, you know, term deals that probably wouldn't have gotten, you know, wouldn't have gotten this favorable deal terms in the Valley.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "mistake",
+      "summary": "Wallin describes a specific, recurring failure pattern he sees in growing startups: a company grants stock options to employees over time as it hires and gains traction, but never gets around to documenting formal board approval of those grants. The problem doesn't surface immediately -- it's typically 18 to 24 months later, once the company's stock value has already risen, that someone discovers the paperwork was never done, and by then it's impossible to retroactively manufacture a board approval at the old, lower valuation. He calls this a \"nightmare to fix\" precisely because the fix requires either underpaying the option-holder relative to current value or exposing the company to a claim, and it can resurface publicly right when a company is heading toward an IPO and disgruntled former employees realize they were promised equity that was never properly papered.",
+      "quote": "another one, um, is this, this, uh, you know, stock options, you've got a company which is, which is growing, making progress, hiring people, um, you know, accumulating traction, and they're, you know, they're granting stock options over time. And then they're, they, they fail to document board approval of the options. Um, and then, you know, you know, 18 or 24 months of spy, and then they find out that, you know, you can't go, you can't sort of go back in time and the value of the stock has gone up. I mean, that's sort of a, that's sort of a nightmare to fix.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Wallin describes a specific institutional bias he's observed in how U.S. immigration authorities treat startup founders on H-1B visas: officials are on guard against \"paper companies\" set up purely to manufacture a basis for immigration status, and startups get caught in that suspicion by default because they structurally look like shell companies -- no office space, little cash in the bank, few employees -- even when they are legitimate, fast-growing businesses. This means a real startup founder on an H-1B faces extra scrutiny not because of anything they did wrong, but simply because the early-stage characteristics that are normal for any startup (thin balance sheet, no office, small headcount) happen to match the profile immigration officials are trained to flag.",
+      "quote": "one of the, you know, one of the things founders who are here on H1B run into is the immigration, you know, authorities are sensitive to the, to the risk of just paper companies being created to, to help people get immigration status. And so they're, they view, they view startups with suspicion because, you know, a lot of times startups don't have office space, don't have a lot of money in the bank, a lot of employees. And so they sort of, they're out of natural disadvantage. They might, I mean, they might be, they might very well be real companies.",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "ops-failure",
+      "signal_strength": "B"
+    },
+    {
+      "category": "other",
+      "summary": "Wallin reveals an unusually specific, idiosyncratic system he uses to sustain a long-running blog while practicing law full time: whenever an idea for a post occurs to him, he jots down just two or three words or a fragment of a sentence and drops it in his outbox, where an assistant types it up. He then keeps a running stack of dozens of these partially-formed drafts, and whenever he has a few idle minutes between calls, he flips through the stack, picks one, and adds a sentence, a few words, or a punctuation fix before moving on. Some drafts sit incomplete for weeks before reaching even a full page, while others get pulled out and published on a whim once they feel ready. This is a genuinely unusual, personally-engineered production system for sustained blogging around a demanding job -- not a general writing tip, but the specific mechanics of how one particular person actually manages it.",
+      "quote": "whenever I have an idea for a blog post, I write, I write down the two or three words or maybe a sentence. And then I, I throw it in my outbox... I have a person who works for me who picks that thing up and types it... whenever I have a dead spot in the day, like five or 10 minutes... I'll just sort of flip through this stack of things and I'll find one that I, and I'll just, maybe I'll write a few more words... sometimes these things like, like sometimes they, they just take weeks and weeks and weeks before I even have one page written.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "category": "number/metric",
+    "summary": "At SparkToro, Rand Fishkin and co-founder Casey Henry structured their own compensation to stay capped until early investors are repaid: they can pay themselves roughly $150,000 in salary until the company returns the $1.3 million investors put in, after which the cap rises to about $300,000 (roughly 2x the market average). This is a concrete, self-imposed governance mechanism most outsiders wouldn't guess exists — founders voluntarily under-paying themselves as an alignment device tied to a specific repayment milestone, not a generic \"founders should pay themselves modestly\" platitude. It shows how a specific deal term (a $1.3M raise) translates directly into a specific personal financial constraint for the founders.",
+    "quote": "that is what we make until we pay our investors back 1.3, the 1.3 that they initially put in, at which point that goes up to two times the average. So I think right now that's one, around 150, and it would go up to as much as 300 that we could be paid in salary."
+  },
+  {
+    "category": "contradicts-convention",
+    "summary": "When raising SparkToro's seed round, Fishkin and Henry deliberately did a priced equity round instead of a SAFE or convertible note — the default instrument YC popularized and that most seed-stage founders are steered toward for speed and simplicity. Their reasoning was that they specifically did not want a future investor to be the one who set the company's valuation; pricing it themselves now, even though it's more work upfront, gave them control that a deferred-pricing instrument would have ceded. This runs against the standard advice to use a SAFE for a fast, cheap, lawyer-light raise.",
+    "quote": "So we did a price round, right? We didn't try and do a convertible node or anything like that. Because, similar to YC Safe, right?... we knew that we did not want to have someone price it in the future. So it wouldn't make sense... You had to price it."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "After closing their seed round, Fishkin and Henry (who together own about 75% of SparkToro) deliberately chose not to spend the money on growth — their explicit plan was to hire nobody, work from home, and burn as little of the $1.3 million as possible, with health insurance as the single biggest line item for a two-person company. This is a specific, atypical capital-deployment decision: most funded startups are expected to use their raise to scale headcount quickly, but they intentionally kept the company at two people to preserve runway and optionality.",
+    "quote": "We are planning on hiring nobody, working from home, spending as little of that 1.3 as we possibly can. Most of the expense is going to health care."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "While raising for SparkToro, Fishkin got a rejection call from a Silicon Valley investor who was openly derisive — telling him the idea was terrible, that \"this will never work,\" and that if he was serious he needed to raise money \"the traditional way.\" Rather than being discouraged, that specific interaction became a personal motivator: Fishkin says that one call alone is a reason he wants to make SparkToro a world leader, illustrating how a single humiliating investor conversation can function as durable founder fuel rather than a signal to quit.",
+    "quote": "he said no, right? But, but like the way he said no, the derision in his voice, just the, the, you're the stupidest person I've ever talked to. This will never work... And I swear to God, just that one person alone, I want to build this company and have it be a world leader just because of him."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "The founding insight behind SparkToro came from Fishkin's SEO consulting work for Crowd Cow, a Seattle company that ships premium craft beef. When he ran keyword research for their marketing team, he found essentially zero search volume for anything related to buying steak online — people don't search for \"ribeye\" the way they search for other purchases — so his conclusion was that SEO literally could not help their business, no matter how good the product was. That specific dead end (a real client, a real keyword-research result of \"nothing\") is what pushed him toward the idea that some audiences need to be found through where they hang out rather than through what they search for, which became SparkToro's core product thesis.",
+    "quote": "nobody, I mean, next to nobody searches for buy steak online. It just doesn't happen, right?... I look at the keyword research and I say, nothing? You can do nothing with SEO."
+  },
+  {
+    "category": "contradicts-convention",
+    "summary": "Fishkin says he strongly dislikes the standard MVP (\"minimum viable product\") advice — the widely repeated startup line that \"if you're not embarrassed by your first version, you launched too late,\" pushed by figures like Paul Graham and Andrew Chen — and calls it \"a dirty lie\" for founders in his position. His argument is that MVPs make sense only when very few people will see the launch and you can iterate quietly in front of a handful of users; but because he has a large pre-existing audience from Moz, tens of thousands of marketers will judge SparkToro on day one, so shipping something embarrassing would be far more costly than for an unknown founder. He also reframes the origin of the advice itself: he argues Eric Ries's original Lean Startup concept of an MVP assumed a founder would be lucky to get five people to look at the product, not thousands who would form a permanent first impression — meaning the popular version of the advice misapplies the original idea to founders (like him) who already have a distribution advantage.",
+    "quote": "So I strongly dislike the MVP, like, kind of like MVP minus one... I really dislike MVPs if you know in advance that lots of people are going to pay attention to your launch. I think MVPs are awesome if you think very few people are going to pay attention to your launch... on launch day, tens of thousands of marketers will come, they will look, and they will judge... Eric Grease, when he wrote The Lean Startup... was not talking about... launch to thousands of people... he was talking about... you'll be lucky if you can get five people to look at your product."
+  },
+  {
+    "category": "number/metric",
+    "summary": "Asked to rate his departure from Moz on a scale where zero is \"escorted out of the building by security\" and ten is \"tearful but joyful goodbyes,\" Fishkin rated it a four — slightly negative, not the storybook happy exit sometimes assumed for a founder who wrote a well-known book about the experience. He adds the detail that there was no security involved; he carried his own belongings out himself, a small but telling specific about how the exit actually happened logistically and emotionally.",
+    "quote": "on a scale of zero to ten, where zero is escorted out of the building by security. And ten is, you know, you hug everybody, and it's sort of tearful but joyful goodbyes... I was like, a four... and there was no security. That was, I carried my own stuff out."
+  },
+  {
+    "category": "number/metric",
+    "summary": "Fishkin gives the specific trajectory of Moz's growth deceleration that preceded his exit as CEO: the company grew at roughly 100% year-over-year for its first seven years, then plateaued to around 50%, then 20%, and in its last couple of years slowed further to roughly 9-12%. He notes that a growth rate like that would be a dream outcome for a bootstrapped company like SparkToro, but was treated as an unacceptable failure at a venture-backed company like Moz — even after it had become profitable — which is the specific numeric backdrop for the internal conflict that led to his departure.",
+    "quote": "for seven years, Malas grew at 100% year over year, sort of growth rate... and then that plateaued, I think, to, like, you know, 50%, and then 20% in the last couple of years have been, like, 11%, something like that, 12%, I think maybe just really 9% or 10%"
+  },
+  {
+    "category": "mistake",
+    "summary": "After Fishkin stepped down as Moz's CEO, he describes sensing that leadership's takeaway was that his own mistakes had caused the company's growth to plateau, and that the fix was to stop listening to him going forward — rather than evaluating individual ideas on their merits. He characterizes this as leadership treating the source of an idea (him) as the problem, rather than assessing whether any specific idea itself was actually bad. This is a specific, non-obvious organizational dynamic he experienced firsthand: a company scapegoating a departed founder wholesale instead of doing idea-by-idea diagnosis.",
+    "quote": "there was this attitude up, right, stepped down, that, like, okay, Rand's mistakes are what got us to this plateauing growth rate. And so, in order to recover, we, we need to not listen to him... it was almost like a, like, the source of the idea is the problem."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "Fishkin's mother was also his business partner at Moz, and he says that in 2012 he effectively had to remove her from the business — he stops short of calling it \"firing,\" but says functionally that's what it was, and that she could fairly rate that departure the same four (or three-to-four) out of ten that he rates his own later exit. He connects the pain of his own subsequent ouster to a sense of \"karma\" for what he had done to her years earlier — a specific, rarely-discussed detail about the compounding personal cost of a family co-founder relationship inside a venture-backed company.",
+    "quote": "I didn't technically fire my mom, but for all intents and purposes, I think, you know, the four out of ten that I said, she could fairly say four, three or four out of ten also... this is, this is sort of what you, you are reaping what you sow."
+  },
+  {
+    "category": "contradicts-convention",
+    "summary": "Fishkin argues that being publicly candid about his struggles and mistakes — writing Lost and Founder, blogging about depression and his exit — directly damaged his ability to raise a large venture round afterward, in specific contrast to the conventional wisdom that thought-leadership and authenticity build a founder's fundraising leverage. He says if he had stayed quiet about the hard parts of the Moz story, he would have had an easy time raising a big round at a great valuation, but because he \"overshared,\" he believes many investors would refuse to fund him now. This is a concrete, counterintuitive trade-off between public vulnerability and fundraising outcomes that he attributes directly to his own choices.",
+    "quote": "if I had come out of Moz and had sort of not overshared in the way that, ways that I have... I would have had a very easy time raising a large venture round and a great, you know, multiple... I think if I were trying to raise venture, no fucking way, right? A lot of people would be like, uh, people go just crap all over our business and all of us for like years. No, we're not giving you money."
+  },
+  {
+    "category": "mistake",
+    "summary": "Writing Lost and Founder took much longer and involved a full restart: Fishkin pitched publishers in New York in January 2016, then submitted roughly a third of the book to his editor by around June, only to have her tell him it wasn't the right book — so he threw out that entire draft, started over, and finished the final manuscript on December 31st at 10:30 p.m., right against the contractual deadline. This is a specific, hard-won detail about how much of the actual writing process was discarded and redone under deadline pressure, rather than a smooth linear draft-to-finish process.",
+    "quote": "I pitched publishers in New York in January of 2016... submitted a few chapters, not quite half the book, maybe a third of the book to the editor... maybe I had written for four or five months, and then she was like, nope, this is not the right book. And so we threw the whole thing out, and I started again, and I finished, uh, December 31st at 10.30 p.m."
+  }
+]

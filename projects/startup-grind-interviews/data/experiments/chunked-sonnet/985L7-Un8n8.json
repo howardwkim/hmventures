@@ -1,0 +1,170 @@
+{
+  "video_id": "985L7-Un8n8",
+  "interviewee_name": "Rand Fishkin",
+  "interviewee_title": "CEO SparkToro",
+  "method": {
+    "technique": "chunked-overlap",
+    "model": "sonnet",
+    "num_chunks": 4,
+    "overlap_pct": 20
+  },
+  "raw_nugget_count": 41,
+  "deduped_nugget_count": 31,
+  "nuggets": [
+    {
+      "category": "number/metric",
+      "summary": "As CEO of Moz (originally SEOmoz) from 2007, Rand Fishkin grew the company's software revenue from roughly $400,000 to about $30 million before stepping down as CEO in 2014. He handed the role to his longtime COO Sarah Bird, who remained Moz's CEO through the time of this interview. This concrete revenue trajectory over roughly seven years as CEO is a specific figure from his own company's history, not a general SEO-industry statistic.",
+      "quote": "Moz basically grew from, what was that, maybe $400,000 in software revenue to about $30 million. And then I stepped down as CEO in 2014, promoted my longtime chief operating officer, Sarah Bird, who still is Moz's CEO today."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "After stepping down as CEO, Fishkin stayed at Moz for four more years as an individual contributor before formally leaving on February 28th. He founded SparkToro the very next day, March 1st, joking that he only wanted \"a few hours of vacation\" between ventures. The specific back-to-back dates illustrate just how little downtime he actually took between running one company and starting the next, revealing his personal pace rather than a generalized founder platitude about taking a break.",
+      "quote": "I was there for four years as an individual contributor and left February 28th and started SparkToro on March 1st because I wanted a few hours of vacation."
+    },
+    {
+      "category": "mistake",
+      "summary": "Before Moz existed as a software company, Fishkin's mother ran a small marketing/web-design agency that sank deeply into debt. Part of that debt came from being unable to pay the SEO subcontractors they hired, which forced Fishkin to teach himself SEO and start the SEOmoz blog as a side project. Years later, some of those unpaid subcontractors still send him angry tweets when he's in the public eye — a lingering, specific consequence of a real financial mistake that most retellings of the \"SEOmoz origin story\" gloss over.",
+      "quote": "the reason I started that is because I was having to learn SEO, the reason being basically that we were unable to pay our SEO subcontractors. And you can occasionally find, sometimes I'll send a tweet and one or two of those SEO subcontractors will send an angry tweet in response. Because they are still pissed that we never paid them, which I think is fair."
+    },
+    {
+      "category": "number/metric",
+      "summary": "For SparkToro's seed round, Fishkin raised $1.3 million from about 35 angel investors, with individual checks ranging from roughly $15,000 to $102,000. The largest check, $102,000, came from Dharmesh Shah, who told Fishkin he'd only explain the oddly specific number over dinner. The wide check-size range and the specific largest investor and amount are concrete facts about how this unconventional round was actually assembled, not generic seed-round advice.",
+      "quote": "We raised $1.3 million from about 35 angel investors... So the biggest check was what? One hundred and two thousand dollars... I think that was Dharma Shah. And he told me that if I let him take me out to dinner, he would explain why it was 102."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Instead of a normal venture-backed C-Corp, Fishkin structured SparkToro as an LLC where the 35 angel investors own \"units\" (similar to a law-firm or VC-firm partnership) rather than equity shares. Profits first go to paying back investors 1x their principal, mirroring a VC liquidation preference, and after that everyone gets a pro-rata share of ongoing profit distributions indefinitely — potentially for 40+ years, since the company never needs to sell or IPO for investors to get paid. This deliberately breaks from the standard venture assumption that a startup must either become a huge outlier or return nothing.",
+      "quote": "This means that when the company is profitable, we have the option to pay our profits out in profit share. And basically we have a requirement similar to venture capital where we pay 1x our investors amount... The first 1.3 million in profit that we decided to pay out go right back to you. So after that, everyone gets paid their percentage of the profit... you could potentially make that for 40 years, right? SparkToro is a long running company."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Fishkin and his SparkToro co-founder Casey set their own salaries by a specific formula: pay themselves the market rate of a Seattle \"level one\" software engineer at a company like Microsoft or Amazon (about $150,000 at the time) until the company has paid back the $1.3 million angel investors put in, at which point the salary cap doubles to roughly $300,000. Beyond salary, the two founders retain about 75% ownership of the LLC's units. This is a specific, self-imposed compensation ceiling tied to a real market benchmark rather than an arbitrary number, and most founders don't publicize this level of detail about their own pay.",
+      "quote": "basically, Casey and I get a salary equal to, up to, the Seattle software engineer average, right? So sort of whatever level one software engineer makes it, Microsoft, Amazon, et cetera, that is what we make until we pay our investors back 1.3... at which point that goes up to two times the average. So I think right now that's one, around 150, and it would go up to as much as 300 that we could be paid in salary... Casey and I own right around 75 percent."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "When raising SparkToro's seed round, Fishkin and Henry deliberately did a priced equity round instead of a SAFE or convertible note — the default instrument YC popularized and that most seed-stage founders are steered toward for speed and simplicity. Their reasoning was specific to the LLC/profit-share structure: they specifically did not want a future investor to be the one who set the company's valuation; pricing it themselves now, even though it's more work upfront, gave them control that a deferred-pricing instrument would have ceded. This runs against the standard advice to use a SAFE for a fast, cheap, lawyer-light raise.",
+      "quote": "So we did a price round, right? We didn't try and do a convertible node or anything like that. Because, similar to YC Safe, right? Like the way that Y Combinator starts with their thing, the non-priced round thing did not make sense because we knew that we did not want to have someone price it in the future."
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Fishkin argues the standard venture-capital return math is a good deal for the investor but not for the founder. He cites the industry pattern that only about 4-6% of venture investments return the fund's needed capital, and that math still works fine for a VC because they spread bets across roughly 100 companies — but a founder only gets to pour their life into one company every 10-20 years, so playing a game built for portfolio-level odds is a bad individual bet. This reframes the default \"just raise venture and swing for a huge outcome\" startup advice as advice optimized for investors, drawn from his own experience having been venture-backed at Moz and deliberately choosing a different structure for SparkToro.",
+      "quote": "I think that it's largely bullshit that you need to fit the venture capital model of, you know, six, whatever it is, four to six percent of venture investments return the appropriate amount of capital or more to the fund. And the other 95 percent fail to do that... I think that model works fine if you are an investor... You make 100 investments, it doesn't matter if 95 of them fail, but five will make up for it. But I'm not an investor. I only get to put all my time and energy and love into one company every 10 to 20 years."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "While raising for SparkToro, Fishkin had a call with a Silicon Valley investor who rejected him with open derision, telling him the idea would never work and that he needed to raise in the traditional venture way if he was serious. Rather than being discouraged, Fishkin says that single dismissive call became a specific, ongoing personal motivator — he wants to prove the company can be a world leader specifically because of how that investor talked to him. It's a concrete, personal account of how one bad interaction shaped his motivation, not a generic \"haters motivate me\" platitude.",
+      "quote": "I had a call with an investor from Silicon Valley. It was, it was, well, it was my favorite call with an investor. I mean, he said no, right? But, but like the way he said no, the derision in his voice, just the, the, you're the stupidest person I've ever talked to. This will never work... And I swear to God, just that one person alone, I want to build this company and have it be a world leader just because of him."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "After closing their seed round, Fishkin and Henry (who together own about 75% of SparkToro) deliberately chose not to spend the money on growth — their explicit plan was to hire nobody, work from home, and burn as little of the $1.3 million as possible, with health insurance as the single biggest line item for a two-person company. This is a specific, atypical capital-deployment decision: most funded startups are expected to use their raise to scale headcount quickly, but they intentionally kept the company at two people to preserve runway and optionality.",
+      "quote": "We are planning on hiring nobody, working from home, spending as little of that 1.3 as we possibly can. Most of the expense is going to health care. I'm serious, right? Health care in this country is insanely expensive for a two-person company."
+    },
+    {
+      "category": "changed-belief",
+      "summary": "The founding insight behind SparkToro came from a pattern Fishkin saw repeatedly at Moz, crystallized by his own SEO consulting work for Crowd Cow, a Seattle company that crowdsources high-quality beef from small farmers and ships frozen cuts to customers' doors. Running keyword research for their marketing team, he found essentially zero search volume for anything related to buying steak online — nobody searches \"buy steak online\" or for a \"ribeye\" because Americans are culturally trained to think of beef as an undifferentiated commodity rather than something to seek out online, leading him to conclude there was nothing SEO could do for a business like that. This concrete example of a great product with zero organic search demand is what convinced him a company like SparkToro, which researches audiences beyond just search-volume signals, needed to exist.",
+      "quote": "the fundamental idea that I encountered a lot with Moz was basically if there are not already a lot of people searching for what you do... But nobody, I mean, next to nobody searches for buy steak online. It just doesn't happen, right? Nobody goes on the internet and is like, ah, I need a ribeye... we're sort of trained as Americans to think of beef as a commodity... I look at the keyword research and I say, nothing? You can do nothing with SEO."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Fishkin says he strongly dislikes the standard MVP (\"minimum viable product\") advice — the widely repeated startup line that \"if you're not embarrassed by your first version, you launched too late,\" pushed by figures like Paul Graham and Andrew Chen — and calls it \"a dirty lie\" for founders in his position. His argument is that MVPs make sense only when very few people will see the launch and you can iterate quietly in front of a handful of users; but because he has a large pre-existing audience from Moz, tens of thousands of marketers will judge SparkToro on day one, so shipping something embarrassing would be far more costly than for an unknown founder. He also reframes the origin of the advice itself: he argues Eric Ries's original Lean Startup concept of an MVP assumed a founder would be lucky to get five people to look at the product, not thousands who would form a permanent first impression — meaning the popular version of the advice misapplies the original idea to founders (like him) who already have a distribution advantage.",
+      "quote": "So I strongly dislike the MVP, like, kind of like MVP minus one... I really dislike MVPs if you know in advance that lots of people are going to pay attention to your launch. I think MVPs are awesome if you think very few people are going to pay attention to your launch... on launch day, tens of thousands of marketers will come, they will look, and they will judge... Eric Grease, when he wrote The Lean Startup... was not talking about... launch to thousands of people... he was talking about... you'll be lucky if you can get five people to look at your product."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Asked to rate his departure from Moz on a scale where zero is \"escorted out of the building by security\" and ten is \"tearful but joyful goodbyes,\" Fishkin rated it a four — slightly negative, not the storybook happy exit sometimes assumed for a founder who wrote a well-known book about the experience. He adds the detail that there was no security involved; he carried his own belongings out himself, a small but telling specific about how the exit actually happened logistically and emotionally.",
+      "quote": "on a scale of zero to ten, where zero is escorted out of the building by security. And ten is, you know, you hug everybody, and it's sort of tearful but joyful goodbyes... I was like, a four... and there was no security. That was, I carried my own stuff out."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Fishkin gives the specific trajectory of Moz's growth deceleration that preceded his exit as CEO: the company grew at roughly 100% year-over-year for its first seven years, then plateaued to around 50%, then 20%, and in its last couple of years slowed further to roughly 9-12%. He notes that a growth rate like that would be a dream outcome for a bootstrapped company like SparkToro, but was treated as an unacceptable failure at a venture-backed company like Moz — even after it had become profitable — which is the specific numeric backdrop for the internal conflict that led to his departure.",
+      "quote": "for seven years, Malas grew at 100% year over year, sort of growth rate... and then that plateaued, I think, to, like, you know, 50%, and then 20% in the last couple of years have been, like, 11%, something like that, 12%, I think maybe just really 9% or 10%"
+    },
+    {
+      "category": "mistake",
+      "summary": "After Fishkin stepped down as Moz's CEO, he describes sensing that leadership's takeaway was that his own mistakes had caused the company's growth to plateau, and that the fix was to stop listening to him going forward — rather than evaluating individual ideas on their merits. He characterizes this as leadership treating the source of an idea (him) as the problem, rather than assessing whether any specific idea itself was actually bad. This is a specific, non-obvious organizational dynamic he experienced firsthand: a company scapegoating a departed founder wholesale instead of doing idea-by-idea diagnosis.",
+      "quote": "there was this attitude up, right, stepped down, that, like, okay, Rand's mistakes are what got us to this plateauing growth rate. And so, in order to recover, we, we need to not listen to him... it was almost like a, like, the source of the idea is the problem."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Fishkin's mother was also his business partner at Moz, and he says that in 2012 he effectively had to remove her from the business — he stops short of calling it \"firing,\" but says functionally that's what it was, and that she could fairly rate that departure the same four (or three-to-four) out of ten that he rates his own later exit. He connects the pain of his own subsequent ouster to a sense of \"karma\" for what he had done to her years earlier — a specific, rarely-discussed detail about the compounding personal cost of a family co-founder relationship inside a venture-backed company.",
+      "quote": "I didn't technically fire my mom, but for all intents and purposes, I think, you know, the four out of ten that I said, she could fairly say four, three or four out of ten also... this is, this is sort of what you, you are reaping what you sow."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Fishkin argues that being publicly candid about his struggles and mistakes — writing Lost and Founder, blogging about depression and his exit — directly damaged his ability to raise a large venture round afterward, in specific contrast to the conventional wisdom that thought-leadership and authenticity build a founder's fundraising leverage. He says if he had stayed quiet about the hard parts of the Moz story, he would have had an easy time raising a big round at a great valuation, but because he \"overshared,\" he believes many investors would refuse to fund him now. This is a concrete, counterintuitive trade-off between public vulnerability and fundraising outcomes that he attributes directly to his own choices.",
+      "quote": "if I had come out of Moz and had sort of not overshared in the way that, ways that I have... I would have had a very easy time raising a large venture round and a great, you know, multiple... I think if I were trying to raise venture, no fucking way, right? A lot of people would be like, uh, people go just crap all over our business and all of us for like years. No, we're not giving you money."
+    },
+    {
+      "category": "mistake",
+      "summary": "Writing Lost and Founder was not a smooth, linear process — Fishkin pitched publishers in New York in January 2016, then after four to five months of writing, submitted roughly a third of the book to his editor at Penguin Random House around June 2016, only to have her tell him it wasn't the right book. He threw out that entire draft, started over, and finished the final manuscript on December 31st at 10:30 p.m., right against his contractual deadline. This is a specific, hard-won detail about how much of the actual writing process was discarded and redone under deadline pressure, rather than a smooth draft-to-finish process.",
+      "quote": "I pitched publishers in New York in January of 2016... submitted a few chapters, not quite half the book, maybe a third of the book to the editor that I went with... from Penguin Random House in June... So, you know, maybe I had written for four or five months, and then she was like, nope, this is not the right book. And so we threw the whole thing out, and I started again, and I finished, uh, December 31st at 10.30 p.m."
+    },
+    {
+      "category": "mistake",
+      "summary": "Rand describes a specific, costly strategic mistake at Moz: he spent years reshaping the company's business model to match the reasons Bay Area venture investors gave him for passing on Moz between 2009 and 2011. One concrete change was eliminating Moz's services revenue entirely to have a 'pure software' story for investors. Five years later, the market consensus flipped and blended software-plus-services models became the new favored trend, meaning the change he made specifically to appease investors turned out to be strategically wrong for the business. He frames this as a broader lesson about the danger of optimizing a company around what turned-down investors say rather than around actual customers.",
+      "quote": "I spent years at Moz, optimizing Moz's business for what I heard was the reasons Valley investors turned me down in 2009 and 2010 and 2011. And those were bad moves. Those were bad moves for the core of the company. Things like getting rid of services entirely so that we had zero services revenue at all. And then, of course, what happened five years later? Oh, now the new trend is a blended software and services."
+    },
+    {
+      "category": "number/metric",
+      "summary": "When raising SparkToro's seed round, Rand deliberately kept the round small (about $1.3 million) rather than raising more, explicitly telling investors that low spending meant the company wouldn't need to worry about runway 'for years.' He also directly credits his own audience/personal brand as an unfair advantage in his fundraising pitch — being able to tweet and get his first 50-100 customers — while acknowledging in the same breath that this exact argument is 'cheating' and not something another founder could credibly use to justify their own investment thesis. This is a specific, self-aware admission that his fundraising success depended on a personal-platform advantage that doesn't generalize.",
+      "quote": "We are not going to have to worry about runway for years because we are spending so little money and our goal is to get to profitability. And I think, you know, I could also credibly say, like, look, I have this superpower, which is tons of people in the web marketing field already pay attention to me, which means that, like, I can send a tweet and probably get my first 50 to 100 customers, which is a cheating, like, that's totally cheating. But it's a great cheat."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Rand explains why he raised exactly $1.3 million for SparkToro's seed round rather than a larger figure like $3 million: the specific number mattered because it matched what investors were already comfortable seeing at the seed stage, whereas a bigger ask would have triggered pushback and skepticism about how the money would be used. This is a concrete, tactical detail about fundraising psychology — round-size 'normalcy' functions as a social proof anchor independent of what the company actually needs.",
+      "quote": "I think the other thing that helped on that front was that the round size didn't feel unreasonable. Right? I think if I had said three million, a lot more people would have been like, whoa, wait a minute. That much money? ... But 1.3 being sort of a round size that many folks were familiar with in the seed stage felt comfortable."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Rand corrects the outside narrative that Moz was failing: revenue was actually still growing, just slowly, even as the overall SEO software market grew faster than ever. He attributes Moz losing ground specifically to two named competitors, SEMrush and Ahrefs, and pins the cause on a deliberate strategic choice — Moz took its focus off core SEO tooling and tried to broaden into other categories, ceding the SEO-specific market to competitors who stayed focused. This is a specific, named mechanism of competitive loss from someone who lived the decision, not a generic 'we lost focus' platitude.",
+      "quote": "Moz is going up in revenue, just not very fast. And second, the field of SEO software has never grown faster. Moz basically lost out to two big competitors, SEMrush and Ahreps, because we took our eye off the SEO ball and tried to go broader and be something other than SEO."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Rand identifies podcast advertising as the single biggest undertapped marketing channel he sees, backing it with a specific mismatch: roughly 22% of Americans listen to multiple podcasts in a given month, but under 5% of podcasts actually carry advertising. He attributes this gap specifically to the lack of a standardized bidding marketplace or platform for podcast ads, unlike search or social — meaning the opportunity persists not because demand is low but because the infrastructure to monetize it doesn't exist yet.",
+      "quote": "I think the biggest one right now is probably in podcasting because there's no good marketplace for it. You know, 20... What is it? 22% of Americans listen to multiple podcasts in the last month, but something under 5% of podcasts have advertising... it's insane how unmonetizable they are for their creators because there's no standardized platform and there's no bidding marketplace."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "When investors asked Fishkin why he raised a full round instead of a smaller amount to preserve optionality (since SparkToro has a low burn rate), his answer was that he didn't want to spend years of his life on repeated fundraising cycles, because doing so forces founders to unconsciously start optimizing the business for what investors want to hear rather than for customers -- a subtle trap for anyone trying to build a real long-term company. This runs against the common \"raise less now, raise more later at a better valuation\" advice, and Fishkin argues that frequent fundraising creates an incentive structure that quietly pulls a founder's attention away from customers even when everyone involved knows better.",
+      "quote": "I think it forces you to have to optimize your business, not for customers, but for investors, which if you're trying to build a profitable long-term company is dumb."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Fishkin cites a specific, sourced statistic -- that as of the February he pulled the numbers, Clickstream data he obtained from Jumpshot showed 49% of all Google searches resulted in zero clicks to any website, because Google increasingly answers the query directly on the results page. He uses this exact figure as evidence that the traditional trade between search engines and web publishers (crawl our content for free, but send us traffic in exchange) is breaking down, and as the reason SEO tracking software is actually well-positioned even as raw organic traffic declines. The specific percentage and its named third-party source make this a concrete, dated data point rather than a general claim about \"SEO getting harder.\"",
+      "quote": "across all Google searches, according to Clickstream data I got from Jumpshot in February, 49% of all searches result in zero clicks."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Asked which investors are actually open to SparkToro's revenue-share model instead of standard venture equity, Fishkin says the best fit is angel investors who were previously operators/founders, because they've personally been burned by the venture model's binary outcome structure -- years of not knowing whether a startup they backed is a winner or a total loss. He illustrates with a concrete example of an investor's math: someone with $400,000 to deploy across six to eight startups at $50K each can't place enough bets for the traditional venture power-law to pay off for them, but a model where a much larger share of companies (20-50%) survive and return some capital changes that calculus entirely. It's a mechanism-level explanation, not just \"angels like it,\" of why a particular investor type self-selects into an alternative funding structure.",
+      "quote": "I want to go ahead and put $400,000 towards, you know, six or eight startups, 50K each. Okay. I can't place enough bets for the venture model to pay out for me. But if there's something that gives me, you know, 20% of the companies or 30%, or, you know, oh, my God, 50% of the companies survive five years, that could be huge."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "SparkToro's free lead-generation tools deliberately don't collect email addresses -- instead they require users to connect their Twitter account. Fishkin reveals the real reason isn't just marketing and brand awareness: Twitter's API is expensive to call at volume, and requiring an OAuth connection lets SparkToro make a large number of Twitter API calls riding on the user's own authenticated connection, without SparkToro having to pay Twitter for that usage itself. It's a specific, non-obvious tactic -- using a free tool's login requirement to offload API cost onto users' own access -- that wouldn't be apparent just from looking at the tool as a marketing asset.",
+      "quote": "Twitter's API is very expensive and we would like to make many calls to it. And so having OAuth connections means that we can make a lot of those calls without paying Twitter a ton of money early on."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Asked how he manages 35 different investors without them interfering in day-to-day decisions, Fishkin says he's heard from essentially none of them since closing the round except a single congratulatory note, and attributes this directly to a selection filter he applied during the raise itself: any prospective investor who showed signs of wanting to be actively involved or push back on decisions was someone he simply didn't call back. In other words, the hands-off cap table wasn't luck or investor discipline after the fact -- it was screened for up front by declining money from investors who behaved differently even before the round closed.",
+      "quote": "And when I found people during the round who were not like that, I did not call them back."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Fishkin says he always prioritizes organic, brand, and content channels before paid advertising, because paid ads get dramatically higher ROI once an audience already knows and trusts the brand -- and one of the biggest mistakes he sees startups make is spending on advertising before anyone has heard of them. He grounds this in a concrete comparison: an ad for a company like Tomboy X is far less effective as a cold impression than as a retargeting ad shown to someone who has already visited the site once, which is why he treats the pool of website visitors and email addresses as the real foundational asset before any paid spend.",
+      "quote": "If you've never heard of Tomboy X, it's not going to be nearly as effective as if you've already heard of them and been to their website once and now they're retargeting you."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Fishkin gives a real example of Instagram advertising working exceptionally well for a specific company, Tomboy X (a Seattle-based apparel brand making boxer-brief-style boy shorts and other clothing for women and men, appealing to a GLBTQ-friendly, alternative-fashion audience) -- but qualifies that this worked because the audience was niche enough that Instagram advertising in that category wasn't yet crowded, letting Tomboy X find and target the specific accounts their audience already followed. It's a concrete counter-example to his general skepticism about Instagram marketing: the claim isn't that Instagram ads never work, it's that they work specifically for early movers in under-advertised niche categories, backed by a named company and its actual outcome rather than general advice.",
+      "quote": "she was saying that like Instagram advertising has been extraordinary for them, um, because their product is, you know, a very visual, but then it, it is like many other consumer products on Instagram in that it's, um, they make a boy shorts, uh, boxer brief style boy shorts for women and a bunch of other clothing and also men. Um, but they, they appeal to a very like GLBTQ plus friendly, um, audience and like a very kind of alternative, uh, fashion. And their audience is fairly, it's fairly ditching, right? Yeah. And so they have had awesome success finding like the right accounts that those people follow on Instagram and then doing targeted stuff."
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Fishkin explains SparkToro deliberately avoids leaning into Instagram, tracing it to a specific shift in what the term \"influencer marketing\" meant to him: seven years earlier it meant finding real sources of influence that reach your customer (podcasts, events, media), but today the same phrase has come to mean paying attractive people on Instagram to post with a product -- a shift in the field's own definition of a core term that he finds personally uninteresting and sees as already saturated with competitors. It's a first-hand account of watching a category's meaning drift over roughly a seven-year span, used to explain a concrete strategic decision (not building Instagram features) rather than a general opinion about influencer marketing.",
+      "quote": "the phrase influencer marketing meant go out and find all the sources of influence that reach your customer and then go do your marketing on the podcasts and events and media and all these kinds of things. And now influencer, influencer marketing means go pay half naked people on Instagram to post with your product."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "category": "concrete-detail",
+    "summary": "MLS enforces a salary cap that's smaller and simpler than other major leagues, but with a built-in escape valve: teams spend roughly $5 million a year across a 20-player roster (about $250,000 average per player), yet are allowed three 'Designated Players' who can be paid essentially unlimited amounts outside the normal cap accounting. Hanauer cites Clint Dempsey earning around $5 million a year as an example of a Designated Player. This two-tier structure lets teams chase marquee stars for competitive and marketing reasons while keeping the rest of the roster on a tight, parity-preserving budget — a pattern worth knowing when analyzing salary structures in any capped team sport.",
+    "quote": "i mean not a super complicated salary cap but uh in you know whatever round numbers we're we spend call it five million dollars a year on um on our uh 20 players so an average of 250 000 per player but we're we're allowed to have three players that basically we can pay anything we want"
+  },
+  {
+    "category": "contradicts-convention",
+    "summary": "Hanauer argues MLS's competitive-parity model — designed so every team's fans can believe at the start of the season that they could win the championship — is a deliberate break from how the top European leagues work. In England only about four or five clubs realistically compete for the title each year, in Spain three, and in Germany effectively one or two, with the rest of the 'good' teams just trying to avoid relegation rather than compete for a championship. He frames MLS's flatter competitive structure as a better business model than the European approach because it keeps a much broader base of fans emotionally invested all season, not just supporters of the handful of teams that can actually win.",
+    "quote": "we want uh we want every team's fans to believe in the beginning of the year that they can win a championship uh because we think that that's a that's a better model than ... typically there are four or five teams in the beginning of any year in in england that can win a championship in spain there are three teams in germany there's really there's one"
+  },
+  {
+    "category": "number/metric",
+    "summary": "In the English Premier League, simply staying in the top division is worth roughly $160 million a year in guaranteed television money per team, while relegation to the second division drops that figure to about $20 million — an eight-times cliff. This shows relegation isn't just a competitive embarrassment but an existential financial threat to a club, and it's part of why Hanauer contrasts MLS's non-relegation, parity-based structure as a fundamentally different risk model for franchise owners.",
+    "quote": "in the english premier league every team is guaranteed i think this year um actually i think next year they're guaranteed a hundred and i want to say 160 million dollars um in tv money uh every single team ... if you are relegated to the next league down it's about 20 million"
+  },
+  {
+    "category": "other",
+    "summary": "Hanauer's biggest leadership lesson from his Tampa Bay Lightning partner Todd was watching him volunteer for the worst, most unpleasant tasks himself instead of pushing them down to staff — for example, personally calling season-ticket holders to tell them the team couldn't honor tickets they'd already paid for, rather than delegating that call. The principle he took from it: never make someone else do something you wouldn't be willing to do yourself, especially the ugliest parts of the job — a concrete standard for how leaders should handle the ugliest operational moments.",
+    "quote": "he was the one who immediately raised his hand and said i'm on it like we have to make this difficult call and tell these people who bought 10 000 tickets that we don't have any tickets for them i'm on it i'm calling them right now ... you never want to make someone do something that you wouldn't do yourself"
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "When the Sounders ownership group formed, Paul Allen didn't buy in with a straight cash investment like the other owners — his stake was structured as a trade of assets for equity, contributing the management team and the stadium in exchange for an ownership percentage. This is a concrete example of how non-cash assets (existing infrastructure, an operating team) can be converted directly into equity in a franchise deal instead of requiring a separate cash purchase price.",
+    "quote": "paul uh paul allen was kind of the final piece um and quite frankly his was uh more of a um trade for for equity deal so basically providing the the management team providing the stadium in exchange for equity"
+  },
+  {
+    "category": "changed-belief",
+    "summary": "Hanauer cautions against reading too much into who looks like 'the best' young player between ages 9 and 14, calling early-age talent evaluation fundamentally a numbers game rather than a reliable predictor — the standout nine-year-old isn't necessarily the standout four years later. He illustrates this with Jordan Morris, who was a good but unremarkable player until age 16, then suddenly became 'a man among boys,' went on to star at Stanford, and became the first college player in 25 years to make the U.S. national team. The takeaway: youth athletic development is nonlinear enough that early rankings and academy cuts should be held loosely.",
+    "quote": "at 9 10 11 13 14 years old it's really kind of a numbers game uh you can identify maybe the best nine year old but that player may not be the best player four years from now ... jordan uh was a fantastic athlete and a good soccer player until he was 16 but at 16 or 17 he turned into a a man among boys"
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "The Sounders academy has found that some of the most skillful young players — often kids from families that emigrated from Central America, South America, or Mexico — aren't inside the organized club-soccer pipeline at all, making them invisible to standard recruiting. Hanauer flags this as an acknowledged gap in the team's talent pipeline, a useful reminder that youth-development programs relying only on formal league structures can systematically miss skilled players from communities without the same access to organized play.",
+    "quote": "it's interesting because the hispanic players sometimes are not in the organized soccer so that's kind of a an area where we we have challenges and often they're the you know they're the skillful players who whose families have come from from central america south america uh mexico"
+  }
+]

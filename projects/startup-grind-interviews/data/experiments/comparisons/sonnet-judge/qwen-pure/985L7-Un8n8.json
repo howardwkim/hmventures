@@ -1,0 +1,27 @@
+{
+  "video_id": "985L7-Un8n8",
+  "candidate": "qwen-chunked-pure-prompt",
+  "judge": "sonnet",
+  "baseline_count": 18,
+  "candidate_count": 17,
+  "matched_count": 12,
+  "recall_pct": 66.67,
+  "missed": [
+    "Fishkin attributes Moz losing its position as the leading SEO software company to SEMrush and Ahrefs specifically to a strategic decision to broaden beyond core SEO rather than double down on it. The company diversified into a wider marketing category at exactly the moment competitors stayed narrowly focused on SEO tooling and out-executed Moz on its own turf.",
+    "Fishkin recounts a specific fundraising call with a Silicon Valley investor who rejected him with open derision, telling him the idea would never work and that he needed to raise in the traditional venture way if he was serious. That single humiliating rejection became his primary personal motivation to make SparkToro succeed and prove the model viable.",
+    "Fishkin argues that the term 'influencer marketing' has been hollowed out over roughly seven years: it used to mean identifying the genuine sources of influence that reach a specific customer base, but now it commonly means paying people with large Instagram followings to post product photos. SparkToro deliberately avoids building for the Instagram-influencer-payment space as a result.",
+    "While consulting for the craft-beef subscription company Crowd Cow, Fishkin ran their keyword research and found essentially zero relevant search volume — nobody searches 'buy steak online' because Americans think of beef as an undifferentiated commodity. His conclusion was that SEO literally couldn't move the needle for this business, which became part of the direct inspiration for SparkToro's product.",
+    "Fishkin relays a specific example from a founder of Tomboy X, a Seattle apparel company, who told him Instagram advertising had been extraordinarily effective for their business specifically because their niche and audience weren't heavily targeted by other advertisers yet.",
+    "Fishkin candidly admits his own case for SparkToro's model rests partly on a non-replicable advantage: because tens of thousands of marketers already follow him from his Moz years, he could tweet once and likely land his first 50-100 customers for free, which he openly calls 'cheating' and says isn't a valid reason for anyone else to believe in the broader investment model."
+  ],
+  "net_new_genuine": [
+    "Fishkin argues that the conventional venture capital power-law model (only 4-6% of investments needing to return capital) is misaligned with founders who only get one or two career attempts, and that forcing startups into a 'hare' mentality causes premature death for businesses that could have been successful 'tortoises' at a slower, profitable pace.",
+    "Despite planning to hire no additional staff and work from home to minimize burn, Fishkin notes that healthcare costs for a two-person company are 'insanely expensive' and constitute the majority of SparkToro's expenses — a hidden operational cost anomaly of running lean in the US.",
+    "During the early days of his first venture (an agency with his mother), Fishkin and his team 'sank deeply into debt' and made every mistake possible. The critical failure was their inability to pay SEO subcontractors on time, which forced Fishkin to start learning SEO himself — directly leading to the creation of the SEO Moz blog that eventually let them dig out of debt and pivot to software.",
+    "Fishkin describes writing 'Lost and Founder' as a method of achieving catharsis for the trauma of leaving Moz, including effectively firing his mother/co-founder. He states that his public oversharing and criticism of the VC ecosystem and Moz have likely made raising a traditional venture round for SparkToro impossible, and he accepts this as 'karma' for his transparency.",
+    "Fishkin explicitly frames raising a modest amount with a low burn rate as choosing to be the 'tortoise, not the hare,' contrasting it with the typical venture playbook of immediately hiring several high-cost engineers and securing expensive office space after a raise.",
+    "Fishkin explains his specific launch-readiness criterion is behavioral, not calendar-based: he won't launch until beta users are so engaged they say 'I can't live without this' and voluntarily ask to share access with others or talk about it publicly.",
+    "Fishkin states his reason for raising a larger amount upfront was explicitly to avoid having to think about fundraising again for two to four years, arguing that frequent fundraising cycles force founders to optimize the business for investors rather than customers."
+  ],
+  "net_new_spurious": []
+}

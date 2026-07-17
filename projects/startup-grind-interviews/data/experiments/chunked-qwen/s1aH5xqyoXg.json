@@ -1,0 +1,70 @@
+{
+  "video_id": "s1aH5xqyoXg",
+  "interviewee_name": "Adrian Hanauer",
+  "interviewee_title": "Owner Seattle Sounders FC",
+  "method": {
+    "technique": "chunked-overlap",
+    "model": "Qwen3.6-27B-Q4_K_M",
+    "num_chunks": 4,
+    "overlap_pct": 20.0
+  },
+  "raw_nugget_count": 14,
+  "deduped_nugget_count": 11,
+  "nuggets": [
+    {
+      "category": "concrete-detail",
+      "summary": "To instill the value of hard work in his children, the speaker's father assigned him a summer task at age 10 to separate nylon from dacron filling in three tons of chopped polyester ski jackets, paying him 10 cents per pound. The speaker spent the entire summer completing the laborious task and earned approximately $103. As an adult, he learned that the company never used any of the separated material; the entire project was a fabricated exercise designed solely to keep him busy and focused, rather than a genuine business need.",
+      "quote": "when i was about 10 years old my dad bought um like three tons of chopped up um polyester uh ski jackets... he threw me in the garage and said tear the nylon from the from the filling the the dacron in the middle i'll pay you 10 cents a pound took me all summer uh to to do this um got my i don't know 103 dollars or something and as an adult he told me that they threw all of it away never used any of it um and it was all just to keep me busy for a summer"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "The speaker highlights a fundamental disconnect between traditional business metrics and sports franchise performance, noting that in standard industries, diligent daily work usually correlates with positive financial reports. In contrast, soccer results are subject to extreme variance where doing everything correctly for weeks can still result in a loss due to a single millimeter of ball trajectory. This means the 'P&L' is determined by Saturday's match results, which can make leadership appear incompetent despite rigorous operational correctness.",
+      "quote": "in a traditional business... when you do things right on a day-to-day basis week to week month to month usually your you know your report card your your p l kind of reflects that... and for us our p l really is the results on saturday and you can do everything right for week after week after week and the ball you know one millimeter to the right and it's a goal one meter to the left it bounces out off the post and everyone thinks you're an idiot"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "The Seattle Sounders implemented a unique governance model inspired by European clubs like Barcelona and Real Madrid, where season ticket holders act as stakeholders with voting power. Specifically, every four years, these fans vote on whether the General Manager retains their position or is removed, serving as a formal vote of confidence or no confidence. The speaker personally underwent this process after the 2012 season while serving as GM, describing it as a nerve-wracking public referendum on his leadership, noting that even his own brother doubted he would be re-elected.",
+      "quote": "we wanted our fans to feel like more than just you know just atms that we hit up once a year for their season ticket money uh we wanted them to feel like stakeholders... every four years our fans our season ticket holders get to vote on whether the general manager retains uh his or her job or loses it it's a vote of confidence or no confidence we've been through the process once i believe it was after the 2012 season um i was the general manager at the time... it was a little nerve-wracking especially when my brother told me didn't think i'd get re-elected"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "The speaker details a specific, multi-layered sports science protocol used to monitor player fitness and injury risk, moving beyond generic 'data collection' to specific tools and metrics. The system integrates heart rate monitors, GPS units for tracking acceleration/deceleration, and an 'Omega Wave' system for measuring central nervous system function to assess sleep and nutrition. This data is synchronized with specific training drills (e.g., 5v5 small-sided games) to create algorithms that visualize player load, allowing coaches to tune players for game day and manage recovery. This is tacit knowledge because it reveals the specific stack of technologies and the granular level of physiological monitoring (CNS function, specific heart rate percentages during specific drills) that defines modern professional sports management, which is rarely detailed in public-facing business advice.",
+      "quote": "we use a lot of um a lot of systems you know i would say they're all based around a couple of of um pretty basic and old technology at this point one is a is a heart rate monitor that every player wears during every training session and the other is a gps unit uh that that everybody every player wears and uh from that though we're able to track uh acceleration deceleration distance traveled um speed at which the players are are traveling um uh heart rate then is is synchronized with that um so we know and and then the drills that we're doing during those training sessions so we know you know during a 5v5 uh small sided game that you know dempsey's heart rate got to 97 percent of his max heart rate um in the early stage of this this you know of this exercise where he hadn't run it at speed for very like you know okay what's going on yeah his with his fitness um uh um we you know along with all of that we do a a ton of um there's another system called omega wave that that measures um um uh uh uh uh uh uh uh neuro uh cns central nervous system uh function functioning helps us understand whether guys are getting enough sleep uh nutrition"
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Contrary to the conventional wisdom in sports franchises where owners often prioritize maximum short-term financial gain from broadcast rights, the speaker reveals a strategic choice to prioritize distribution and fan access. They explicitly turned down opportunities to earn more money from broadcast partners if those deals came with less access or distribution for their fans. This decision reflects a long-term brand-building strategy over immediate revenue maximization, acknowledging that while a large enough financial offer could eventually change their course, their current path favors wider reach.",
+      "quote": "we've had some choices along the way to maybe get paid a little bit more money um but less uh less access and distribution for our fans uh and we've chosen the path of more distribution but there is some amount of money that would convince us to change change course"
+    },
+    {
+      "category": "changed-belief",
+      "summary": "The speaker outlines a specific theory regarding the adoption timeline of Virtual Reality (VR) in sports, distinguishing between professional and consumer applications. He predicts that VR will first be adopted on the 'team side' for coaching and analysis because organizations are willing to invest significant sums (e.g., half a million dollars) for competitive advantage. He believes consumer adoption for fan engagement will lag behind, requiring a slow build over 10 years before VR headsets become ubiquitous in homes for watching sports.",
+      "quote": "i think it will my guess is it'll probably start um uh more on the uh coach on the on the team side people who you know where we are willing to invest half a million dollars in a system that that will help us as opposed to 60 000 uh fans at home with hololens sets"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "The speaker reveals the stark contrast between their initial conservative business projections and the actual market demand, highlighting a specific case of underestimated pent-up demand in a major sports market. When planning the franchise, they created pro formas predicting 9,000, 12,000, or 15,000 season ticket holders and scaled the stadium for a maximum capacity of 25,000. However, they sold 22,000 season ticket holders in the first three weeks, and eventually reached 36,000. This specific numerical discrepancy serves as a hard-won lesson about the unpredictability of fan enthusiasm in markets with 'pent-up demand' (specifically Seattle, where other teams had failed or left), contradicting the cautious, data-driven planning typically expected in major infrastructure investments.",
+      "quote": "when we planned our our business we did a bunch of several pro formas and one of them had one of them had nine thousand season ticket holders one was 12 000 and one was 15 000. um that was and and we had scaled the building for a capacity of about 25 000. um that was going to be the maximum capacity um and uh and you know quickly we realized that we had underestimated... yeah five years ago we had 28 000 so no i wouldn't have laughed at you at that point eight nine years ago if you had asked me i would have laughed at you yeah well and we we look when we planned our our business we did a bunch of several pro formas and one of them had one of them had nine thousand season ticket holders one was 12 000 and one was 15 000... until we launched and we had 22 000 season ticket holders in the first three weeks"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "The speaker details the specific financial structure of Major League Soccer's salary cap, noting that while the average player salary is around $250,000 (based on a ~$5 million budget for 20 players), the league allows for three designated players who can be paid significantly more, such as Clint Dempsey at $5 million. This structure is explicitly designed to enforce parity, ensuring every team has a realistic chance at a championship, which contrasts with European leagues where relegation creates a massive financial cliff (dropping from ~$160 million in TV revenue to ~$20 million) and concentrates power among a few dominant teams.",
+      "quote": "we spend call it five million dollars a year on um on our uh 20 players so an average of 250 000 per player but we're we're allowed to have three players that basically we can pay anything we want um so you know you know a clint dempsey who i think again you can look this up is on something like five million dollars a year... in the english premier league every team is guaranteed i think this year um actually i think next year they're guaranteed a hundred and i want to say 160 million dollars um in tv money um every single team wow if you are relegated to the next league down it's about 20 million"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "The speaker recounts the specific, serendipitous chain of events that formed the ownership group for the Seattle Sounders. It began with a call from the MLS commissioner suggesting a meeting with Hollywood producer Joe Roth, which succeeded because both men bonded over poker rather than soccer. Drew Carey then inserted himself into the deal after breaking his hand on the set of 'The Price is Right' but refusing to miss the meeting with Roth. Finally, Paul Allen joined not through a cash purchase, but by trading equity in exchange for providing the management team and the stadium, a deal the speaker describes as beneficial for both parties.",
+      "quote": "i got a call one day from the commissioner of major league soccer and said hey you should meet this joe roth guy... we spent an hour talking about poker because we were both poker players... drew carey then found out that joe roth was gonna was gonna uh buy a franchise and called him and said i want i want in... drew spinning the wheel broke his hand um just before the meeting... and then paul uh paul allen was kind of the final piece um and quite frankly his was uh more of a um trade for for equity deal so basically providing the the management team providing the stadium in exchange for equity"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "The speaker highlights a specific challenge in their youth academy scouting: identifying talented Hispanic players who are often not part of organized soccer structures. He notes that these players, whose families often come from Central or South America, are frequently highly skilled but fall through the cracks of traditional identification methods. This represents a specific gap in their current system that they acknowledge needing to improve, despite having a structured academy that goes down to under-12s and partners with local youth clubs.",
+      "quote": "it's interesting because the hispanic players sometimes are not in the organized soccer so that's kind of a an area where we we have challenges and often they're the you know they're the skillful players who whose families have come from from central america south america uh mexico uh and uh it's a it's an area where we need to do better"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "The speaker distinguishes between the impact of injuries in 2014 versus 2015 to illustrate the nuance of team performance analysis. While the total number of injuries and games missed was statistically similar in both years, the 2015 season was negatively impacted because the injuries occurred to the team's top critical players, whereas in 2014, the injuries affected players who were less critical to the team's success. This detail underscores that aggregate injury metrics can be misleading without analyzing the specific roles of the affected athletes.",
+      "quote": "in 2015 those injuries occurred to basically our our top players in 2014 it was players who maybe didn't weren't quite as uh critical to the to the success"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "video_id": "985L7-Un8n8",
+  "candidate": "sonnet-chunked",
+  "judge": "sonnet",
+  "baseline_count": 18,
+  "candidate_count": 31,
+  "matched_count": 18,
+  "recall_pct": 100.0,
+  "missed": [],
+  "net_new_genuine": [
+    "As CEO of Moz (originally SEOmoz) from 2007, Rand Fishkin grew the company's software revenue from roughly $400,000 to about $30 million before stepping down as CEO in 2014, handing the role to longtime COO Sarah Bird, who remained Moz's CEO through the time of this interview.",
+    "After stepping down as CEO, Fishkin stayed at Moz for four more years as an individual contributor before formally leaving on February 28th, then founded SparkToro the very next day, March 1st, joking that he only wanted 'a few hours of vacation' between ventures.",
+    "Before Moz existed as a software company, Fishkin's mother ran a small marketing/web-design agency that sank into debt, partly because they couldn't pay their SEO subcontractors -- which forced Fishkin to teach himself SEO and start the SEOmoz blog. Some of those unpaid subcontractors still send him angry tweets years later.",
+    "When raising SparkToro's seed round, Fishkin and his co-founder deliberately did a priced equity round instead of a SAFE or convertible note (the default YC-popularized instrument), specifically because they did not want a future investor to be the one who set the company's valuation.",
+    "Fishkin argues standard venture-capital return math is a good deal for the investor but not the founder: only about 4-6% of venture investments return the fund's needed capital, which works fine for a VC spreading roughly 100 bets, but a founder only gets to pour their life into one company every 10-20 years, making it a bad individual bet.",
+    "After closing the seed round, Fishkin and his co-founder deliberately chose not to spend the money on growth -- their explicit plan was to hire nobody, work from home, and burn as little of the $1.3 million as possible, with health insurance as the single biggest line item for a two-person company.",
+    "Fishkin argues that being publicly candid about his struggles and mistakes (writing Lost and Founder, blogging about depression and his exit) directly damaged his ability to raise a large venture round afterward -- the opposite of the conventional wisdom that thought-leadership and authenticity build fundraising leverage.",
+    "When investors asked why he raised a full round instead of a smaller amount to preserve optionality, Fishkin's answer was that he didn't want to spend years of his life on repeated fundraising cycles, because that process forces founders to unconsciously start optimizing the business for what investors want to hear rather than for customers.",
+    "Fishkin says the investors most receptive to SparkToro's revenue-share model are angel investors who were previously operators/founders, because they've personally been burned by venture's binary outcome structure -- illustrated with a concrete example of an investor who can only place 6-8 bets at $50K each and can't make the traditional power-law math work for them.",
+    "Fishkin says he always prioritizes organic, brand, and content channels before paid advertising, because paid ads get dramatically higher ROI once an audience already knows and trusts the brand -- contrasting a cold Tomboy X ad impression with a retargeting ad shown to someone who already visited the site."
+  ],
+  "net_new_spurious": []
+}

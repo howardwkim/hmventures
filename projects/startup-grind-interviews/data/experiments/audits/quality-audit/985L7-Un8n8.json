@@ -1,0 +1,56 @@
+{
+  "video_id": "985L7-Un8n8",
+  "total_nuggets": 31,
+  "fail_count": 8,
+  "pass_count": 23,
+  "fails": [
+    {
+      "index": 1,
+      "category": "number/metric",
+      "summary": "As CEO of Moz (originally SEOmoz) from 2007, Rand Fishkin grew the company's software revenue from roughly $400,000 to about $30 million before stepping down as CEO in 2014. He handed the role to his longtime COO Sarah Bird, who remained Moz's CEO through the time of this interview. This concrete revenue trajectory over roughly seven years as CEO is a specific figure from his own company's history, not a general SEO-industry statistic.",
+      "in_baseline": false
+    },
+    {
+      "index": 2,
+      "category": "concrete-detail",
+      "summary": "After stepping down as CEO, Fishkin stayed at Moz for four more years as an individual contributor before formally leaving on February 28th. He founded SparkToro the very next day, March 1st, joking that he only wanted \"a few hours of vacation\" between ventures. The specific back-to-back dates illustrate just how little downtime he actually took between running one company and starting the next, revealing his personal pace rather than a generalized founder platitude about taking a break.",
+      "in_baseline": false
+    },
+    {
+      "index": 3,
+      "category": "mistake",
+      "summary": "Before Moz existed as a software company, Fishkin's mother ran a small marketing/web-design agency that sank deeply into debt. Part of that debt came from being unable to pay the SEO subcontractors they hired, which forced Fishkin to teach himself SEO and start the SEOmoz blog as a side project. Years later, some of those unpaid subcontractors still send him angry tweets when he's in the public eye — a lingering, specific consequence of a real financial mistake that most retellings of the \"SEOmoz origin story\" gloss over.",
+      "in_baseline": false
+    },
+    {
+      "index": 4,
+      "category": "number/metric",
+      "summary": "For SparkToro's seed round, Fishkin raised $1.3 million from about 35 angel investors, with individual checks ranging from roughly $15,000 to $102,000. The largest check, $102,000, came from Dharmesh Shah, who told Fishkin he'd only explain the oddly specific number over dinner. The wide check-size range and the specific largest investor and amount are concrete facts about how this unconventional round was actually assembled, not generic seed-round advice.",
+      "in_baseline": true
+    },
+    {
+      "index": 9,
+      "category": "concrete-detail",
+      "summary": "While raising for SparkToro, Fishkin had a call with a Silicon Valley investor who rejected him with open derision, telling him the idea would never work and that he needed to raise in the traditional venture way if he was serious. Rather than being discouraged, Fishkin says that single dismissive call became a specific, ongoing personal motivator — he wants to prove the company can be a world leader specifically because of how that investor talked to him. It's a concrete, personal account of how one bad interaction shaped his motivation, not a generic \"haters motivate me\" platitude.",
+      "in_baseline": true
+    },
+    {
+      "index": 13,
+      "category": "number/metric",
+      "summary": "Asked to rate his departure from Moz on a scale where zero is \"escorted out of the building by security\" and ten is \"tearful but joyful goodbyes,\" Fishkin rated it a four — slightly negative, not the storybook happy exit sometimes assumed for a founder who wrote a well-known book about the experience. He adds the detail that there was no security involved; he carried his own belongings out himself, a small but telling specific about how the exit actually happened logistically and emotionally.",
+      "in_baseline": true
+    },
+    {
+      "index": 16,
+      "category": "concrete-detail",
+      "summary": "Fishkin's mother was also his business partner at Moz, and he says that in 2012 he effectively had to remove her from the business — he stops short of calling it \"firing,\" but says functionally that's what it was, and that she could fairly rate that departure the same four (or three-to-four) out of ten that he rates his own later exit. He connects the pain of his own subsequent ouster to a sense of \"karma\" for what he had done to her years earlier — a specific, rarely-discussed detail about the compounding personal cost of a family co-founder relationship inside a venture-backed company.",
+      "in_baseline": true
+    },
+    {
+      "index": 18,
+      "category": "mistake",
+      "summary": "Writing Lost and Founder was not a smooth, linear process — Fishkin pitched publishers in New York in January 2016, then after four to five months of writing, submitted roughly a third of the book to his editor at Penguin Random House around June 2016, only to have her tell him it wasn't the right book. He threw out that entire draft, started over, and finished the final manuscript on December 31st at 10:30 p.m., right against his contractual deadline. This is a specific, hard-won detail about how much of the actual writing process was discarded and redone under deadline pressure, rather than a smooth draft-to-finish process.",
+      "in_baseline": true
+    }
+  ]
+}

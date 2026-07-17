@@ -1,0 +1,179 @@
+{
+  "video_id": "KtauDMsH-mA",
+  "interviewee_name": "Jason Stoffer",
+  "interviewee_title": "Partner Maveron",
+  "nuggets": [
+    {
+      "category": "changed-belief",
+      "summary": "Stoffer started as an analytical, numbers-driven investor who believed a financial model could actually tell you something meaningful about an early-stage company \u2014 and says he was flatly wrong. Over eight years he learned that early traction and momentum have some value but far less than he once assumed, and he has shifted almost entirely to evaluating the people rather than the metrics. The non-obvious part is the direction of travel: most new investors are warned away from pure gut-feel toward 'be more rigorous with the numbers'; his experience ran the opposite way, from spreadsheet conviction toward people conviction.",
+      "quote": "I was quite analytical when I started I mean you know I thought you know for and I thought frankly there's an for an early stage company that you could actually look at a financial model and it would mean something and I was really wrong ... I think some of my early mistakes were kind of being seduced by early momentum and I think early momentum has some value but not much",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Stoffer cites Warren Buffett's line that when a great team meets a bad market, the market wins \u2014 meaning he now weighs market quality above founding-team quality, which cuts against the common venture mantra of 'bet on the team, the market will follow.' In practice this means he screens hard on whether the market itself has room to produce a huge outcome before he lets a great team's charisma carry the decision.",
+      "quote": "my favorite Warren Buffett quote is when a great team met a mediocre market only the market maintains his reputation so you know I'm I'm I'm I'm I'm with Buffett on that",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "One of Stoffer's explicit founder-screening criteria is the absence of balance: he says he actively avoids backing people who have a lot of hobbies, take family vacations, or otherwise live a balanced life, because in his experience the founders who succeed are the ones who work around 18 hours a day and treat the company as an obsession rather than a job. This is a specific, almost counterintuitive filter \u2014 he's not just looking for passion, he's treating visible work-life balance as a negative signal at the earliest stage.",
+      "quote": "I don't want someone who's balanced I don't want someone who has a lot of hobbies I don't want someone who like you know goes on a lot of vacations with their family I basically want someone who's going to like work 18 hours a day and build a team and a culture and like kill themselves to make it happen",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Stoffer argues that management consultants, using McKinsey as the example, tend to make poor entrepreneurs precisely because their training rewards the opposite skill from what founders need: consultants are drilled to arrive at an answer that's essentially 100% correct before presenting it to a client, while founders succeed by making fast, roughly-good-enough calls (get 51% of the way to a decision, ship it, and course-correct) rather than optimizing for certainty. This reframes 'elite pedigree' as a potential liability rather than an asset when evaluating founders.",
+      "quote": "mckinsey consultants are often like terrible entrepreneurs right because like the reality is like they get a hundred you to to to go to a meeting at mckinsey with a client you need to like get the answer like a hundred percent right so uh but for an entrepreneur like it's all about cycle time like can you make can you kind of get 51 of the way there say all right we're going to do this and then you know kill it quick and move on to the next thing",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "leadership-founder",
+      "signal_strength": "B"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Stoffer describes a specific recruiting signal he looks for in a founder: the ability to irrationally convince high-caliber people to join far earlier than makes rational sense, at low pay, on the strength of vision alone. His concrete example is the founder of the real-estate startup Common, who persuaded the general counsel who had built out all of Apple's New York retail stores, plus a Goldman Sachs MD, to join at very low salaries purely on a dream \u2014 Stoffer treats this as direct evidence of founder quality, and inverts the common founder complaint 'I can't get good people to join' into a diagnosis that the vision or the founder's charisma is the actual problem.",
+      "quote": "he convinced the woman who is the gc who built all kind of the apple stores in New York to come and join them at uh you know at a you know at a incredibly low salary with uh with a dream and I think uh ... whenever people say I can't get people I'm my my my either the vision's not good enough or you're not charismatic enough to kind of do the impossible",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "number/metric",
+      "summary": "Stoffer gives concrete pricing data on how much more expensive venture rounds had become at the time of the interview: the Series A prices his firm was paying had risen roughly 50% over the prior 24 months, while late-stage private valuations had risen 150\u2013200% according to PwC data. This is a specific, dated benchmark for how fast a 'hot' venture cycle can reprice deals, and it's the concrete evidence behind his broader claim that late-stage money was flooding down into earlier stages.",
+      "quote": "our series a prices we paid have gone up roughly 50 percent over the past you know 24 months and um you know late stage the prices have gone up 150 200 if you kind of look at the pwc data",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Stoffer notes that the strongest founders increasingly bypass institutional venture capital and its governance strings entirely, jumping from a seed round straight to an $80\u2013100 million growth round by raising from high-net-worth individuals instead of firms like his. This decouples capital from governance and advice \u2014 the conventional assumption that a company needs a VC's oversight and board control to scale is being disproven by founders who deliberately choose to avoid exactly that.",
+      "quote": "if you're a really good entrepreneur there's a bunch of them who i mean we have a couple in our portfolio we backed who went right from a seed to uh you know 80 or 100 million dollar growth round and uh and it's because they um they either raised money from high net worth people along the way or they didn't choose to take institutional capital and all the constraints that people like me put on a company",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Stoffer contrasts Bay Area and Seattle risk-taking culture with a specific mechanism, not just a vibe: in the Valley, an early engineer who makes two million dollars from an exit will still live four-to-an-apartment, work on their own startup idea, and angel invest on the side, largely insulated from macro downturns because wealth preservation isn't yet their concern. In Seattle, by contrast, someone who makes three million dollars tends to get comfortable and stay at the acquiring company rather than take the next risk \u2014 meaning the missing ingredient in Seattle's ecosystem isn't capital or talent, it's a recycling culture where newly-wealthy people keep swinging instead of cashing out mentally.",
+      "quote": "if you're an early engineer at twitter and you make two million bucks you live four people to a two-bedroom apartment you're each working on your own startup idea and you're angel investing on the side ... the engineer who made three million bucks isn't like four in a house starting a company they're like pretty comfortable and they stayed at the acquirer like ebay or whatever it might be and uh and uh they don't want to take the risks",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Stoffer points to a structural, not cultural, reason Seattle underperforms the Valley on entrepreneurship: its dominant employers, Amazon and Microsoft, don't encourage employees to leave and start companies the way Google does in the Bay Area \u2014 Amazon doesn't sponsor entrepreneurship events like this one and has used non-competes against departing employees, whereas Google-alumni founders get funded by Google executives themselves. This reframes the ecosystem gap as an incentive-and-network problem tied to specific large employers rather than a vague 'Seattle is risk-averse' story.",
+      "quote": "you have amazon and like they don't exactly encourage entrepreneurship right no like you know they're not sponsoring this event google's sponsoring this event down in the valley right yeah and people come out of google and the google execs fund them people come out on amazon and you know there's uh there could be a non-compete which they try to kind of fight",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Stoffer summarizes the founder-VC access dynamic with a rule he treats as near-universal: for a genuinely high-quality opportunity, it's nearly impossible to get a VC to take the meeting until suddenly the VC is fighting to get in \u2014 there's little middle ground. He illustrates this with the True Facet story, where he wrote a small seed check without much conviction, then kept meeting the founder monthly for months, watched the story compound in real time, and eventually pushed to co-invest in a round he wasn't originally leading \u2014 the lesson being that conviction on a deal is usually built through repeated, unhurried contact rather than decided in the first pitch.",
+      "quote": "it's kind of like it's really really hard until it's easy and like you don't get to you you uh you have to fight to get the vc to take the meeting until you have to fight them off",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "number/metric",
+      "summary": "Stoffer discloses the concrete mechanics of Maveron's seed program, a deliberate relationship-building tool rather than a return-driver: they write roughly twenty $100,000 checks a year, following rather than leading rounds, and about 15% of those seed investments eventually convert into a Series A investment from the firm. Seven of the eleven investments in their current fund originated either from this seed program or from a venture-partner/entrepreneur-in-residence relationship \u2014 meaning most of their real capital deployment traces back to a cheap, low-commitment early touchpoint maintained over many months of biweekly check-ins, not to reactive deal evaluation.",
+      "quote": "seven of the 11 investments in our current fund came either out of the seed program or came out of a venture partner eir type of relationship ... i think 15 of our seeds roughly have turned into a series a",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Stoffer offers a specific staffing rule of thumb for founders: everyone at the company should personally interview every new hire until headcount reaches 100 employees. The implicit reasoning is that founder involvement in hiring is what preserves culture and quality bar during the highest-leverage growth phase, and 100 is the concrete threshold past which that becomes structurally impossible.",
+      "quote": "everyone here should interview everyone until they have 100 employees plus period",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "hiring-people",
+      "signal_strength": "A"
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Stoffer challenges the assumption that bringing in seasoned professional managers is an unambiguous upgrade for a scaling company: he argues professional managers excel at optimizing and A/B-testing what already exists but are systematically weaker at answering 'what's next,' the innovation question. He cites Amazon under Bezos as the counter-model of a founder who kept innovating alongside professional operators running the core business, and argues this is why the best-performing companies tend to still be run by their founders rather than by hired-in executives.",
+      "quote": "what can happen with professional managers is that you lose the um innovation piece ... they're really good at running a business on the metrics they're really good at like a b testing the hell out of everything ... what they're not really good at is saying hey you know what's next what's the next play",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "leadership-founder",
+      "signal_strength": "B"
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Stoffer explicitly rejects the standard 'whitespace analysis' method of picking a consumer startup idea \u2014 spotting a gap in the market and building toward it. He calls this the 'MBA thesis brand' trap and insists a good consumer idea has to come from something the founder personally experienced as broken or delightful, not from a market map, because he believes founders who didn't live the problem can't sustain the conviction or insight required to break through consumer noise.",
+      "quote": "I hate mba thesis brands where like people are like oh there's a white space in the market let's go after it ... don't take it as a thematic exercise of here's where there's white space in the market take it as this is something which bothered me or this is something that i think would delight me and it doesn't exist and i think the best brands come from that place",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "customer-discovery",
+      "signal_strength": "A"
+    },
+    {
+      "category": "mistake",
+      "summary": "Stoffer warns founders against becoming dependent on paid Facebook or Google advertising to acquire customers, arguing that this doesn't actually build a defensible business \u2014 it just puts you in direct competition with every other company also buying the same ads, and the resulting margin flows to the ad platforms rather than staying with the startup. His stated preference is for founders who can generate organic, passion-driven consumer growth first and only add paid acquisition on top of that base, rather than using paid spend as the primary growth engine.",
+      "quote": "you don't want to get stuck in this trap of using facebook advertising or google advertising to kind of buy customers because all that really does is you know i think over time ... you compete with a bunch of other people in the industry who are dependent on paid advertising and the the profits accrue to google facebook and the platforms",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "growth-marketing",
+      "signal_strength": "A"
+    },
+    {
+      "category": "number/metric",
+      "summary": "Stoffer quantifies just how rare early product-market fit actually is from a VC's vantage point: of all the companies his firm meets in a given year, fewer than two or three percent ever reach a point of genuine product usage. This reframes 'getting to one' (a small group of people who genuinely care the product exists) not as a modest milestone but as the single hardest and most selective filter in the entire venture funnel \u2014 harder, in his framing, than scaling a working product afterward.",
+      "quote": "the number of people we meet every year like you know what percent of them it's less than you know less than two or three percent actually get to a point where like you actually have real usage of the thing",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "customer-discovery",
+      "signal_strength": "B"
+    },
+    {
+      "category": "mistake",
+      "summary": "Stoffer admits that the famous Buffett advice to 'be greedy when others are fearful' is almost never actually followed by VCs in practice, using his own firm's behavior during the 2009 downturn as the example: an advisor suggested they simply buy a basket of public consumer stocks like Starbucks, Whole Foods, and e-Health, which would have returned roughly 10x, but they didn't do it \u2014 because when several portfolio companies are burning cash and can't raise, LPs actively pressure the fund not to deploy capital aggressively. This is a concrete, self-implicating admission that contrarian courage during a real downturn is much harder to execute than to preach.",
+      "quote": "we should just buy like you know we should just buy publics a basket of public stocks and like starbucks and whole foods and e-health we would have got like a 10x ... most people have don't have the uh i mean don't have the internal fortitude to like say like oh my god ... there's a lot of pressure not to deploy capital",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Stoffer describes a specific post-mortem sourcing process his firm runs when they miss a good deal: after failing to see the Series A for the home-services startup Porch even though the founder was strong, they went back and asked which angel investors had actually been in that deal, then deliberately built relationships with those specific angels so that the next time one of them backed something promising, Maveron would be shown it first. This turns 'missed deal flow' into an actionable, repeatable diagnostic rather than a one-off regret.",
+      "quote": "an example like porch like matt's a very strong entrepreneur we never saw the series a and then we asked ourselves why didn't we see the series a so we uh we uh we go back and we say okay who are the angels in the deal who do we get to who do we need to know better so next time they see something uh they're going to show it to us",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "mistake",
+      "summary": "Stoffer flags an unwillingness to delegate as one of the clearest red flags in a founder: when every decision has to run through the founder personally, it produces a cult-of-personality structure rather than a collectively-driven organization, and he says this pattern is a formula for failing to build a scaled company, because the only way to bring in great people is to hand them real rope and responsibility.",
+      "quote": "where we run into trouble is where you have a founder who's kind of unwilling to let go so the only way you could bring on great people is by giving them enough rope to give them enough responsibility to do great things and if you want to hold on to everything yourself and every decision needs to go through you that's a formula for not building a scaled successful company",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "leadership-founder",
+      "signal_strength": "B"
+    },
+    {
+      "category": "mistake",
+      "summary": "Stoffer treats basic honesty as an absolute, non-negotiable table-stakes requirement rather than one factor among many, citing a specific cautionary case: a high-profile unicorn company 'burned' (failed or badly damaged its investors) because, according to early investors he spoke with, its founder had what he calls 'a tenuous relationship with the truth.' The point isn't that dishonest founders are merely risky \u2014 it's that no amount of other strength (market, product, traction) offsets this particular failure mode.",
+      "quote": "there's a high profile unicorn that burned where kind of i talked to some of the early investors and they said the founder had a tenuous relationship with the truth",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "number/metric",
+      "summary": "Stoffer illustrates how brutal the senior-talent hiring market had become by describing a specific case from his own portfolio: a company trying to hire someone they considered a junior developer found that candidate had also received a job offer from Google for $320,000 a year. The number is used as concrete evidence for his broader claim that hiring senior (or even junior-level, in a hot market) talent had become a 'knife fight,' since even non-senior candidates were commanding compensation that would once have been reserved for experienced engineers.",
+      "quote": "we had one portfolio ceo who's trying to get a developer and they're like yeah we think they're a junior developer and google offered him 320 000 a year so it's like you know it is so darn hard",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "hiring-people",
+      "signal_strength": "C"
+    },
+    {
+      "category": "number/metric",
+      "summary": "Stoffer uses Net Promoter Score as a concrete, comparable measure of consumer delight when explaining why he backed the moving/delivery startup Dolly: the company had an NPS in the 80s, which he contrasts with Apple's NPS of roughly 70, as evidence that Dolly had turned a historically painful experience (waiting around for a delivery window) into something customers genuinely loved. This gives a quantified benchmark for what 'craveable consumer experience' looks like in practice, anchored against a company famous for customer loyalty.",
+      "quote": "so uh you know they have an mps in the 80s so i mean an mps score is kind of you know you ask people would you recommend this to a colleague or friend apple 70",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "customer-discovery",
+      "signal_strength": "B"
+    }
+  ]
+}

@@ -1,1 +1,4 @@
 docs/miho/private/
+
+# personal-ai workflow rules — ported for local use, not part of this codebase
+.claude/rules/

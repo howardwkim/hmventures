@@ -1,0 +1,42 @@
+[
+  {
+    "category": "concrete-detail",
+    "summary": "Hanauer frames the core threat to live sports attendance not as competing leagues but as the living room itself. Fans have 120-inch TVs with multiple camera angles, a second screen for stats, and their own bathroom steps away — amenities a stadium can't match. His conclusion is that teams face a binary choice: either enhance and monetize the at-home experience, or make the in-stadium experience so good that missing it feels unacceptable. This reframes \"fan engagement investment\" as a defensive necessity against the sofa, not just an upsell.",
+    "quote": "that's you know that's a challenge in and of itself in in pro sports leagues that you know people are leaving the stadium for their for their sofa sure um because now they've got you know 120 inch tvs with multiple angles and a second screen right there and uh the bathroom right there and pause pause on the you know"
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "The Sounders run their sports science program on roughly eight overlapping systems (heart rate monitors, GPS units, an Omega Wave device that tracks central nervous system function and sleep/nutrition readiness, and others), with a former Microsoft data scientist building algorithms to turn the combined data into readable graphs for coaches. Hanauer is explicit that all of this instrumentation serves exactly three purposes: reducing soft-tissue injury risk, tuning player conditioning precisely for game day, and speeding injury recovery. The value here isn't the tech stack itself but the discipline of tying every data system back to a small, named set of business purposes rather than collecting data for its own sake.",
+    "quote": "all of that is really based uh really for three main purposes one um to uh uh monitor risk of injury uh so that we can avoid avoid uh soft tissue injuries muscle muscle injuries uh two to get guys perfectly tuned uh for saturday game time uh so that the loading is just right so that they've got the right energy and and um uh and um uh stamina for the game and then third is is for injury recovery um how we how we get players back from from being injured as as quickly as possible"
+  },
+  {
+    "category": "mistake",
+    "summary": "Hanauer's hardest-learned lesson as a public-facing CEO is to stay off message boards entirely. The specific trap he names isn't just that criticism is painful — it's that anonymous posters state opinions as settled fact, and other readers then treat that fabricated fact as true and act on it, with no way for the company to correct the record. His advice for anyone running a business with a public forum attached to it is to avoid reading it altogether, because the format itself manufactures false certainty faster than it can be corrected.",
+    "quote": "people will people will go on message boards and post things as fact when because they know it's a fact when in fact it's not a fact it's nowhere near true and and then 10 people will go about their day based on that fact that someone"
+  },
+  {
+    "category": "number/metric",
+    "summary": "When the Sounders built their business case, their pro formas modeled three season-ticket scenarios of 9,000, 12,000, and 15,000 holders, and they built stadium capacity around a 25,000 ceiling they believed would never be exceeded. Actual demand blew past every projection to 36,000 season ticket holders. The gap illustrates how far even a deliberately-scenario-planned market-sizing exercise can miss when a market has genuine pent-up, unmeasured demand — the team wasn't wrong to plan conservatively, they simply had no way to see the true ceiling until launch.",
+    "quote": "we did a bunch of several pro formas and one of them had one of them had nine thousand season ticket holders one was 12 000 and one was 15 000. um that was and and we had scaled the building for a capacity of about 25 000. um that was going to be the maximum capacity um and uh and you know quickly we realized that we had underestimated"
+  },
+  {
+    "category": "contradicts-convention",
+    "summary": "Asked to explain the Sounders' outsized early success, Hanauer resists the tidy narrative that good decisions alone produced it. Instead he lists external conditions that had nothing to do with the team's own execution: the Sonics were leaving Seattle, the Seahawks and Mariners had been bad for years, and there was unmeasured pent-up demand for MLS in the market that the team could plan around but not fully predict. This is a founder openly crediting market timing and a competitive vacuum over strategy — a more candid attribution than the usual founder narrative of pure execution skill.",
+    "quote": "the sonics were on their way out of town um the seahawks and mariners had sucked for years um uh we had we had this unbelievable um management team that we launched with we had pent-up demand uh for major league soccer in this market that we knew about but we didn't you know we couldn't imagine how you know how strong that was"
+  },
+  {
+    "category": "changed-belief",
+    "summary": "Hanauer describes his effectiveness as CEO as coming from generalist breadth rather than depth in any one function: knowing enough about every area of the business to \"call bullshit\" or sense when something doesn't pass the sniff test. He's candid about where that breaks down — asked to interview senior developer candidates, he admits he can only judge whether the person seems nice, not their technical competence. The insight is a specific, self-aware boundary on what generalist leadership can and can't substitute for: it's good for smell-testing decisions across departments, useless for domain-specific technical evaluation.",
+    "quote": "i know enough about every area of our business to kind of call bullshit or or or you know sure see whether it passes the the sniff test um now that said we're uh hiring and interviewing senior developers uh next week and i was asked to interview them you're like what i'm like okay i can tell you if he's nice or not um but that that's about it so i'm no good after that"
+  },
+  {
+    "category": "number/metric",
+    "summary": "The Sounders operate under MLS's salary cap structure by spending roughly $5 million a year across 20 roster players — an average of $250,000 per player — but the league carves out three \"designated player\" slots per team that can be paid essentially unlimited amounts outside the cap. Hanauer cites Clint Dempsey as an example, earning roughly $5 million a year on his own, nearly matching the rest of the roster's combined spend. He frames this cap design as central to MLS's competitive parity, letting every team afford a marquee player while keeping the rest of the roster cost-controlled.",
+    "quote": "we spend call it five million dollars a year on um on our uh 20 players so an average of 250 000 per player but we're we're allowed to have three players that basically we can pay anything we want um so you know you know a clint dempsey who i think again you can look this up is on something like five million dollars a year"
+  },
+  {
+    "category": "other",
+    "summary": "Hanauer's closest mentor, Todd Leiweke, modeled a specific leadership habit: when the organization faced its worst, most unpleasant tasks — like calling season ticket holders who'd bought 10,000 tickets to tell them there were none available — Leiweke volunteered to do it himself immediately rather than delegating it downward. The underlying principle Hanauer draws from it is that a leader shouldn't offload work they wouldn't be willing to do themselves. It's a concrete behavioral marker (who makes the hard calls) rather than an abstract claim about good leadership.",
+    "quote": "he was the one who immediately raised his hand and said i'm on it like we have to make this difficult call and tell these people who bought 10 000 tickets that we don't have any tickets for them i'm on it i'm calling them right now um always wanted the nastiest worst uh things because he didn't want the people that worked for him to to necessarily have to have to take it on"
+  }
+]

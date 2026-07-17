@@ -7,6 +7,7 @@ source_documents:
   - docs/miho/brand/brand-voice.md
   - docs/miho/brand/icp.md
   - docs/miho/brand/proven-angles.md
+reddit_sources: docs/miho/reddit-sources.yaml
 ---
 
 # MiHO Partners content profile
@@ -68,6 +69,10 @@ clear, practical point. Favor specificity, an operator-relevant consequence, and
 reason the topic matters now. A broad trend is useful only after it clears MiHO
 relevance. Begin with current Reddit signals plus targeted web search; allow actual
 accept/pass reasons to refine the beat over time.
+
+Reddit subreddits/query/sort/window live in the sibling `reddit-sources.yaml`
+(see the `reddit_sources` field above), not here — if this profile's editorial
+territory or audience changes, check whether that file still fits.
 
 ## Writing voice and defaults
 

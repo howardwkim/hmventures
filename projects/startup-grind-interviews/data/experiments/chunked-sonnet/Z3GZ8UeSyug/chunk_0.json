@@ -1,0 +1,37 @@
+[
+  {
+    "category": "concrete-detail",
+    "summary": "To validate the trucking idea before raising money, Dan Lewis skipped desk research entirely and did guerrilla fieldwork: he searched LinkedIn for every person he could find in the trucking industry and cold-emailed them, which led to chain introductions (\"they'd introduce me to three other people\"). He physically visited operations — he got kicked out of a Whole Foods warehouse in the Sodo neighborhood of Seattle for walking in unannounced — and staked out truck stops in Marysville and other locations south of Seattle, approaching truckers walking between their rigs and the diner to ask what they liked and disliked about their work. This six-week immersion, done before he had any data, was specifically designed to compress the time between quitting his job and having a credible enough story to raise money and recruit engineers.",
+    "quote": "So, that was just honestly walking into warehouses. I went on LinkedIn and looked up every single person in the trucking industry and cold in-mailed them. And then they would talk to me and they'd introduce me to three other people. Kept doing that. Got kicked out of the Whole Foods warehouse down in Soto."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "While simultaneously researching a second idea (mobile retail for college students), Lewis bought a stack of $5 Starbucks gift cards, printed a paper questionnaire on a clipboard, and deliberately picked out a shirt that \"didn't make me look sketchy\" before showing up at community colleges to interview students in person. His interview technique was to have students hand over their phones and walk him through exactly which shopping apps they used and how — a hands-on, physical-artifact research method rather than a survey tool or focus group.",
+    "quote": "So, I went and bought a bunch of Starbucks $5 gift cards, got a clipboard, printed, like, a questionnaire, put on a shirt that didn't make me look sketchy. And then went to a bunch of community colleges and just interviewed tons of students, you know, and just did the same thing. About how do you shop? Show me your phone. How do you shop on your phone?"
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "Lewis found that the specific value of his six weeks of guerrilla customer research wasn't the data itself — he explicitly says he \"didn't have data yet\" — but the anecdotes it gave him. Having a first-hand story ready for every question an investor could ask shifted his pitch from \"I have an idea\" to a narrative backed by real conversations, and he credits this shift with changing the substance of his fundraising meetings, not just their polish.",
+    "quote": "It changed the entire conversation from I have an idea to every time there was a question, I could pull an anecdote. I didn't have data yet, but I had anecdotes. And that changed all of the fundraising conversations."
+  },
+  {
+    "category": "contradicts-convention",
+    "summary": "When advising younger entrepreneurs, Lewis pushes back on the instinct to validate an idea with friends and treat their encouragement as a green light. His view, sharpened by his own experience, is that friends are actually poor validation sources because they'll be nice rather than honest, so the real test is deliberately seeking out strangers instead. He also notes an unexpected payoff from doing this: many of the strangers he cold-approached during his six weeks of research (truckers, warehouse workers) later became paying customers, and having been the \"crazy guy\" who showed up cold made it an easier sell once he had a working product to show them, rather than a cold pitch.",
+    "quote": "So friends are bad, bad customer validation. Don't talk to your friends. Talk to your non-friends. Those people I talked to early on became customers later, which is great. Because then you can go back to them and say, hey, man, you're so hopeful to me. You're this crazy guy, exactly. Thank you so much for your help. Why don't I show you what we actually built?"
+  },
+  {
+    "category": "number/metric",
+    "summary": "As a concrete marker of Convoy's early trajectory, Lewis states that in roughly its first year as a real company the business grew to about 45 employees and raised approximately $19 million in funding — figures he offers as evidence of how compressed and fast his transition into the CEO role actually was, tying the pace of headcount and capital growth directly to how disorienting the experience felt.",
+    "quote": "I've been a CEO of a company that has gone from zero to, you know, 45 people or so, and we've raised about $19 million in just about a year."
+  },
+  {
+    "category": "changed-belief",
+    "summary": "Reflecting on becoming a first-time CEO, Lewis says he could not have predicted what the role would actually feel like, no matter how much he prepared mentally beforehand — a realization that led him to a broader conclusion about empathy itself: that people generally cannot truly understand an experience until they have lived it themselves, in any category. He draws a direct parallel to becoming a parent, where he had the same experience of prior expectation failing to match reality, and uses that comparison to argue there's no useful analogy for what being a CEO is actually like.",
+    "quote": "It actually made me think at one point, I was like, I don't think humans are very good at empathy. I don't think you can actually understand what someone's really going through until you do it yourself in any category. And when I had kids, the first time I was like, okay, I never could have expected what that was like. And then doing this, like, couldn't have predicted that."
+  },
+  {
+    "category": "other",
+    "summary": "Facing an actual, undecided choice at age 22 between going into teaching (Spanish) or management consulting after returning from a year in Chile, Lewis says a Yale dean gave him a specific decision rule rather than generic career advice: since starting in consulting keeps the door open to teaching later, but starting in teaching makes a later pivot into consulting much less likely, the higher-\"option value\" path was to consult first. Lewis says this framework was the actual deciding factor in a real choice he was otherwise ambivalent about, illustrating how a single reframing tool resolved a decision generic advice hadn't.",
+    "quote": "let me teach you this thing called option value. Um, and, you know, he basically said, if you go do management consulting right now, you can have, the odds of you being able to go be a teacher later are really high. Yeah. If you go do a teaching right now, the odds of being able to go into management consulting later are really low. So, if you're not sure which one you want to do, pick the one that has more option value."
+  }
+]

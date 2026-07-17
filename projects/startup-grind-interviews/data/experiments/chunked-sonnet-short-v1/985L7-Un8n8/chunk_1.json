@@ -1,0 +1,62 @@
+[
+  {
+    "category": "concrete-detail",
+    "summary": "When Rand Fishkin and Casey Henry raised the founding round for SparkToro, they deliberately structured it as a priced round instead of a convertible note or SAFE (the YC-style instrument). The reasoning was specific: they didn't want a future investor to be the one who effectively set the company's valuation by pricing a later round off the note. This is a non-obvious structuring choice for a small seed round, where convertible notes/SAFEs are usually the default because they're cheaper and faster to execute.",
+    "quote": "So we did a price round, right? We didn't try and do a convertible node or anything like that. Because, similar to YC Safe, right? Like the way that Y Combinator starts with their thing, the non-priced round thing did not make sense because we knew that we did not want to have someone price it in the future."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "For a two-person, self-funded startup with no outside growth pressure, Rand notes that health insurance in the US ends up being the single largest recurring expense line — more than salaries, tools, or anything else. This is a useful budgeting flag for anyone planning to run a tiny bootstrapped team without an employer group plan: the cost isn't proportional to headcount the way people expect, so it can dominate a lean startup's burn.",
+    "quote": "Most of the expense is going to health care. I'm serious, right? Health care in this country is insanely expensive for a two-person company. Yeah, it's unjustifiable."
+  },
+  {
+    "category": "other",
+    "summary": "Rand describes a call with a Silicon Valley investor who rejected SparkToro with open derision, telling him the idea would never work and that he needed to raise in the traditional way if he was serious. Rather than being discouraging, that specific rejection became one of his strongest motivators to prove the company could succeed on its own terms. The insight is a pattern about founder psychology: being told bluntly \"you can't\" can generate more resolve than encouragement does, which is worth knowing both as a founder and as an investor deciding how to deliver a pass.",
+    "quote": "the derision in his voice, just the, the, you're the stupidest person I've ever talked to. This will never work... I want to build this company and have it be a world leader just because of him... There's no better way to get a founder just like, oh, oh, I'm going to make this work than to tell, than to tell me, you know, you can't."
+  },
+  {
+    "category": "contradicts-convention",
+    "summary": "The idea for SparkToro came from a recurring pattern Rand saw in his post-Moz consulting work: SEO only helps when people are already actively searching for what a business sells. Using Crowd Cow (a crowdsourced high-quality beef delivery service) as the example, he explains that nobody searches \"buy steak online\" because Americans think of beef as a commodity, so keyword research turns up nothing usable — there's no search demand to capture. The non-obvious implication is that for products creating new demand or reframing a category, the actionable move isn't SEO at all but finding where the target audience already spends attention (podcasts, publications, people they follow) and reaching them there instead.",
+    "quote": "nobody, I mean, next to nobody searches for buy steak online. It just doesn't happen, right?... You can do nothing with SEO... there's no searches... Instead, what they have to do... is go find their audience... find all the places online and off that that audience pays attention to."
+  },
+  {
+    "category": "contradicts-convention",
+    "summary": "Rand pushes back hard on the MVP dogma, arguing it only makes sense when very few people will see your first launch. He says he strongly dislikes MVPs for SparkToro specifically because he built a large audience during his Moz years, meaning tens of thousands of marketers will show up and judge the product on day one — a bad first impression at that scale is much costlier than the lean-startup advice assumes. The point generalizes: whether an MVP is smart or reckless depends on how much attention your launch will actually get, not on a blanket \"ship fast\" rule.",
+    "quote": "I strongly dislike the MVP... I really dislike MVPs if you know in advance that lots of people are going to pay attention to your launch. I think MVPs are awesome if you think very few people are going to pay attention to your launch... on launch day, tens of thousands of marketers will come, they will look, and they will judge."
+  },
+  {
+    "category": "other",
+    "summary": "Rand offers an explanation for why prominent VCs and startup commentators keep pushing the \"launch fast, don't be embarrassed by v1\" message even though he thinks it's often wrong advice for founders. His read is that it's rational advice for the investor, not the founder: if only about 5% of a portfolio needs to succeed and returns must materialize within a 5-7 year fund cycle, speed and first-mover advantage matter more to them than getting the product right. For a founder building a durable, profit-focused business rather than optimizing for a fund's return timeline, that calculus doesn't apply — worth remembering that startup advice often encodes the advice-giver's incentives, not the founder's.",
+    "quote": "if only 5% of the companies in your portfolio need to make it, and you need your returns in five to seven years, because that's what you promised your LPs, speed to market as being the dominant first mover monopoly matters more than getting it right."
+  },
+  {
+    "category": "other",
+    "summary": "After Rand stepped down as Moz's CEO, he describes sensing that leadership attributed the company's slowing growth to his past decisions specifically — not just to the ideas themselves being wrong, but to the fact that the ideas came from him — and concluded the fix was to stop listening to him. This is a recognizable organizational failure mode worth naming: conflating \"this idea underperformed\" with \"this person's judgment is the problem\" can lead a team to discard a founder's input wholesale rather than evaluating each decision on its own merits.",
+    "quote": "there was this attitude up, right, stepped down, that, like, okay, Rand's mistakes are what got us to this plateauing growth rate. And so, in order to recover, we, we need to not listen to him."
+  },
+  {
+    "category": "number/metric",
+    "summary": "Rand lays out Moz's growth trajectory over its life: roughly 100% year-over-year growth for seven years, then a plateau down to about 50%, then 20%, then down to around 9-12% in its final years — even as the company became profitable for the first time in years. The non-obvious point is that for a venture-backed company, hitting profitability doesn't offset a low growth rate; a 10% growth rate that would be a dream outcome for a bootstrapped company like SparkToro is treated as an unacceptable result once VC money and return expectations are in the mix.",
+    "quote": "for seven years, Malas grew at 100% year over year, sort of growth rate... and then that plateaued, I think, to, like, you know, 50%, and then 20%... 11%, something like that... because it's venture-backed, that's sort of an unacceptably low growth rate, even though it's now profitable growth rate after, after a number of years of burning money."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "To describe how his exit from Moz felt, Rand uses a self-invented 0-to-10 scale where zero means being escorted out of the building by security and ten means a tearful, joyful goodbye among close friends — and rates his own departure a four. This is a reusable framing device for talking concretely about a messy, ambiguous departure (from a company, a role, a partnership) without needing to fully narrate the details — a single number on a defined scale conveys more than a vague adjective like \"difficult.\"",
+    "quote": "on a scale of zero to ten, where zero is escorted out of the building by security. And ten is, you know, you hug everybody, and it's sort of tearful but joyful goodbyes... I was like, a four."
+  },
+  {
+    "category": "contradicts-convention",
+    "summary": "Rand is candid that his radical transparency about Moz's struggles — writing openly about disagreements, depression, and a painful exit in his book \"Lost and Founder\" — likely made it much harder to raise a large venture round afterward, even though that same openness helped readers and built trust. He explicitly says if he hadn't overshared, he'd have had an easy time raising venture money at a strong valuation; instead, he believes investors would be wary given how publicly he's criticized the venture-backed growth model. This complicates the common startup-community advice to \"just be transparent\" — transparency has a real, acknowledged cost in fundability, not just upside in authenticity.",
+    "quote": "if I had come out of Moz and had sort of not overshared in the way that, ways that I have... I would have had a very easy time raising a large venture round and a great, you know, multiple... I think if I were trying to raise venture, no fucking way, right?"
+  },
+  {
+    "category": "other",
+    "summary": "Rand explains that writing — blog posts and his book — is his specific mechanism for processing painful experiences like the Moz departure, as opposed to other common coping methods like therapy or emotional venting. He notes the payoff isn't book sales (he says it wasn't a bestseller) but the catharsis of getting it off his chest, reinforced when readers email him saying his openness made them feel less alone in similar experiences. This names writing publicly about failure as a legitimate, effective processing tool in its own right, not just a marketing or personal-brand exercise.",
+    "quote": "a huge part of processing and being able to take something off my chest is write about it... especially when other people email me and say, I have also been through that and thank you for writing this because now I don't feel alone. I think that's the biggest, that's like the biggest thing for me."
+  },
+  {
+    "category": "other",
+    "summary": "Rand's mother was his co-founder at Moz, and he describes effectively having to part ways with her professionally alongside his own departure — noting that unlike a typical co-founder split, this was also his mom. He frames the pain of that outcome as a kind of karmic parallel he wasn't fully prepared for. The practical takeaway for anyone considering starting a company with a family member: the risk of a bad ending compounds when the business relationship and the family relationship are the same relationship, and the emotional fallout doesn't stay contained to the business.",
+    "quote": "it's not just your partner in the business. It has to be your mom... I didn't technically fire my mom, but for all intents and purposes... she could fairly say four, three or four out of ten also... this is karma. Like, this is sort of what you, you are reaping what you sow."
+  }
+]

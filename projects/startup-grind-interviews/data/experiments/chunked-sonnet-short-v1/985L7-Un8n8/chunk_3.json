@@ -1,0 +1,52 @@
+[
+  {
+    "category": "mistake",
+    "summary": "Fishkin explains why SparkToro raised $1.3M instead of a smaller, shorter-runway amount even with a low burn rate: he didn't want to spend the next two to four years thinking about fundraising again. His reasoning is that a short runway forces a founder to optimize the business for what investors want rather than what customers want, which is corrosive if you're trying to build a profitable long-term company. He notes that even investors themselves will say not to optimize for their interest, but founders do it anyway because they have to when money is tight. The takeaway is that raising a bit more than the bare minimum buys strategic independence from investor pressure, not just runway.",
+    "quote": "because I don't want to spend another day thinking about fundraising for the next two or three or four years. And everybody hates it... I think it forces you to have to optimize your business, not for customers, but for investors, which if you're trying to build a profitable long-term company is dumb."
+  },
+  {
+    "category": "mistake",
+    "summary": "Fishkin cites a concrete, years-long mistake from his time at Moz: he optimized the business around the objections Bay Area VCs gave him when they passed on funding in 2009-2011, including eliminating services revenue entirely to look like a pure-software company. Five years later, the industry trend reversed and blended software-and-services models became the accepted norm, meaning the change he made specifically to please investors turned out to be wrong for the business. He frames this directly as the reason he now resists optimizing SparkToro around investor preferences. The lesson: chasing what investors say they want, rather than what serves the business, can lock in changes that age badly once fashions shift.",
+    "quote": "I spent years at Moz, optimizing Moz's business for what I heard was the reasons Valley investors turned me down in 2009 and 2010 and 2011. And those were bad moves. Those were bad moves for the core of the company. Things like getting rid of services entirely so that we had zero services revenue at all. And then, of course, what happened five years later? Oh, now the new trend is a blended software and services."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "When asked why SparkToro raised $1.3M rather than a larger amount, Fishkin gives a second, more tactical reason beyond avoiding repeat fundraising: the round size itself needed to feel psychologically unremarkable to investors. He believes a $3M ask would have triggered pushback and scrutiny simply because it exceeded what people expect at the seed stage, whereas $1.3M matched a size range investors were already comfortable with. This suggests that anchoring a raise to the "normal" number for your stage can smooth the fundraising conversation independent of what the business actually needs.",
+    "quote": "I think if I had said three million, a lot more people would have been like, whoa, wait a minute. That much money?... But 1.3 being sort of a round size that many folks were familiar with in the seed stage felt comfortable."
+  },
+  {
+    "category": "mistake",
+    "summary": "Fishkin corrects the audience's premise that Moz's revenue was declining because of Google's changes -- it's actually still growing, just slowly. The real cause of Moz losing ground to SEMrush and Ahrefs, he says, was a strategic mistake: Moz took its focus off SEO specifically and tried to broaden into being a wider marketing category player, ceding ground to competitors who stayed narrowly focused on SEO. This is a cautionary example of losing a market not because of external forces but because of self-inflicted diversification away from a core strength.",
+    "quote": "Moz basically lost out to two big competitors, SEMrush and Ahreps, because we took our eye off the SEO ball and tried to go broader and be something other than SEO."
+  },
+  {
+    "category": "number/metric",
+    "summary": "Fishkin cites a specific data point on how much organic search traffic has dried up: as of clickstream data he obtained from Jumpshot in February, 49% of all Google searches result in zero clicks to any website, because Google increasingly answers the query directly on the results page. He argues this is exactly why the market for SEO/rank-tracking software (Moz, SEMrush, Ahrefs) is positioned to keep growing even as organic traffic itself shrinks -- marketers still need someone to track and report on how they're showing up in shrinking, more complex result types. It's a concrete number that reframes "SEO is dying" into "SEO tracking is becoming more necessary, not less."",
+    "quote": "across all Google searches, according to Clickstream data I got from Jumpshot in February, 49% of all searches result in zero clicks. The answer is right there."
+  },
+  {
+    "category": "contradicts-convention",
+    "summary": "Asked which investors are actually receptive to his slower-growth, profit-focused model (versus the standard venture path), Fishkin identifies angel investors who are themselves former founders/operators as the best fit, and explains the math behind why. A typical angel might have $3-4M to deploy and can only place a handful of $50K bets across 6-8 startups -- nowhere near enough volume for the venture math (a few huge winners covering many losses) to work for them personally. Instead, if even 20-50% of their portfolio companies survive and return some capital over several years, that's a great outcome for them, especially since many angels frame it as giving back to a community rather than beating an index fund. This reframes "who should I raise from" around an investor's actual portfolio math and motivation, not just their check size.",
+    "quote": "I want to go ahead and put $400,000 towards, you know, six or eight startups, 50K each. Okay. I can't place enough bets for the venture model to pay out for me. But if there's something that gives me, you know, 20% of the companies or 30%, or, you know, oh, my God, 50% of the companies survive five years, that could be huge."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "SparkToro's free tools deliberately don't collect email addresses as the price of use -- instead they require connecting a Twitter account via OAuth. Fishkin gives two reasons: first, it builds the brand impression that follower count doesn't equal real influence (a belief central to SparkToro's product thesis), and second, and more practically, Twitter's API is expensive to call at volume, so having users authenticate via OAuth lets SparkToro make many API calls under each user's connection rather than paying Twitter directly for API access. This is a case of a lead-gen mechanic being chosen for infrastructure-cost reasons as much as marketing ones.",
+    "quote": "you do have to give us one thing, which is that you have to connect your Twitter account, right? For us to be able to analyze it and give you sort of the free data... Twitter's API is very expensive and we would like to make many calls to it. And so having OAuth connections means that we can make a lot of those calls without paying Twitter a ton of money early on."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "Fishkin says SparkToro largely avoids Instagram marketing because he's not personally interested in the influencer-marketing-as-paid-post model it's become, but he carves out an important exception: Instagram advertising can be extraordinarily effective for early movers in a category that isn't yet saturated with advertisers there. He cites Tomboy X, a Seattle apparel company making boy-shorts and boxer-briefs for women with a GLBTQ-friendly niche audience, as an example where Instagram ads worked exceptionally well because they were able to find and target the specific accounts their audience already followed before competitors crowded the channel. The generalizable point: channel effectiveness depends heavily on how crowded that channel already is within your specific category, not on the channel itself.",
+    "quote": "people who are advertising in a category where there are a few other advertisers on Instagram... I have seen Instagram advertising be extraordinarily effective for new companies in a category... I think it can be effective, uh, as long as the sector isn't overrun."
+  },
+  {
+    "category": "mistake",
+    "summary": "Fishkin identifies a common startup mistake: spending on advertising before building any organic brand awareness. His stated approach is to always start with organic reach, brand, and content first, because advertising becomes dramatically more effective (higher ROI) once an audience already recognizes, likes, and trusts you -- for example, retargeting ads convert far better on someone who has already visited your site once than on someone who has never heard of you. He generalizes this beyond his own company to Tomboy X and Crowdcow, framing "building your crowd" (website visitors, email addresses) as the real foundational asset that makes later paid spend efficient, rather than treating ads as a starting point.",
+    "quote": "I always biased starting with organic, with brand and with content because advertising, once people have already come to know you, like you and trust you gets way higher ROI. I think that one of the biggest mistakes that startups make and many companies make is that they invest in advertising [when] no one knows who they are."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "Asked how he manages 35 investors without them interfering in daily decisions, Fishkin says he has heard from essentially none of them since closing the round, and attributes this to a deliberate filter he applied during the raise itself: when he encountered prospective investors during fundraising who were unusually active or wanted heavy involvement in decisions, he simply didn't call them back. He frames this as a selection bias he intentionally built into who ended up on his cap table -- prioritizing busy, experienced operators/investors who prefer hands-off involvement (checks now, updates later) over investors who wanted more control or visibility into operations.",
+    "quote": "when I found people during the round, during the raise who were not like that, I did not call them back."
+  }
+]

@@ -1,0 +1,101 @@
+{
+  "video_id": "qenvDqBIA10",
+  "interviewee_name": "John Cook",
+  "interviewee_title": "Co-founder GeekWire",
+  "nuggets": [
+    {
+      "category": "contradicts-convention",
+      "summary": "A colleague at the Seattle PI taught Cook to never surprise the subject of a story, which runs against the popular image of hard-hitting \"gotcha\" journalism. Instead, the discipline is to have every fact locked down and verified before ever confronting someone, then give them a real, informed chance to respond on the record. The subject can then choose to talk or stay silent, but either choice becomes part of the story rather than the reporter engineering an ambush moment. The non-obvious part is that this approach doesn't weaken confrontational reporting; Cook still broke stories that sent people to federal prison using this method.",
+      "quote": "she told me, you never really want to surprise people. And so that was good because there's this element of journalism where it's like this gotcha journalism. You're trying to surprise and get, and, and you really don't want to do that. You want to be, you want to have your facts lined up and things buttoned down when you do talk to people that, uh, that you're just reporting on the story. And you're giving them the opportunity to speak.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Cook learned his beat-ownership strategy from a colleague who covered a single county so completely that \"no one really messed with it\" \u2014 she had built what he calls a moat around the beat by simply knowing everything happening in it before anyone else did. He copied this directly onto the Seattle startup scene starting in the late 1990s: pick a genuinely uncovered, greenfield topic (no one else was writing about startups and venture capital at the time) and become the exhaustive default source on it before competition arrives. The lesson generalizes beyond journalism \u2014 total early coverage of a neglected niche builds a durable position that's hard for a later entrant to dislodge, precisely because there's nothing to compete over once you're already the only comprehensive source.",
+      "quote": "she was really good at carving out her niche and like developing a moat around her beat that, you know, no one could really touch... she owned Wayne County... And no one else was covering it. And so it was, it was a total greenfield.",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "growth-marketing",
+      "signal_strength": "A"
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "While employed at the Seattle PI, Cook and future GeekWire co-founder Todd Bishop each built their online coverage under their own personal names (\"John Cook's Venture Blog,\" \"Todd Bishop on Microsoft\") rather than under the newspaper's institutional brand. This runs counter to the usual employee posture of building the employer's brand, but it meant the audience and reputation they accumulated were personally portable. When they eventually left to start what became GeekWire, that pre-built personal following made the transition dramatically easier than it would have been if their work had only ever been associated with the paper's masthead.",
+      "quote": "I developed, luckily, in hindsight, developed what was called John Cook's Venture Blog at the PI. And it was nice because it happened to be branded under my team... that was a good lesson in terms of, you know, branding under your own personal brand does matter... That made it much easier when we did decide to leave the PI.",
+      "opportunity_signal": true,
+      "small_business_focus": true,
+      "opportunity_topic": "growth-marketing",
+      "signal_strength": "A"
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Cook and Bishop tried to spin their coverage out into an independent publication from inside the Seattle PI, backed by a full 25-page business plan, and it went nowhere \u2014 not for lack of merit, but because the paper (Hearst-owned, bound by a joint operating agreement, unionized) could not structurally allow it. The real blocker wasn't the specific proposal; it was that granting one team an entrepreneurial spin-out would set a precedent every other ambitious employee would then demand too. Cook draws a direct parallel to journalist Ezra Klein's later failed negotiation to spin his blog out of the Washington Post, arguing this is a general property of legacy media companies, not a one-off institutional failure at his old paper.",
+      "quote": "We actually tried to start what essentially became GeekWire at the PI with a spin-out publication. We had a full 25-page business plan... that was just...it was just a dead end... the newspaper is totally hamstrung there because they can't start to carve out entrepreneurial talent and say, yeah, go for it. Because everybody's going to want to go do it.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Cook contrasts two models of investigative depth: the traditional approach of a reporter disappearing for six to eight months to produce one comprehensive project piece, versus his own approach of covering a fraud case (the Intellium scandal) as a beat reporter, showing up every single day, digging through court filings and reader tips as they came in. Looking back at the cumulative body of daily coverage, he judges it as good as the big single investigative piece would have been, despite never once sitting down to write \"the comprehensive report.\" This challenges the assumption that depth requires isolation and a single big reveal \u2014 sustained daily incremental coverage can equal or beat the prestige investigative format.",
+      "quote": "that's a story that I didn't ever sit back in my cubicle and go off for three weeks and decide I'm going to do the comprehensive report on Intellium. So what I did was I was there every day... if you looked at the body of the work, it was probably as good as the big piece that you would do if you sat back for six, eight months and tried to do that big analysis.",
+      "opportunity_signal": true,
+      "small_business_focus": true,
+      "opportunity_topic": "growth-marketing",
+      "signal_strength": "B"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "When Redfin closed a $50 million funding round, GeekWire was deliberately left off the company's list of reporters given advance access \u2014 yet Cook still broke the story same-day, and beat Reuters, Wired, and the Wall Street Journal to it. His route around the lockout was a tipster who searched Delaware corporate filing records and found that Redfin's registration had recently been amended to reflect the new funding. This is a concrete, replicable investigative technique: state corporate-registry changes (Delaware being the default incorporation state for many US startups) can reveal a funding event independent of, and even despite, a company's PR gatekeeping.",
+      "quote": "I got the news with help from a great tipster who was able to dig into the Delaware corporate records and find out that they had changed their corporate records in the last week to reflect a 50 million dollar funding come in. And the company did not want to talk to me.",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "growth-marketing",
+      "signal_strength": "B"
+    },
+    {
+      "category": "other",
+      "summary": "Asked where he'd start a company if money were no object, Cook's answer isn't \"wherever the idea is best\" \u2014 it's a specific geographic-arbitrage move: raise the capital in Silicon Valley, because that's where the money and the deep bench of venture funds actually are, but build and run the company out of Seattle. He frames this as a practical workaround for a real structural gap (Seattle's shrinking local venture ecosystem) rather than a compromise, and notes entrepreneurs are already doing exactly this split.",
+      "quote": "Well, what I would do is, I would go and raise money in the valley and I would start it here. And I think you see, and you do see entrepreneurs doing that, in part because it's very challenging to raise money here.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "mistake",
+      "summary": "Cook's single biggest regret is the timing of his own exit from the Seattle PI: he and Bishop left roughly six months before the paper publicly announced it was closing its print operation, and in hindsight staying that extra stretch would have paid off twice over. First, as a ten-year employee at a union shop, staying through the closure would have entitled him to a real severance package. Second, he could have used that paid \"lame duck\" window \u2014 three to four months where the paper was still operating but clearly on its way out \u2014 to build his new venture on the side before it fully launched. The lesson: an early, clean break from a dying institution can cost you a funded runway that a slightly later, messier exit would have handed you for free.",
+      "quote": "In retrospect, it probably would have been very smart for us to stay because I was there ten years. It was a union shop. I was going to be owed a pretty good severance package and be taken care of. And plus during that lame duck period of three to four months while I could have built the thing up. So I do regret that to some degree.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Cook's operating rule for his co-founder partnership with Todd Bishop treats real conflict as expected and even healthy, but puts a hard time limit on how long it's allowed to fester. He describes genuine \"blow down arguments\" where they're yelling at each other, followed by getting back to it and repairing things within hours, not days or a week. The specific, actionable norm is the time bound itself: unresolved co-founder tension left to sit for a week is, in his words, dangerous, so the discipline is forcing a same-day resolution rather than letting either party stew.",
+      "quote": "Todd and I have had, you know, blow down arguments, you know, where we're yelling at each other... coming back, you know, not a week later, but even hours later after that... And make up quickly. Cause you can't sit there and sue on something for a week and start off. I mean, that's like, it's very dangerous. You need to get over it very quickly.",
+      "opportunity_signal": true,
+      "small_business_focus": false,
+      "opportunity_topic": "leadership-founder",
+      "signal_strength": "A"
+    },
+    {
+      "category": "number/metric",
+      "summary": "Citing a Wall Street Journal analysis he covered, Cook points out that of the 37 privately held U.S. tech companies valued at a billion dollars or more at the time, exactly zero were headquartered in Seattle \u2014 a concrete gap in the region's ability to produce venture-scale outcomes despite its overall tech wealth. He pairs that with a counterpoint metric to show the picture isn't purely bleak: two Seattle companies that went public the prior year, Zulily (roughly $5 billion market cap) and Tableau (roughly $4 billion), both ranked in the top five nationally for venture-backed exits in 2013. The two numbers together frame a specific, falsifiable claim about the region's startup ecosystem: strong at producing large exits, weak at producing private unicorns.",
+      "quote": "the Wall Street Journal came out with an analysis, and it looked at the 37 privately held tech companies that have a billion dollar valuation or more. And, you know, I pointed out, there wasn't one Seattle company on the list... those two companies were in the top five in terms of venture-backed exits for 2013.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Cook argues, using RealNetworks as his case study, that a once-dominant company stumbling can be a net positive for the surrounding regional startup ecosystem rather than a pure loss. He traces a long list of significant Seattle-area companies (Isilon, Big Fish Games among them) founded by RealNetworks alumni after that company hit its own wall, and generalizes the pattern to speculate that a stumble at Microsoft or Amazon could similarly release experienced talent to found new companies. This inverts the intuitive assumption that a struggling anchor company is bad news for its local tech scene \u2014 its distributed alumni network may end up mattering more than its own continued success.",
+      "quote": "I wrote a column... about real networks. And I said, real networks is the forgotten superhero of Seattle tech... Isilon, Sujol Patel, and Paul Thielen, Big Fish Games... maybe having a Microsoft really hit a hiccup or an Amazon hit a hiccup, could do something to spark that wave of entrepreneurial energy here.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    },
+    {
+      "category": "number/metric",
+      "summary": "Cook describes Seattle's angel investing scene as effectively propped up by a single person: he says that without that one investor, the local angel community \"would be in bad shape,\" and cites having heard the person was involved in 57 deals at once. This is a specific, quantified data point about ecosystem fragility \u2014 a whole regional funding layer depending heavily on one individual's deal volume, rather than being distributed across a deep bench of angels.",
+      "quote": "The angel community largely was supported by Rudy Godry... without Rudy, frankly, the angel community here would be in bad shape. I mean, he, I heard the other day he's in 57 deals, which, I mean, that's a lot of deals.",
+      "opportunity_signal": false,
+      "small_business_focus": false
+    }
+  ]
+}

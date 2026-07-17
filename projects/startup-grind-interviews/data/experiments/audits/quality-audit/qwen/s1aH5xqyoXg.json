@@ -1,0 +1,32 @@
+{
+  "video_id": "s1aH5xqyoXg",
+  "total_nuggets": 11,
+  "fail_count": 4,
+  "pass_count": 7,
+  "fails": [
+    {
+      "index": 0,
+      "category": "concrete-detail",
+      "summary": "To instill the value of hard work in his children, the speaker's father assigned him a summer task at age 10 to separate nylon from dacron filling in three tons of chopped polyester ski jackets, paying him 10 cents per pound. The speaker spent the entire summer completing the laborious task and earned approximately $103. As an adult, he learned that the company never used any of the separated material; the entire project was a fabricated exercise designed solely to keep him busy and focused, rather than a genuine business need.",
+      "in_baseline": true
+    },
+    {
+      "index": 6,
+      "category": "concrete-detail",
+      "summary": "The speaker reveals the stark contrast between their initial conservative business projections and the actual market demand, highlighting a specific case of underestimated pent-up demand in a major sports market. When planning the franchise, they created pro formas predicting 9,000, 12,000, or 15,000 season ticket holders and scaled the stadium for a maximum capacity of 25,000. However, they sold 22,000 season ticket holders in the first three weeks, and eventually reached 36,000. This specific numerical discrepancy serves as a hard-won lesson about the unpredictability of fan enthusiasm in markets with 'pent-up demand' (specifically Seattle, where other teams had failed or left), contradicting the cautious, data-driven planning typically expected in major infrastructure investments.",
+      "in_baseline": true
+    },
+    {
+      "index": 7,
+      "category": "concrete-detail",
+      "summary": "The speaker details the specific financial structure of Major League Soccer's salary cap, noting that while the average player salary is around $250,000 (based on a ~$5 million budget for 20 players), the league allows for three designated players who can be paid significantly more, such as Clint Dempsey at $5 million. This structure is explicitly designed to enforce parity, ensuring every team has a realistic chance at a championship, which contrasts with European leagues where relegation creates a massive financial cliff (dropping from ~$160 million in TV revenue to ~$20 million) and concentrates power among a few dominant teams.",
+      "in_baseline": true
+    },
+    {
+      "index": 8,
+      "category": "concrete-detail",
+      "summary": "The speaker recounts the specific, serendipitous chain of events that formed the ownership group for the Seattle Sounders. It began with a call from the MLS commissioner suggesting a meeting with Hollywood producer Joe Roth, which succeeded because both men bonded over poker rather than soccer. Drew Carey then inserted himself into the deal after breaking his hand on the set of 'The Price is Right' but refusing to miss the meeting with Roth. Finally, Paul Allen joined not through a cash purchase, but by trading equity in exchange for providing the management team and the stadium, a deal the speaker describes as beneficial for both parties.",
+      "in_baseline": true
+    }
+  ]
+}

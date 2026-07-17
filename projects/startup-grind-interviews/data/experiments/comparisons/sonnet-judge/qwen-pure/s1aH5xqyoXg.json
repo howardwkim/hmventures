@@ -1,0 +1,21 @@
+{
+  "video_id": "s1aH5xqyoXg",
+  "candidate": "qwen-chunked-pure-prompt",
+  "judge": "sonnet",
+  "baseline_count": 18,
+  "candidate_count": 11,
+  "matched_count": 12,
+  "recall_pct": 66.67,
+  "missed": [
+    "During lean years in his family's pillow-and-comforter manufacturing business, Hanauer recalls dinner-table conversations where the family openly acknowledged that the financially expedient, profitable move would have been to lay people off — and his father fought against doing so 'tooth and nail,' even when it meant the family itself absorbed the financial hit.",
+    "Hanauer names a specific, mundane personal cost of running a public-facing sports franchise: when the team is struggling, he avoids going out to dinner with his girlfriend because he doesn't want to run into people.",
+    "Hanauer's closest mentor, Todd Lewicky, modeled a specific management behavior he observed firsthand: three weeks after Lewicky became CEO of the Tampa Bay Lightning, Hanauer visited for a game and found Lewicky already knew half the arena ushers by name, along with their families. Lewicky also had a habit of personally volunteering for the worst, most painful tasks rather than delegating them downward.",
+    "Hanauer's brother told him repeatedly, before launch, that buying an MLS franchise was 'the stupidest single idea he had ever heard in his life' — and kept saying so right up until the Sounders sold 22,000 season tickets in the first three weeks, at which point he reversed completely and claimed the idea had been his all along.",
+    "Hanauer uses the real trajectory of Jordan Morris to illustrate why early talent identification in youth academies is unreliable: Morris was a good athlete through age 16 but not a standout, and only at 16-17 did he suddenly become 'a man among boys,' becoming the academy league's top scorer, leading Stanford to a national championship, and eventually signing with the Sounders.",
+    "Hanauer admits that despite being generally hostile and unreliable, fan message-board commentary contains 'a kernel of truth' in a lot of what gets said, even when specific claims are stated as fact and are 'nowhere near true.' He frames the real danger as not the falsehoods themselves but that other people treat those claims as settled fact and act on them."
+  ],
+  "net_new_genuine": [
+    "The speaker outlines a specific theory regarding the adoption timeline of Virtual Reality (VR) in sports, distinguishing between professional and consumer applications. He predicts that VR will first be adopted on the 'team side' for coaching and analysis because organizations are willing to invest significant sums (e.g., half a million dollars) for competitive advantage. He believes consumer adoption for fan engagement will lag behind, requiring a slow build over 10 years before VR headsets become ubiquitous in homes for watching sports."
+  ],
+  "net_new_spurious": []
+}

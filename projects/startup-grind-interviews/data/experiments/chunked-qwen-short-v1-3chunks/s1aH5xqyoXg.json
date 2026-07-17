@@ -1,0 +1,127 @@
+{
+  "video_id": "s1aH5xqyoXg",
+  "interviewee_name": "Adrian Hanauer",
+  "interviewee_title": "Owner Seattle Sounders FC",
+  "method": {
+    "technique": "chunked-overlap",
+    "model": "Qwen3.6-27B-Q4_K_M",
+    "reasoning": false,
+    "num_chunks": 3,
+    "overlap_pct": 20,
+    "prompt_file": "gold-extraction-prompt-short-v1.md"
+  },
+  "timing": {
+    "total_elapsed_seconds": 797.2,
+    "per_call": [
+      {
+        "wall_seconds": 85.4,
+        "completion_tokens": 1070,
+        "predicted_ms": 72595.534
+      },
+      {
+        "wall_seconds": 92.6,
+        "completion_tokens": 1128,
+        "predicted_ms": 76991.462
+      },
+      {
+        "wall_seconds": 97.1,
+        "completion_tokens": 1244,
+        "predicted_ms": 84394.991
+      },
+      {
+        "wall_seconds": 106.2,
+        "completion_tokens": 1315,
+        "predicted_ms": 89892.637
+      },
+      {
+        "wall_seconds": 90.4,
+        "completion_tokens": 1144,
+        "predicted_ms": 77638.736
+      },
+      {
+        "wall_seconds": 98.9,
+        "completion_tokens": 1212,
+        "predicted_ms": 82830.323
+      },
+      {
+        "wall_seconds": 226.5,
+        "completion_tokens": 3180,
+        "predicted_ms": 216169.02
+      }
+    ]
+  },
+  "raw_nugget_count": 16,
+  "deduped_nugget_count": 14,
+  "nuggets": [
+    {
+      "category": "mistake",
+      "summary": "Adrian Hanauer reveals that his father made him spend an entire summer manually tearing nylon from polyester ski jackets for a nominal wage, only to throw the entire batch of material away. The work was not for production purposes but was a deliberate, albeit deceptive, exercise designed to teach the value of hard work and keep him focused. This illustrates a counter-intuitive parenting strategy where the product of the labor is irrelevant; the value lies entirely in the discipline and work ethic instilled during the process. It challenges the conventional view that childhood chores must have tangible economic utility to be educational.",
+      "quote": "when i was about 10 years old my dad bought um like three tons of chopped up um polyester uh ski jackets... he threw me in the garage and said tear the nylon from the from the filling... took me all summer uh to to do this... as an adult he told me that they threw all of it away never used any of it um and it was all just to keep me busy for a summer and really and keep me focused on a on an activity"
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Hanauer contrasts the feedback loops of traditional business with those of sports management, noting that in standard industries, consistent good work usually results in positive financial metrics. In sports, however, you can execute every strategic decision correctly for weeks, yet a single random bounce of the ball can result in a loss and public criticism. This disconnect between effort/strategy and immediate outcome requires owners to decouple their self-worth and operational assessment from short-term game results, focusing instead on long-term structural health rather than weekly report cards.",
+      "quote": "in a traditional business... when you do things right on a day-to-day basis week to week month to month usually your you know your report card your your p l kind of reflects that... for us our p l really is the results on saturday and you can do everything right for week after week after week and the ball you know one millimeter to the right and it's a goal one meter to the left it bounces out off the post and everyone thinks you're an idiot"
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "The Sounders implemented a democracy in sports model where season ticket holders vote on whether the General Manager retains their job every four years. This directly contradicts the traditional sports franchise model where owners hold absolute power and fans are treated primarily as revenue sources. By giving fans a formal vote of confidence or no confidence, the ownership group forces itself to maintain high levels of transparency and accountability, treating the fan base as stakeholders rather than just customers. This structural change ensures that management remains aligned with the core community's interests, preventing the complacency often seen in monopolistic sports markets.",
+      "quote": "we created you know our mantra i guess is democracy in sports uh we wanted our fans to feel like more than just you know just atms that we hit up once a year for their season ticket money uh we wanted them to feel like stakeholders... every four years our fans our season ticket holders get to vote on whether the general manager retains uh his or her job or loses it"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Hanauer describes the specific operational shift from relying on the Seattle Seahawks' business infrastructure to building an independent 70-75 person business team. Initially, the partnership allowed the Sounders to focus solely on soccer operations and brand building while the Seahawks handled ticketing, sponsorships, and stadium operations. Recognizing that this training wheels approach had a sunset clause, the ownership group proactively leased office space and hired staff to take over these critical business functions in 2014. This highlights the importance of planning for operational independence early in a partnership to avoid being locked into another entity's systems long-term.",
+      "quote": "part of the agreement was that the business management group of the seahawks would run the sounders mls team uh from day one... but but it was that was an agreement that was uh planned to be some there was going to be some sort of sunset to that and we would eventually uh you know kick the training wheels off and and go run our own uh business uh group... we did that yeah it was april of 2014"
+    },
+    {
+      "category": "other",
+      "summary": "Hanauer identifies the dirty nature of global soccer agent negotiations and the intense public scrutiny of sports ownership as the most difficult aspects of the job. Unlike traditional business where mistakes are internal, sports errors are published on the front page, and the negotiation process involves dealing with rumors and agents who may not be truthful. This insight serves as a warning for entrepreneurs entering highly public, relationship-driven industries: the emotional toll of public failure and the ethical ambiguity of certain negotiation tactics are significant hidden costs that are not reflected in the financial upside.",
+      "quote": "their soccer on a global level um can be a pretty dirty business um and uh you know like getting the truth out of agents as you deal with players and and the rumors that are started... yeah you know like when you screw up in in our business it's on the front of the sports page and yeah and it kind of sucks"
+    },
+    {
+      "category": "mistake",
+      "summary": "The speaker highlights a critical forecasting error where the team\u2019s initial business plans projected only 9,000 to 15,000 season ticket holders, yet they quickly sold out to 22,000 in the first three weeks. This massive underestimation occurred because they failed to fully account for the pent-up demand in a market that had recently lost other major professional teams (the Sonics) and suffered through years of poor performance by others (Seahawks, Mariners). The lesson is that in markets with suppressed demand, conservative historical data can be dangerously misleading, and leaders must recognize when pent-up energy creates a demand spike that defies standard pro formas.",
+      "quote": "when we planned our our business we did a bunch of several pro formas and one of them had one of them had nine thousand season ticket holders one was 12 000 and one was 15 000... quickly we realized that we had underestimated and and those numbers would have been in those days in major league soccer would have been decent numbers yeah so yeah i mean obviously you blew that out of the water"
+    },
+    {
+      "category": "changed-belief",
+      "summary": "The speaker describes a shift in perspective regarding celebrity ownership, moving from skepticism to recognizing its value as a profile-raising tool. Initially, the involvement of Hollywood figures like Drew Carey and Joe Roth seemed like a mismatch for a sports franchise, but their distinct styles\u2014Roth\u2019s assertive Hollywood approach and Carey\u2019s low-key, fan-centric generosity\u2014proved to enhance the team\u2019s national visibility. This insight suggests that celebrity owners are not just financial backers but active brand amplifiers who can leverage their existing audiences to drive engagement, a strategy now being adopted by other teams like LAFC.",
+      "quote": "drew is you know way low-key totally passionate into it loves it uh working doing a lot of work uh in in la now so he hasn't been up to as many games uh kind of uh um you know owner of the people uh or for the people he is and you know he'll wander into a bar and drop down a credit card and say you know beers for everyone and uh super generous... good for our profile nationally"
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Contrary to the conventional wisdom that maximizing revenue should always dictate media partnerships, the speaker\u2019s organization chose a broadcast partner that offered lower financial compensation in exchange for wider distribution. They prioritized reaching more fans and building the brand over immediate cash flow, rejecting offers that would have paid more but limited access to their audience. This decision underscores a long-term growth strategy where brand penetration and fan acquisition are valued higher than short-term rights fees, a counter-intuitive move in a business often driven by immediate monetization.",
+      "quote": "we've had some choices along the way to maybe get paid a little bit more money um but less uh less access and distribution for our fans uh and we've chosen the path of more distribution but there is some amount of money that would convince us to change change course"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "The speaker details a specific, multi-layered sports science protocol that integrates heart rate monitors, GPS units, and CNS (Central Nervous System) function tracking to optimize player performance and prevent injury. By synchronizing physiological data with specific training drills, coaches can identify anomalies, such as a player\u2019s heart rate spiking disproportionately to their exertion, indicating fitness issues or fatigue. This system allows for precise load management, ensuring players are perfectly tuned for game day and accelerating recovery, demonstrating how granular data collection can be translated into actionable coaching decisions.",
+      "quote": "one is a is a heart rate monitor that every player wears during every training session and the other is a gps unit uh that that everybody every player wears and uh from that though we're able to track uh acceleration deceleration distance traveled um speed at which the players are are traveling um heart rate then is is synchronized with that... there's another system called omega wave that that measures um um uh uh um uh neuro uh cns central nervous system uh function functioning"
+    },
+    {
+      "category": "mistake",
+      "summary": "The speaker identifies the public nature of sports management as a significant operational hazard, specifically the inability to control the narrative on message boards where misinformation spreads rapidly. He notes that false statements posted online are often treated as fact by the community, creating a double-edged sword where management cannot easily correct the record or stop the spread of rumors. The actionable insight is that leaders in public-facing roles must develop a thick skin and a strong internal belief system, as trying to manage public perception in real-time is futile and distracting.",
+      "quote": "the hardest thing for me is is the public piece of it and staying away from the message boards sure um uh not reading the paper yeah not reading the paper although the paper is much better than the message boards uh um yeah if you're ever in a business that has message boards stay away um because uh because everyone in management is an idiot"
+    },
+    {
+      "category": "other",
+      "summary": "The speaker advocates for a jack of all trades leadership style that allows executives to perform a sniff test on specialized departments without needing deep technical expertise. He explains that knowing enough about every area of the business enables him to identify obvious errors or bullshit, even if he cannot execute the specialized tasks himself. This approach suggests that generalist leaders can be highly effective by focusing on cross-functional coherence and risk detection, rather than trying to become subject matter experts in every silo.",
+      "quote": "i think we're both you know we grew up pretty well rounded and and um no no enough about enough things to you know kind of be dangerous and also be effective at the same time stay out of hot water and yeah and you know again i think that that's made i mean it's made me effective in with the sounders is i know enough about every area of our business to kind of call bullshit or or or you know sure see whether it passes the the sniff test"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Effective leadership in high-stakes environments often requires absorbing the most difficult interpersonal conflicts rather than delegating them. The speaker highlights his mentor, Todd Lewicky, who would immediately volunteer to handle the 'nastiest' calls, such as informing fans that their tickets were invalid. By taking on the emotional burden of bad news, Lewicky protected his team from burnout and resentment, demonstrating that true leadership is measured by willingness to do the tasks no one else wants to do. This approach builds immense loyalty because employees see their leader as someone who shares the pain of the business, not just the glory.",
+      "quote": "he was the one who immediately raised his hand and said i'm on it like we have to make this difficult call and tell these people who bought 10 000 tickets that we don't have any tickets for them i'm on it i'm calling them right now um always wanted the nastiest worst uh things because he didn't want the people that worked for him to to necessarily have to have to take it on"
+    },
+    {
+      "category": "mistake",
+      "summary": "Relying solely on traditional scouting metrics for youth development can lead to missed talent due to the unpredictability of physical maturation. The speaker notes that identifying the 'best' nine-year-old is often a numbers game that fails to predict future success, as late bloomers may not stand out early on. He cites Jordan Morris, who was merely a 'good' player until age 16 or 17 when he physically matured into a 'man among boys,' eventually becoming a top scorer and national team player. This insight suggests that organizations should maintain broader talent nets and be patient with development timelines, rather than cutting prospects who haven't yet hit their physical growth spurts.",
+      "quote": "at 9 10 11 13 14 years old it's really kind of a numbers game uh you can identify maybe the best nine year old but that player may not be the best player four years from now and uh and and a good example of that is a young man who we signed this year uh named jordan morris um jordan uh was a fantastic athlete and a good soccer player until he was 16 but at 16 or 17 he turned into a a man among boys"
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Parity structures in competitive leagues can create more sustainable fan engagement than meritocratic systems where only a few teams are viable contenders. The speaker contrasts MLS\u2019s salary cap and parity model with European leagues, where relegation fears and massive TV revenue disparities mean most teams are effectively playing to avoid failure rather than to win championships. In MLS, every team\u2019s fans can reasonably believe they can win the title at the start of the season, which drives consistent attendance and investment. This challenges the idea that pure meritocracy is the best model for sports business, suggesting that engineered competitiveness can be more profitable and engaging for the broader fanbase.",
+      "quote": "we want uh we want every team's fans to believe in the beginning of the year that they can win a championship uh because we think that that's a that's a better model than you know take this year's miracle of leicester city uh out of the english premiership but typically there are four or five teams in the beginning of any year in in england that can win a championship"
+    }
+  ]
+}

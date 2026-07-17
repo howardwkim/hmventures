@@ -1,0 +1,38 @@
+{
+  "video_id": "985L7-Un8n8",
+  "total_nuggets": 17,
+  "fail_count": 5,
+  "pass_count": 12,
+  "fails": [
+    {
+      "index": 4,
+      "category": "concrete-detail",
+      "summary": "Fishkin highlights a specific operational cost anomaly for small, profitable startups in the US: healthcare expenses. Despite planning to hire no additional staff and working from home to minimize the burn rate of their $1.3 million raise, he notes that healthcare costs for a two-person company are 'insanely expensive' and constitute the majority of their expenses. This detail underscores the hidden financial burdens of maintaining a lean, profitable operation in the US compared to the capital-heavy model of venture-backed scaling.",
+      "in_baseline": false
+    },
+    {
+      "index": 5,
+      "category": "mistake",
+      "summary": "During the early days of his first venture, an agency with his mother, Fishkin and his team 'sank deeply into debt' by making 'every mistake you can possibly make' in web design and client management. The critical failure was their inability to pay SEO subcontractors on time, which forced Fishkin to start learning SEO himself to save costs. This necessity led to the creation of the SEO Moz blog, which eventually attracted clients who paid on time and in full, allowing them to dig out of debt and pivot to a software business.",
+      "in_baseline": false
+    },
+    {
+      "index": 7,
+      "category": "concrete-detail",
+      "summary": "The speaker describes a specific, painful detail about his departure from Moz, rating the experience as a 'four' on a scale of zero to ten, where zero is being escorted out by security and ten is a joyful goodbye. He clarifies that while there was no security involvement and he carried his own belongings, the departure was emotionally difficult and marked by substantive disagreements with leadership. He notes that the company's growth had plateaued from 100% year-over-year to around 9-12%, and leadership attributed this slowdown to his mistakes, leading to a dynamic where his input was dismissed entirely.",
+      "in_baseline": true
+    },
+    {
+      "index": 8,
+      "category": "concrete-detail",
+      "summary": "The speaker reveals that his decision to write 'Lost and Founder' was a method of achieving catharsis for the trauma of leaving Moz, particularly the pain of effectively firing his mother, who was his co-founder. He acknowledges that his public oversharing and criticism of the venture capital ecosystem and his former company have likely made raising a traditional venture round for his new company impossible. He accepts this as 'karma' for his past actions, noting that while he could have easily raised money if he had stayed silent, his choice to be transparent has closed that door but allowed him to help others who feel alone in similar struggles.",
+      "in_baseline": true
+    },
+    {
+      "index": 9,
+      "category": "concrete-detail",
+      "summary": "The speaker details the specific timeline and failure mode of his book writing process, noting that he pitched publishers in January 2016 and submitted roughly a third of the manuscript to Penguin Random House by June 2016. The editor rejected the initial draft, forcing him to discard the work and restart, ultimately finishing the new version on December 31st at 10:30 p.m. to meet the deadline. This highlights the non-linear reality of publishing, where a significant portion of early work can be deemed fundamentally flawed by a professional editor, requiring a complete pivot rather than incremental edits.",
+      "in_baseline": true
+    }
+  ]
+}

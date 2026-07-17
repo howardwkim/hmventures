@@ -1,0 +1,21 @@
+{
+  "video_id": "s1aH5xqyoXg",
+  "candidate": "sonnet-chunked",
+  "judge": "sonnet",
+  "baseline_count": 18,
+  "candidate_count": 27,
+  "matched_count": 18,
+  "recall_pct": 100.0,
+  "missed": [],
+  "net_new_genuine": [
+    "When the Sounders split off from the Seahawks' shared business operations group in April 2014 to stand up their own front office, Hanauer says they leased office space in Pioneer Square, brought over about 30 staff who had previously worked across the Seahawks' shared business unit, and then hired roughly 40 more, landing at about 70 to 75 people in the new offices.",
+    "The Sounders' 'democracy in sports' fan-ownership model — built around the GM confidence vote and quarterly fan advisory councils — wasn't derived from internal strategy discussions but was imported wholesale by co-owner Drew Carey after he personally experienced membership-club culture at Barcelona and Real Madrid and loved it.",
+    "Managing celebrity co-owners Joe Roth (a Hollywood producer) and Drew Carey works in practice through very different, specific rhythms: Roth, based in LA, talks to Hanauer daily or a couple of times a day and attends roughly half the team's games despite the distance, while Carey is lower-key and less present at games as his LA work has increased.",
+    "Hanauer frames the club's approach to VR investment as a specific cost tradeoff: he expects adoption to start on the team/coaching side first because the club is willing to spend around half a million dollars on a system that helps performance analysis, versus needing tens of thousands of individual fans (he estimates 60,000) to each buy a Hololens-type headset before fan-facing VR becomes viable.",
+    "When it came to GPS tracking units worn during training, the Sounders had a real vendor choice to make — Adidas offers a system that embeds a GPS unit directly in the player's shoe, but Hanauer says the club chose instead to go with Catapult, an Australian company, for its tracking unit.",
+    "Hanauer notes that Major League Soccer currently prohibits clubs from embedding small cameras on player clothing/kit to capture player-point-of-view footage during matches, even though the technology exists and teams have looked at it as a fan-engagement idea.",
+    "Asked to explain the Sounders' outsized success relative to plan, Hanauer resists crediting pure business strategy and instead names a specific, contingent set of market conditions that lined up at launch: the Sonics were leaving Seattle, the Seahawks and Mariners had been losing for years, the club had an unusually strong management team, and there was pent-up local demand for MLS soccer that ownership had badly underestimated — framing it explicitly as partly luck and good timing rather than something replicable by skill alone.",
+    "Asked what he's good at, Hanauer describes himself and his brother as 'jack of all trades, master of none,' and explains the specific practical value of that generalism: knowing enough about every part of the business to 'call bullshit' or judge whether something passes the sniff test — then undercuts it with a concrete limitation, noting he'd been asked to sit in on interviews for senior developer hires and admits his only real contribution will be judging whether the candidate seems 'nice,' nothing technical."
+  ],
+  "net_new_spurious": []
+}

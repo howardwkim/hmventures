@@ -1,0 +1,23 @@
+{
+  "video_id": "Z3GZ8UeSyug",
+  "candidate": "qwen-chunked-pure-prompt",
+  "judge": "sonnet",
+  "baseline_count": 20,
+  "candidate_count": 17,
+  "matched_count": 14,
+  "recall_pct": 70.0,
+  "missed": [
+    "College mobile-shopping research used specific low-cost field-research props: $5 Starbucks gift cards, a printed clipboard questionnaire, and a deliberately non-sketchy shirt, interviewing students at community colleges app-by-app on their phones.",
+    "The strangers Lewis cold-approached during his pre-launch guerrilla research became Convoy's actual first customers, letting him later return to them with the 'you thought I was the crazy guy, now look what we built' callback pitch.",
+    "Lewis expected the hardest part of being first-time CEO to be sheer hours, since he'd worked comparable hours in consulting/big tech; what actually made it harder was the inability to mentally disengage ('never not thinking') - a shift from a time-allocation model of work-life balance to an attention/mental-processing model.",
+    "Right after closing the Series A, investors advised Lewis to write the Series B pitch deck immediately, before there was real news to fill it with, and use that to reverse-engineer the roadmap and proof points needed to make the future story true.",
+    "Convoy never seriously considered bootstrapping because the reasoning was timing-specific: smartphone penetration, data plans, and rural GPS coverage for truckers had only recently become good enough to make the business feasible, creating a limited first-mover window, so venture funding was used specifically to buy speed ('time equals money') rather than reduce personal risk.",
+    "In explaining the 'know why' value, Lewis makes a specific quantitative argument: roughly 10% of employees at a company like Microsoft are the highly engaged 'diehard' contributors who are 2-10x more valuable, and moving that ratio from 10% to 15% would be transformational for productivity - the justification for building transparency into how decisions are explained."
+  ],
+  "net_new_genuine": [
+    "Lewis explicitly advises against using friends for early customer validation because friends lie to be nice ('bad, bad customer validation'); he advocates deliberately talking to strangers/non-friends instead, since their feedback is more honestly critical.",
+    "Lewis's biggest fear when founding Convoy was that nobody would actually use the platform to ship anything - a fear that persisted for four months during the MVP build (April-September) until the first customer, Guided Products, shipped a couple of pallets in the Puget Sound region and validated the market need.",
+    "To earn engineering credibility before Convoy, Lewis deliberately engineered a multi-step 'long play' career path: management consulting to startup business development (for startup credibility) to product management to a startup working directly with product engineering to a role managing engineering and product - five or six roles in total - to eventually earn a technical co-founder's trust and the ability to hire engineers effectively."
+  ],
+  "net_new_spurious": []
+}

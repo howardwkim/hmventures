@@ -1,0 +1,57 @@
+[
+  {
+    "category": "number/metric",
+    "summary": "As CEO of Moz (originally SEOmoz) from 2007, Rand Fishkin grew the company's software revenue from roughly $400,000 to about $30 million before stepping down as CEO in 2014. He handed the role to his longtime COO Sarah Bird, who remained Moz's CEO through the time of this interview. This concrete revenue trajectory over roughly seven years as CEO is a specific figure from his own company's history, not a general SEO-industry statistic.",
+    "quote": "Moz basically grew from, what was that, maybe $400,000 in software revenue to about $30 million. And then I stepped down as CEO in 2014, promoted my longtime chief operating officer, Sarah Bird, who still is Moz's CEO today."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "After stepping down as CEO, Fishkin stayed at Moz for four more years as an individual contributor before formally leaving on February 28th. He founded SparkToro the very next day, March 1st, joking that he only wanted \"a few hours of vacation\" between ventures. The specific back-to-back dates illustrate just how little downtime he actually took between running one company and starting the next, revealing his personal pace rather than a generalized founder platitude about taking a break.",
+    "quote": "I was there for four years as an individual contributor and left February 28th and started SparkToro on March 1st because I wanted a few hours of vacation."
+  },
+  {
+    "category": "mistake",
+    "summary": "Before Moz existed as a software company, Fishkin's mother ran a small marketing/web-design agency that sank deeply into debt. Part of that debt came from being unable to pay the SEO subcontractors they hired, which forced Fishkin to teach himself SEO and start the SEOmoz blog as a side project. Years later, some of those unpaid subcontractors still send him angry tweets when he's in the public eye — a lingering, specific consequence of a real financial mistake that most retellings of the \"SEOmoz origin story\" gloss over.",
+    "quote": "the reason I started that is because I was having to learn SEO, the reason being basically that we were unable to pay our SEO subcontractors. And you can occasionally find, sometimes I'll send a tweet and one or two of those SEO subcontractors will send an angry tweet in response. Because they are still pissed that we never paid them, which I think is fair."
+  },
+  {
+    "category": "number/metric",
+    "summary": "For SparkToro's seed round, Fishkin raised $1.3 million from about 35 angel investors, with individual checks ranging from roughly $15,000 to $102,000. The largest check, $102,000, came from Dharmesh Shah, who told Fishkin he'd only explain the oddly specific number over dinner. The wide check-size range and the specific largest investor and amount are concrete facts about how this unconventional round was actually assembled, not generic seed-round advice.",
+    "quote": "We raised $1.3 million from about 35 angel investors... So the biggest check was what? One hundred and two thousand dollars... I think that was Dharma Shah. And he told me that if I let him take me out to dinner, he would explain why it was 102."
+  },
+  {
+    "category": "contradicts-convention",
+    "summary": "Instead of a normal venture-backed C-Corp, Fishkin structured SparkToro as an LLC where the 35 angel investors own \"units\" (similar to a law-firm or VC-firm partnership) rather than equity shares. Profits first go to paying back investors 1x their principal, mirroring a VC liquidation preference, and after that everyone gets a pro-rata share of ongoing profit distributions indefinitely — potentially for 40+ years, since the company never needs to sell or IPO for investors to get paid. This deliberately breaks from the standard venture assumption that a startup must either become a huge outlier or return nothing.",
+    "quote": "This means that when the company is profitable, we have the option to pay our profits out in profit share. And basically we have a requirement similar to venture capital where we pay 1x our investors amount... The first 1.3 million in profit that we decided to pay out go right back to you. So after that, everyone gets paid their percentage of the profit... you could potentially make that for 40 years, right? SparkToro is a long running company."
+  },
+  {
+    "category": "number/metric",
+    "summary": "Fishkin and his SparkToro co-founder Casey set their own salaries by a specific formula: pay themselves the market rate of a Seattle \"level one\" software engineer at a company like Microsoft or Amazon (about $150,000 at the time) until the company has paid back the $1.3 million angel investors put in, at which point the salary cap doubles to roughly $300,000. Beyond salary, the two founders retain about 75% ownership of the LLC's units. This is a specific, self-imposed compensation ceiling tied to a real market benchmark rather than an arbitrary number, and most founders don't publicize this level of detail about their own pay.",
+    "quote": "basically, Casey and I get a salary equal to, up to, the Seattle software engineer average, right? So sort of whatever level one software engineer makes it, Microsoft, Amazon, et cetera, that is what we make until we pay our investors back 1.3... at which point that goes up to two times the average. So I think right now that's one, around 150, and it would go up to as much as 300 that we could be paid in salary... Casey and I own right around 75 percent."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "For the SparkToro raise, Fishkin deliberately chose a priced equity round instead of a convertible note or SAFE (the Y Combinator-style instrument most seed startups default to). His reasoning was specific to the LLC/profit-share structure: because they never intended to let a future investor set the company's valuation or terms down the road, a non-priced instrument that defers valuation to a later round didn't fit their model at all. This is a specific mechanical choice that runs against the default seed-stage playbook of doing a SAFE first and pricing later.",
+    "quote": "So we did a price round, right? We didn't try and do a convertible node or anything like that. Because, similar to YC Safe, right? Like the way that Y Combinator starts with their thing, the non-priced round thing did not make sense because we knew that we did not want to have someone price it in the future."
+  },
+  {
+    "category": "changed-belief",
+    "summary": "Fishkin argues the standard venture-capital return math is a good deal for the investor but not for the founder. He cites the industry pattern that only about 4-6% of venture investments return the fund's needed capital, and that math still works fine for a VC because they spread bets across roughly 100 companies — but a founder only gets to pour their life into one company every 10-20 years, so playing a game built for portfolio-level odds is a bad individual bet. This reframes the default \"just raise venture and swing for a huge outcome\" startup advice as advice optimized for investors, drawn from his own experience having been venture-backed at Moz and deliberately choosing a different structure for SparkToro.",
+    "quote": "I think that it's largely bullshit that you need to fit the venture capital model of, you know, six, whatever it is, four to six percent of venture investments return the appropriate amount of capital or more to the fund. And the other 95 percent fail to do that... I think that model works fine if you are an investor... You make 100 investments, it doesn't matter if 95 of them fail, but five will make up for it. But I'm not an investor. I only get to put all my time and energy and love into one company every 10 to 20 years."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "While raising for SparkToro, Fishkin had a call with a Silicon Valley investor who rejected him with open derision, telling him the idea would never work and that he needed to raise in the traditional venture way if he was serious. Rather than being discouraged, Fishkin says that single dismissive call became a specific, ongoing personal motivator — he wants to prove the company can be a world leader specifically because of how that investor talked to him. It's a concrete, personal account of how one bad interaction shaped his motivation, not a generic \"haters motivate me\" platitude.",
+    "quote": "I had a call with an investor from Silicon Valley. It was, it was, well, it was my favorite call with an investor. I mean, he said no, right? But, but like the way he said no, the derision in his voice, just the, the, you're the stupidest person I've ever talked to. This will never work... And I swear to God, just that one person alone, I want to build this company and have it be a world leader just because of him."
+  },
+  {
+    "category": "concrete-detail",
+    "summary": "SparkToro's plan is to stay a two-person company, hire no one, and spend as little of the $1.3 million raised as possible. Despite that minimal-spend plan, Fishkin notes that healthcare is the single largest expense line for the company — a specific, non-obvious operational reality for a bootstrapped two-person U.S. company that most startup advice doesn't surface, since it isn't tied to headcount growth or product spend at all.",
+    "quote": "We are planning on hiring nobody, working from home, spending as little of that 1.3 as we possibly can. Most of the expense is going to health care. I'm serious, right? Health care in this country is insanely expensive for a two-person company."
+  },
+  {
+    "category": "changed-belief",
+    "summary": "Fishkin explains that the core insight behind starting SparkToro came from a pattern he saw repeatedly at Moz: many genuinely great businesses have almost no existing search demand for what they sell, so SEO and search-based marketing can't help them. His example is Crowd Cow, a Seattle company that crowdsources high-quality beef from small farmers and ships frozen cuts to customers' doors — despite being an excellent product, virtually nobody searches \"buy steak online\" because Americans are culturally trained to think of beef as an undifferentiated commodity rather than something to seek out online. This concrete example of a great product with zero organic search demand is what convinced him a company like SparkToro, which researches audiences beyond just search-volume signals, needed to exist.",
+    "quote": "the fundamental idea that I encountered a lot with Moz was basically if there are not already a lot of people searching for what you do... But nobody, I mean, next to nobody searches for buy steak online. It just doesn't happen, right? Nobody goes on the internet and is like, ah, I need a ribeye... we're sort of trained as Americans to think of beef as a commodity."
+  }
+]
