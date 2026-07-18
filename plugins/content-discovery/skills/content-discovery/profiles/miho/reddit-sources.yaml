@@ -1,0 +1,15 @@
+# Reddit sources for the miho content profile — sibling to content-profile.md.
+# Referenced from that file's `reddit_sources` frontmatter field: if the profile's
+# editorial territory or audience changes, check whether this still fits.
+# Schema: references/reddit-sources-contract.md
+
+subreddits:
+  - smallbusiness
+  - Entrepreneur
+  - sweatystartup
+
+query: ""       # blank = browse the listing; set to search a specific term
+sort: top       # top | hot | new | rising | controversial
+t: week         # day | week | month | year | all
+min_score: 25
+min_comments: 3

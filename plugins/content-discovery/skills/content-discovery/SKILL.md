@@ -10,7 +10,10 @@ not a queue. While discussing it, prepare the next session's reservoir.
 
 ## Inputs
 
-Require an authored content-profile path. Read `references/content-profile-contract.md`
+Require an authored content-profile path. If the operator doesn't name one and
+`profiles/` (sibling to this file) contains exactly one profile, use it as the default
+without asking — that's the bundled team profile, not a placeholder. If it contains more
+than one, ask which. Read `references/content-profile-contract.md`
 and validate the minimum fields. Read `config.json` at this skill's root for `state_root`
 (default `~/.content-profiles` if the file or key is absent — expand `~` and resolve
 relative paths against the skill root) and resolve state under
