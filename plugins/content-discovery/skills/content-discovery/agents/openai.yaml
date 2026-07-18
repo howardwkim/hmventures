@@ -1,0 +1,4 @@
+interface:
+  display_name: "Content Discovery"
+  short_description: "Pitch current, profile-specific content ideas"
+  default_prompt: "Use $content-discovery with an authored content profile to recommend the strongest current idea and prepare the next session."

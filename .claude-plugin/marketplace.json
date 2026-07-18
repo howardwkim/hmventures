@@ -9,6 +9,11 @@
       "name": "social-post",
       "source": "./plugins/social-post",
       "description": "Create and publish a social media post from a file or inline content. Picks accounts, fills required fields, confirms it actually went live. woopsocial backend behind a swappable adapter."
+    },
+    {
+      "name": "content-discovery",
+      "source": "./plugins/content-discovery",
+      "description": "Find and pitch current, profile-specific content ideas from an authored content profile, using a saved reservoir plus Reddit research."
     }
   ]
 }

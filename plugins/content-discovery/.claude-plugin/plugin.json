@@ -1,0 +1,8 @@
+{
+  "name": "content-discovery",
+  "description": "Find and pitch current, profile-specific content ideas from an authored content profile, using a saved reservoir plus Reddit research.",
+  "version": "1.0.0",
+  "author": {
+    "name": "HM Ventures"
+  }
+}
