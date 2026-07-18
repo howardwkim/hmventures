@@ -1,8 +1,0 @@
-[project]
-name = "scrapling-client"
-version = "0.1.0"
-description = "Shared stealth-fetch primitive (Scrapling: curl_cffi impersonation, Camoufox stealth, Playwright) — general purpose, not Reddit-specific"
-requires-python = ">=3.12"
-dependencies = [
-    "scrapling[fetchers]>=0.4.11",
-]
