@@ -87,17 +87,19 @@ Keep it conversational.
 
 - Accept: append `pitch.accepted`, remove from the reservoir, write the seed and queue
   row using `references/writing-seed-contract.md` (`seed.written`), then ask whether to
-  write it up now or keep reviewing more pitches. Choosing to keep reviewing re-enters
-  this loop: present the next highest-ranked reservoir card (Start step 4) and continue
-  reacting. Accepting again before an earlier seed is started is fine — it queues, it
-  never overwrites.
+  keep reviewing more pitches or wrap up (keep-reviewing/done). Discovery's job ends at
+  the seed — it never writes the piece or offers to; what happens to an accepted seed is
+  the caller's decision, not discovery's. Choosing to keep reviewing re-enters this loop:
+  present the next highest-ranked reservoir card (Start step 4) and continue reacting.
+  Accepting again before an earlier seed is started is fine — it queues, it never
+  overwrites.
 - Pass: append `pitch.passed` with verbatim reason and inferred tags, then remove it.
 - Later: append `pitch.deferred` with `eligible_after`, then remove it temporarily.
 - Unresolved: append `pitch.unresolved` and preserve it below unseen cards.
 
 Any question put to the operator lays out its options explicitly: a multiple-choice
 question labels each option A., B., C., etc.; a binary question states it as y/n (or the
-equivalent two words, e.g. write-now/keep-reviewing). Never leave the choice implicit in
+equivalent two words, e.g. keep-reviewing/done). Never leave the choice implicit in
 prose.
 
 Ask one clarifying question only when the reason is genuinely ambiguous. Do not ask the

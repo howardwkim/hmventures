@@ -31,9 +31,10 @@ When a pitch is accepted, write `seeds/<pitch_id>.md` with these headings and fi
 
 Each seed is resumable state, not a chat-only handoff. Acceptance appends `seed.written`
 to `discovery-events.jsonl`, writes the seed file, and adds a row to `seeds-queue.jsonl`
-(schema: `references/pitch-card-contract.md`) before offering to start writing it up.
-Discovery sources are starting material and must be revalidated by whatever consumes the
-seed.
+(schema: `references/pitch-card-contract.md`). That is where discovery's responsibility
+ends: the seed and queue row are the handoff surface, and discovery neither writes the
+piece nor offers to. Discovery sources are starting material and must be revalidated by
+whatever consumes the seed.
 
 ## Multiple outstanding seeds
 
