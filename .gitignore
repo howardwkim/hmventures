@@ -2,3 +2,9 @@ docs/miho/private/
 
 # personal-ai workflow rules — ported for local use, not part of this codebase
 .claude/rules/
+
+# macOS
+.DS_Store
+
+# site source lives in its own repo: howardwkim/miho-partners-landing
+projects/miho-landing-page/web/
