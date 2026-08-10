@@ -52,7 +52,7 @@ Here's how it works:
   list.
 - **A short review call** where we walk through what to install first and what it'll save you.
 
-**Price:** $999.
+**Price:** $399.
 
 **The guarantee:** If we can't find you at least 5 hours a week back, you get every dollar back.
 No questions asked. Worst case, you lose 45 minutes.
@@ -72,7 +72,7 @@ what to do on day one.
 **"I don't have time for this."**
 You have 45 minutes. What you don't have is another year of doing this by hand.
 
-**"Is $999 worth it?"**
+**"Is $399 worth it?"**
 If we don't find at least 5 hours a week, we refund it. That's the only guarantee we're willing
 to make, because it's the only one we're sure of.
 
@@ -116,6 +116,6 @@ for MiHO specifically. Left uncosted here on purpose rather than inventing numbe
 
 ## Final CTA
 
-Start with the audit. $999, one 45-minute call, five hours a week guaranteed or your money back.
+Start with the audit. $399, one 45-minute call, five hours a week guaranteed or your money back.
 
 **[Book your audit]**

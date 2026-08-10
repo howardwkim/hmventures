@@ -53,10 +53,11 @@ Named token families in the source (kept as-is since the naming itself is inform
 |---|---|---|
 | `--error` | `#ec1313` | not used on this page |
 
-Note: MiHo's own brief bans the "fall" orange family (Howard's explicit call). We use the
-spring greens plus neutrals only. This is a deliberate deviation from Modern Life's actual
-palette, not a miss — the fall family stays documented here for completeness since it's part of
-what "Modern Life" the reference site actually looks like.
+Note: all three families are available to MiHo — spring, fall and neutrals. Two things to
+carry when reaching for `fall`: on Modern Life these warm tones are **illustration-only** and
+never UI accents, so using them as UI accents is a deliberate departure from the reference;
+and the brief's ban on purple-to-orange *gradients* as AI-startup styling is unaffected — that
+rules out a gradient treatment, not these hues.
 
 ## Buttons
 
@@ -86,8 +87,8 @@ links; color is the primary signal.
 
 ## What this means for our page
 
-- Replace the ad hoc cream/sage/blue/coral tokens with the actual `spring` + `neutral` families
-  above (dropping `fall` per the no-orange rule).
+- Replace the ad hoc cream/sage/blue/coral tokens with the actual `spring`, `fall` and
+  `neutral` families above.
 - Give every clickable text element (nav links, footer links, "Book your audit" text treated as
   a link where relevant, inline emphasis links) a `:hover` color transition into spring-deep or
   cta-spring-vibrant — currently only the button itself has any hover treatment.

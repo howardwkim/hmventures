@@ -1,40 +1,55 @@
 # miho-landing-page — CURRENT
 
-**Last updated:** 2026-07-28
+**Last updated:** 2026-07-31
 
 **Next:**
-- Now: Copy draft v1 is complete — reference/copy-draft-v1.md. Full page copy (hero, problem, offer, objections, founder bios for both Mike and Howard, bottom services section, final CTA), following brand-voice.md. Founder bios were subagent-researched against real sources (Howard's career/resume files; Mike's from michaelgrabham.com) — not placeholders. One correction caught in the process: the draft's original Mike bio claimed unsupported advisory experience; replaced with his verified operator facts. One open item remains: pricing for the bottom services section (never set for MiHO — brand-dna.md's "TBD per project" was about Mike's old solo practice). Next: Howard reviews the full draft and gives feedback; decide services pricing or leave uncosted.
-- Note: the `/landing-page-messaging` skill referenced in earlier session notes does not exist in this install — draft v1 was written directly instead.
-- Logo generation: 4 options generated via gpt-image (`personal-ai/tools/openai-image/generate.py`), background-removed to transparent PNGs, in `assets/brand/` — option1-wordmark (clean wordmark, orange dot-accent on the 'i'), option2-mark-wordmark ("MiHO Partners" with an overlapping-circles partnership mark), option3-monogram-badge (circular "MH" seal), option4-hand-highlight (wordmark with a hand-drawn highlighter underline, echoing the "emphasis by hand" device below). Raw pre-key sources kept in `assets/brand/raw/`. Next: Howard picks a direction (or requests iteration).
-- On deck: Whether to generate a photo of Mike and Howard together. Resuming design generatively against the written brief.
+- Now: Commit the insights work — nothing is committed in either repo. The nested web/ repo (howardwkim/miho-partners-landing, Vercel-linked) holds the whole insights section plus fixes to SiteNav/BookButton/page.tsx/globals.css/designs; hmventures holds reference/blog-plan.md, the decisions entries, this file and .claude/launch.json. Build and lint are clean. Committing web/ deploys to Vercel — so decide first whether the Insights nav link should ship before any real article exists, since /insights currently renders its empty state.
+- On deck: Write the first real article (copy content/insights/_template.mdx). Separately and pre-existing, unrelated to this session: reference/copy-draft-v1.md still has no pricing set for the bottom services section.
 
 **Standing constraints:**
-- Do not reopen design reference hunting — four rounds did not converge; when design resumes, go generative against the written brief.
-- Trust is the single goal of the page; every design and copy choice serves it.
-- Avoid the saturated AI-startup look: no near-black grounds, monospace/terminal type, purple-orange gradients, glow or grid overlays.
+- Never delete or empty web/content/insights/ — the article route resolves posts through a dynamic import and an empty directory fails the build outright. _template.mdx is permanent and stays draft:true.
+- The guarantee gradient sweep (.guarantee-shimmer) is reserved for the money-back guarantee. A second use on any page destroys its meaning.
+- Anything on the site not documented in the /designs style guide is ad hoc and should be fixed — new components get an entry there in the same change.
+- Do not reopen design reference hunting — four rounds did not converge; design goes generative against the written brief.
+- Trust is the single goal of the page; every design and copy choice serves it. One CTA everywhere: book the Time Saver Audit.
+- Avoid the saturated AI-startup look: no near-black grounds, monospace/terminal type, purple-to-orange gradients, glow or grid overlays. The warm 'fall' palette family is admitted and is not covered by the gradient ban.
 - Avoid the professional-services look (accountant/law firm) — Howard rejects it as boring.
-- Select references for boutique presentation, not venture scale: no thousand-member counts, press logo walls, award laurels or Enterprise mega-menus.
+- Select references for boutique presentation, not venture scale: no member counts, press logo walls, award laurels or Enterprise mega-menus.
 - Keep design references and copy references as separate lists — a site can be right on arena and wrong on design.
 - Read the MiHO brand ground-truth at hmventures/docs/miho/brand/ before writing any copy; do not duplicate it here.
 
 **Canonical assets:**
 - Design brief → hmventures/projects/miho-landing-page/CLAUDE.md → the agreed look-and-feel and scope rules
-- Founder photos → hmventures/projects/miho-landing-page/assets/founders/ → Howard's LinkedIn portrait, Mike's LinkedIn portrait, and Mike's transparent-background cutout
-- Corey Gannon transcript → personal-ai/projects/video-clipper/work/greg-isenberg-corey-ganim-ai-business/transcript.txt → the source offer architecture (audit into implementation ladder, seven acquisition channels)
-- Design reference library → personal-ai/design/references/ → all 153 collected candidates, 27 tagged for this project, each with screenshot, provenance and accept/reject reasoning
-- Mike's public positioning → michaelgrabham.com → his own words for the same audience (6X founder, small business expert, cash flow optimization, growth strategy, CEO group coaching)
+- Insights build plan → hmventures/projects/miho-landing-page/reference/blog-plan.md → the built architecture, article template rationale, and why the content directory can never be empty
+- Design tokens → hmventures/projects/miho-landing-page/reference/design-tokens-modernlife.md → the Modern Life extraction the palette derives from
+- Live style guide → hmventures/projects/miho-landing-page/web/app/designs/page.tsx → every colour, type size, device and component the site is built from; noindex, excluded from the sitemap
+- Post authoring template → hmventures/projects/miho-landing-page/web/content/insights/_template.mdx → the metadata contract and body conventions for a new article
+- Founder photos → hmventures/projects/miho-landing-page/assets/founders/ → Howard's and Mike's portraits plus Mike's transparent cutout
+- Corey Gannon transcript → personal-ai/projects/video-clipper/work/greg-isenberg-corey-ganim-ai-business/transcript.txt → the source offer architecture; its $999 price is Gannon's, not MiHO's
+- Design reference library → personal-ai/design/references/ → all 153 collected candidates, 27 tagged for this project
+- Mike's public positioning → michaelgrabham.com → his own words for the same audience
 
-**Key decisions:** Page architecture settled via grill-with-docs (2026-07-28): MiHO Partners is a distinct venture from Mike's solo brand, selling the audit-to-implementation offer specifically, not general consulting. Whole ladder shown, one CTA (book the audit); implementation/retainer get a real section at the bottom, no CTA of their own. Lead persona is the Ready-to-Grow Owner. Trust comes from founder operating history, not a client roster (none exists yet). Price shown, but in the offer section, not the hero. Entry offer is called "audit," always paired with a solutions qualifier. Audit carries a money-back guarantee conditioned on client follow-through, not a fixed day count. Full reasoning in reference/decisions.md.
-
-Design direction is unresolved: only Modern Life (modernlife.com) and Boords (boords.com) were ever accepted, both from the first batch. Copy references Draft (draft.nu), Jonathan Stark (jonathanstark.com) and Greg Kogan (gkogan.co) are maybes, not settled models.
-**Session ref:** `claude --resume 577f2059-1031-4b9f-8cd3-df366a0af825`
+**Key decisions:** The audit is $399 (not $999 — that figure is Gannon's source model). Insights lives at /insights inside the existing Next.js app, built on @next/mdx with local .mdx files; adding an article means committing one file. Articles alternate between Mike and Howard, bylined to the person plus "MiHo Partners" with no credential line. Five fixed categories filtered by chips; post images optional per article. Full reasoning in reference/decisions.md.
+**Session ref:** `claude --resume 4260ea63-dde7-471d-bd4e-c0d2f44669d7`
 
 <!-- summary:end -->
 
 ## Where the work stands
 
-**Copy — not started.** This is the live thread. Three consultancy sites are maybes, not
-settled models:
+**The page is built.** `web/app/page.tsx` is a working single-route landing page — nav, hero
+with both founder photos, problem, offer (three steps, $399, guarantee), objections, founder
+bios, insights sampler, ladder, final CTA, footer. The Modern Life design tokens are live in
+`web/app/globals.css` (spring greens, the warm fall family, neutrals), with Manrope for body
+and Instrument Serif for the italic accent, plus three devices: highlighter swipe, guarantee
+gradient sweep and a pure-CSS scroll reveal. Deployed via Vercel from
+`howardwkim/miho-partners-landing`.
+
+**Insights section — built.** `/insights` listing with category chips, `/insights/[slug]`
+article template, homepage sampler, sitemap. Runs on `@next/mdx` with posts as `.mdx` files in
+`web/content/insights/`. No real articles yet, so it renders its empty state.
+`reference/blog-plan.md` is the architecture and the reasoning.
+
+**Copy references.** Three consultancy sites are maybes, not settled models:
 
 | Reference | Mine it for |
 |---|---|
@@ -46,10 +61,11 @@ Secondary copy references, also maybes: Caboodle (caboodle.studio), Other Land
 (otherland.studio), Test Double (testdouble.com). All three are right on arena and were
 rejected on design.
 
-**Design — unresolved, parked.** Only two references were ever accepted, both from the first
-batch: Modern Life (modernlife.com) and Boords (boords.com). They are the sole calibration
-points. Everything found across three further rounds was rejected. The brief is agreed and
-stable; what is missing is a page satisfying it.
+**Design — resolved for the homepage, extends to insights.** Only two references were ever
+accepted, both from the first batch: Modern Life (modernlife.com) and Boords (boords.com).
+They remain the sole calibration points. The insights section reuses the existing tokens and
+adds none — Modern Life's own insights pages are the reference for it, deliberately lighter
+(no content-type taxonomy, no whitepapers or webinars, no sidebar).
 
 The bar extracted from those two:
 - Warm cream / off-white ground — never pure white, never dark
