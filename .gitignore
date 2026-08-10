@@ -8,3 +8,12 @@ docs/miho/private/
 
 # site source lives in its own repo: howardwkim/miho-partners-landing
 projects/miho-landing-page/web/
+
+# Meeting store. THIS REPO IS PUBLIC — transcripts and vendor exports are
+# verbatim recordings of private conversations and must never be committed.
+# Only the derived summaries (and the index/README) are tracked.
+meetings/**
+!meetings/**/
+!meetings/README.md
+!meetings/index.md
+!meetings/**/summary.md
