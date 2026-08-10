@@ -33,6 +33,21 @@ claude mcp add --transport http -s user woopsocial "https://api.woopsocial.com/m
 
 Restart Claude Code after adding. Then point the skill at a file — e.g. *"post this video to TikTok."*
 
+### ai-visibility-audit
+Audits whether AI (Google AI Overview, ChatGPT, Perplexity) recommends a brand for buyer-intent
+category questions — shows who AI names instead, scores overall AI visibility, and flags
+reputation risk when a review platform surfaces a rating under 3/5. HM Ventures fork of
+[mikefutia/ai-visibility-audit](https://github.com/mikefutia/ai-visibility-audit) — see that
+plugin's own README for what changed in this fork.
+
+```
+/plugin install ai-visibility-audit@hmventures
+```
+
+**Requires an Apify token + an OpenAI key**, both in a local `.env` (keys are per-person, not
+stored in this repo). Follow `PLAYBOOK.md` inside the plugin for setup. Then say *"run the ai
+visibility audit."*
+
 ## Docs
 
 Non-plugin reference material lives under `docs/`.

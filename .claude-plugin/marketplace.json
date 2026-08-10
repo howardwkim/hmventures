@@ -14,6 +14,11 @@
       "name": "content-discovery",
       "source": "./plugins/content-discovery",
       "description": "Find and pitch current, profile-specific content ideas from an authored content profile, using a saved reservoir plus Reddit research."
+    },
+    {
+      "name": "ai-visibility-audit",
+      "source": "./plugins/ai-visibility-audit",
+      "description": "Audit whether AI (Google AI Overview, ChatGPT, Perplexity) recommends a brand for buyer-intent category questions. Shows competitor mentions, scores overall AI visibility, and flags reputation risk from low platform ratings."
     }
   ]
 }

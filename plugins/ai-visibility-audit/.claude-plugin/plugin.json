@@ -1,0 +1,8 @@
+{
+  "name": "ai-visibility-audit",
+  "description": "Audit whether AI (Google AI Overview, ChatGPT, Perplexity) recommends a brand for buyer-intent category questions. Shows competitor mentions, scores overall AI visibility, and flags reputation risk from low platform ratings.",
+  "version": "1.0.0",
+  "author": {
+    "name": "HM Ventures"
+  }
+}
