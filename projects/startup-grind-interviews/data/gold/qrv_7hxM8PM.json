@@ -1,0 +1,82 @@
+{
+  "video_id": "qrv_7hxM8PM",
+  "interviewee_name": "Tim Porter",
+  "interviewee_title": "Journalist/Storyteller",
+  "nuggets": [
+    {
+      "category": "changed-belief",
+      "summary": "Tim Porter's board experience with Smartsheet (a Madrona portfolio company) taught him that the correct posture before product-market fit is confirmed is to keep the team small and resist the urge to overhire or over-plan around the next funding round. Smartsheet's first product had the fundamental idea right but the user-experience execution wrong, and the founders had to admit the flaw and rebuild the UI rather than push forward on a broken product. Critically, the company stayed at roughly nine to twelve people for its first three to four years, with some founders not drawing a salary, and only once real traction appeared did later-stage investors (Insight Venture Partners, Sutter Hill) make fundraising easy. The generalizable lesson: don't fixate on what the next round needs to look like before you've proven the product works -- staying lean and being honest about product flaws is what buys the runway to actually find product-market fit.",
+      "quote": "until you're sure you have product market fit, stay lean... The company was like 12 people for like the first four years or something, three years, nine people... And also, you know, don't be overly focused on what the next round has to look like."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "In diligence on an early Madrona deal (Aptera, founded by Kabir Shahani and Chris Hahn), Porter discovered the founders' only outside financing was a few thousand dollars from a father plus a bank loan the CEO had personally guaranteed with his own car and apartment as collateral. Porter was struck by the founder's total lack of hesitation about the personal risk, and the company went on to a successful acquisition by IMS Health -- but Porter, and a fellow panelist directly asked the same question, both say this is not something they'd recommend, calling it a hard no and noting a failed personal guarantee can cost you your house. The nugget is a caution against romanticizing founder stories where extreme personal risk happened to pay off: it worked in this one case, but that's survivorship bias, not a strategy to emulate.",
+      "quote": "Would you recommend people signing personal guarantees? ... Geyer, would you recommend signing personal guarantees? No. That's a hard no. I can tell you from my experience, not signing personal guarantees, it will cost you your house."
+    },
+    {
+      "category": "mistake",
+      "summary": "Porter's clearest self-described mistake is Corensic, a University of Washington spinout building developer tools to debug parallel-coded systems. The team and technology were strong, but the company and Madrona skipped fully validating that customers would actually buy dev tools before building -- a category Porter says is notoriously hard to sell into. He frames the error with a golf metaphor: if the real prize is the 'second putt' (a longer-term, bigger opportunity), don't spend disproportionate time perfecting the 'first putt' (an intermediate step), because you may never get the chance to take the second putt at all. The company's later CEO, Pete Godman, absorbed the lesson and applied rigorous customer validation at his next company, Cumulo, which Porter says did the best customer-validation work of any company he's seen.",
+      "quote": "the classic lesson of, you know, if you think the business is, you know, the second putt, don't waste time on just going for the first putt because you would never get a chance to take the second putt... we didn't validate the market enough."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "When coaching a first-time founder on how much money to ask for, Porter says the common instinct -- anchoring high just in case -- is backwards. His advice is to pick a narrow, deliberately modest range (for example $2-4 million rather than a wide or padded figure) tied to specific 18-24 month milestones, because it's far better for an investor to react with 'why aren't you raising more?' than 'what are you going to do with all that money?' The former builds investor confidence and can lead to being offered more; the latter signals the founder hasn't rigorously thought through their own burn and milestones.",
+      "quote": "I would, you know, always, you know, anchor a little bit at the lower end of what you think that you could take. It's always better to have investors say, why aren't you raising more than to say, you know, what are you going to do with all that money?"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "For scaling a sales team once unit economics are proven, Porter uses what he calls the 'Mark Leslie sales learning curve': rather than hiring a full sales org at once, test the model iteratively -- for example, hire two salespeople, confirm they become profitable on a unit-economic basis, then add two more, and repeat. Only once the unit economics are proven at small scale do you pour money in more aggressively. This turns the commonly-heard but vague advice to 'understand your unit economics' into a specific, staged hiring test a founder can actually run.",
+      "quote": "I'm very much a believer in like the Mark Leslie sales learning curve, right? You hire... maybe it's, you know, two salespeople and you see that, you know, they become profitable and then you add two more and you go from there."
+    },
+    {
+      "category": "mistake",
+      "summary": "Porter warns against a recurring founder error he's pushed companies into himself: selling hard before the product is actually stable enough to support the customers being signed. He says he's 'made that mistake a number of times' as an investor pressuring companies to sell faster, and that overselling an unready product 'causes pain for everyone' -- support failures, churn, and reputational damage that outweigh the short-term revenue gain. He's careful to note this isn't a call to be fully product-ready before selling at all -- startups always have to sell somewhat ahead of the product -- so the actionable point is that this is a balance to actively manage with advisors, not simply 'sell as fast as possible.'",
+      "quote": "if the product is not fully stable and you've sort of proved out through it from a prototype standpoint that it works, you know, don't get over your skis and try to go sell that, you know, 20 times if the product's not ready to do that... That causes pain for everyone... made that mistake a number of times."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Porter gives a rare concrete breakdown of how Madrona actually allocates a fund across stages, useful for founders gauging how competitive a given stage is at a specific firm. Roughly 25-33% of a fund's companies are seed investments (initial checks under $1 million); the more typical 50-60% of initial investments are classic Series A checks of $1.5-4.5 million, averaging about $3.3 million; and only 10-20% are Series B/C investments in companies the firm wishes it had backed earlier. He draws the conclusion that the firm can say yes to far more seed pitches than it actually funds, so more seed-stage capital specifically would help Seattle founders, even though the firm's real bread-and-butter is Series A.",
+      "quote": "about 25% to a third of our companies in each fund are what we call seed investments. It's initial check under a million dollars, but the even more typical 50 or 60% of our initial investments are what we'd call classic series A... I think the average is 3.3 and then, you know, 10 to 20% of initial investments in a fund or series B or C."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Porter's tactical advice for running a fundraise is to compress it into a defined multi-week process rather than letting it become an open-ended, constantly-ongoing activity -- being 'always fundraising, always meeting with folks' is explicitly the pattern to avoid. The practical mechanism: line up target investors in advance (built through prior relationship-building), then meet them all within roughly the same short window so they move at the same pace, because the classic angel dynamic is that once you land a single lead investor, the rest of the round becomes dramatically easier to fill -- a dynamic he says is even stronger in Seattle than elsewhere.",
+      "quote": "try to make that as kind of defined a process as possible... try to have a set of investors lined up that you want to go talk to and try to go do that, you know, in a period of weeks... There's the classic dynamic with angels. It's all about finding a lead. Once you find a lead, you know, it becomes a lot easier to get the rest of the people to write checks."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "When weighing a strategic investor (for example a cloud provider like Amazon or Microsoft investing alongside a commercial deal), Porter's rule is to deliberately keep the commercial rationale and the equity rationale separate rather than letting them blend. He advises founders to first ensure the commercial deal stands on its own two feet as something they'd want regardless of the investment, and only then evaluate the equity terms, because entangling the two typically leads to worse decisions on both fronts. The assumption to plan around: a strategic investor will always ultimately act in the interest of their own larger business, not out of special allegiance to the startup -- not malicious, but a structural reality to price in up front.",
+      "quote": "the strategic ultimately is always going to just be strategic about themselves... you probably should have a commercial reason for doing it and think about the commercial reason first, make sure the commercial reason stands on its own two feet. And then think about the equity side of it. The more of those two get intertwined, the more you generally screw up... one or both."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Uncapped convertible notes are worth avoiding as a founder, according to Porter -- Madrona won't do them, and at an angel-investor panel the night before this interview, every single angel on stage independently said they'd never do one either. This runs counter to the assumption some founders have that an uncapped note is an easy, founder-friendly way to raise a bridge without setting a valuation; in practice it makes the round unattractive to sophisticated investors, and Porter suggests it only makes sense with a single relationship-based investor (someone funding the entire round personally) rather than as a way to attract a syndicate.",
+      "quote": "we generally wouldn't do an uncapped note... every angel that was asked that question just said they would never do it. So I'm not sure who exactly would do that."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Contrary to the idea that VCs require founders to have put in meaningful personal capital as a prerequisite to fund them, Porter says there's no threshold amount -- even zero is fine. What actually matters to Madrona is the founder's demonstrated conviction, evidenced by betting their full time on the venture. The one case where a lack of personal capital becomes a red flag is specific: if a founder already had a significant financial exit or clearly has money and still isn't putting any of their own capital in, that's a legitimate question about why they aren't betting on themselves -- but for a founder without that financial cushion, contributing zero dollars carries no stigma.",
+      "quote": "No threshold amount... if somebody, you know, had a significant exit or was a, you know, senior, clearly has made money somewhere and they're not putting in their own capital in, then that would be a question of why wouldn't you want to bet on yourself? But if you're someone who doesn't have the luxury of that background, there's no prerequisite."
+    },
+    {
+      "category": "number/metric",
+      "summary": "A BCG analysis of LinkedIn connection data, presented at a Cascadia-focused conference in Vancouver, found that professional network ties between Vancouver tech workers and New York tech workers were stronger than the ties between Vancouver and Seattle -- despite Vancouver and Seattle being geographically much closer and part of the same regional pitch. This is a genuinely counter-intuitive data point that undercuts the assumption that geographic proximity naturally produces the strongest tech-ecosystem ties, and it argues for deliberately investing in cross-border relationship-building rather than assuming it happens organically.",
+      "quote": "BCG did this interesting analysis that just, uh, analyzed LinkedIn data to see, you know, connections between tech professionals, uh, in Seattle and Vancouver. And the connections between Vancouver and New York... were stronger than... the connections between Vancouver and Seattle."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Porter directly pushes back on a belief he says he hears often from Seattle founders -- that they need to relocate to Silicon Valley to get funded. His counter is blunt: good companies get funded regardless of location, and financing might come from a variety of sources, but moving isn't a prerequisite. He reframes the real gap as a supply-of-capital problem rather than a location problem -- Seattle has more fundable companies than it has check-writers moving quickly -- so the fix he'd want is more local capital and faster decision-making, not founders leaving.",
+      "quote": "I think it's BS when a company or entrepreneurs like, oh, you know, we have to move the valley, get funded. It's like good companies get funded, right?... Your funding might come from a variety of places, but you don't have to move to get funded."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Porter's specific, quantified advice to a founder still validating an idea before fundraising is to take whatever amount of customer-development work they've already done and multiply it by five to ten times -- a concrete multiplier rather than vague 'talk to more customers' advice. He frames a founder's time as their single most precious asset at this stage, and argues that over-investing in this validation step is what actually makes fundraising easier later, because it lets a founder demonstrate proof with metrics rather than assertions. He's specifically wary of founders who have a personal affinity for the problem ('I was the customer') but haven't tested whether the pain point generalizes beyond a too-small sample.",
+      "quote": "whatever amount you've done to, um, to do, uh, customer development, you know, go do five or ten times more of that, some significant multiple. You, your most precious, you know, asset is your time."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "On evaluating a long-horizon, hype-heavy market like VR/AR, Porter describes Madrona's specific filter: they deliberately avoid investing in VR content and VR hardware -- categories he calls classic things VCs avoid, but particularly risky in VR given the installed base of headsets was only around 300,000 units globally at the time -- and instead invest in the tools/infrastructure layer, such as Pixvana, a cloud backend for VR video production and distribution. The logic: even before consumer adoption is large enough to support a content or hardware business, real companies (studios, brands, agencies) are already spending money experimenting with VR production right now, so a tools/platform bet can find near-term revenue milestones while still being positioned for the long-term, larger platform shift.",
+      "quote": "we've shied away from content. We've shied away from hardware... a content play, you know, when there's 300,000 global installed... HMDs... there's going to be some that rise up and some that fall down."
+    }
+  ]
+}

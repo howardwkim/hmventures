@@ -1,0 +1,127 @@
+{
+  "video_id": "eBqWDZTTlvg",
+  "interviewee_name": "Lisa Nelson",
+  "interviewee_title": "General Manager/Managing Director M12",
+  "nuggets": [
+    {
+      "category": "number/metric",
+      "summary": "M12 (Microsoft's venture fund) deliberately writes checks of $2-10 million and targets Series A/B only, skipping both seed and later-stage deals entirely. The reasoning is structural, not arbitrary: other parts of Microsoft (Microsoft for Startups, business development) already cover earlier-stage engagement without equity, so M12 doesn't need to compete there. For a founder, this means approaching M12 before you have real Series A/B traction is a mismatch regardless of how compelling the pitch is.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "M12 explicitly refuses to invest in China, and the reason isn't political or regulatory complexity -- it's that a $10 million check is functionally worthless there because local investors routinely write $100 million to $1 billion checks for the same stage of company. Showing up with a comparatively small check wouldn't just be a weaker offer, it would get the fund excluded from the deal room entirely. This is a useful frame for any investor or company deciding whether to enter a market: check whether your typical capital size is even large enough to be a credible player in that market's going rate, independent of whether you can technically write the check.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Most VC firms hold their all-day partner meetings on Mondays, which forces partners to spend Sunday reading investment memos. M12 deliberately scheduled its partner meetings for Tuesdays instead, specifically to reclaim Sunday and push memo-reading to Monday. It's a small operational choice, but it illustrates that an inherited industry convention (Monday meetings) is worth questioning rather than adopting by default, especially when the cost (lost weekends) is easy to see and the fix is nearly free.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "M12's investment process runs in two escalating stages: first a quick two-page memo written after an initial conversation with the founder, which the partner team gives lightweight feedback on before deciding to go deeper; only then does the deal owner produce a full 30-40 page investment memo covering what could make the company succeed or fail. The final decision is a straight majority vote among roughly ten investors (six of ten thumbs-up wins), not a founder's-champion veto or a hierarchical sign-off -- meaning a single strong sponsor inside the fund isn't sufficient, the deal has to survive a full-team read.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Unlike most corporate venture funds, which operate as a strategic extension of the parent company's product roadmap and require business-unit sign-off before investing, M12 needs no such approval and can fund a deal even when an internal product team objects. The one real constraint is time horizon: if a Microsoft product team says it plans to build the same thing itself within a few years, M12 will still invest and let it compete on its merits; but if the same product is shipping from Microsoft next month, M12 passes. This shows corporate VC independence is really about how the fund defines 'competitive' -- a distant roadmap intention doesn't count, an imminent ship date does.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "A recurring internal challenge Lisa faces is Microsoft product teams nominating their own struggling partners for M12 funding, essentially asking for a bailout dressed up as a strategic investment opportunity. Once those teams learned that framing a request as 'this partner is going bankrupt, can you fund them' gets an automatic no, they shifted to pitching the same company as an 'amazing' strategic fit instead -- forcing Lisa to independently re-verify the underlying financials rather than trust the internal sponsor's characterization. The lesson generalizes: when a gatekeeping criterion becomes known, requesters adapt their framing to route around it, not their underlying case.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "To access Microsoft's go-to-market and co-selling benefits, an M12 portfolio company must have moved at least some workloads onto Azure -- not necessarily its whole stack, but something. Despite this being a real lever M12 could pull, Lisa explicitly refuses to push a company onto Azure before it's operationally ready, because forcing a premature migration risks breaking the company and would be, in her words, terrible for M12's reputation. This is a case of an investor deliberately not using available leverage because the short-term win (Azure adoption) could destroy the long-term asset (the company's survival).",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "number/metric",
+      "summary": "M12's own team, despite being staffed with experienced finance and investing people, modeled a conservative 5-7 year timeline before expecting its first exits. In practice they got three exits (to Microsoft, Siemens, and Nutanix) within just two years of the fund's founding. This is a useful calibration data point: even people who explicitly build financial models for a living can meaningfully underestimate exit velocity when the fund is well-targeted (enterprise-focused, syndicate-backed, well-connected) -- suggesting conservative exit-timeline assumptions in venture planning may be a systematic bias rather than sound conservatism.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "M12's baseline bar for seriously evaluating a Series A/B enterprise deal is about $1 million in trailing annual recurring revenue, because that's the point at which there are enough real customers to run reference checks against. Just as important as the revenue number, though, is who else is already on the cap table or joining the round -- M12 never invests alone, always as part of a syndicate, and will pass on an otherwise-fine deal if the other investors coming in aren't ones its team considers strong operators to work alongside. This shows two independent screens (a revenue threshold and a co-investor quality check) are both load-bearing, not just the headline metric.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "When a founder pitches M12 too early (at seed stage, before the fund's Series A/B threshold), Lisa doesn't simply decline and move on -- she distinguishes between founders worth a relationship-building meeting now for a future round, and founders who should instead be routed to Microsoft for Startups' non-equity programs (the Scale-Up program for go-to-market support, or Azure credits) or directly to Microsoft's business development team for a commercial partnership. In other words, 'not right for us right now' inside a large company can still resolve into several distinct, real next steps rather than a dead end, as long as the person declining knows the full menu of adjacent programs to hand the founder off to.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "M12 only invests in geographies where it can staff people 'on the ground' able to take a board seat or board-observer seat, because that physical presence is itself a working tool: when a company contact stops responding to emails, an M12 partner can walk into their office and force the conversation. This is why the fund passed on scattering deals across places like Australia, Brazil, or Kenya despite interesting opportunities there -- the constraint isn't capital availability, it's the fund's ability to be locally present enough to actually exercise influence after the check clears.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "M12 runs periodic small 'startup showcase' sessions where 4-8 portfolio companies present directly to CEO Satya Nadella and Microsoft's most senior leaders. Beyond the obvious PR value, these sessions serve two under-the-radar functions: Nadella has effectively become the fund's unofficial closer for competitive, oversubscribed rounds (startups get funded partly because a company wants Microsoft's CEO on the cap table), and he uses the sessions to benchmark internal execution against outside teams, once remarking that a 30-person startup had built something 500 of Microsoft's own engineers hadn't matched. This shows a large company's highest-leverage use of exposure to outside startups isn't just deal-sourcing -- it's using external comparisons as an internal-performance diagnostic.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Lisa initially doubted whether she belonged in venture investing because she lacked the classic VC pedigree (no Stanford or Harvard degree, no prior VC career) that most of her peers around the table had. She came to believe the opposite: her background as a CPA gave her a financial-analysis lens none of the traditionally-trained investors had, letting her catch things like companies burying real costs inside R&D or sales-and-marketing lines that should properly sit in COGS -- a distortion that inflates the appearance of gross margin. Her broader takeaway is that self-doubt from lacking the 'standard' credential is worth checking against actual evidence of capability before it's allowed to hold someone back, rather than assumed to be accurate just because everyone else seems more fluent in the room's shared jargon.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "To manage heavy international travel without ever properly adjusting sleep schedules, Lisa's rule (learned from her former boss Peggy Johnson) is to wake up at 5am regardless of what time zone she's in or how late she went to bed, and to never sleep in. Her stated reasoning is that sleeping in resets the body clock further away from the destination time zone, making it progressively harder to actually adapt -- so the fix is to force the wake time to stay consistent and catch naps opportunistically instead of protecting a full night's sleep.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "When founders raise the common fear that Microsoft might use a venture investment as cover to steal their IP, Lisa's answer isn't a reassurance about internal policy -- it's a structural deterrence argument: venture circles are small enough that a single incident of a corporate VC misusing a portfolio company's IP would become known industry-wide and effectively end that fund's ability to get into future deals. In her framing, the fund's self-interest in preserving its reputation functions as a stronger practical safeguard for founders than any stated ethics policy would be.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    }
+  ]
+}

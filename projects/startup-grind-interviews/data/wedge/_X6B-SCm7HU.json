@@ -1,0 +1,135 @@
+{
+  "video_id": "_X6B-SCm7HU",
+  "interviewee_name": "Rudy Gadre",
+  "interviewee_title": "Angel Investor",
+  "nuggets": [
+    {
+      "category": "contradicts-convention",
+      "summary": "When a novice angel hears a plausible pitch, the instinctive reaction is to imagine everything that could go right — Gadre argues this is backwards. The useful diagnostic question is the opposite one: before writing the check, map out specifically where and why this venture is most likely to fail. Because almost any idea sounds plausible and exciting in the moment, optimism alone doesn't discriminate between good and bad bets; actively hunting for the failure points is what gives you a realistic read on whether the team can actually survive them.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "With 70 companies in his portfolio, Gadre can't meaningfully engage with all of them every week, so he manages attention using a rough bell-curve heuristic: at any given time only about ten of the portfolio companies actually need his help (an intro, a hire, bridge funding), and he concentrates on that subset while the rest cycle in as new needs arise. His rule for the companies not currently asking for anything is passive: he assumes they'll reach out if they need him, and if they don't call, he doesn't call them. This is a scalable way to triage founder support across a large portfolio without spreading yourself thin on companies that are currently fine.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "One of the most common red flags Gadre sees is a founder who is overly worried about dilution when more capital is on the table — turning down or hesitating on available money to preserve ownership percentage. His framing: because startups almost always take longer and cost more than founders expect, a large stake in a company that runs out of money is worth nothing, so it's rational to take money when it's offered even on imperfect terms rather than optimize for a bigger slice of an equity pie that may not survive. This matters even more in Seattle specifically, where funding can disappear entirely in a downturn (he cites 2008–2009 as effectively un-fundable locally) unlike the Valley, where capital tends to keep flowing even in a bad market.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "number/metric",
+      "summary": "Gadre lays out a concrete, stage-based valuation rubric he's seen hold as the going market rate in Seattle over several years: a credible team with just an idea and no product is valued around $0–2M; a credible team with a built product but no go-to-market yet is $2–4M; a credible team showing early traction/proof points is $4–6M; and a credible team with a product already live in market is essentially uncapped (\"the sky's the limit\"). He uses this rubric directly with founders as an anchoring tool in valuation conversations, telling them plainly where the market says their stage sits before proposing a number.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "number/metric",
+      "summary": "For a typical Seattle seed round, Gadre puts the standard dilution range for angels at 20–30%. He also flags a specific structural red flag beyond the headline number: angels who try to stack extra liquidation preferences on top of a clean deal. His advice to founders is to avoid investors pushing multiple layers of preference (e.g. a 3x liquidation preference), because it creates founder-motivation problems later and gives subsequent investors leverage to demand similarly aggressive terms — a clean 1x preference or a note converting at a reasonable cap is the healthier norm.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "number/metric",
+      "summary": "Gadre treats convertible notes as functionally equivalent to a priced round only up to about $1.5M in cumulative debt — past that threshold he advises founders to switch to pricing the round outright. His reasoning is concrete: carrying too much debt on the balance sheet can scare off certain downstream investors and complicate equipment-leasing type financing, and once a note has a valuation cap, it sets up a harder negotiation with the next round's investors over liquidation stacking. So the note-vs-priced-round choice isn't just about legal cost, it has real consequences for fundability a round or two later.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "For marketplace startups specifically, Gadre says there is really only one variable that matters: liquidity, meaning whether the founder has a credible edge in seeding one side of the marketplace (supply or demand) so the other side follows. He states this is by far the hardest problem in any marketplace business, because sellers won't show up without buyers and buyers won't show up without sellers, so the two sides won't bootstrap each other on their own — someone needs an unfair advantage in cold-starting one side. He explicitly says this is his sole investment filter for marketplace pitches; without a clear liquidity-seeding edge, he passes regardless of the rest of the pitch.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "Gadre frames the investor-founder relationship as functionally a multi-year marriage that depends on trust, and says the single fastest way to destroy that trust is over-promising and under-delivering — even a single detectable exaggeration during the pitch, not just an outright lie. Once an investor senses a founder has \"folded\" on credibility, the relationship is effectively over and no further progress is possible with that investor. The practical implication: sell the vision hard enough to convey why the opportunity is compelling, but never make a specific claim you can't back up, because the cost of getting caught is disproportionate to any short-term benefit of oversell.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "When evaluating what makes a pitch compelling, Gadre draws a sharp line between ideas that are qualitatively / order-of-magnitude better than existing alternatives (or that create a category that doesn't exist yet) versus incremental improvements framed as percentage gains over a known competitor. He explicitly contrasts \"we're 10% better than Google\" (weak, hard to raise on) against something so categorically superior that customers feel they must have it. The actionable filter for founders: pitch the qualitative leap, not the incremental optimization, because incremental framing reads as a much harder sell to an investor even if the underlying business is fine.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Gadre uses his own reaction to first seeing Airbnb as a cautionary story against his usual filters: his gut instinct was to dismiss it outright because hotels already existed and solved the same basic need. What he initially failed to appreciate was that living in someone's actual apartment is a qualitatively different experience from a hotel room, not just a cheaper substitute for one — a distinction that wasn't obvious from the pitch alone and that he says he would have missed even if he'd had the chance to invest. It's a concrete admission that \"this doesn't make sense because [obvious incumbent] already exists\" is not a reliable disqualifier.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "Asked for the single biggest thing founders should never say in a first pitch meeting, Gadre points to unsubstantiated, sales-flavored bravado — his example is a founder claiming they're \"going to replace Google.\" The issue isn't ambition itself, it's making a specific claim that can't be backed up under questioning; once an investor catches that gap between claim and substance, the credibility damage is immediate and hard to recover from within that meeting.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Gadre gives a specific, business-model-dependent set of numbers founders must be ready to defend in diligence. For transactional/enterprise businesses (anything selling at a price point), the core question is customer acquisition cost versus lifetime value of the customer — he calls this \"the only thing that matters in the long run.\" For growth/engagement/advertising-based businesses where per-user revenue is thin, the founder instead needs a credible answer for how growth happens virally or through free distribution partnerships, since they can't afford to pay for acquisition at all. Not knowing your own numbers on this axis — or knowing them less well than the investor questioning you — is presented as an immediate disqualifier.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "other",
+      "summary": "Gadre says he makes investment go/no-go decisions quickly rather than dragging out due diligence, on the philosophy that a fast rejection respects both parties' time more than a prolonged maybe. The specific line he cites — \"a quick no is the second best answer\" — reframes speed of decision-making itself as a form of investor courtesy and professionalism, not just personal efficiency, worth naming explicitly to founders who might otherwise read a fast pass as dismissive.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Gadre offers a structural explanation for why he finds Seattle's investing culture markedly more cooperative and collegial than the Valley's, one that runs counter to the assumption that more money in an ecosystem makes it friendlier. In the Valley, there's so much capital chasing a relatively small number of good deals that competition among investors turns cutthroat. In Seattle, the ratio is inverted — more companies than available funding — which paradoxically produces more collaboration among investors rather than more competition. He explicitly predicts this would flip if Valley-scale money started flooding into Seattle.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "other",
+      "summary": "Gadre has a specific historical theory for why so few early Amazon employees became active local angel investors or startup founders in Seattle, despite the company producing significant wealth. His account: during the dot-com bust, the early Amazon cohort who might have left to found companies couldn't get funded because there was no capital available at the time, and by the time the market recovered it was too late for many of them — they'd settled into \"pioneer, then settler\" roles inside a now-large company rather than founders. He notes this pattern is now reversing: he's increasingly seeing people do only two-to-four-year stints at Amazon before leaving to start something, unlike the earlier \"old guard\" who mostly stayed.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Gadre describes a deliberate geographic arbitrage strategy behind joining Founders Co-op: source seed deals in Seattle at valuations well below Bay Area norms, then use strong Bay Area connections to help the winners raise follow-on rounds at Valley-style valuations. The mechanism only works if the fund has real downstream connectivity to Valley capital — otherwise a cheap Seattle entry price is just a cheap entry price, not an arbitrage. This is a specific, replicable thesis for why investing in an underpriced regional market can outperform investing directly in an expensive one, provided you can bridge the two markets at the follow-on stage.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    }
+  ]
+}

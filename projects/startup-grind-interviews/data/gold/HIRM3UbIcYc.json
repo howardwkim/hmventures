@@ -1,0 +1,87 @@
+{
+  "video_id": "HIRM3UbIcYc",
+  "interviewee_name": "Sally Bergesen",
+  "interviewee_title": "CEO Oiselle",
+  "nuggets": [
+    {
+      "category": "contradicts-convention",
+      "summary": "Bergesen expected country of manufacture to predict quality, but after touring domestic and overseas factories she concluded there is no such correlation — good and bad factories exist everywhere. Her first production run happened in Costa Rica, and one of her best current factories is in South China (run by two sisters she's worked with since 2008), while she's also encountered terrible factories in Los Angeles. This pushes back on the popular reshoring narrative that \"Made in USA\" automatically means higher quality or more ethical production; the real variable is the specific factory's relationship and management, not the country stamp on the label.",
+      "quote": "just because you see made in USA doesn't mean that it's a great factory and just because you see made in China doesn't mean it's a bad factory... I have one of my best factories in South China that's owned by two women two sisters who are awesome and I've been working with them since 2008"
+    },
+    {
+      "category": "mistake",
+      "summary": "Six weeks into an exclusive courtship with one VC couple, Bergesen stopped pursuing any other funding source because she was convinced the deal would close — then it fell through. The very next day, almost by accident, she mentioned the rejection to a new running-group friend whose husband did angel investing; he met her, asked a handful of questions, and wired a $50k commitment (plus help finding the rest) within roughly a day, after six fruitless weeks spent chasing the single dead-end lead. The explicit lesson: never let one prospective investor be your only active conversation, since a rejection there shouldn't have to cost you the weeks you spent not talking to anyone else.",
+      "quote": "well, A, chase more than one money. Yeah, rule number one... Six weeks, two days."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Preparing for her first significant employee termination, Bergesen Googled how to do it the night before and learned the key technique: once the meeting starts, skip any small talk — no \"how was your weekend,\" no warming up — and get straight to the point. She now treats this as the operative rule for every firing conversation, because the instinct to soften the moment with pleasantries actually drags out the discomfort and muddies the message instead of easing it.",
+      "quote": "one thing I learned is that when you sit down to do it, don't fuck around. Just, like, get right to it. Don't ask them how their weekend was, and talk about your kids"
+    },
+    {
+      "category": "other",
+      "summary": "Bergesen's answer to \"when's the best time to fire somebody\" is \"the first time you think of it\" — the moment doubt about an employee first crosses your mind is already the signal to act, not a thought to sit on. She frames slow firing as a near-universal founder failure mode: she says she's talked to almost no entrepreneurs who fired early enough, and admits she herself still doesn't fully follow her own \"think about it Tuesday, do it Wednesday\" rule.",
+      "quote": "The first time you think of it... You think about it on Tuesday, you do it on Wednesday."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Bergesen says that telling an investor \"I only need a million dollars and then we'll be profitable\" is itself a tell that a founder doesn't understand their own business, because hitting exact profitability at the amount you originally projected essentially never happens — sophisticated investors already expect you'll need more later and respect the honesty of saying so upfront. Her own experience backs this up: she ended up needing roughly five times the capital she thought she'd need going in.",
+      "quote": "I probably needed five times more money than I thought I did... when you say, I only need a million dollars and then we'll be profitable. That is, that is the first sign that you have no flipping clue what you're doing because it's never that way."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "A friend who had been listening to Bergesen talk about her fundraising struggles eventually had to prompt her directly — \"so when are you going to ask me for some money?\" — because despite treating him as a sounding board, she had never actually asked him for an investment. The lesson she draws, reinforced by advice she'd gotten earlier, is that raising money requires literally asking someone to write a check rather than talking around the topic and hoping they volunteer; the direct ask itself is the hard, easy-to-avoid step, not the pitch content.",
+      "quote": "if you want to ask somebody for money, you need to ask them to write you a check. Don't beat around the bush... so when are you going to ask me for some money?"
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "The recurring obstacle Bergesen names as the biggest challenge in apparel manufacturing is minimum order quantities (MOQs), which apply both at the fabric level (minimum yardage you must purchase) and the production level (minimum units a factory will cut). As a concrete threshold, orders under roughly 200 units of an item are effectively unworkable — factories simply won't take them — forcing small brands into bigger upfront inventory bets than they'd otherwise choose, or into a search for niche factories willing to work at smaller scale.",
+      "quote": "the biggest challenge in manufacturing is what we call MOQs, minimum order quantity... if you're buying less than 200 of anything, it's, yeah, they, yeah, they just don't want you to do it."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Coming from a software and consulting background where formal terms-and-conditions were standard, Bergesen was struck that apparel manufacturing at her company's scale runs almost entirely on informal trust rather than contracts — she places an order, the factory makes it, she pays, with no signed agreement locking in either side. Trust only builds after a few successful seasons together, which means there's no legal backstop protecting a small brand if a production run goes wrong early in a factory relationship, a risk that founders coming from other industries typically don't expect.",
+      "quote": "there's no contracts. It's all, we're giving you an order and then you're going to go make it. And then we're going to pay you... hope everything works out... just coming from the software world. I was like, well, where's your like terms and conditions"
+    },
+    {
+      "category": "changed-belief",
+      "summary": "If she could redo the company's distribution strategy, Bergesen says she would have launched direct-to-consumer only instead of building a wholesale channel first, because running both channels simultaneously creates an ongoing operational tension that's hard to manage — even though wholesale gave her fast initial distribution and awareness in markets she couldn't otherwise reach on her own. It's a genuine trade-off confession, not a clean \"wholesale is bad\" claim: the awareness benefit was real, but the cost of straddling two channels outweighed it in hindsight.",
+      "quote": "I probably would have started Wazelle purely direct only though... it's hard to straddle to, it's hard to straddle multiple channels."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Despite selling through retail partners, Bergesen made a deliberate call to pull Oiselle off Amazon starting fall 2016, reasoning that being sold there commoditizes a brand by stripping away price control and the sense of specialness that justifies a premium — Amazon will undercut price and out-execute logistics regardless of what a brand does. This runs against the standard growth playbook of maximizing every distribution channel available; she chose to give up a large, easy sales channel specifically to protect brand positioning and pricing power.",
+      "quote": "the commoditization of your brand is absolutely like the worst thing that could possibly happen... we are actually intentionally pulling back. We're not going to be selling on Amazon starting with fall 16."
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Bergesen deliberately avoids browsing competitor stores like Lululemon or Nike while she's in a design phase, not out of animosity but because she doesn't want her creative instincts unconsciously anchored to what bigger, better-resourced brands are already doing. She frames the risk as creative contamination — seeing a competitor's solution too early makes you second-guess your own direction and risks producing derivative \"me too\" work — which runs against the common startup advice to study competitors closely before building.",
+      "quote": "I also don't want my creative mind to be clouded by their product... I think the creepiness is just kind of wanting, wanting to feel like what we're doing is not, like, me too, or we're copying kind of the bigger brands."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "When selecting sponsored athletes, Oiselle filters on two criteria beyond raw speed: how well the athlete already connects with an audience/community independent of race results, and whether they can tell a full personal story (balancing motherhood, other work, and life stress alongside competing) rather than being purely a performance statistic. This directly contrasts with how Nike evaluates athletes — on race times almost exclusively, with little room for individual expression — and is why Oiselle was able to sign Kara Goucher, a runner who felt boxed in under Nike's numbers-only model despite a decade-long sponsorship there.",
+      "quote": "we look at an athlete's audience, like how well do they connect with their own community... a lot of fast athletes can't tell, can't tell their story and they might be crazy fast on the track, but if you're only fast... Wazell's not really that interesting."
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Early on, Bergesen optimized for being liked by everyone who worked for her, but after several years of hiring and firing she came to believe that earning respect matters more than being liked — and that over-indexing on likability is a common early-founder trap that only gets corrected through the harder experience of actually managing people and letting some go.",
+      "quote": "I think in the beginning, I really just wanted everybody that worked for me to like me... I really needed to be respected and needed to worry less about being liked and I think that's just come with doing it for a while, hiring people."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Bergesen's rule for choosing a factory partner is to pick one sized to match your own scale rather than the biggest or most prestigious option available — a huge factory producing millions of units will treat a small brand's order as low priority and give it poor service. A small brand is better served finding a factory willing to grow alongside it and invest in the relationship the same way the brand invests in them, rather than optimizing for factory size or reputation alone.",
+      "quote": "they need to be a factory of the size that's right for you. There's a lot of factories that are huge... we would be the tiny, tiny little fish and we would get, wouldn't get the right service... I need you to invest in me as much as I'm investing you. So we grow this together."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Oiselle's ambassador (\"Vole\") program charges a $100 membership fee, of which $25 flows directly into a fund supporting emerging elite track and field athletes' travel, training, or physical therapy costs. This turns what's typically a discount-and-shoutout arrangement between a brand and its fan ambassadors into a program with a tangible funding mechanism connecting the grassroots community directly to funding professional athletes — something Bergesen says she hasn't seen replicated elsewhere in the sponsored-athlete space.",
+      "quote": "it's $100 membership and $25 goes to an emerging elite athlete fund. So that fund will help send emerging... track and field athletes to big meets or help them pay for training or physical therapy."
+    },
+    {
+      "category": "other",
+      "summary": "Bergesen's mentor Missy Park (founder of Title Nine) reduced the entire challenge of running an apparel company to two repeated words: cash flow and inventory. Nine years into running Oiselle, Bergesen says this still holds as the core operating tension — carrying too much inventory locks up cash and can sink the business, while carrying too little means missed sales — and that nearly every other operational problem she's dealt with traces back to managing that balance.",
+      "quote": "Sally, you've got to know, it just comes down to two things. Cash flow and inventory, cash flow and inventory... nine years in, it comes down to, it's cash flow and inventory, and it's still like those two things"
+    }
+  ]
+}

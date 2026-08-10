@@ -1,0 +1,79 @@
+{
+  "video_id": "IV5QDf5ITUk",
+  "interviewee_name": "Nick Soman",
+  "interviewee_title": "Founder/CEO Decent",
+  "nuggets": [
+    {
+      "category": "changed-belief",
+      "summary": "Soman describes realizing, only after repeated pivots and near-death moments for his company, that 'clarity of mission' isn't just motivational language but the literal mechanism that keeps a team from quitting during a crisis. When Likebrite hit an existential threat (Facebook restricting the dating vertical it was built on), the team didn't panic or leave because everyone had internalized 'cure loneliness' as the actual goal, so the question became how to keep curing loneliness despite the obstacle rather than whether to give up. He contrasts this with a hypothetical where the mission itself had changed (e.g., to 'drive mobile ad conversion') and says the team would have quit -- the insight is that mission continuity, not the founder's charisma or personal loyalty to him, is what survives a pivot.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "When Likebrite (renamed Reveal) was acquired by Rhapsody and the team received large raises -- some salaries doubled -- Soman planned a celebratory moment revealing the news to each person individually, expecting excitement about the money. Instead, to a person, everyone's first reaction was some version of 'cool, what are we going to be working on?' -- nobody dwelled on the raise itself. In hindsight he calls his own approach a mistake: leading with salary instead of immediately following with the new mission and roadmap, since compensation was never what actually motivated or retained this team.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "During the acquisition process, Soman had multiple stakeholders -- investors, team, family -- all wanting input, and to keep everyone happy he expressed more openness to different deal options than he actually felt, even though he privately already knew which outcome he thought was right. That vagueness backfired: signaling flexibility invited a flood of competing proposals, several of which he didn't actually want to pursue, slowing and complicating the process. His takeaway is that in a high-stakes, multi-stakeholder decision, being intentionally vague to avoid conflict produces more competing options to wade through, not fewer -- the desired outcome should be held and stated as tightly as the mission itself.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "To validate the pivot from a dating app to an anonymous synchronous-chat product (which became Reveal), the team deliberately built the cheapest, ugliest possible test rather than investing in the polished mobile UX they had originally envisioned: a bare web page, driven by Facebook ads, dropping two strangers into a plain SMS-style chat window with no photo-reveal feature at all. This runs against the instinct to make a v1 good enough to be fairly judged; the lesson carried over from their first failed product (over-building before validating) was to strip everything non-essential out of the test. The test was cheap enough to run that Soman had to stop his own product manager from spending 45 minutes personally chatting with a stranger in Delaware because it had already proven the concept.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "While scaling Reveal to roughly 50,000 new users a day, growth was driven almost entirely through a single acquisition channel: Facebook. Soman admits he over-indexed on that one channel rather than building equally compelling alternatives, because building alternatives was 'honestly really really hard to do.' When Facebook's platform team began restricting API access to apps classified as dating -- a bucket Reveal fell into despite deliberately avoiding the low-quality 'dirty ads' common in that category -- the company had no way to replicate that growth elsewhere, and losing its one channel directly contributed to the decision to sell rather than continue independently.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "The customer-testing discipline Soman's team still runs (weekly sessions with University of Washington students, carried over into his current company) explicitly avoids the common founder move of pitching a finished idea and asking 'do you like it?' -- he says flatly that approach 'never works.' Instead they ask people to talk about their actual lives and problems, letting product direction emerge from what surfaces naturally rather than from reactions to a pre-formed pitch. He names the reluctance to do this as fear of being judged, and reframes that fear as the entire point: hearing where an idea is weak, every week, on a fixed cadence, is what actually improves it.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Raising seed money for Likebrite/Reveal with no personal track record in online dating, Soman kept hitting investor skepticism about his domain credibility. Rather than trying to out-argue it, he sought out Dr. Galen Buckwalter, the psychologist who wrote eHarmony's matching algorithm -- but before the call, he researched Buckwalter as a person (discovering he also fronted an all-therapist rock band) and the conversation became 15 minutes about music, not a pitch. That non-pitch connection led Buckwalter to volunteer to advise and then invest, and his name attached to the round made previously skeptical investors willing to fund it. The operationalized lesson: find the most credible person in the exact domain, whether they succeeded or failed at it, and connect with them as a person before ever presenting the idea as a pitch.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Soman recounts realizing he had been treating investors as a category rather than as individuals -- imagining 'unique and almost inhuman' motives for people once he learned they were investors. When one investor invited him to his ranch, Soman anxiously asked a friend whether it was appropriate to invite his own friends along too; the friend replied 'what would you do if you had an $11 million ranch?' -- snapping him into treating the investor as an ordinary person who would naturally want to share it, not a financial actor requiring careful management. The broader operating lesson he drew: employees and investors both want the same basic things -- clarity, humanness, and transparency about where the business is going -- and founders should default to treating every stakeholder as a person rather than assuming different roles need to be handled differently.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "other",
+      "summary": "Soman's single piece of tactical advice for anyone starting a company is to pick exactly one key metric -- not a balanced scorecard -- that represents the current top priority, then make it visible to an almost embarrassing degree: posted on the wall, emailed to the whole team daily, even though which metric matters most will change over time. He frames this with a 'plans are useless, planning is essential' logic: the value isn't that the chosen metric stays permanently correct, it's that the discipline of being forced to choose one clarifies what matters right now, and visible tracking creates organizational alignment around it.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    }
+  ]
+}

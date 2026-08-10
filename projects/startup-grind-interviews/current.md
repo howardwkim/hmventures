@@ -1,35 +1,46 @@
 # Startup Grind Interviews — CURRENT
 
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-21
 
 **Next:**
-- Now: Review data/opportunity_review.md (124 opportunity_signal nuggets, grouped into 8 topic buckets, A/B/C strength-tiered within each group — read A first). Regenerate anytime via `scripts/generate_opportunity_review.py` after re-tagging. Rubric: reference/opportunity-topic-taxonomy-v1.md.
-- On deck: Once the review pass is done: continue extraction batches from the 33 remaining interviews (see Remaining Interviews section) using the locked short-v1 prompt, single-pass, no chunking, then re-run both tagging passes (reference/nugget-tagging-prompt-v1.md for opportunity_signal/small_business_focus, reference/opportunity-topic-taxonomy-v1.md for topic/strength) over the newly extracted batches. Also still open: final presentation format for the gold output (structured dataset vs. readable doc) once all 50 are extracted.
+- Now: Design and run a new founder-wedge filter over the full 732-nugget gold set (all 50 interviews): pull nuggets where the reaction is either "I could automate/AI this" or "this is a real, sharp pain point for this type of business/user, worth digging deeper into." This is narrower than the existing opportunity_signal tag (which just means buildable/solvable pain point) — no rubric or script exists for it yet, needs designing from scratch next session.
+- On deck: Run the existing tagging passes (reference/nugget-tagging-prompt-v1.md, reference/opportunity-topic-taxonomy-v1.md via scripts/tag_nuggets.py + scripts/tag_opportunity_topics.py) over the 33 newly extracted interviews — only the original 17 are tagged so far. Then regenerate data/opportunity_review.md (scripts/generate_opportunity_review.py) and do a fresh review pass over the full 50. Also still open: final presentation format for the gold output (structured dataset vs. readable doc) — deliberately deferred until the full dataset was in hand, which it now is.
 
-**Key decisions:** Gold-extraction prompt locked as reference/gold-extraction-prompt-short-v1.md (2026-07-17). The already-saved first 5 gold files are NOT being re-extracted (Howard's explicit call). Nugget-tagging rubric locked as reference/nugget-tagging-prompt-v1.md (2026-07-17, widened same day after Howard's review pass — see reference/decisions.md for the full why). Opportunity-topic taxonomy (8 buckets + A/B/C strength tier) locked as reference/opportunity-topic-taxonomy-v1.md (2026-07-17), applied via scripts/tag_opportunity_topics.py: 65 tier-A, 56 tier-B, 3 tier-C; topics led by leadership-founder (25), customer-discovery (23), growth-marketing (22). Full decision history: reference/decisions.md.
-**Session ref:** `claude --resume 3611c9a3-f5ff-4797-b820-4b6f37c94c0d`
+**Standing constraints:**
+- Gold-extraction method (Agent tool, one Sonnet subagent per interview, single-pass, no chunking, locked prompt reference/gold-extraction-prompt-short-v1.md) is settled — reuse as-is for any future re-extraction, don't re-derive.
+- Nugget-tagging rubric (reference/nugget-tagging-prompt-v1.md) and opportunity-topic taxonomy (reference/opportunity-topic-taxonomy-v1.md) are locked — reuse verbatim for consistency, don't re-derive.
+- data/silver/interviews.jsonl has 52 lines for 50 unique video_ids (qrv_7hxM8PM, XDCrar4JBoQ each duplicated, confirmed byte-identical) — not deduped at the source; don't double-extract or double-count these two.
+
+**Canonical assets:**
+- Gold nuggets → data/gold/<video_id>.json → authoritative extracted-insight output, one file per unique interview, all 50 present, schema {video_id, interviewee_name, interviewee_title, nuggets:[{category,summary,quote}]}
+- Extraction prompt → reference/gold-extraction-prompt-short-v1.md → locked prompt for any future gold extraction
+- Tagging rubrics → reference/nugget-tagging-prompt-v1.md, reference/opportunity-topic-taxonomy-v1.md → locked enrichment criteria, applied to 17/50 interviews so far
+
+**Key decisions:** All 50 unique interviews now have gold files (732 nuggets total) as of 2026-07-21. Full decision history: reference/decisions.md.
+**Session ref:** `claude --resume b626e2da-c957-4e15-8e1d-be4d14bbadb1`
 
 <!-- summary:end -->
 
-## Remaining Interviews
+## Extraction Status
 
-33 remaining (excludes the 17 already extracted): 7TklH3CghgE (Britta Jacobs), qrv_7hxM8PM (Tim
-Porter, dup row), oFDwLF8ZwbY (Dan Price), Hd5N-2rNOxc (Aaron Bird), 9lgBJ67YjQU (Bill Bryant, 2nd
-interview), 4pd9BzxzFaU (Dan Levitan, 2nd interview), De5jtsW_-Lw (David Israel), vgPlJWUPEe4
-(Hansen Hosein), eWCVFCL6DLc (Joe Roets), 7HaDTiploEg (Leslie Feinzaig), bEWSr_tdhyo (Mark Mader),
-XDCrar4JBoQ (Scott Berkun, dup row), VLrTAPMDDOk (Kirby Winfield), Fm_iPtM0mqo (Nick Huzar),
-IV5QDf5ITUk (Nick Soman), hBgQ9-WTwk0 (Rahul Sood), _X6B-SCm7HU (Rudy Gadre), HIRM3UbIcYc (Sally
-Bergesen), Y6bP5bt9abc (Sanjay Parthasarathy), T1rBhAq8KZw (Sarah Bird), nNS-XZWNR8c (Scott Oki),
-N2ZIwCy5Wn0 (Rian Buckley), SVXHN9qvYsQ (Eric Breon), yPug9Y8Z2FM (Nick Soman, 2nd interview),
-2hQqBB37pwc (Peter Hamilton), aCOWjAE-YYQ (Robbie Bach), U7WPvIWUQno (Spencer Rascoff), pj4j4wKcVP4
-(John Lauer), 5zmCJ3wNGvg (Chris DeVore), yJLnC9-ecRE (Oren Etzioni), DV8PM-byXjI (Len Jordan),
-8PgYt_Hm930 (Jeana Jorgensen), eBqWDZTTlvg (Lisa Nelson). Includes Sally Bergesen — had the original
-locked prompt run on her during earlier validation, but that output was never saved to `data/gold/`,
-so she still needs a real extraction pass with the current locked prompt.
+All 50 unique interviews now have gold files (2026-07-21) — the 33 remaining were extracted this
+session via 33 parallel Sonnet subagent calls (Agent tool, 4 batches), using the locked
+`gold-extraction-prompt-short-v1.md`, one subagent per interview, no chunking. 447 nuggets
+extracted across the 33, on top of the original 17's 285 — 732 gold nuggets total, not yet all
+tagged (see Next above).
 
-Note: `data/silver/interviews.jsonl` has 52 lines but only 50 unique `video_id`s — `qrv_7hxM8PM`
-(Tim Porter) and `XDCrar4JBoQ` (Scott Berkun) each appear twice. Not yet deduped or investigated;
-don't double-extract these when picking the next batch.
+Two of the 33 (`qrv_7hxM8PM` Tim Porter, `XDCrar4JBoQ` Scott Berkun) were the silver-layer
+duplicate rows flagged below — confirmed byte-identical transcripts, so each was extracted once,
+resolving that open question. Sally Bergesen (`HIRM3UbIcYc`) got a real extraction pass this
+session, replacing the earlier validation-only run that was never saved to `data/gold/`.
+
+One subagent (Dan Price, `oFDwLF8ZwbY`) pre-emptively added the not-yet-run tagging fields
+(`opportunity_signal`, `small_business_focus`, `opportunity_topic`, `signal_strength`) to its
+output, apparently copying an existing tagged file's shape — stripped back to the plain
+`{category, summary, quote}` schema so all 33 are consistent ahead of the real tagging pass.
+
+Note: `data/silver/interviews.jsonl` still has 52 lines for 50 unique `video_id`s (the two
+duplicate rows above) — not deduped at the source, just not double-extracted.
 
 ## Gold-Extraction Method
 
@@ -42,9 +53,8 @@ interviewee_title, nuggets: [{category, summary, quote}]}`. Extraction prompt:
 `reference/gold-extraction-prompt-short-v1.md` (locked 2026-07-17, see decisions below). Design
 history and original-prompt validation in `reference/gold-extraction-prompt-drafts.md`.
 
-Once all 50 unique interviews are extracted, still need to decide the presentation format for the
-gold output (structured dataset vs. readable doc) — deliberately undecided, revisit with the full
-dataset in hand.
+All 50 unique interviews are now extracted (see Extraction Status above). Presentation format for
+the gold output (structured dataset vs. readable doc) is still undecided — see Next.
 
 ## Nugget Categorization
 

@@ -1,0 +1,103 @@
+{
+  "video_id": "7HaDTiploEg",
+  "interviewee_name": "Leslie Feinzaig",
+  "interviewee_title": "CEO Venture Kits LLC",
+  "nuggets": [
+    {
+      "category": "mistake",
+      "summary": "Feinzaig's single biggest regret from building Venture Kids was rushing to get a physical product prototype to market before finding a co-founder, assuming she'd recruit one \"after the holidays.\" By the time she started looking, the company already had media attention and a public identity, so candidates who reached out expected a market-rate salary from day one rather than early equity -- she compares it to \"single-parent dating,\" where the baby (the company) is already born and the new partner has to accept the situation as-is instead of shaping it from the start. Her advice: find a co-founder (or at least regular advisors) before the idea becomes a real, visible entity, not after.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "She used her powerful network of established investors (from her time at Julep Beauty) as an informal sounding board for her new idea, treating them like mentors she could ask dumb questions of. But because they had money and reputational standing, they effectively became investors the moment she pitched them -- permanently changing the relationship so she could no longer say \"I have no idea what I'm doing.\" The lesson she draws is the reverse of what people expect: \"ask for money, you get advice; ask for advice, you get money\" -- meaning if you want unguarded mentorship, don't pitch it to people positioned to write a check.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Feinzaig had long accepted early-career feedback that she was bad at business development and sales, and internalized a personal rule to double down on strengths rather than work on weak spots (reasoning that leaning into a weakness just makes you mediocre at two things instead of excellent at one). After pitching Venture Kids on stage and realizing she could actually sell, she discovered the \"bad at sales\" label was wrong -- raising the broader question of how many other capabilities she'd quietly abandoned simply because someone once told her she lacked them.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "To validate Venture Kids before building any real product, Feinzaig faked the entire experience using a mocked-up PowerPoint printout, colored pencils, and a bought box, then recruited neighborhood kids through local mom groups to play-test it in small same-age groups (4-year-olds, 5-year-olds, 6-year-olds, etc.). She ran roughly 50 kids through these sessions in the first two months, which gave her real confidence the product worked before committing money to physical inventory -- a technique she notes can be adapted to fake a service-based product too, not just physical goods.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Because Venture Kids is a physical, inventory-dependent product, Feinzaig deliberately avoided the common hardware-startup trap of manufacturing a large batch upfront. Instead she built in small batches \"almost on demand,\" sizing each production run to recent sales signals (e.g., ramping up after media coverage and pulling back when there's none), which let her collect real sales data without sinking her savings into unsold inventory sitting at the mercy of seasonality and the sales cycle.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "Coming from a product-management background, Feinzaig over-invested in the product itself and underestimated how little time a customer's attention gives a new item to explain itself -- on a store shelf or a website product page, a shopper decides in \"a fraction of a second.\" Ordinary toys solve this because their box or a plastic window shows exactly what they are instantly, but Venture Kids' pitch (\"turn your kids into entrepreneurs, because future-proof skills are entrepreneurial, not STEM\") is too conceptual to land in that fraction of a second, so packaging/website design became the thing she had to rework most after launch.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "When recruiting a co-founder through cold channels like AngelList (rather than a pre-existing relationship), Feinzaig's key learned rule is total transparency about compensation from the very first conversation -- stating the rough equity range and whether the role is unpaid, before investing time in interviews. Skipping this wastes both people's time because the current hype around \"founder\" as a glamorous identity (she cites Elon-Musk-as-Iron-Man imagery) draws in people who want the fantasy of being a co-founder without understanding that most of the actual day-to-day is unglamorous grind -- they tend to drop out once they see the reality and then ask for a salary she can't afford to pay.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "other",
+      "summary": "The Seattle Female Founders Alliance (which Feinzaig founded) deliberately restricts membership to people who have already quit their job and started their company -- not people still employed and merely dreaming about an idea. She explains this isn't gatekeeping for its own sake: someone still in the \"daydreaming\" phase hasn't had their assumptions stress-tested yet and doesn't know what the daily reality of founding actually costs, so mixing the two groups would dilute the value of shared experience for people who've actually made the leap. Applicants in the pre-leap stage get redirected to other resources (she names the F-Bomb Breakfast Club) meant specifically to help people decide whether to take that leap at all.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "number/metric",
+      "summary": "Feinzaig frames Venture Kids' market opportunity by combining two adjacent industries rather than picking one category: the toy industry (roughly $26 billion a year) and the educational publishing industry (roughly $29 billion a year), both of which she says are growing at 5-10% annually. She uses this dual-market framing deliberately in her pitch to investors, positioning the company at the intersection rather than being pigeonholed as purely an \"ed-tech\" or purely a \"toy\" play -- categories she notes many investors are individually wary of.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "For anyone starting a low-budget web presence, Feinzaig's actual stack for Venture Kids was Wix for the website, Shopify for transactions, and MailChimp for email -- tools she still uses. She says a first version doesn't need custom design: a template from Wix or Squarespace filled in with your own photography is enough to look legitimate and functional, and the whole setup can be stood up for under $200.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "Feinzaig's first company, a photo app, failed within about six months -- not from lack of interest, but because as a non-technical founder without a technical co-founder, building it would have required raising millions of dollars to compete with what a company like Google \"will sneeze and create tomorrow.\" She frames this as a structural mismatch rather than a personal failure: a founder without the relevant skill set (technical, in this case) attempting a category where capital intensity and incumbent competition are both extremely high is a losing setup regardless of execution, which is part of why she chose a bootstrappable physical product for her second venture instead.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "When Feinzaig sat across from a well-connected angel investor who loved her pitch and background, she realized in the moment that she could have asked for money right there but genuinely didn't know the words to do it -- calling it a self-confidence and \"rookie\" gap rather than a business one. She later got coaching and learned the actual phrasing experienced founders use to make the ask land naturally, such as \"would you like to participate?\" or \"we're closing this round -- what are your thoughts?\" -- concrete scripts for the specific moment many first-time founders freeze on.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    }
+  ]
+}

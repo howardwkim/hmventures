@@ -1,0 +1,111 @@
+{
+  "video_id": "yPug9Y8Z2FM",
+  "interviewee_name": "Nick Soman",
+  "interviewee_title": "Founder/CEO Decent",
+  "nuggets": [
+    {
+      "category": "contradicts-convention",
+      "summary": "When Soman pitched his friends-of-friends dating startup (Like Bright) to investors, they didn't push back on the product's quality — they pushed on growth curve shape, telling him a dating service needs lots of members and they wanted a curve that goes sharply up. He internalized this as a mandate and went and figured out how to grow a consumer app aggressively, effectively force-fitting growth tactics onto a product that hadn't yet proven it was good. The non-obvious lesson: investor pressure for a hockey-stick growth curve can push a founder to optimize distribution before the core experience is validated, which is backwards and can mask a weak product with vanity growth.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "Soman's second startup (Reveal, an anonymous synchronous chat app) grew to roughly 1.5 million users and at one point hit 50,000 new users a day, almost entirely through Facebook as the acquisition channel. He never built out equally compelling alternative channels, so when Facebook's policy team cracked down on the dating vertical (which Reveal was classified under) and cut API access, the growth engine died almost overnight. His own read on the mistake: over-indexing on a single platform-owned channel for growth is a structural risk, not a strategy, because the platform will always act in its own interest over yours no matter how compliant you've been.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "After Like Bright failed, Soman's team wanted to test a completely different hypothesis (that people wanted synchronous, appearance-blind chat) but deliberately avoided repeating their earlier mistake of over-building a polished V1 before knowing if the core idea worked. Instead they threw up a deliberately ugly web experience with no reveal/photo functionality at all — just bare SMS-style chat with a stranger — and ran a single cheap Facebook ad campaign to drive two strangers into a conversation. The test validated the concept within about 45 minutes of live use, which is the concrete payoff of testing the riskiest assumption with the cheapest possible artifact instead of the full product vision.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "When Reveal was acquired by Rhapsody and salaries doubled for much of the team, Soman expected the announcement of new (much higher) salaries to be the exciting moment for his employees. Instead, to a person, everyone's immediate response to hearing their new salary was to ask what they'd be working on next — not to celebrate the money. This flipped his assumption about what actually retains and motivates a team: people who stayed through a hard pivot were there for the mission, not the paycheck, and leading the conversation with salary instead of the next mission was, in his own assessment, the wrong instinct.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "During the acquisition negotiation, Soman tried to keep every stakeholder (investors, team, his wife) happy by expressing more openness to different deal structures/options than he actually felt, rather than being as clear and firm about the outcome he believed was right as he had been about the company's mission. The result was that expressing flexibility invited a flood of alternative proposals — many of which he fundamentally didn't want to pursue — which slowed and muddied the process. His lesson: when you already know the right outcome by your own ethics, holding the line as tightly as you would on mission is faster and cleaner than staying \"open\" to please everyone.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Asked what operational advice he'd give a co-founder starting a new company, Soman's first answer was to pick exactly one key metric for the business — not a balanced scorecard. He explicitly rejects the common instinct to hedge with multiple metrics (e.g., growth balanced against net promoter score), arguing the value isn't in the metric itself but in the forcing function of the process of choosing just one, since that process is what surfaces what actually matters to the team; the single metric can change later, but there always has to be only one at a time, tracked obsessively and visible to everyone daily.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Struggling to raise a first round for a dating startup with no track record in the category, Soman connected with Dr. Galen Buckwalter, the guy who wrote eHarmony's matching algorithm. Instead of preparing a pitch or a list of expert-testing questions, Soman researched him as a person, discovered he was also the lead singer of an all-therapist rock band, and spent the entire first call talking about music rather than the business. That personal, non-pitch conversation is what led Buckwalter to offer to advise and then invest — and Buckwalter's small check and a written endorsement then unlocked larger checks from other investors who had been on the fence, because his credibility functioned as third-party validation.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Soman describes routinely projecting inhuman, purely transactional motives onto investors early in his career — treating them as a category rather than as people. A friend snapped him out of this by pointing out, when Soman was anxiously overanalyzing whether he should accept an investor's invitation to his ranch, that the investor was just being a normal generous person, the same way Soman himself would be if he had an $11 million ranch. The reframe he took from it: investors and other stakeholders are just people, and treating them with basic transparency and humanness works better than trying to strategically manage them as instruments.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Soman describes a specific, repeatable customer-research discipline his team runs weekly at the University of Washington: rather than asking prospective users \"here's my idea, do you like it?\" — which he calls a rookie mistake that never works — his team asks students to talk about their own lives and problems, and lets product opportunities surface from that. The discipline is maintained by team members (including alumni from the earlier Reveal team) running it every single week, treating negative feedback as the goal rather than something to fear, since being told an idea is flawed is the only way to improve it.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Reflecting on being hospitalized and paralyzed for weeks with Guillain-Barré syndrome, Soman says the hardest part wasn't the physical pain of the illness itself — it was the sheer unstructured, empty time spent alone in a room, unable to move or be meaningfully present with people who loved him. This became the seed insight for the products he later built (a dating app, then an anonymous synchronous chat app): that loneliness is less about lacking people who care and more about the crushing volume of unfilled time, which reframes what a product trying to \"cure loneliness\" should actually be optimizing for.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Reveal's core product mechanic let two strangers chat without seeing each other's photo or name unless both parties opted to reveal it after building trust through conversation. Soman cites a story a friend told him: he was chatting with a Muslim woman from Malaysia who asked to reveal photos only if he'd promise to remain friends afterward, because she'd learned that once people saw she was Muslim, some stopped wanting to be friends. This illustrates a non-obvious design principle: making identity-reveal optional and sequenced after connection can let people bypass the snap judgments (religion, appearance, etc.) that usually gate whether a relationship even starts.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "After his son was born, Soman assumed that pouring his own energy and attention directly onto the baby was what would keep the family okay. He instead learned the opposite worked better: when he shifted his focus to supporting his wife (his partner) first, his son ended up fine as a byproduct — what he calls the \"transitive property.\" His generalized takeaway is that new parents often instinctively deprioritize the partnership in favor of direct child-focus, and that this doesn't actually work once you're also running a company, because you can't sustain three competing top priorities (spouse, kid, company) — the partnership needs to stay first.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Describing what he looks for in hires, Soman recounts the youngest person his company ever hired, Suzanne, a UW freshman who approached him saying she wanted to work with smart people — and, in the same breath, stated plainly that she expected to be paid for her work. He read that combination (confidence plus explicit self-advocacy about compensation, from someone with no track record) as a strong positive signal and says it turned into one of his best hiring decisions, suggesting that a candidate's willingness to state their own worth up front, even without credentials, is itself worth weighting heavily.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    }
+  ]
+}

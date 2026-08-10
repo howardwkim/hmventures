@@ -1,0 +1,95 @@
+{
+  "video_id": "eWCVFCL6DLc",
+  "interviewee_name": "Joe Roets",
+  "interviewee_title": "CEO Dragonchain",
+  "nuggets": [
+    {
+      "category": "mistake",
+      "summary": "When Mt. Gox collapsed, Roets's team had already made it standard practice to buy or mine Bitcoin on an exchange but immediately move it into a self-custodied wallet rather than leaving it parked there. Their reasoning was that leaving large sums on an exchange defeats the entire premise of Bitcoin as a decentralized, non-custodial asset -- an exchange functions like a bank you don't need. The mistake was widespread even among people who understood the technology: crypto-sophisticated holders still lost money at Mt. Gox because they treated an exchange as long-term storage instead of a conversion point. The actionable lesson is to make self-custody a default habit as soon as a purchase clears, not just a lesson learned after being burned.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Roets's team was repeatedly asked which use cases or industries \"shouldn't\" use blockchain, and he came to see that as the wrong question entirely. He compares it to asking in the early 1990s which websites shouldn't be built: at the infancy of a platform, the right move is to lower the cost and risk of experimenting on it so unlikely ideas can be tried cheaply, not to pre-screen for which applications count as legitimate. He points to Pinterest and Twitter as products nobody would have approved in advance as sensible use cases. The reframe: at the frontier of a new technology, optimize the platform for cheap experimentation and let adoption sort winners, rather than trying to curate valid use cases upfront.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "In one enterprise deployment, an internal engineering team that served other engineering teams had no way to prove which requesting groups were behaving well versus poorly, so prioritization defaulted to office politics (\"I know your boss and I want this today\") -- and that opacity was driving good engineers to quit rather than deal with it. The team initially rejected the idea of an internal currency as scary, but came back about six weeks later asking for it once they understood what it would do. Dragonchain modeled each group's actual contributions and activity, then monetized the good behavior with priority-granting tokens while leaving bad-behaving groups still functional but slower, without punishing anyone or escalating to a manager. The broader insight: making invisible political dynamics transparent and monetized, rather than escalating up the chain of command, can reduce internal-politics-driven turnover.",
+      "founder_wedge": true,
+      "wedge_kind": "pain",
+      "wedge_score": 3,
+      "wedge_note": "Interview internal platform/dev-tools teams about request-prioritization that defaults to office politics and drives engineer turnover; build a transparent intake/priority-scoring system."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Roets treats high-profile bearish declarations -- a bank CEO like Jamie Dimon calling Bitcoin traders stupid, or a government like China announcing a ban -- as a contrarian buy signal rather than a sell signal. His logic: Bitcoin's entire value proposition is that no single authority can actually stop it, so an authority publicly attempting to ban or discredit it is proof the asset is working as designed, and the resulting price dip from panic-sellers becomes a buying opportunity rather than a warning. This flips the conventional instinct to treat regulatory-crackdown headlines as a reason to exit a position.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Because data committed to a blockchain is effectively immutable, Roets argues \"going on-chain\" should be treated as a late, deliberately deferred decision rather than a starting assumption. Dragonchain's own architecture is built so a project can start on ordinary infrastructure -- his example is literally a database plus a web server -- observe how the data and usage patterns actually behave, and only commit specific assets or events to the blockchain once it's clear what's worth monetizing and permanently recording. This avoids the common mistake of over-committing an unproven data model to a system that can't cheaply be revised later.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Roets argues token sales are structurally more attractive to investors than traditional startup equity for a specific, often-overlooked reason: liquidity, not just easier access to a deal. An equity investor in a startup is typically locked in for five to ten-plus years until an exit event, whereas a token holder can sell down to their cost basis -- or exit entirely -- as soon as the token trades on an exchange, long before the underlying company has any liquidity event of its own. This reframes token sales as offering investors a fundamentally different risk profile, not merely a regulatory workaround for fundraising.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "When founders pitch Dragonchain a project idea, the team's standard filter is whether there is an actual utility being tokenized, versus a currency simply bolted onto an otherwise normal business purely to enable a token sale. Roets says the bolt-on-currency-for-fundraising pattern is common but weak, while the durable model is to identify a real in-system utility -- an action, asset, or access right -- tokenize that directly, and design the economy around it. This gives anyone evaluating whether to do a token sale a concrete diagnostic: can you name the specific thing inside the system the token unlocks, separate from \"it lets us raise money\"?",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Roets describes a structural fix for the classic Kickstarter failure mode, where a creator takes all the money up front and then partially ships or never ships. Instead, funds sit in escrow and release in tranches tied to milestones: each release is triggered either automatically by pre-agreed, testable criteria, or by contributor vote confirming the milestone was actually met. If the creator stops delivering, contributors can collectively reclaim the un-released remainder, while the creator keeps only what was already earned for milestones genuinely completed. This turns crowdfunding from an all-or-nothing trust bet into a pay-as-delivered structure enforced in code rather than by hoping a platform's reputation system deters fraud.",
+      "founder_wedge": true,
+      "wedge_kind": "pain",
+      "wedge_score": 3,
+      "wedge_note": "Crowdfunding backers repeatedly burned by non-delivery; milestone-gated escrow that releases funds in tranches on verifiable/voted completion."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Asked how blockchain could prevent an Equifax-style breach, Roets argues the fix isn't better security around a central data store but eliminating the central store entirely: individuals hold their own verified data (with proof anchored on-chain), and a verifying party defines a scoring threshold -- e.g., \"provide any combination of these factors that adds up to X\" -- rather than demanding one specific sensitive field like a Social Security number. A person could satisfy a verification request with a bank-signed home address instead of their SSN, clearing the score while exposing less, and any party that insists on holding data anyway becomes clearly liable for it. The reframe: an entity like Equifax or a government agency should never actually hold the underlying sensitive data at all, because a breach of data you never possessed can't happen.",
+      "founder_wedge": true,
+      "wedge_kind": "pain",
+      "wedge_score": 2,
+      "wedge_note": "Verifiers (banks/gov/employers) forced to hold sensitive PII they get breached on; user-held credentials + threshold-based partial-attribute verification so the verifier never stores the raw data."
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Roets pushes back on the assumption that a well-designed decentralized system is inherently secure just because its protocol is hard to break. He argues the weakest link in these systems, as in most security systems, is the humans around it -- social engineering, key compromise, insider behavior -- rather than the cryptography itself, and separately that any public smart contract holding real funds or sensitive data should be assumed to be under active attack the moment it's deployed. This is why Dragonchain's architecture defaults to a hybrid model, keeping sensitive logic private and only checkpointing proofs to public chains like Bitcoin and Ethereum, instead of putting everything on a fully public chain by default.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "number/metric",
+      "summary": "Asked to estimate what fraction of the roughly 330 million people in the US had actually used or even been exposed to blockchain technology as of this 2017-era interview, Roets put the figure at around 1%. He frames this not as discouraging but as evidence of how early-stage the technology still was, expecting adoption over the following five years to happen largely invisibly -- embedded inside bank and enterprise systems users won't even know are blockchain-based -- rather than through visible consumer-facing crypto use.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    }
+  ]
+}

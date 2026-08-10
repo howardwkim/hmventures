@@ -1,0 +1,67 @@
+{
+  "video_id": "5zmCJ3wNGvg",
+  "interviewee_name": "Chris DeVore",
+  "interviewee_title": "Managing Partner Founders Co-op",
+  "nuggets": [
+    {
+      "category": "concrete-detail",
+      "summary": "DeVore describes the exact founder trait Techstars screens for in selection: an almost contradictory combination of near-irrational self-belief (conviction strong enough to keep going when the world says you're wrong) and genuine coachability (the ability to actually update when a mentor points out a flaw, without becoming defensive). Most founders have only one half of this pair -- either they're so certain they ignore all feedback and drive off a cliff, or they're so uncertain that any pushback sends them in a new direction -- and holding both traits at once is rare enough that Techstars treats it as the single most important selection heuristic, above the idea itself.",
+      "quote": "founders have to have a really unusual, almost like a schizophrenia, which is they have to have a ridiculous sense of internal motivation and self-confidence... And they have to be humble enough to be coachable... A lot of founders have one but not the other."
+    },
+    {
+      "category": "number/metric",
+      "summary": "DeVore's explicit goal running Techstars Seattle was to get at least 50% of each cohort to an institutional financing within six months of finishing the program -- a number he contrasts with the baseline odds for an unaffiliated startup, where the chance of ever reaching institutional capital is far lower than one in two. This quantifies the actual value trade a founder is paying for when they give up equity to join an accelerator: it isn't mentorship or brand, it's a measured, order-of-magnitude improvement in the odds of raising real venture money.",
+      "quote": "My goal when I was running Techstars Seattle was to get at least half of the class, so 50% of the class, to an institutional financing within six months post-program. And I think most startups, like the idea of ever getting access to the institutional markets are like one in, pick a number, but it wasn't 50%."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "DeVore argues that institutional capital is structurally 'sticky' to a handful of geographies (Sand Hill Road for venture, Wall Street for public finance) because large asset allocators like pension funds and university endowments only trust managers physically embedded in those money centers -- so a strong founder in a place like Seattle can't simply out-hustle their way to a big out-of-town fund writing the first check. His fund's actual thesis follows from this: the first check into any deal is almost always local, because big-money investors can afford to wait on the sidelines until a company de-risks, while only a local fund or angel has the incentive to take that early risk. This flips the common assumption that money flows to wherever the best deal is; instead it explains why small regional funds exist at all and why they occupy a permanent, structural niche rather than a stopgap one.",
+      "quote": "capital tends to be sticky in geographies, right?... they're mostly going to put their money in the Bay Area because they believe that those managers are the best managers for that asset class... the first check is always local. Because the big guys can afford to hang around the hoop and wait until something shows some promise."
+    },
+    {
+      "category": "number/metric",
+      "summary": "DeVore lays out the actual arithmetic that forces early-stage VC funds to only chase huge outcomes: to return 3x his $25M fund (the bar LPs expect to reinvest), he needs $75M net back to LPs, which given typical dilution and minority ownership means a deal has to reach roughly a $1.5 billion terminal value if his fund still owns about 5% at exit. This concrete math explains why a genuinely good, fundable business idea still gets a 'no' from a VC -- it's not a judgment on the idea's quality, it's that the idea's total addressable outcome isn't large enough to move a fund-sized number, which most founders pitching investors don't realize is the actual filter being applied.",
+      "quote": "If I don't turn that into at least 75 net to my LPs, they won't give me money again... turning a 5% stake in your business into 75 million bucks, do the math. 20 times 75 million is a buck and a half, right? So... terminal value has to be a billion and a half if I own 5%."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "DeVore says the single biggest red flag in diligence isn't a weak business model but any whiff of dishonesty or exaggeration -- he describes personally verifying a founder's claim about a supposedly closed deal by directly emailing the referenced company's CEO to check if it was true. Because early-stage investing is almost entirely a bet on the integrity of the person (there's rarely enough data to underwrite the business itself), a founder who stretches or misrepresents even a minor fact can permanently kill the relationship, since investors in a tight regional market can and do fact-check specific claims directly with the people involved.",
+      "quote": "Anything that give, has a whiff of dishonesty, you know, misrepresentation, lack of integrity... I emailed the CEO saying, this company is representing X. Did it or did it not?... just don't, like, don't make shit up."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "DeVore says one of the most useful but rarely-asked diligence questions is whether a two- or three-person founding team can already name their first five to ten hires -- ideally with LinkedIn profiles in hand and informal agreement to join once funded. Most founders don't build this kind of concrete hiring roadmap on their own, but being able to show it functions as evidence the team has already thought past the current headcount to how they'll actually scale, which is a distinct and separate risk from whether the founders themselves are strong.",
+      "quote": "a question that we've gotten smarter about asking is who are your first end hires? And have you already identified who those people are?... Hiring roadmap... is not something that is intuitively done by most founders."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "DeVore says that when a Bay Area deal shows up unsolicited in his inbox despite Seattle being a comparatively capital-poor market, his instinct is not excitement but suspicion -- his literal first question is 'why am I so lucky?' The logic: if a company had genuinely strong traction, it would have no trouble raising from investors closer to it with more capital and better follow-on capacity, so a deal actively seeking out a smaller, out-of-market fund is itself a signal that something is likely wrong with it that better-positioned investors have already spotted and passed on.",
+      "quote": "the question I always ask myself when I see a Bay area deal is why am I so lucky? Right? If there's a deal coming to me from a market... that's, that's, that's good to hear... There's probably something weird going on."
+    },
+    {
+      "category": "changed-belief",
+      "summary": "DeVore's clear-eyed take is that bootstrapping and venture-backed 'dominance-seeking' growth aren't two points on a spectrum a founder can slide between -- they're culturally divergent paths that are nearly impossible to cross over between once a company has committed to one. A venture-backed strategy requires spending aggressively ahead of free cash flow to try to win a category outright (accepting that most such bets fail), while a bootstrapped strategy requires making survival and cash preservation the top priority, and these produce fundamentally different organizational cultures and employee expectations. His practical warning: staying bootstrapped 'too long' (his example: multiple years, with 15-20 employees already hired into a cash-preservation culture) then trying to suddenly pivot into venture-style rapid growth is a jarring culture change that founders underestimate, and clean crossovers (he cites Atlassian) are rare exceptions, not a normal path.",
+      "quote": "the venture pathway and the... bootstrap pathway are divergent in every way... If you want to build a business on free cash flow, you by definition cannot pursue a dominance strategy... once you get on that train, like you, you can't toggle back and forth. And really, if you run too far as a bootstrap, you basically have made it almost impossible to cross over."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "DeVore says doing customer development is not automatically valuable -- a lot of founders do it in a way that only reinforces their existing conviction, because they're unconsciously seeking validation rather than real pushback, and all they come away with is 'pats on the back about how great their idea is.' The distinction he actually screens for is whether a founder has been genuinely told they're wrong multiple different ways by real prospective customers and adjusted their thinking as a result -- the volume of customer conversations someone had is a far weaker signal than whether those conversations changed their mind about something.",
+      "quote": "a lot of people do customer development and all it does is hardens their conviction that they're on the right track... They're just getting pats on the back about how great their idea is."
+    },
+    {
+      "category": "number/metric",
+      "summary": "DeVore gives a specific, almost mechanical banding rule for how much runway a raise should buy: less than 18 months of capital is dangerous because it doesn't leave enough time (roughly 12 months of execution plus 6 months of fundraising and contingency) before the founder is back out raising again without having proven much; more than 24 months usually means the founder sold more equity than necessary at that valuation. The expected cadence, if things are going well, is raising again within 12-18 months after at least doubling the company's enterprise value -- a predictable 'ladder' that applies regardless of sector, and deviating from it (in either direction) is itself diagnostic of either underperformance or overpaying for capital.",
+      "quote": "you have to have at least 18 months of capital... Any more than 18 months and maybe 24 is the outer bound on that. You're probably selling more of the business than you should at this price... the expectation is you're going to raise again within 12 to 18 [months] because... at least a 2x on enterprise value."
+    },
+    {
+      "category": "other",
+      "summary": "DeVore's concrete advice for someone starting out in angel investing is to treat it like a fitness routine rather than a series of one-off bets: commit to investing a fixed amount on a fixed cadence (e.g., quarterly or yearly) for at least two to three years, so that time diversification and deal diversification force the discipline needed to actually build skill and a real portfolio. He contrasts this with the common failure mode -- someone who writes a handful of checks quickly based on a friend's tip, learns nothing from the experience, and ends up as 'dumb money' that founders don't actually want on their cap table, versus becoming one of the small number of investors in a market who add real value and get sought out for it.",
+      "quote": "the way to begin in angel investing is to commit yourself to a program of angel investing, which is I'm going to invest a fixed amount of money every year, every quarter, and I'm going to do it for at least two or three years... there's people that wrote lots of checks real quick and no one really wants them as investor because they really didn't learn anything."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "DeVore says his fund stopped publicly listing its individual LPs because doing so felt dishonest as marketing -- most named LPs, even ones with impressive personal brands, never actually signed up to do hands-on work for portfolio companies, so presenting them as a network benefit overstates what a founder is really getting. The real leverage a small fund provides, in his account, comes not from a marquee LP list but from the fund's own relationships and, even more so, from the reputational goodwill of the 200+ founders it has already backed across Techstars and Founders Co-op, who refer other founders when asked who to raise money from.",
+      "quote": "the reality is most of those people aren't, they didn't sign up to do work, right?... it just, it didn't feel honest... the leverage that we get is surprisingly we get a lot of leverage from... the founders we backed and not just from our money."
+    }
+  ]
+}

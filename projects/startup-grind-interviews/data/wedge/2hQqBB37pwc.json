@@ -1,0 +1,95 @@
+{
+  "video_id": "2hQqBB37pwc",
+  "interviewee_name": "Peter Hamilton",
+  "interviewee_title": "CEO TUNE",
+  "nuggets": [
+    {
+      "category": "number/metric",
+      "summary": "Hamilton built his Series A/B fundraising as a deliberate sales funnel rather than a series of ad hoc conversations: he first compiled a list of 70 potential investors, then met with 40 of them at the partner level (not counting associate meetings needed to get there), and then narrowed that pool down to about 6 live offers he could pit against each other for terms. The key sourcing tactic was getting almost all of his intros from other entrepreneurs rather than cold outreach, and deliberately building a network of founders who would each make 2-3 introductions on his behalf. The non-obvious part is treating the number of investor conversations as a volume/practice game — using early meetings to hone the pitch before it mattered — rather than trying to go straight to the few investors he most wanted.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "During fundraising, Hamilton controlled exactly how much financial detail different investors saw based on how serious/far-along they were, rather than giving everyone the same pitch deck. Early-stage or less-committed investors got a limited information set; as investors got more serious he progressively revealed more (full P&L, detailed averages); only the firms actually about to sign a term sheet got the fully detailed picture. The logic he gives for holding back until the very end: revealing something after signing exclusivity — even something minor — gives the investor leverage to claim you weren't forthright and use it against you in diligence, whereas showing everything right before signing means they can't later claim they were misled.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Hamilton argues founders systematically underestimate how much leverage they actually hold over investors, even in a bad-terms scenario after money is raised — the common fear is that a signed deal locks you into whatever the investor wants, but in his view an entrepreneur can always walk away from an unreasonable investor and let the company relationship 'explode,' which is a real cost to the investor too. The practical takeaway is to negotiate hard for clean, simple terms up front (fewer levers for the investor to pull later) rather than assuming you have to accept unfavorable terms just because the money is in the bank.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "Hamilton's biggest cited mistake was a falling-out with Facebook that came from a wrong mental model of the relationship: his team assumed a back-and-forth, collaborative 'partner' dynamic, when in Facebook's eyes TUNE was simply a vendor with no say in how things worked. That mismatch led to friction on calls where his team pushed back as if negotiating with an equal, which from Facebook's side looked like overstepping. The lesson generalizes: before assuming a platform or big-company relationship is a true partnership, explicitly check how the other side actually categorizes you, because a 'vendor' relationship has fundamentally different rules than a 'partner' one, however friendly it feels.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "TUNE's stated firing rule inverts the usual instinct to punish the mistake itself: they say they have never fired someone for making a mistake, but have fired people for hiding or not admitting a mistake over an extended period. The underlying test for whether someone is a problem isn't whether they errored, but whether they're self-aware enough to know it — Hamilton gives the concrete diagnostic of a 5-person team where 4 members know someone isn't performing but that person doesn't, calling that specific unawareness-of-reality gap the real red flag requiring a change, not the underperformance itself.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "When designing TUNE's culture code (Collaborate, Optimize, Do, Evolve), Hamilton deliberately avoided values that describe subjective traits people could use to attack each other, because vague or judgmental values become 'weapons' in interpersonal conflict rather than genuine behavior guides. Instead the values were chosen to be things that are inherently hard to accuse someone of lacking in a divisive way — closer to baseline professionalism (show up, work well with others) than to trait-based judgments like 'not collaborative enough.' The practical design principle: test a candidate culture value by asking whether it could be weaponized as a personal accusation, not just whether it sounds inspiring.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "For post-acquisition integration, Hamilton says the outcome is largely set before the deal even closes: how the acquired team is treated during the deal process itself (respect, ease, even having the acquirer's legal team proactively introduce the incoming people around the company) determines how the team feels about the whole transition afterward. The second concrete integration tactic is getting a key leader from the acquired company connected directly into the executive team and the company's strategic thinking as fast as possible (he cites naming an acquired founder as general manager of TUNE's flagship product), rather than keeping acquired teams siloed under their old identity.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Hamilton pushes back on the common startup-hiring dogma that founders must be 'insanely scrutinous' about every hire from day one. He describes TUNE's own early hiring as fast and loose — two interviews and an offer — because at that stage the priority was shipping and filling seats, not perfecting process; only later, once the company had scale and stability, did they slow down and become highly selective. His framing positions himself as more 'practical' than the standard advice, treating early-stage speed-over-precision as a legitimate tradeoff rather than a rookie mistake to avoid.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "number/metric",
+      "summary": "Hamilton discloses that TUNE's acquisition track record is roughly 35% successful integration ('batting about 350'), which he frames as better than the average large corporation but still far from perfect — a candid, quantified admission that most acquisitions at any company, including a well-regarded fast-growing startup, don't fully pan out. This is a useful calibration point for founders evaluating their own or others' M&A track record: even a company good at acquiring should expect roughly two-thirds of deals to underperform expectations.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "On negotiating fundraising terms, Hamilton describes prioritizing clean, simple terms over squeezing the best valuation, explicitly asking his lead investor (Excel Partners) for a 'back of the napkin clean term sheet' and pushing back line by line to strike out the few clauses that gave the investor extra leverage. His stated rationale is that clean terms remove the investor's ability to exert 'weird leverage' later — if there are no special levers in the contract, an investor who starts behaving badly has no real mechanism to force outcomes, which keeps the power dynamic aligned even after the money is in the bank.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Hamilton stakes out a contrarian industry bet that the long-running 'mobile web vs. native app' debate is a false binary that's about to be resolved in apps' favor for navigation, not just engagement. His reasoning: the web wins at navigation but apps win at dwell time/engagement, and the missing piece — a navigation layer for apps analogous to hyperlinks for the web — is already being built via deep linking and app-content indexing (e.g., Spotlight search surfacing specific app pages like a website). He calls people who assume the browser will simply catch up and win 'well-meaning idiots,' arguing that by the time the web catches up on UI, apps will already have superior personalization and context baked in.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    }
+  ]
+}

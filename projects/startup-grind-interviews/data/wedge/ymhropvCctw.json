@@ -1,0 +1,119 @@
+{
+  "video_id": "ymhropvCctw",
+  "interviewee_name": "Liz Pearce",
+  "interviewee_title": "CEO LiquidPlanner",
+  "nuggets": [
+    {
+      "category": "contradicts-convention",
+      "summary": "Pearce runs LiquidPlanner with near-total internal transparency: every employee, including candidates she's interviewing, can see her personal to-do list and the company's internal work-tracking feed, which she compares to reading someone else's Facebook feed. The payoff she cites is serendipity — someone on one team stumbles across what another team is doing and makes a mental connection to a problem they're trying to solve, something that's hard to engineer through formal reporting. She's explicit that this isn't compatible with everyone (a 'bull in a china shop' hire won't last in this environment), but the core reframe is that this level of visibility is the opposite of micromanaging, not a version of it: if people can self-serve the information they need, nobody has to ask permission or be checked up on.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "As CEO, Pearce personally reads every customer support ticket that comes into LiquidPlanner, even though she doesn't get on a customer call every week. Her reasoning isn't oversight of the support team — it's that tickets contain unfiltered, specific complaints about the product, not just account-activation questions, and reading them raw keeps her calibrated on where the product is actually failing in a way a summarized report from the support or product team would smooth over.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "LiquidPlanner raised a debt round rather than equity, from SaaS Capital, a lender that only extends credit to companies above a certain monthly recurring-revenue run rate — because the company had predictable revenue but wasn't yet ready to raise VC. Pearce frames the decision as a total-cost comparison, not just an interest-rate one: raising VC money costs real founder time, focus, and distraction during the process, and taking on debt let the company move from one stage to the next without spending months fundraising or diluting before the business was actually ready. The transferable point is that revenue-based debt is a legitimate bridge-financing tool for a SaaS company with predictable MRR, not a fallback for companies that can't raise equity.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "number/metric",
+      "summary": "LiquidPlanner's engineering team reached 5 out of 11 engineers (45%) female, which Pearce attributes directly to sponsoring ADA Developers Academy, a coding bootcamp specifically for women changing careers from non-technical backgrounds like teaching or linguistics, and bringing on an ADA apprentice — over initial internal pushback from her own CTO, whose objection was that the company already had a good pipeline of University of Washington computer-science interns. The actionable point: adding a career-changer bootcamp partnership to a hiring funnel that already looks adequate can still measurably shift team composition within a few hiring cycles.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "LiquidPlanner restructured its employee referral bonus so payout scales with the number of people an employee refers, rather than paying a flat one-time bonus per hire — the more people an employee refers, the more money that employee makes. Pearce says she prefers this over leaning primarily on paid recruiters because it's 'better for the ecosystem': it turns hiring into employees vouching for people they'd actually want to work alongside, while still functioning as a real financial incentive rather than a token gesture.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Once LiquidPlanner's fundraising process wound down, Pearce deliberately started scheduling at least two meetings a week with people who are not on her management team, specifically to stay connected to what individual contributors are working on, what they enjoy, and where they want to grow. The non-obvious part is the timing and mechanism: fundraising had crowded this out entirely, and she treated restoring direct contact with non-managers as something that needed an explicit calendar commitment to survive a CEO's schedule — not something that happens naturally as a company scales.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Pearce argues startups have the opposite data problem from big companies: instead of analysis paralysis from too much data, early-stage companies typically aren't instrumented enough to produce the data they'd need, and don't have the luxury of spending two weeks to go get it. Her resolution is to look 'forensically' at whatever fragmentary data exists — even a single data point — and pair it with gut judgment to decide fast, rather than waiting for a fuller picture that won't arrive in time. This reframes 'data-driven decisions' at an early-stage company as necessarily incomplete by design, not a discipline gap to close with more dashboards.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Asked how to handle possible bias or discrimination — she'd just closed an $8M round after pitching roughly 30 investors, only one of whom was a woman — Pearce says you usually can't tell in the moment whether it's happening, because 'people may not even know they're doing it,' so confronting it case by case isn't a workable strategy. Her actual approach, the only one she says she's been comfortable with, is to act as though it isn't happening and proceed anyway, on the logic that whatever bias may be present, not letting it visibly change your own behavior is the one thing fully within your control.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Pearce treats mentorship as opportunistic and time-boxed rather than an ongoing relationship: she met a well-known startup CEO once at an event, then directly asked for a single half-hour coffee meeting, prepared specific questions in advance, and treated that one session as complete rather than expecting continued access — she explicitly says she doesn't consider him an 'ongoing mentor.' The actionable idea is the asymmetry logic: rather than trying to cultivate a long-term relationship with someone whose time is far more constrained than hers, she extracts maximum value from a single, well-prepared, respectfully brief interaction and doesn't over-ask afterward.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Pearce frames making introductions between people as a deliberate networking currency rather than an incidental courtesy: if you proactively connect other people, they become more willing to do the same for you, and over time this compounds into a genuinely useful, tight-knit professional circle. The actionable reframe is that the higher-leverage behavior is giving introductions to others, not just asking others to make introductions for you.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "other",
+      "summary": "Pearce says she deliberately doesn't dwell on her own mistakes, describing a coping mechanism where she literally forgets bad things that happen to her — illustrated with an anecdote about a flight disaster en route to her grandmother's funeral that she'd completely blocked from memory until her sister brought it up years later. She frames this as a chosen operating practice for staying functional as a CEO, not a quirk she's powerless over, implying that actively declining to ruminate on past failures — rather than processing every one — is itself a workable strategy for an operator under constant pressure.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Asked what drives their content marketing ROI, Pearce says LiquidPlanner sees a direct correlation between how many posts they publish and their search engine ranking, even though attributing revenue to any single piece of content is hard. Her case for over-investing in content is that one piece becomes raw material for multiple channels at once — a social post, an email, a webinar topic, a video — rather than a single-use deliverable, which is why she calls it a 'highly leveraged investment' worth sustaining even without clean attribution.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Pearce contrasts LiquidPlanner's product philosophy with traditional tools like Microsoft Project: conventional software requires a human to input the schedule and then manually re-propagate every change when priorities shift, which breaks down in practice because a human has to remember to make that update and often doesn't. LiquidPlanner's alternative has users rank work by priority instead of assigning dates, and the software calculates projected completion — on the belief that software can predict completion timing more reliably than a person can under constantly shifting priorities. The transferable idea: if a planning system depends on a human remembering to re-enter changed information, the plan will silently go stale — the fix is having the system infer state from a lower-maintenance input (like priority order) instead of demanding the human maintain the schedule directly.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Asked how to handle feeling in over your head while scaling a company, Pearce reframes the question away from 'working harder' and toward finding the 'force multiplier' — the single action that frees up the most bandwidth for everything else. Her concrete example: she didn't hire an executive assistant until about a year before this interview, only after auditing how much of her week went to scheduling meetings and realizing that hiring one person to own that layer would multiply not just her own capacity but everyone else's who no longer had to coordinate around her calendar. The generalizable move is to treat 'who is the right person to own this layer of work' as the central scaling question, rather than personally trying to absorb more.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    }
+  ]
+}

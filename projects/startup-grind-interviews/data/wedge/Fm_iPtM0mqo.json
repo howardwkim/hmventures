@@ -1,0 +1,135 @@
+{
+  "video_id": "Fm_iPtM0mqo",
+  "interviewee_name": "Nick Huzar",
+  "interviewee_title": "CEO OfferUp",
+  "nuggets": [
+    {
+      "category": "mistake",
+      "summary": "At his prior company, Kinex (an early social-networking site pre-dating Friendster), Huzar optimized purely for signup volume without checking whether users actually did anything after joining — celebrating days like 3,000 new signups while never measuring engagement. Compounding that, he took money from investors who were real-estate professionals with no tech-sector judgment, rather than investors positioned in the space. The two mistakes fed each other: vanity growth metrics impressed unsophisticated investors, masking the fact the product had no real usage. The non-obvious lesson is that growth and engagement are separate metrics, and investor domain expertise matters as much as their willingness to write a check.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Before OfferUp had enough two-sided liquidity for a real marketplace, Huzar personally showed up at early users' houses to buy the items they'd posted, without disclosing he worked at the company. This wasn't a scaled feature — it was a deliberate, hands-on hack to manufacture the appearance (and reality) of transactions early on, one buyer at a time, so the marketplace didn't die from the classic chicken-and-egg problem of no buyers showing interest in early listings. It's a \"do things that don't scale\" tactic applied literally to solve cold-start liquidity.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "number/metric",
+      "summary": "While fundraising with zero market traction, Huzar flew to Silicon Valley 15 times over 12 months. Fourteen of those trips ended in rejection; only the fifteenth produced his Series A. The takeaway isn't just \"be persistent\" — it's a concrete base rate showing how much rejection precedes a single yes when raising as an outsider without a warm network, useful for calibrating expectations before writing off an idea after a string of no's.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "OfferUp has deliberately never announced a funding round or done PR, even though startups conventionally treat funding announcements and press coverage as validation and marketing wins. Huzar's reasoning: when he sees competitors publicize their funding or roadmap, he treats it as free competitive intelligence he can act on — so for a consumer product where the audience that matters is end users (not enterprise buyers or other investors), broadcasting funding only hands the same intelligence to rivals for no compensating benefit.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Huzar's tactic for improving a fundraising pitch: deliberately pitch investors you're least excited about first, since a rejection from them costs nothing (you weren't counting on that relationship anyway) but still gives you real feedback that sharpens your story. Save the investors you actually want for later in the sequence, once the pitch has already been stress-tested and improved by the earlier, lower-stakes conversations — effectively treating early meetings as free rehearsal rather than final attempts.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Huzar says he has never once presented a forward-looking financial model or growth projection (a \"hockey stick\") in a pitch deck, calling such projections fundamentally fabricated (\"it's all BS anyhow\"). Instead his pitch leads with a genuine personal story — for OfferUp, an actual photo of his daughter that he happened to take, tied to the real moment he decided to build the company — on the belief that a compelling, visual, honest narrative earns investor attention far more than a spreadsheet projection nobody actually believes, especially given how many generic decks a partner sees.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "In OfferUp's first year, with investor money finally in hand, Huzar paid himself as a 1099 contractor instead of a W2 employee to avoid the extra payroll tax and administrative overhead — technically not allowed for a company officer, and he was later fined for it. But at the point the company was down to 90 days of cash, he judged that the tax savings from staying 1099 were the difference between surviving and running out of money as a W2 employee. It's a stark example of knowingly breaking a compliance rule and eating a penalty later because the near-term cash math made survival the higher priority.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Huzar deliberately did not legally incorporate his company during its first year of existence, on the reasoning that the moment you incorporate, you take on ongoing paperwork obligations that consume time better spent building and validating the product. He treated incorporation as a cost with a clock attached, not a formality to knock out immediately — worth delaying until the idea had proven it deserved that overhead.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "To drive awareness in a dense Seattle-area neighborhood, Huzar rented a moving truck, filled it overnight with roughly a thousand balloons, and had a team hand-deliver branded balloons door to door across an entire neighborhood — a highly visible, effort-intensive stunt. It produced zero measurable signups or usage; on top of that, a braking mistake caused an employee to be thrown from the truck and hospitalized. The lesson: high-visibility, high-effort brand stunts can look impressive and still convert nothing, especially for a transactional product where the friction is in the follow-through action, not top-of-mind awareness.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "As OfferUp scaled, Huzar consciously inverted his mental model of an org chart: rather than seeing himself at the top directing others, he pictures himself at the bottom, with his job being to facilitate and remove obstacles for everyone above him in the inverted structure. Concretely this meant deliberately stopping doing the hands-on work he used to do himself — icons, accounting, business models — and shifting entirely to guiding, on the belief that a founder who keeps doing detail work as the company grows is the bottleneck, not the asset.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "number/metric",
+      "summary": "Huzar cites a stat that an average venture partner is pitched roughly 800 times a year and ends up investing in about eight companies — a roughly 1% hit rate. He offers this as context for founders drowning in rejection: statistically, being told no by the vast majority of investors you pitch isn't evidence your idea is bad, it's simply the base rate of how selective the funding funnel is even for eventually-fundable companies.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Huzar treats startup advisors as having a shelf life rather than being a fixed, permanent resource: the person whose advice was invaluable two years into the company may no longer be the right person to lean on today, because the problems a company faces change as it scales. His framing is that founders should expect to outgrow advisors just as they outgrow their own earlier selves, rather than treating an advisory relationship as something to lock in once and keep indefinitely.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "number/metric",
+      "summary": "Huzar quantifies OfferUp's core product wedge against Craigslist in seconds versus minutes: listing an item on OfferUp takes about 30 seconds, while doing the same on Craigslist takes roughly 13 minutes once you account for the posting process and back-and-forth communication. He uses this stark contrast to argue that friction reduction — not feature parity — is what actually unlocks the supply side of a marketplace that has sat stagnant for two decades.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "mistake",
+      "summary": "At his previous company, Huzar's hiring bar was thin: he'd interview only two candidates for a role and hire whichever one seemed good, a low-rigor process that produced weak hires. Having learned that a fast bad hire costs far more than a slow good one, at OfferUp he deliberately raised the bar to interviewing around 20 candidates per role — a concrete, quantified before/after showing how much more selective his hiring process became after being burned by the cheaper version of it.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Against the common startup pattern of outsourcing pieces you're not personally good at (design, parts of engineering, etc.) to move faster early on, Huzar says he never outsourced anything in OfferUp's early days — not a single task. His reasoning is that an outsourced contractor will never bring the same level of dedication as someone who is actually building the company alongside you, so any speed gained from outsourcing is offset by weaker execution and commitment on that piece of the product.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "In his fundraising pitch, Huzar's very first content slide after the intro wasn't the solution — it was a quantified problem statement: stats like one in four two-car-garage owners can't park in their garage, homes have gotten 30% bigger since the 1950s while families shrank, and one in ten Americans rent a storage unit. He led with these numbers specifically to make investors feel the scale and persistence of the underlying problem (\"why does stuff sit?\") before he ever showed them how OfferUp solved it, pre-empting the reflexive \"you're just competing with Craigslist\" dismissal by reframing the market as far bigger than Craigslist's existing usage.",
+      "founder_wedge": false,
+      "wedge_kind": null,
+      "wedge_score": null,
+      "wedge_note": ""
+    }
+  ]
+}

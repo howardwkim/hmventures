@@ -1,0 +1,127 @@
+{
+  "video_id": "bEWSr_tdhyo",
+  "interviewee_name": "Mark Mader",
+  "interviewee_title": "CEO Smartsheet",
+  "nuggets": [
+    {
+      "category": "mistake",
+      "summary": "In Smartsheet's earliest days, the team deliberately avoided hiring specialists for roles that weren't yet proven necessary — Mader himself acted as QA tester and videographer rather than the company hiring a dedicated person for those functions. He warns that early-stage founders often overplan and overstructure too soon, reflexively thinking 'we need to hire a director of video' the moment a gap appears instead of just doing the job themselves. The non-obvious point is that this scrappiness isn't just about saving cash — it builds an internal norm that nobody is 'too senior' to do the necessary grunt work, which he says is essential to maintain even as the company scales.",
+      "quote": "So the early days, some of those memories was the team coming together and doing what was necessary to do the minimum required to build a product, ship a product, and not having any... it's like, do it. Do the job."
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Mader argues that founders routinely spend 15-20% of their effort searching for an 'easy door' — a shortcut, formula, or hack that would make the hard work of building a company unnecessary. His hard-won belief, after both Onyx and Smartsheet, is that this door essentially doesn't exist, and the search itself is wasted effort that could go toward the actual grind. The practical implication: accepting up front that success requires sustained hard work (not a discoverable trick) makes people complain less and execute more during the inevitable difficult stretches.",
+      "quote": "I think a lot of times entrepreneurs, they'll, like, allocate 15 to 20 percent. I think there's that easy thing. If I only had the formula, it's like, it's actually not there. It doesn't exist."
+    },
+    {
+      "category": "mistake",
+      "summary": "When Smartsheet was around 30-45 employees, several critical parts of the business were 'single-threaded' — dependent on one specific person with no backup. Mader notes this is a genuine structural risk at that headcount: if that person gets sick or has a family emergency, the whole operational model can break, and there often isn't enough budget yet to add redundancy. The insight for other founders at similar scale is to consciously identify which functions are single-threaded rather than assuming the team is resilient just because it's small and tight-knit.",
+      "quote": "There were a couple parts of the business which were single threaded. And if that one part of the composite, for some reason, person gets sick, person needs to take care of family member, I mean, the model can break."
+    },
+    {
+      "category": "mistake",
+      "summary": "Mader names installing a real, high-competency recruiting function as one of the things he did too late at Smartsheet, framing the difference as 'having a line in the water' versus actually fishing — i.e., passively waiting for applicants versus actively targeting, pursuing, and adjusting tactics ('changing the lures') to land specific people. He personally still shows up to recruiting meetups and talks values directly to candidates rather than delegating the pitch, because candidates can tell when someone is reciting a script versus actually meaning it. The actionable point: treat recruiting as an active sales function requiring dedicated, skilled headcount much earlier than instinct suggests, and have leadership visibly show up rather than delegate the message.",
+      "quote": "One of the biggest... things that I did too late at Smartsheet was install a true recruiting team, like high competency, high effectiveness recruiting team... it's a real big difference between having a line in the water and actually fishing."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Mader explicitly rejects the common startup adage that 'the best idea wins,' arguing instead that the best idea that is most effectively presented and recommended is what actually wins internally. His point is that being observant, curious, and full of ideas isn't enough — people who stop at 'I noticed a problem and I have an idea' without researching whether others see it too, and without packaging the recommendation persuasively, don't actually move anything forward despite feeling productive. He frames teams that only clear the first steps (observe, ideate) as merely 'high potential' — a state that curdles into 'low potential' fast if it never converts into a well-researched, well-presented, executed recommendation.",
+      "quote": "This whole, the old adage of best idea wins, I don't subscribe to at all. I think it's the best idea that is most effectively presented or recommended wins... high potential teams are only high potential teams until they run that stack."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Smartsheet uses what they call the 'Spokane test' (a term Mader picked up from another CEO) as the final filter in hiring, applied only after a candidate has already cleared the hard skills bar: could you get in a car and drive several hours to Spokane with this person without wanting to throw them out along the way? It's evaluated through observed behavior rather than direct questions — how someone treats a server at a meal, whether they make eye contact during a handshake, whether they show any interest in topics outside work. The insight is that culture fit is assessed as a secondary gate after competency, not a substitute for it — a great Spokane-test candidate who fails the skills bar is 'a friend, not a colleague.'",
+      "quote": "The Spokane test is when we go down the checklist of quality, skills, all the hard stuff, and then we say, could we get in a car and drive to Spokane with that person without throwing their behind out the door?"
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Mader pushes back on the assumption that being hyper-competitive and being genuinely empathetic are mutually exclusive traits in a leader. He states plainly that he holds both simultaneously and believes it's fully possible to do so — the catch is that it takes considerably more energy than defaulting to just one mode, which is why most people don't bother trying to hold both at once. The practical takeaway is that leaders shouldn't treat 'I get competitive so I go cold' as an unavoidable trade-off; it's a discipline that can be maintained, just at higher personal cost.",
+      "quote": "I'm hyper-competitive. I also try to be super empathetic... Totally. I actually think you can totally do that... It takes a lot of energy... most people don't because it's pain in the ass."
+    },
+    {
+      "category": "mistake",
+      "summary": "Mader identifies a specific failure mode in his own leadership: reacting forcefully and immediately when he sees a problem, without accounting for how the cost of that reaction changes as the company scales. When the team was 20-30 people he saw everyone daily, so a sharp in-the-moment reaction could be repaired quickly; now at 750 employees he might only see a given person every two months, meaning a bad reactive moment can sit unresolved and damage the relationship for months before there's any chance to rebuild it. The lesson is that the same leadership behavior that was low-risk at small scale becomes high-risk at larger scale purely because of reduced interaction frequency, not because the behavior itself changed.",
+      "quote": "When we were 30 people or 20 people, I saw everybody all day. Well, let's say I see you every two months. And you see me in that moment when I react... you might not have a chance to actually recover or rebuild for three months."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Mader explains that for a fast-growing recurring-revenue business (Smartsheet was north of $100M ARR growing 50%+ annually at the time), asking 'what headcount do we need to solve this calendar year' is the wrong question, because hiring and revenue don't move in lockstep — you have to hire against demand 1-2 years out, since you can never catch up if you wait until the current year's numbers justify it. Concretely, heading into year-end planning they didn't just hit their hiring plan of roughly 400 people for the trailing 12 months, they added 90 more hires on top of plan specifically to 'set the table' for the following year, not the current one. The counter-intuitive point: headcount planning in a scaling SaaS business should lag revenue need by a full year or more, not track it.",
+      "quote": "As a north of a hundred million dollar recurring business, growing north 50% a year, you need to solve for 2018 calendar year, 2019. You need to start setting the table because you can't catch up."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "Contrary to the common startup instinct to build a sales team as soon as there's a product, Smartsheet ran with only a tiny bit of early sales capacity, then operated for six full years with zero salespeople at all — the business grew entirely through self-directed online trial-and-buy, and they didn't hire real sales capacity until late 2012. Mader says in hindsight he wouldn't have invested in sales capacity that early at all, because it wasn't productive before they had a clear sense of product-market fit, and having the CEO sell directly was a better use of that scarce early resource. This runs against the standard advice to build sales motion early — for Smartsheet, a self-serve funnel alone proved a strong-enough business to validate demand before sales was added.",
+      "quote": "We went without any sales capacity for six years. And we were totally self-directed, online, trial and buy... Built a pretty interesting business with zero salespeople. And we didn't hire our sales capacity until late 2012."
+    },
+    {
+      "category": "contradicts-convention",
+      "summary": "When asked what he'd tell first- or second-time entrepreneurs, Mader's first piece of advice reverses a sequence he says he hears constantly: people decide to 'team up' first — pick co-founders, name the company, register the domain — and only then go looking for what to actually build. He says this is the wrong order and that the idea has to come first, with the team assembled around a real, validated problem rather than assembled speculatively in advance of one. This directly contradicts a common narrative in startup culture that finding the right co-founders is the first and most important step.",
+      "quote": "I would say, don't team up. And then say, once we team up, let's come up with the idea... Do not do that. Get your idea. First. You need the idea first."
+    },
+    {
+      "category": "mistake",
+      "summary": "Mader admits Smartsheet built genuinely complex, technically impressive product capabilities early on that essentially nobody ever used, calling it 'the early stage faux pas that is just so easy' to fall into because engineers love building sophisticated things but skip validating with customers whether they actually want it. He contrasts this with the 'long tail' economics of a product: a small kernel of heavily-used capabilities drives most retention and expansion value, while the long tail of edge-case features is expensive to build and maintain for marginal impact on winning, retaining, or growing customers. The actionable move he recommends is deliberately compressing scope — build and validate the top few things customers have real urgency (\"heat\") behind, and defer the 4th-through-10th features rather than building them preemptively.",
+      "quote": "We built some really cool stuff early, like really cool, super complex that no one used. No one ever used... engineers love to build cool stuff, but they forget to talk to the customers and say, do we actually want that cool stuff?"
+    },
+    {
+      "category": "mistake",
+      "summary": "Mader flags a hiring trap he says he's personally fallen for more than once: over-crediting a candidate because of an impressive-sounding prior title or company name, without knowing whether that person's success there was actually their own doing or was carried by a strong team around them. The non-obvious risk is that the halo of a prestigious past role can mask the fact that you have no real evidence of that individual's personal contribution versus their environment's. His prescription is to treat a fancy resume line as an unknown, not a credential, until you've separately verified the person's actual individual capability.",
+      "quote": "Don't fall for the, oh, that person was so awesome there. Oh, at X. So awesome. They had this amazing title... Or they had a great team who did all that awesome stuff for them. Yeah, we don't know."
+    },
+    {
+      "category": "number/metric",
+      "summary": "Mader shared with the whole company that it took Smartsheet 10 years to reach its first $50 million in revenue, but only 17 months to reach the next $50 million — a dramatic acceleration in the growth curve once certain flywheels (distribution focus, product maturity, capital) kicked in. He uses this specific pairing of numbers to make the point that no single decision, customer, or person explains that acceleration; it's the compounding effect of continuous daily decision-making over years, not a single inflection event people can point to in hindsight.",
+      "quote": "It took us 10 years to get our first 50 million, 17 months to get our next 50 million... That's not because of one decision. That's like... hundreds of decisions."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "After a major customer conference (1,100 customers in attendance) that was, in Mader's words, 'a flippin' love fest,' his deliberate practice the very next morning was not to bask in the praise but to actively surface the 13 specific things customers said the company needs to do better — treating positive events as a moment of maximum risk for complacency rather than validation. He names this discipline of 'not drinking your own Kool-Aid' as one of the two things Smartsheet has been genuinely good at, precisely because a company with 73,000 customers globally can, at any moment, find real evidence of underserving someone. The concrete practice worth copying is building an explicit next-morning ritual of harvesting criticism right after a high point, rather than letting the good feeling linger unchallenged.",
+      "quote": "We had a customer conference this September, 1,100 customers, in the building. It was a flippin' love fest... And the next morning, it's like, buckle up... here are the 13 things I heard from these clients that we need to do a lot better, like, now."
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Mader reframes how he thinks about startup success stories: rather than crediting one pivotal person, one big customer, or one landmine narrowly avoided, he describes the real driver as an accumulation of thousands of ordinary right decisions made daily over years — 'get up, rinse and repeat.' The implication he draws is a warning against complacency: even if you feel you've cleared a major landmine and are now 'winning,' a whole new set of decisions is coming the next day regardless, so there's no point at which the daily decision-making discipline stops mattering.",
+      "quote": "I think about the business more of it's a collection of thousands of right decisions than I do avoid the landmines... It is get up, rinse and repeat every single day."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "On Smartsheet's most recent ~$52 million raise, Mader says the single biggest change from earlier rounds was deliberately introducing multiple competing parties into the process rather than negotiating with one lead investor — a lesson he says he underappreciated in earlier fundraises but fully internalized by this one. The cost of doing it right was real: five different firms extended term sheets that ultimately weren't chosen, meaning he had to personally make five separate rejection calls to good people who had genuinely invested effort in courting the deal, which he describes as some of the toughest calls of his career. The actionable point is that competitive tension among multiple real term sheets — not just having one good offer — is what actually improves terms, even though it creates a painful obligation to reject people who did nothing wrong.",
+      "quote": "If you have something that you believe for which there's demand, make it, introduce multiple parties to the process. Essential. That's a lesson I underappreciated early, that I fully appreciate now... some of the toughest calls I had to make were to the five companies who gave us term sheets who didn't get that $52 million deal."
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Mader offers a specific reframe on founder equity dilution: the real question isn't whether you're giving up ownership percentage, it's what that percentage is worth in absolute terms — would you rather own 3% of a company that becomes worth one, two, or three billion dollars, or 57% of a company worth a few million? He extends this same logic beyond investors to early employees, citing Smartsheet's first QA hire (joined at 13-14 people) as an example where giving up meaningful ownership created a life-changing outcome for her and, in turn, deep loyalty back to the company — a return he frames as bigger than the raw economics.",
+      "quote": "Would you rather own 3% of something that is a billion? Two billion? Three billion? Or would you rather own 57% of something that's worth, pick your number, right? Five million?"
+    },
+    {
+      "category": "changed-belief",
+      "summary": "Mader says one thing he 'totally misread' early in his career was the expectation that major milestone events — raising a big round, hitting a valuation number — would feel transformative or change daily life in some meaningful way. In reality, he says, you wake up the next morning and it's the exact same business with the exact same problems; nothing about the day-to-day operating reality shifts just because an external event happened. His advice distilled from this is simply to 'keep it real' — don't let the perceived significance of a funding milestone distort how you or your team behave the next day.",
+      "quote": "Life actually doesn't change that much. With these events, like someone say, oh my gosh, you raise this, you get up the next morning, it's the exact same business... That's one thing I totally misread early in my career."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "To manage his own tendency to react sharply to problems, Mader applies an explicit filter before engaging: assess whether the issue actually matters by checking it against real impact — how many customers does it affect, what's the dollar impact, what's the employee impact — rather than reacting to the first irritant that crosses his radar (his example: reacting to someone's minor stumble walking in the door, which simply doesn't matter). Only when the assessment comes back 'hit, hit, hit' across those dimensions does he say 'go now' and react immediately; otherwise the discipline is to hold back, because everything in life technically 'matters to a degree' but that's not the same as being worth a reaction.",
+      "quote": "If you're like hit, hit, hit, huge customer impact, huge dollar impact, huge employee impact, go now. Right? So it's almost the filter on making that assessment."
+    },
+    {
+      "category": "other",
+      "summary": "Mader observes that genuinely accomplished people are surprisingly generous with their time, but the real bottleneck isn't their willingness — it's that most people simply never ask. He cites reaching out to a retired early Target employee who ended up walking him through the exact playbook Target ran when it was a 40-person company, a conversation that shaped his own scaling approach for the rest of his career, and notes that when he offers to connect after talks, maybe 2% of the audience actually follows up. His practical advice: a single well-considered outreach question, especially via something as low-friction as LinkedIn, costs little effort and can genuinely redirect a company's trajectory, particularly in the earliest days.",
+      "quote": "People, like really great people, are actually very generous with their time. And so very often people just don't ask... It doesn't actually take that much energy to come up with a thoughtful question."
+    },
+    {
+      "category": "concrete-detail",
+      "summary": "Mader identifies 2013 as the point when Smartsheet's internal focus shifted from being almost entirely product-driven to being equally weighted toward distribution — meaning founders and teams that stay fixated on product need to consciously ask whether they're actually spending 30-40% of their time on getting the product in front of people, not just building it. The shift wasn't casual: it meant treating channels like pay-per-click as a rigorously instrumented system (tracking who clicks, how they engage, whether they convert), starting with something as small as roughly $4,000 in early spend and only scaling that spend up once the data showed it was working. The insight is that the tipping point from product-focus to growth-focus is a deliberate reallocation of founder attention, validated incrementally with small, measurable bets before committing serious capital.",
+      "quote": "The company went from being majority focused on product to being equal focused on distribution... spending the equivalent of maybe $4,000 on pay-per-click. And spending a lot more than that now. But it's because the evidence showed and the confidence."
+    },
+    {
+      "category": "other",
+      "summary": "Mader references a practice — 'sell before you build' — where, when talking to customers about a potential feature, you pitch and try to sell it as if it already exists before actually building it, using their real reaction (would they actually buy this) as validation instead of polite enthusiasm. The point is to catch, before any engineering investment happens, whether a feature would truly move a purchase decision or is just something people say sounds nice, preventing teams from building the wrong thing based on false-positive interest.",
+      "quote": "Sell before you build. Like when you're talking to customers, before you build that feature, sell it as if it already exists... So you don't build the wrong flipping thing."
+    },
+    {
+      "category": "mistake",
+      "summary": "Asked what skill he'd bring to a hypothetical new company, Mader names 'market fit and first dollar' specifically because founders easily fall into an echo chamber where everyone around them — cofounders, friends, early users — tells them the idea and product are great, which creates false confidence untethered from real economic validation. He argues that getting someone to actually write the first check is categorically harder than getting verbal enthusiasm, and is one of the hardest things to teach someone who hasn't done it before, because it's the first moment reality (not social politeness) tests the idea. The broader lesson is to treat unpaid enthusiasm and paid commitment as fundamentally different signals, and to prioritize chasing the latter over collecting more of the former.",
+      "quote": "So many people are using our stuff. So many people are told us, it's incredible. It's like, okay, what's the economic element of that?... Getting the yes to the first dollar... is one of the hardest parts to get people over the hump."
+    }
+  ]
+}
