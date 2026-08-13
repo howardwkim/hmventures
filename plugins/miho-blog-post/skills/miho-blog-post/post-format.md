@@ -112,10 +112,13 @@ yourself:
   block above. Do not leave a YAML block in the file; MDX does not read it.
 - **A `#` title at the top of their body** — pull it into `meta.title` and delete it from the
   body.
-- **A summary, subtitle, or standfirst line** — that is the `deck`. If there isn't one, write
-  one from the article's actual argument.
+- **A summary, subtitle, or standfirst line** — that is the `deck`. If there isn't one, lift
+  the article's own thesis sentence verbatim. If nothing in the article works as one, **ask the
+  author for a sentence — do not write it yourself.** The deck is published copy, and writing
+  copy is not this skill's job.
 - **Their headings** — shift the whole tree so the top level is `##`.
-- **A conclusion, "key takeaways", "next steps", or an action list** — reshape it into the
-  single `<Takeaway>`. If the article has no concrete actions at all, say so to the author
-  before publishing; a missing Takeaway is a content problem, not a formatting one.
+- **A conclusion, "key takeaways", "next steps", or an action list** — move it, as written,
+  inside the single `<Takeaway>`. That is a structural move, not a rewrite; keep their wording.
+  If the article has no such section, say so to the author and let them supply one. Never
+  invent the actions yourself.
 - **Smart quotes, em dashes, footnotes, emoji** — all fine, leave them alone.

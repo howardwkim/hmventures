@@ -1,6 +1,6 @@
 {
   "name": "miho-blog-post",
-  "description": "Publish a finished article to the MiHO Partners blog at mihopartners.com/insights. Converts finished writing in any format into the site's article format, validates it builds, pushes, and confirms it went live.",
+  "description": "Publish, unpublish, or fix an article on the MiHO Partners blog at mihopartners.com/insights. Converts finished writing in any format into the site's article format, previews it, checks it builds, pushes, and confirms it went live. Publishing only — it never edits the author's words.",
   "version": "1.0.0",
   "author": {
     "name": "HM Ventures"
