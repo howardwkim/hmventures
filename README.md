@@ -50,7 +50,7 @@ visibility audit."*
 
 ### miho-blog-post
 Publish a finished article to the MiHO Partners blog at
-[mihopartners.com/insights](https://mihopartners.com/insights). Takes finished writing in any
+[mihopartners.com/blog](https://mihopartners.com/blog). Takes finished writing in any
 format, converts it into the site's article format, checks it builds, pushes, and confirms it
 actually went live. It only publishes — it does not write or edit.
 

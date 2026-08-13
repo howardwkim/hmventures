@@ -1,11 +1,11 @@
 ---
 name: miho-blog-post
-description: Publish, unpublish, or fix an article on the MiHO Partners blog at mihopartners.com/insights. Use when the user says "publish this post", "put this on the blog", "post this article to insights", "upload this article", "take that post down", "unpublish that article", "remove that from the blog", "fix a typo on the blog", or "/miho-blog-post". Takes finished writing in any format, converts it into the site's article format, previews it, checks it builds, pushes, and confirms it is actually live. Not for social media — posting to LinkedIn, X, Instagram or TikTok is a different skill.
+description: Publish, unpublish, or fix an article on the MiHO Partners blog at mihopartners.com/blog. Use when the user says "publish this post", "put this on the blog", "post this article to the blog", "upload this article", "take that post down", "unpublish that article", "remove that from the blog", "fix a typo on the blog", or "/miho-blog-post". Takes finished writing in any format, converts it into the site's article format, previews it, checks it builds, pushes, and confirms it is actually live. Not for social media — posting to LinkedIn, X, Instagram or TikTok is a different skill.
 ---
 
 # miho-blog-post
 
-Take a **finished** article and get it live at `mihopartners.com/insights/<slug>` — confirmed live, not just pushed.
+Take a **finished** article and get it live at `mihopartners.com/blog/<slug>` — confirmed live, not just pushed.
 
 ## Scope — read this before anything else
 
@@ -110,11 +110,11 @@ Always, before writing anything — otherwise the push conflicts.
 - **Which category.** The list is closed at five values; guessing wrong fails the build.
   Suggest the closest fit and let them confirm.
 
-Then check the slug is free: `ls content/insights/`. If `<slug>.mdx` already exists, ask
+Then check the slug is free: `ls content/blog/`. If `<slug>.mdx` already exists, ask
 whether this replaces that article or needs a different slug. **Never overwrite silently** — a
 published URL can't be renamed without breaking every link to it.
 
-**4. Convert the article.** Write `content/insights/<slug>.mdx` following `post-format.md`.
+**4. Convert the article.** Write `content/blog/<slug>.mdx` following `post-format.md`.
 Set `draft: true` for now; step 5 flips it.
 
 - **`date` is today's date**, not any date found in the author's file. A machine-written
@@ -122,9 +122,9 @@ Set `draft: true` for now; step 5 flips it.
 - **Escape the two characters that break MDX.** A bare `<` and a bare `{` in ordinary prose
   will break the build — `post-format.md` has the rule and the exact error messages. Scan for
   them before writing. This is the only change you make to the author's text.
-- **If there's an image:** create `public/insights/` if it doesn't exist, copy the file in, set
-  `image` to `/insights/<filename>` and `imageAlt` to a real description. Then confirm the file
-  landed (`ls public/insights/`) — only the alt text is build-enforced, so a missing image file
+- **If there's an image:** create `public/blog/` if it doesn't exist, copy the file in, set
+  `image` to `/blog/<filename>` and `imageAlt` to a real description. Then confirm the file
+  landed (`ls public/blog/`) — only the alt text is build-enforced, so a missing image file
   builds clean and ships a broken picture. Most articles have no image; don't go looking.
 
 **5. Show it before it goes live — this is the default path.** Publishing is a one-way door
@@ -137,7 +137,7 @@ pnpm dev
 ```
 
 Drafts are visible in the local dev server and nowhere else. Give the user
-`http://localhost:3000/insights/<slug>`, let them look, and wait for an explicit go. Then set
+`http://localhost:3000/blog/<slug>`, let them look, and wait for an explicit go. Then set
 `draft: false`. Skip this only if they say to publish straight away.
 
 **If `pnpm` is missing, install it** — don't route around it: `corepack enable && corepack
@@ -163,7 +163,7 @@ fail the build — it just comes out wrong:
 
 ```
 pnpm start
-curl -s localhost:3000/insights/<slug> | grep -c "What to do about it"
+curl -s localhost:3000/blog/<slug> | grep -c "What to do about it"
 ```
 
 (Use the custom title if the article overrode it.) Stop the server afterwards.
@@ -185,8 +185,8 @@ If it's empty, ask for the email on their GitHub account and set
 `git config --global user.email "..."` and `git config --global user.name "..."`.
 
 ```
-git add content/insights/<slug>.mdx
-git commit -m "Insights: <article title>"
+git add content/blog/<slug>.mdx
+git commit -m "Blog: <article title>"
 git push origin main
 ```
 
@@ -196,7 +196,7 @@ Include the image file in the same commit if there is one.
 returns 200, then give the user the link:
 
 ```
-curl -s -o /dev/null -w "%{http_code}" https://mihopartners.com/insights/<slug>
+curl -s -o /dev/null -w "%{http_code}" https://mihopartners.com/blog/<slug>
 ```
 
 Do not report success off a successful `git push`. A push is not a publish.
@@ -217,15 +217,15 @@ separate admin panel, no content management system, and no dashboard anywhere in
 is a file; changing the site means changing the file and pushing.
 
 **To unpublish — the default, and what to reach for unless told otherwise.** Set `draft: true`
-in the article's metadata block. It vanishes from production, from the `/insights` listing and
+in the article's metadata block. It vanishes from production, from the `/blog` listing and
 from the sitemap; its URL starts returning a genuine 404. The file stays in the repo, so the
 article can be fixed and republished by flipping the flag back. Reversible both directions.
 
-**To remove permanently.** Delete `content/insights/<slug>.mdx`. Same visible outcome, but the
+**To remove permanently.** Delete `content/blog/<slug>.mdx`. Same visible outcome, but the
 text is gone from the working tree. Prefer `draft: true` unless the user explicitly wants the
-file gone. Deleting the last *real* article is perfectly safe — but **never delete
-`content/insights/_template.mdx`**; it is permanent, and it is what keeps the directory
-non-empty (see failure modes).
+file gone. Deleting every article is safe — the blog degrades to an empty listing rather
+than breaking — but leave `content/blog/_template.mdx` alone anyway: it is the authoring
+reference, not a post, and it never appears on the site.
 
 **To fix a typo or change the wording.** Edit the file and push. The reader sees the corrected
 version on the next deploy, about a minute later. There is no revision history to manage and
@@ -233,7 +233,7 @@ nothing to re-approve.
 
 Whichever of the three it is: pull first, run the build, push, then confirm — for a takedown
 the confirmation is the URL returning **404** and the article no longer appearing on
-https://mihopartners.com/insights. Report the takedown only once you've seen that.
+https://mihopartners.com/blog. Report the takedown only once you've seen that.
 
 **Say this plainly if the user is anxious about it:** taking a post down is not a recall. If it
 was live long enough for someone to read it or for a search engine to index it, removing the
@@ -260,9 +260,6 @@ not yours.
 - **`ReferenceError: <word> is not defined`** during "Generating static pages" — a bare `{...}`
   in the prose. Same section. This one compiles clean and only dies at the very end, so it
   looks unrelated to the article.
-- **`Module not found: Can't resolve '@/content/insights/' <dynamic> '.mdx'`** — the content
-  directory is empty. Restore `_template.mdx`. Note this error names `lib/insights/posts.ts`,
-  not the missing content, so it reads like a code bug rather than a content one.
 - **Build fails naming a file you did not touch** — someone else's post is broken, or the pull
   in step 2 was skipped. Pull and rebuild before assuming your file is the problem.
 - **Drafts.** `draft: true` means visible in the local dev server, excluded from production,

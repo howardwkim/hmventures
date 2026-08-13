@@ -4,15 +4,15 @@ The one contract that matters. The site validates every field of it during the b
 mistake here does not ship a slightly-wrong page — it fails the build and stops the site from
 updating until it's fixed. Follow this exactly.
 
-Source of truth on the site: `lib/insights/types.ts` (the field types and the category list)
-and `lib/insights/posts.ts` (the validator that runs at build time). If this file and those
+Source of truth on the site: `lib/blog/types.ts` (the field types and the category list)
+and `lib/blog/posts.ts` (the validator that runs at build time). If this file and those
 ever disagree, the site wins — read them and update this file.
 
 ## File and slug
 
-One article is one file: `content/insights/<slug>.mdx`
+One article is one file: `content/blog/<slug>.mdx`
 
-The slug is the URL — `mihopartners.com/insights/<slug>` — and it comes from the filename, not
+The slug is the URL — `mihopartners.com/blog/<slug>` — and it comes from the filename, not
 from any metadata field. Derive it from the title: lowercase, words joined by hyphens, no
 punctuation, no dates, no stop-word padding. Short beats complete.
 
@@ -49,7 +49,7 @@ appears in the article body.
 | `date` | yes | Exactly `YYYY-MM-DD`. **Today's date** — not a date found in the author's file. It sorts the listing, prints under the byline, and feeds the sitemap and the article's social-preview metadata, so a stale one is visible in several places. The build only checks the *shape*: `2026-13-45` passes and then renders as "Invalid Date". |
 | `category` | yes | **Exactly one of the five below.** Closed list. |
 | `author` | yes | Exactly `"mike"` or `"howard"`. Lowercase. **This is who actually wrote the article, not whose turn it is** — never infer it from the previous post, and never from this template's default. Always confirm it with the person publishing. It sets the byline name and photo, and the build cannot catch it being wrong. |
-| `image` | no | Path under `/insights/`, e.g. `"/insights/inbox.jpg"`. The file goes in `public/insights/`. Most posts have no image and that is the normal case. |
+| `image` | no | Path under `/blog/`, e.g. `"/blog/inbox.jpg"`. The file goes in `public/blog/`. Most posts have no image and that is the normal case. |
 | `imageAlt` | only with `image` | Required and non-empty whenever `image` is set. Omitting it fails the build. |
 | `draft` | no | Boolean. `true` = visible in local development, excluded from production, the listing and the sitemap. Omit or set `false` to publish. |
 
@@ -123,9 +123,8 @@ Close with a short paragraph after the Takeaway. Not a summary — a last though
 
 ## The working reference
 
-`content/insights/_template.mdx` in the site repo is the live annotated example. It stays
-`draft: true` forever and it is also what keeps `content/insights/` non-empty, which the build
-requires. **Copy it, never edit or delete it.**
+`content/blog/_template.mdx` in the site repo is the live annotated example. It stays
+`draft: true` forever, so it never appears on the site. **Copy it, never edit it.**
 
 ## Converting from whatever the article arrived as
 

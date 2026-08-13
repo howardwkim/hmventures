@@ -23,7 +23,7 @@
     {
       "name": "miho-blog-post",
       "source": "./plugins/miho-blog-post",
-      "description": "Publish, unpublish, or fix an article on the MiHO Partners blog at mihopartners.com/insights. Converts finished writing in any format into the site's article format, previews it, checks it builds, pushes, and confirms it went live. Publishing only — it never edits the author's words."
+      "description": "Publish, unpublish, or fix an article on the MiHO Partners blog at mihopartners.com/blog. Converts finished writing in any format into the site's article format, previews it, checks it builds, pushes, and confirms it went live. Publishing only — it never edits the author's words."
     }
   ]
 }
