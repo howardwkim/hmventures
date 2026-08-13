@@ -23,18 +23,24 @@ Never rename a published file. The old URL dies and any link to it breaks.
 
 ## The metadata block
 
-Every article opens with this, before any prose:
+Every article opens with a YAML frontmatter block — the fenced `---` pair — before any prose:
 
 ```
-export const meta = {
-  title: "Sentence case, no title case",
-  deck: "One sentence stating the article's claim.",
-  date: "2026-08-13",
-  category: "Operations",
-  author: "howard",
-  draft: false,
-};
+---
+title: "Sentence case, no title case"
+deck: "One sentence stating the article's claim."
+date: "2026-08-13"
+category: "Operations"
+author: "howard"
+draft: false
+---
 ```
+
+Quote every value. It costs nothing and it stops a title containing a colon, a `#`, or a
+leading `>` from silently breaking the parse.
+
+The `---` block is invisible on the page — the site strips it before rendering — and it never
+appears in the article body.
 
 | Field | Required | Rule |
 |---|---|---|
@@ -126,10 +132,11 @@ requires. **Copy it, never edit or delete it.**
 The author's file will not look like this, and that is expected. Do the whole conversion
 yourself:
 
-- **Their front matter** (YAML `---` blocks, a different metadata shape, none at all) — read
-  whatever is there for useful values, then discard it and write the `export const meta`
-  block above. Do not leave a YAML block in the file; MDX does not read it.
-- **A `#` title at the top of their body** — pull it into `meta.title` and delete it from the
+- **Their front matter** (a YAML block with different field names, a different metadata shape,
+  or none at all) — mine it for useful values, then rewrite it as exactly the block above.
+  Matching field names is not enough: an unknown extra key is harmless, but a *missing* or
+  *misnamed* required one fails the build.
+- **A `#` title at the top of their body** — pull it into the `title` field and delete it from the
   body.
 - **A summary, subtitle, or standfirst line** — that is the `deck`. If there isn't one, lift
   the article's own thesis sentence verbatim. If nothing in the article works as one, **ask the

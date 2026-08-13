@@ -252,7 +252,7 @@ not yours.
 
 ## Failure modes worth knowing
 
-- **`meta.category "..." is not one of:`** — the category isn't in the closed list. Pick from
+- **`category "..." is not one of:`** — the category isn't in the closed list. Pick from
   the list in `post-format.md`; don't invent one and don't edit the site's category array to
   fit an article.
 - **`Unexpected character ... before name`** at compile time — a bare `<` in the prose. See the
