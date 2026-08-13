@@ -26,7 +26,8 @@ Four rules that follow from that, and they are not negotiable:
 2. **Never change the author's words.** You reshape *metadata and structure* — the title into
    the title field, headings down a level, a summary line into the deck. You do not rewrite,
    trim, tighten, delete paragraphs, or improve the prose, even when it looks improvable. The
-   words that arrive are the words that ship.
+   words that arrive are the words that ship. The one exception is escaping characters that
+   would break the build (step 4) — that changes how a character is written, never what it says.
 3. **Stay independent of whatever produced the article.** Do not read, reference, depend on,
    or modify the tool, template, or app that wrote it. Assume its output format changes
    without warning; this skill absorbs that silently. Nothing here should ever need updating
@@ -43,28 +44,55 @@ the deploy runs on the repo owner's Vercel project, triggered by the push alone.
 Find the working copy in this order:
 
 1. `~/src/miho-partners-landing`
-2. `~/src/hmventures/miho-landing-page/web` (this is where it sits for Howard, nested inside
-   the hmventures workspace)
+2. `~/src/hmventures/miho-landing-page/web`
 3. Anywhere else the user names.
 
-If none exists, clone it:
+**If you use candidate 2, check where you are before any git command.** That directory is its
+own repo *nested inside a different one* — its parent belongs to the `hmventures` repo, and
+committing one directory too high puts the article in the wrong repository where it will never
+deploy. Confirm both:
 
 ```
-git clone https://github.com/howardwkim/miho-partners-landing.git ~/src/miho-partners-landing
+git rev-parse --show-toplevel   # must end in /web
+git remote -v                   # must show miho-partners-landing, not hmventures
 ```
 
-If the clone fails with a permission or 404 error, the account is not a collaborator on the
-private repo yet. Stop and say exactly that — it is an access problem, not a git problem, and
-the fix is an invitation from Howard, not a retry.
+That copy is also often on a branch called `dev` rather than `main`. Step 2 handles it, but
+tell the user you are moving their checkout and put it back when you're done.
+
+### Cloning it the first time
+
+```
+gh repo clone howardwkim/miho-partners-landing ~/src/miho-partners-landing
+```
+
+Writing outside the current project may trigger a permission prompt the user has never seen
+before. Say it's coming so it doesn't read as an error.
+
+If `gh` isn't installed, or `gh auth status` says not logged in, **stop and ask the user to run
+`gh auth login` in their own terminal** (GitHub.com → HTTPS → login with a web browser). It is
+an interactive browser flow you cannot complete for them. **Never ask anyone to paste a token
+or password into the chat.**
+
+Three failures look similar and mean completely different things. Do not confuse them:
+
+| What you see | What it means | What to say |
+|---|---|---|
+| `could not read Username for 'https://github.com': terminal prompts disabled` | Not authenticated at all. | Run `gh auth login` in your own terminal. |
+| `Repository not found`, or a 404 on a repo that exists | Authenticated, but not yet a collaborator — **usually an invitation that was never accepted**. | Open https://github.com/howardwkim/miho-partners-landing/invitations and click Accept, or accept it from the GitHub email, then retry. Check that page before asking Howard for a new invite. |
+| `remote: Permission to howardwkim/miho-partners-landing.git denied` (403 on push) | Read access only, or the invitation lapsed. | Ask Howard to confirm write access. |
 
 ## Steps
 
-**1. Read `post-format.md`.** Every field rule, the closed category list, the body
-conventions and the slug rule are there. Do not work from memory.
+**0. Get the article.** "Publish this to the blog" often arrives with no file and no text. Ask
+for the path or the text in one question, then proceed.
+
+**1. Read `post-format.md`.** Every field rule, the closed category list, the body conventions,
+the characters that break the build, and the slug rule are there. Do not work from memory.
 
 **2. Sync, without disturbing the user's work.** Note the branch the working copy is currently
-on before you touch anything, and put it back there when you're done. If the tree is dirty,
-stop and say so rather than stashing someone's uncommitted work behind their back. Then:
+on and put it back there when you're done. If the tree is dirty, stop and say so rather than
+stashing someone's uncommitted work behind their back. Then:
 
 ```
 git checkout main && git pull
@@ -74,56 +102,87 @@ Always, before writing anything — otherwise the push conflicts.
 
 **3. Ask the two things you cannot know, in one message.**
 
-- **Who wrote it.** Required, and it is the one field nothing in the article implies. It sets
-  the byline name and photo, so guessing wrong publishes one partner's article under the
-  other's face, and the build will not catch it. Propose a default rather than asking cold:
-  read the `author` of the most recent published post and offer the other one, since articles
-  are meant to alternate. **This is the one place it is right to push back on the author and
-  insist on an answer.**
+- **Who wrote it.** Required. This is a fact about the article, **not whose turn it is** —
+  never infer it from the previous post, and never infer it from the template's default. It
+  sets the byline name and photo, so getting it wrong publishes one partner's article under the
+  other's face, and the build will not catch it. **This is the one place it is right to push
+  back and insist on an answer.**
 - **Which category.** The list is closed at five values; guessing wrong fails the build.
   Suggest the closest fit and let them confirm.
 
-Everything else — title, deck, date, slug, body — comes from the article itself.
+Then check the slug is free: `ls content/insights/`. If `<slug>.mdx` already exists, ask
+whether this replaces that article or needs a different slug. **Never overwrite silently** — a
+published URL can't be renamed without breaking every link to it.
 
 **4. Convert the article.** Write `content/insights/<slug>.mdx` following `post-format.md`.
 Set `draft: true` for now; step 5 flips it.
 
-If the article came with an image: create `public/insights/` if it does not exist, copy the
-image in named after the slug, set `image` to `/insights/<slug>.<ext>`, and write a real
-`imageAlt` describing what the image shows — a missing or empty alt fails the build. Articles
-with no image are the normal case; do not go looking for one.
+- **`date` is today's date**, not any date found in the author's file. A machine-written
+  article often carries a stale one. Backdate only if the user asks.
+- **Escape the two characters that break MDX.** A bare `<` and a bare `{` in ordinary prose
+  will break the build — `post-format.md` has the rule and the exact error messages. Scan for
+  them before writing. This is the only change you make to the author's text.
+- **If there's an image:** create `public/insights/` if it doesn't exist, copy the file in, set
+  `image` to `/insights/<filename>` and `imageAlt` to a real description. Then confirm the file
+  landed (`ls public/insights/`) — only the alt text is build-enforced, so a missing image file
+  builds clean and ships a broken picture. Most articles have no image; don't go looking.
 
 **5. Show it before it goes live — this is the default path.** Publishing is a one-way door
-for someone who does not use git, and a successful build only proves the metadata is valid,
-not that the article reads right.
+for someone who doesn't use git, and a clean build only proves the metadata is valid, not that
+the article reads right.
 
 ```
-pnpm install
+pnpm install --frozen-lockfile
 pnpm dev
 ```
 
 Drafts are visible in the local dev server and nowhere else. Give the user
 `http://localhost:3000/insights/<slug>`, let them look, and wait for an explicit go. Then set
-`draft: false`.
+`draft: false`. Skip this only if they say to publish straight away.
 
-Skip this only if the user explicitly says to publish straight away.
-
-If `pnpm` or `node` is not installed on this machine, you cannot preview or build locally.
-Push the file to a new branch and open a pull request instead — the hosted preview build then
-serves as both the preview and the gate, and the user merges it when they're happy.
+**If `pnpm` is missing, install it** — don't route around it: `corepack enable && corepack
+prepare pnpm@10 --activate`, or `npm install -g pnpm`. **If `node` is missing or older than
+v20.9.0** (`node -v`), stop: Node has to come from [nodejs.org](https://nodejs.org) and you
+cannot verify anything until it does. Do not push an unverified file to `main`. If the user
+explicitly accepts publishing without a local check, push to a branch and run `gh pr create
+--fill --base main`, hand them the pull request URL, and tell them plainly that you cannot
+confirm the post went live.
 
 **6. Check it builds — do not skip this.** The article's metadata is validated during the
-build, and a bad value fails the whole build, which means the site stops updating for
-everyone.
+build, and a bad value fails the whole build, which means the site stops updating for everyone.
 
 ```
 pnpm build
 ```
 
-A build failure names the file and the exact problem. Fix it and build again. **Never push a
+A build failure usually names the file and the problem. Fix it and build again. **Never push a
 file that has not built cleanly.**
 
+Then confirm the article actually rendered, because a malformed `<Takeaway>` block does *not*
+fail the build — it just comes out wrong:
+
+```
+pnpm start
+curl -s localhost:3000/insights/<slug> | grep -c "What to do about it"
+```
+
+(Use the custom title if the article overrode it.) Stop the server afterwards.
+
+Note the local Node version. Nothing in the repo pins it, and the hosting platform may build
+with a different one — so a green local build is strong evidence, not a guarantee. Step 8 is
+what actually confirms publication.
+
 **7. Commit and push.**
+
+First check there's a git identity, or the commit fails with `Author identity unknown` after
+all the real work is done:
+
+```
+git config user.email
+```
+
+If it's empty, ask for the email on their GitHub account and set
+`git config --global user.email "..."` and `git config --global user.name "..."`.
 
 ```
 git add content/insights/<slug>.mdx
@@ -140,9 +199,14 @@ returns 200, then give the user the link:
 curl -s -o /dev/null -w "%{http_code}" https://mihopartners.com/insights/<slug>
 ```
 
-Do not report success off a successful `git push`. A push is not a publish. If the URL is
-still not 200 after about three minutes, say so plainly and point at the repo's deploy status
-rather than claiming it worked.
+Do not report success off a successful `git push`. A push is not a publish.
+
+If it's still not 200 after about three minutes, say so plainly. **There is no GitHub Actions
+workflow in this repo** — the deploy is Vercel's Git integration, so don't send anyone to an
+Actions tab. Check the commit at
+https://github.com/howardwkim/miho-partners-landing/commits/main for a deployment marker, and
+if there's nothing after ~5 minutes, tell the user to ask Howard to check the Vercel dashboard.
+Only he has access to it.
 
 Then return the working copy to the branch it started on.
 
@@ -154,20 +218,22 @@ is a file; changing the site means changing the file and pushing.
 
 **To unpublish — the default, and what to reach for unless told otherwise.** Set `draft: true`
 in the article's metadata block. It vanishes from production, from the `/insights` listing and
-from the sitemap; its URL starts returning 404. The file stays in the repo, so the article can
-be fixed and republished later by flipping the flag back. Reversible in both directions.
+from the sitemap; its URL starts returning a genuine 404. The file stays in the repo, so the
+article can be fixed and republished by flipping the flag back. Reversible both directions.
 
 **To remove permanently.** Delete `content/insights/<slug>.mdx`. Same visible outcome, but the
 text is gone from the working tree. Prefer `draft: true` unless the user explicitly wants the
-file gone — and never delete the last article in the directory (see the failure modes below).
+file gone. Deleting the last *real* article is perfectly safe — but **never delete
+`content/insights/_template.mdx`**; it is permanent, and it is what keeps the directory
+non-empty (see failure modes).
 
 **To fix a typo or change the wording.** Edit the file and push. The reader sees the corrected
 version on the next deploy, about a minute later. There is no revision history to manage and
 nothing to re-approve.
 
 Whichever of the three it is: pull first, run the build, push, then confirm — for a takedown
-the confirmation is the URL returning **404**, and the article no longer appearing on
-`https://mihopartners.com/insights`. Report the takedown only once you've seen that.
+the confirmation is the URL returning **404** and the article no longer appearing on
+https://mihopartners.com/insights. Report the takedown only once you've seen that.
 
 **Say this plainly if the user is anxious about it:** taking a post down is not a recall. If it
 was live long enough for someone to read it or for a search engine to index it, removing the
@@ -180,19 +246,24 @@ Mention these once, as information. Do not act on them — the article's content
 not yours.
 
 - **The site appends its own call to action** to the bottom of every article. If the article
-  already ends with one, the published page will show two. Say so and let the author decide.
+  already ends with one, the published page shows two. Say so and let the author decide.
 - **There is no scheduling.** Nothing publishes itself at a future time. The honest equivalent
   is leaving the article as `draft: true` and pushing it live when the day comes.
 
 ## Failure modes worth knowing
 
-- **`meta.category "..." is not one of:`** — the category is not in the closed list. Pick from
-  the list in `post-format.md`; do not invent one and do not edit the site's category array to
+- **`meta.category "..." is not one of:`** — the category isn't in the closed list. Pick from
+  the list in `post-format.md`; don't invent one and don't edit the site's category array to
   fit an article.
+- **`Unexpected character ... before name`** at compile time — a bare `<` in the prose. See the
+  MDX rules in `post-format.md`.
+- **`ReferenceError: <word> is not defined`** during "Generating static pages" — a bare `{...}`
+  in the prose. Same section. This one compiles clean and only dies at the very end, so it
+  looks unrelated to the article.
+- **`Module not found: Can't resolve '@/content/insights/' <dynamic> '.mdx'`** — the content
+  directory is empty. Restore `_template.mdx`. Note this error names `lib/insights/posts.ts`,
+  not the missing content, so it reads like a code bug rather than a content one.
 - **Build fails naming a file you did not touch** — someone else's post is broken, or the pull
   in step 2 was skipped. Pull and rebuild before assuming your file is the problem.
-- **`content/insights/` must never be emptied.** The article route resolves posts by dynamic
-  import and an empty directory fails the build outright. `_template.mdx` stays there
-  permanently with `draft: true`. Never delete it.
 - **Drafts.** `draft: true` means visible in the local dev server, excluded from production,
   the listing and the sitemap. Publishing means `draft: false` or omitting the field.

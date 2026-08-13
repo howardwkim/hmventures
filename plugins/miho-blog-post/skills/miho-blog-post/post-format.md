@@ -40,9 +40,9 @@ export const meta = {
 |---|---|---|
 | `title` | yes | Non-empty. Sentence case. Becomes the page `<h1>` and the browser tab title. Do **not** repeat it as a heading in the body. |
 | `deck` | yes | Non-empty. One sentence stating the article's claim. Renders in italic serif under the title and doubles as the meta description and the listing summary. Not a teaser, not a question — a claim. |
-| `date` | yes | Exactly `YYYY-MM-DD`. Anything else fails the build. Sorts the listing; nothing else reads it. Use the publish date. |
+| `date` | yes | Exactly `YYYY-MM-DD`. **Today's date** — not a date found in the author's file. It sorts the listing, prints under the byline, and feeds the sitemap and the article's social-preview metadata, so a stale one is visible in several places. The build only checks the *shape*: `2026-13-45` passes and then renders as "Invalid Date". |
 | `category` | yes | **Exactly one of the five below.** Closed list. |
-| `author` | yes | Exactly `"mike"` or `"howard"`. Lowercase. Articles alternate between them. |
+| `author` | yes | Exactly `"mike"` or `"howard"`. Lowercase. **This is who actually wrote the article, not whose turn it is** — never infer it from the previous post, and never from this template's default. Always confirm it with the person publishing. It sets the byline name and photo, and the build cannot catch it being wrong. |
 | `image` | no | Path under `/insights/`, e.g. `"/insights/inbox.jpg"`. The file goes in `public/insights/`. Most posts have no image and that is the normal case. |
 | `imageAlt` | only with `image` | Required and non-empty whenever `image` is set. Omitting it fails the build. |
 | `draft` | no | Boolean. `true` = visible in local development, excluded from production, the listing and the sitemap. Omit or set `false` to publish. |
@@ -65,16 +65,35 @@ Howard and Mike, not a metadata edit.** Do not add a category to make one articl
 
 ## The body
 
-Below the metadata block, write plain markdown. Headings, lists, links, tables, bold, italic,
-code — all work with no extra syntax and no classes. Styling is applied automatically by the
-article template; never add CSS classes, `<div>`s, or inline styles.
+Below the metadata block, write markdown. Headings, lists, links, tables, bold, italic and code
+all work with no extra syntax and no classes. Styling is applied automatically by the article
+template; never add CSS classes, `<div>`s, or inline styles.
+
+### It is MDX, not plain markdown — two characters will break the build
+
+`<` and `{` are code characters here, and both appear in ordinary business prose. Scan the
+article for them before writing the file and escape them. This is the one edit you make to the
+author's text, and it changes how a character is written, never what it says.
+
+| In the prose | Breaks as | Write instead |
+|---|---|---|
+| `spend <5 minutes a day` | `Unexpected character '5' before name` — fails at compile | `spend &lt;5 minutes a day` |
+| `a {customer_name} placeholder` | `ReferenceError: customer_name is not defined` — **compiles clean, then fails during "Generating static pages"** | `` a `{customer_name}` placeholder `` or `a \{customer_name\} placeholder` |
+| `<https://example.com>` or `<mike@mihopartners.com>` | same as the first row | a real markdown link: `[example.com](https://example.com)` |
+
+Anything already inside backticks or a fenced code block is safe and needs no change.
+
+The brace failure is the nasty one: the build looks fine right up until the last stage, and the
+error names a word from the article with no file path, so it reads like an unrelated code bug.
 
 Two conventions that are specific to this site:
 
 **Start headings at `##`.** The title is already the page's `<h1>`. A `#` in the body produces
 a second one and breaks the page's document outline.
 
-**Every article carries exactly one `<Takeaway>`, near the end.** This is the one custom
+**Every article carries exactly one `<Takeaway>`, near the end.** This one is a convention, not
+a build check — zero or three will compile fine, and a malformed one renders wrong without
+failing. It is the one custom
 component the site provides. It holds the two or three concrete things a reader should
 actually do. It is a structural slot, not decoration, and it exists because MiHO sells
 prescription rather than diagnosis — an article that ends on a platitude contradicts the
