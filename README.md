@@ -48,6 +48,21 @@ plugin's own README for what changed in this fork.
 stored in this repo). Follow `PLAYBOOK.md` inside the plugin for setup. Then say *"run the ai
 visibility audit."*
 
+### miho-blog-post
+Publish a finished article to the MiHO Partners blog at
+[mihopartners.com/insights](https://mihopartners.com/insights). Takes finished writing in any
+format, converts it into the site's article format, checks it builds, pushes, and confirms it
+actually went live. It only publishes — it does not write or edit.
+
+**Requires collaborator access** to the private site repo `howardwkim/miho-partners-landing`
+(ask Howard). No Vercel account is needed — the push itself triggers the deploy.
+
+```
+/plugin install miho-blog-post@hmventures
+```
+
+Then hand it a finished article — e.g. *"publish this to the blog."*
+
 ## Docs
 
 Non-plugin reference material lives under `docs/`.
