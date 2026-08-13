@@ -19,12 +19,12 @@
 - Read the MiHO brand ground-truth at hmventures/docs/miho/brand/ before writing any copy; do not duplicate it here.
 
 **Canonical assets:**
-- Design brief → hmventures/projects/miho-landing-page/CLAUDE.md → the agreed look-and-feel and scope rules
-- Insights build plan → hmventures/projects/miho-landing-page/reference/blog-plan.md → the built architecture, article template rationale, and why the content directory can never be empty
-- Design tokens → hmventures/projects/miho-landing-page/reference/design-tokens-modernlife.md → the Modern Life extraction the palette derives from
-- Live style guide → hmventures/projects/miho-landing-page/web/app/designs/page.tsx → every colour, type size, device and component the site is built from; noindex, excluded from the sitemap
-- Post authoring template → hmventures/projects/miho-landing-page/web/content/insights/_template.mdx → the metadata contract and body conventions for a new article
-- Founder photos → hmventures/projects/miho-landing-page/assets/founders/ → Howard's and Mike's portraits plus Mike's transparent cutout
+- Design brief → hmventures/miho-landing-page/CLAUDE.md → the agreed look-and-feel and scope rules
+- Insights build plan → hmventures/miho-landing-page/reference/blog-plan.md → the built architecture, article template rationale, and why the content directory can never be empty
+- Design tokens → hmventures/miho-landing-page/reference/design-tokens-modernlife.md → the Modern Life extraction the palette derives from
+- Live style guide → hmventures/miho-landing-page/web/app/designs/page.tsx → every colour, type size, device and component the site is built from; noindex, excluded from the sitemap
+- Post authoring template → hmventures/miho-landing-page/web/content/insights/_template.mdx → the metadata contract and body conventions for a new article
+- Founder photos → hmventures/miho-landing-page/assets/founders/ → Howard's and Mike's portraits plus Mike's transparent cutout
 - Corey Gannon transcript → personal-ai/projects/video-clipper/work/greg-isenberg-corey-ganim-ai-business/transcript.txt → the source offer architecture; its $999 price is Gannon's, not MiHO's
 - Design reference library → personal-ai/design/references/ → all 153 collected candidates, 27 tagged for this project
 - Mike's public positioning → michaelgrabham.com → his own words for the same audience

@@ -7,7 +7,7 @@ docs/miho/private/
 .DS_Store
 
 # site source lives in its own repo: howardwkim/miho-partners-landing
-projects/miho-landing-page/web/
+miho-landing-page/web/
 
 # Meeting store. THIS REPO IS PUBLIC — transcripts and vendor exports are
 # verbatim recordings of private conversations and must never be committed.

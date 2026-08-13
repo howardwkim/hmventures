@@ -41,7 +41,7 @@
 ---
 
 ## 2026-07-31 — Insights section lives inside the existing landing-page app at /insights
-**Decision:** The blog/insights section is built into the existing Next.js app at projects/miho-landing-page/web/, served at mihopartners.com/insights. Not a separate site, not a subdomain, not a hosted blog platform.
+**Decision:** The blog/insights section is built into the existing Next.js app at miho-landing-page/web/, served at mihopartners.com/insights. Not a separate site, not a subdomain, not a hosted blog platform.
 **Why:** The app is already its own git repo (howardwkim/miho-partners-landing) wired to Vercel, so a second property would mean a second deploy pipeline and split domain authority for no gain. A two-person firm with no traffic cannot afford to divide SEO signal or maintain two codebases. Rejected alternatives: a subdomain (blog.mihopartners.com), which splits domain authority and reads as a bolted-on afterthought, and a hosted platform such as Substack or Ghost, which puts content outside git and makes machine-authored publishing an API problem instead of a commit.
 
 ---
