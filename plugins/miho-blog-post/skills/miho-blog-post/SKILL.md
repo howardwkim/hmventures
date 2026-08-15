@@ -62,9 +62,17 @@ tell the user you are moving their checkout and put it back when you're done.
 
 ### Cloning it the first time
 
+Clone it into a `src` folder inside the user's home directory. **Write the home directory out
+in full rather than using `~`** — on Windows the shell does not expand `~` for `gh`, so the
+clone silently succeeds into a folder literally *named* `~`, and every later step then fails
+for reasons that look unrelated. Resolve the real home path first and pass the whole thing:
+
 ```
-gh repo clone howardwkim/miho-partners-landing ~/src/miho-partners-landing
+gh repo clone howardwkim/miho-partners-landing /Users/<name>/src/miho-partners-landing
 ```
+
+(On Windows that target looks like `C:/Users/<name>/src/miho-partners-landing`. Forward
+slashes are fine there. If the user's name contains a space, quote the whole path.)
 
 Writing outside the current project may trigger a permission prompt the user has never seen
 before. Say it's coming so it doesn't read as an error.
@@ -95,10 +103,16 @@ on and put it back there when you're done. If the tree is dirty, stop and say so
 stashing someone's uncommitted work behind their back. Then:
 
 ```
-git checkout main && git pull
+git checkout main
+git pull
 ```
 
 Always, before writing anything — otherwise the push conflicts.
+
+**Run them as two commands, not one.** Joining commands with `&&` is a syntax error in the
+version of PowerShell that ships with Windows, and Claude Code uses PowerShell there whenever
+Git for Windows isn't installed. The same applies everywhere else in this skill: one command
+per line.
 
 **3. Ask the two things you cannot know, in one message.**
 
@@ -132,7 +146,7 @@ for someone who doesn't use git, and a clean build only proves the metadata is v
 the article reads right.
 
 ```
-pnpm install --frozen-lockfile
+pnpm install
 pnpm dev
 ```
 
@@ -140,36 +154,46 @@ Drafts are visible in the local dev server and nowhere else. Give the user
 `http://localhost:3000/blog/<slug>`, let them look, and wait for an explicit go. Then set
 `draft: false`. Skip this only if they say to publish straight away.
 
-**If `pnpm` is missing, install it** — don't route around it: `corepack enable && corepack
-prepare pnpm@10 --activate`, or `npm install -g pnpm`. **If `node` is missing or older than
-v20.9.0** (`node -v`), stop: Node has to come from [nodejs.org](https://nodejs.org) and you
-cannot verify anything until it does. Do not push an unverified file to `main`. If the user
-explicitly accepts publishing without a local check, push to a branch and run `gh pr create
---fill --base main`, hand them the pull request URL, and tell them plainly that you cannot
-confirm the post went live.
+**Stop the dev server before step 6** — it holds port 3000, and step 6 needs it free. On
+Windows there is no `lsof`/`pkill`: find it with `netstat -ano | findstr :3000` and stop it
+with `taskkill /PID <number> /F`.
 
-**6. Check it builds — do not skip this.** The article's metadata is validated during the
-build, and a bad value fails the whole build, which means the site stops updating for everyone.
+**If `pnpm` is missing, install it with `npm install -g pnpm`.** (Not corepack — it needs
+administrator rights on Windows and was removed from Node entirely at v25.) **If `node` is
+missing** (`node -v`), stop: Node has to come from [nodejs.org](https://nodejs.org), take the
+LTS build, and you cannot verify anything until it does.
+
+**After installing Node or pnpm, Claude Code has to be restarted before it can see them.** On
+Windows especially, a successful install still reports "not recognized" until then — say so,
+or it reads as a failed install and you will loop reinstalling something that already works.
+
+Do not push an unverified file to `main`. If the user explicitly accepts publishing without a
+local check, push to a branch and run `gh pr create --fill --base main`, hand them the pull
+request URL, and tell them plainly that you cannot confirm the post went live.
+
+**6. Run the check — do not skip this.** One command answers both questions that matter:
+whether the article breaks the site (its metadata is validated during the build, and a bad
+value fails the whole build, so the site stops updating for everyone), and whether the
+`<Takeaway>` box actually rendered (a malformed one does *not* fail the build — it publishes
+and just comes out wrong).
 
 ```
-pnpm build
+pnpm check-post <slug>
 ```
 
-A build failure usually names the file and the problem. Fix it and build again. **Never push a
-file that has not built cleanly.**
+It prints `PASSED` or `FAILED` with a plain-language reason. Read the reason and act on it:
+fix the article and run it again. **Never push a file that has not passed.** Do not fall back
+to running `pnpm build`, `pnpm start`, `curl` or `grep` by hand — that path is the one this
+command replaced, and it does not work on Windows.
 
-Then confirm the article actually rendered, because a malformed `<Takeaway>` block does *not*
-fail the build — it just comes out wrong:
+If the article is still `draft: true`, the check reports that and skips the box test — that is
+expected, not a failure. The box can only be checked once `draft: false`.
 
-```
-pnpm start
-curl -s localhost:3000/blog/<slug> | grep -c "What to do about it"
-```
-
-(Use the custom title if the article overrode it.) Stop the server afterwards.
+The script is `scripts/check-post.mjs` in the site repo. If it is missing, the checkout
+predates it: pull `main`.
 
 Note the local Node version. Nothing in the repo pins it, and the hosting platform may build
-with a different one — so a green local build is strong evidence, not a guarantee. Step 8 is
+with a different one — so a green local check is strong evidence, not a guarantee. Step 8 is
 what actually confirms publication.
 
 **7. Commit and push.**
@@ -192,12 +216,10 @@ git push origin main
 
 Include the image file in the same commit if there is one.
 
-**8. Confirm it is live.** The deploy takes roughly a minute. Poll the real URL until it
-returns 200, then give the user the link:
-
-```
-curl -s -o /dev/null -w "%{http_code}" https://mihopartners.com/blog/<slug>
-```
+**8. Confirm it is live.** The deploy takes roughly a minute. Fetch
+`https://mihopartners.com/blog/<slug>` with your own **WebFetch tool** — not `curl`, which is
+an alias for something else in Windows PowerShell and fails there. Retry until the page comes
+back with the article's content, then give the user the link.
 
 Do not report success off a successful `git push`. A push is not a publish.
 
