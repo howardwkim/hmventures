@@ -17,3 +17,10 @@ meetings/**
 !meetings/README.md
 !meetings/index.md
 !meetings/**/summary.md
+
+# generated meshes and scorer output
+projects/trellis-jewelry-cad/out/
+
+# python
+__pycache__/
+*.pyc
