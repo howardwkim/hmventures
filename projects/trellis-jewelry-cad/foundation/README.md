@@ -43,18 +43,18 @@ handoff into Rhino.
 
 ## Model choice
 
-Primary: **TRELLIS.2** (MIT, 4B, Microsoft) via the MLX Apple Silicon fork.
-Fallback/benchmark: **Hunyuan3D 2.1** shape stage.
+**TRELLIS.2** (MIT, 4B, Microsoft) via the MLX Apple Silicon fork. Single generator — this
+project is the TRELLIS workflow, not a model bake-off.
 
-Rationale and the evidence behind it: `../reference/model-survey.md`.
-The short version: TRELLIS.2's O-Voxel representation is architecturally aimed at exactly the
-topology cases jewelry stresses (open surfaces, enclosed structures, non-manifold), and it is
-MIT-licensed end to end. Hunyuan's strongest differentiator is its texture stage, which we
-discard.
+Why it fits: O-Voxel is architecturally aimed at exactly the topology cases jewelry stresses
+(open surfaces, enclosed structures, non-manifold geometry), and it is MIT-licensed end to end.
+Alternatives that lead with PBR texturing have little to offer here — we discard texture before
+Rhino ever sees the mesh.
 
-**We do not assume TRELLIS wins every piece.** The pipeline is built to run more than one
-generator over the same input and pick by score, because these models hallucinate unseen
-geometry differently and neither is reliably better per-design.
+**We still do not assume any single generation is good.** These models hallucinate occluded
+geometry, and the same image with a different seed can produce a materially better or worse
+ring. So the pipeline generates N candidates per image and picks by score rather than trusting
+one run. See `../reference/pipeline-architecture.md`.
 
 ## Design principles
 

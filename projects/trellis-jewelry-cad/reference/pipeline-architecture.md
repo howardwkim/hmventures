@@ -80,9 +80,9 @@ a parameter change, not new architecture. Combined with the scorer, that gives:
 image → N candidates (seed sweep) → QC scores → best-scoring mesh → Rhino
 ```
 
-This is also the natural place a second generator (Hunyuan3D shape stage) plugs in: it becomes
-another candidate producer feeding the same scorer, which is exactly the "run both and pick"
-design the project charter calls for.
+Seed sweeps are the point here: the same image at the same settings can yield a materially
+better or worse ring depending on how the model resolves occluded geometry, and the scorer is
+what turns that variation into a choice instead of a coin flip.
 
 ## What the scorer measures
 

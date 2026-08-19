@@ -15,13 +15,11 @@
 
 **Key decisions:**
 
-- **TRELLIS.2 primary, Hunyuan3D 2.1 as fallback/benchmark** (2026-08-19). The decision rests
-  on the architectural argument — O-Voxel targets exactly the topology cases jewelry stresses,
-  and we discard texture, which is Hunyuan's strongest differentiator — not on Microsoft's
-  benchmark numbers, which are near-identical on automatic metrics and come from an interested
-  party. Full reasoning and the provenance of each claim: `reference/model-survey.md`.
-  The pipeline treats generators as interchangeable candidate producers precisely because we
-  do **not** assume TRELLIS wins every design.
+- **TRELLIS.2 is the generator, single-model** (2026-08-19). Chosen on the architectural
+  argument: O-Voxel targets exactly the topology cases jewelry stresses, and it is MIT
+  end to end. Models whose main strength is PBR texturing are not a fit, since texture is
+  discarded before Rhino. Explicitly **not** a comparative bake-off — this project is the
+  TRELLIS workflow.
 
 - **The MLX fork (`pedronaugusto/trellis2-apple`) is the right base, and the search results
   about it are wrong.** Web sources describe it as "postprocessing only" and last-updated in

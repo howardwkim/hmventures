@@ -3,8 +3,8 @@
 Geometry QC and scoring for generated jewelry meshes.
 
 Reference-free: scores a mesh on its own merits, so it works on generator output where
-no ground-truth CAD exists. Used to rank candidates (seed sweeps, or TRELLIS vs Hunyuan)
-before anything reaches Rhino.
+no ground-truth CAD exists. Used to rank candidates from a seed sweep before anything
+reaches Rhino.
 
 Scores are ADVISORY RANKING SIGNALS, not pass/fail gates. A genuine openwork pendant is
 correctly non-watertight; a naive "watertight = good" rule would reject exactly the pieces
